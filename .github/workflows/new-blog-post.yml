@@ -1,0 +1,58 @@
+name: Create new micro-blog post and populate Hugo frontmatter
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  create-post:
+    # Restrict to my GitHub username to prevent the public from creating new blog posts
+    if: github.actor == 'stochastical' && github.event.label.name == 'new-blog-post'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Hugo Blog post YAML frontmatter
+        id: post-data
+        run: |
+          # Extract data from the issue body
+          TITLE=$(echo "${{ github.event.issue.body }}" | grep -oP "(?<=### Blog Post Title:\n).*")
+          DATE=$(echo "${{ github.event.issue.body }}" | grep -oP "(?<=### Post Date:\n).*")
+          DESCRIPTION=$(echo "${{ github.event.issue.body }}" | grep -oP "(?<=### Description:\n).*")
+          LINK=$(echo "${{ github.event.issue.body }}" | grep -oP "(?<=### Link:\n).*")
+          CONTENT=$(echo "${{ github.event.issue.body }}" | grep -oP "(?<=### Additional Content:\n).*")
+
+          # Generate post filename
+          FILENAME=$(echo "$DATE-$TITLE.md" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -d '[:punct:]')
+          echo "FILENAME=$FILENAME" >> $GITHUB_ENV
+
+      - name: Create blog post file
+        run: |
+          cat <<EOF > content/micro-blog/$FILENAME
+          ---
+          title: "$TITLE"
+          date: $DATE
+          description: "$DESCRIPTION"
+          link: "$LINK"
+          draft: false
+          ---
+
+          $CONTENT
+          EOF
+
+      - name: Switch to preview branch
+        run: |
+          git checkout -B preview
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/blog/$FILENAME
+          git commit -m "Add new blog post (via Actions): $TITLE"
+          git push origin preview
