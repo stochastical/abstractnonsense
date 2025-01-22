@@ -1,0 +1,43 @@
+name: New Blog Post
+description: Create a new blog post for your Hugo site.
+title: "[New Blog Post] <title>"
+labels:
+  - new-blog-post
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Blog Post Title
+      description: The title of the blog post.
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Post Date
+      description: Date of the blog post in YYYY-MM-DD format.
+      placeholder: "2024-06-18"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A short description of the blog post.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: The YouTube embed URL or external link.
+      placeholder: "https://www.youtube.com/embed/example"
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Additional Content
+      description: Add the content for the blog post.
+    validations:
+      required: false
