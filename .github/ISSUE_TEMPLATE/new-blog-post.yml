@@ -16,7 +16,7 @@ body:
     attributes:
       label: Post Date
       description: Date of the blog post in YYYY-MM-DD format.
-      placeholder: "2024-06-18"
+      placeholder: "2025-01-01"
     validations:
       required: true
   - type: textarea
@@ -30,7 +30,7 @@ body:
     id: link
     attributes:
       label: Link
-      description: The YouTube embed URL or external link.
+      description: The external link.
       placeholder: "https://www.youtube.com/embed/example"
     validations:
       required: true
