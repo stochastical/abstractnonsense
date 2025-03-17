@@ -7,31 +7,16 @@
     <title>{{ .Site.Title }}</title>
     <meta name="description" content="{{ .Site.Params.description }}">
     <link rel="stylesheet" href="/css/style.css">
-
-    <script>
-        // Highlight the current page in the navigation bar
-        document.addEventListener('DOMContentLoaded', event => {
-            const navLinks = document.querySelectorAll("nav > a");
-            const currentPath = window.location.pathname.split('/')[1]; // Get the top-level path
-    
-            navLinks.forEach(link => {
-                const linkPath = link.getAttribute('href').split('/')[1]; // Get the top-level path of the link
-                if (linkPath === currentPath) {
-                    link.classList.add("selected");
-                    link.setAttribute("aria-current", "page"); // Improve accessibility
-                }
-            });
-        });
-    </script>
 </head>
 
 <body>
     <header>
         <h1><a href="{{ .Site.BaseURL | relURL}}">{{ .Site.Title }}</a></h1>
         <nav>
-            <a href="{{ "/micro-blog/" | relURL }}">Microblog</a>
-            <a href="{{ "/blog/" | relURL }}">Blog</a>
-            <a href="{{ "/about/" | relURL }}">About</a>
+            <!-- Highlight the current page in the navigation bar -->
+            <a href="{{ "/micro-blog/" | relURL }}" class="{{ if hasPrefix .RelPermalink "/micro-blog/" }}selected{{ end }}">Microblog</a>
+            <a href="{{ "/blog/" | relURL }}" class="{{ if hasPrefix .RelPermalink "/blog/" }}selected{{ end }}">Blog</a>
+            <a href="{{ "/about/" | relURL }}" class="{{ if hasPrefix .RelPermalink "/about/" }}selected{{ end }}">About</a>
         </nav>
     </header>
     <main>
