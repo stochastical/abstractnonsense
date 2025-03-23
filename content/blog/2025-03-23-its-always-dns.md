@@ -1,7 +1,7 @@
 ---
 title: "It's always DNS"
 blog_section:
-  - Microblog
+  - Blog
 date: "2025-03-23"
 description: An ode to debugging DNS diagnostics
 link: ""
