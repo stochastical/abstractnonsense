@@ -1,4 +1,4 @@
-name: Create new micro-blog post and populate Hugo frontmatter
+name: Create new blog post
 
 on:
   issues:
@@ -39,6 +39,7 @@ jobs:
           DESCRIPTION=$(jq '.description' parsed_issue.json)
           LINK=$(jq '.link' parsed_issue.json)
           CONTENT=$(jq '.content' parsed_issue.json)
+            BLOG_SECTION=$(jq -r '.blog_section[0]' parsed_issue.json)
 
           FILENAME=$(echo "$DATE-$TITLE.md" | tr ' ' '-' | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]-.\n')
            
@@ -48,6 +49,7 @@ jobs:
           echo "LINK=$LINK" >> $GITHUB_ENV
           echo "CONTENT=$CONTENT" >> $GITHUB_ENV
           echo "FILENAME=$FILENAME" >> $GITHUB_ENV
+          echo "BLOG_SECTION=$BLOG_SECTION" >> $GITHUB_ENV
 
       - name: Create blog post file
         run: |
@@ -60,9 +62,9 @@ jobs:
             
             # Inline "content" key for the body
             jq -r '.content' "parsed_issue.json" 
-          } > content/micro-blog/"$FILENAME"
+          } > content/$BLOG_SECTION/"$FILENAME"
 
-          cat content/micro-blog/"$FILENAME" #NOTE: for debugging
+          cat content/$BLOG_SECTION/"$FILENAME" #NOTE: for debugging
 
       # - name: Switch to preview branch
       #   run: |
@@ -74,11 +76,11 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/micro-blog/"$FILENAME"
+          git add content/$BLOG_SECTION/"$FILENAME"
           git commit -m "Add new blog post (via Actions): "$FILENAME""
           git push origin main
 
-          gh issue comment ${{ github.event.issue.number }} --body "Added new blog post to \`content/micro-blog/$FILENAME\`"
+          gh issue comment ${{ github.event.issue.number }} --body "Added new blog post to \`content/$BLOG_SECTION/$FILENAME\`"
 
       - name: Close issue
         env:

@@ -17,8 +17,8 @@ body:
       label: Blog Section
       description: Choose the section of `abstractnonsense.xyz` where this post will be added
       options:
-        - Microblog
-        - Blog
+        - micro-blog
+        - blog
     validations:
       required: true
   - type: input
