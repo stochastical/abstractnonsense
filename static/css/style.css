@@ -1,6 +1,6 @@
 /* Tags styling */
 .post-tags {
-    margin: 0.5em 0 1.5em 0;
+    margin: 0.2em 0 0.8em 0;
 }
 
 .tag {
@@ -8,8 +8,8 @@
     background-color: rgba(var(--highlight), 0.1);
     color: var(--highlight);
     padding: 0.2em 0.8em;
-    margin-right: 0.5em;
-    margin-bottom: 0.5em;
+    margin-right: 0.2em;
+    margin-bottom: 0.2em;
     border-radius: 30px;
     font-size: 0.85em;
     transition: background-color 0.2s ease;
@@ -19,6 +19,14 @@
     background-color: var(--highlight);
     color: var(--bgcolor);
     border-bottom: none;
+}
+
+/* Add hashtag before each tag */
+.tag::before {
+    content: "#";
+    margin-right: 0.05em;
+    opacity: 0.8;
+    font-size: 0.85em;
 }
 
 .tags-cloud {
@@ -412,7 +420,7 @@ article+article {
 
 article h2 {
     font-weight: 700;
-    margin: 0 0 1em 0;
+    margin: 0 0 0.5em 0;
 }
 
 article time {
