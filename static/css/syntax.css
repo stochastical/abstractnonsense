@@ -10,6 +10,9 @@
     --code-function: #4271ae;
     --code-operator: #3e999f;
     --code-punctuation: #767676;
+    --copy-button-bg: rgba(255, 255, 255, 0.7);
+    --copy-button-hover: rgba(255, 255, 255, 0.9);
+    --copy-button-text: #666;
 }
 
 /* Dark mode syntax highlighting */
@@ -25,6 +28,9 @@
         --code-function: #61afef;
         --code-operator: #56b6c2;
         --code-punctuation: #abb2bf;
+        --copy-button-bg: rgba(30, 34, 42, 0.7);
+        --copy-button-hover: rgba(30, 34, 42, 0.9);
+        --copy-button-text: #aaa;
     }
 }
 
@@ -55,6 +61,7 @@ pre {
 .highlight {
     background-color: var(--code-background);
     border-radius: 8px;
+    position: relative;
 }
 
 .highlight pre {
@@ -62,6 +69,61 @@ pre {
     padding: .6em .9em;
     margin: .8em 0 1em 0;
     white-space: pre;
+}
+
+/* Copy button styling */
+.copy-button {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    padding: 0.25em 0.5em;
+    font-size: 0.8em;
+    background: var(--copy-button-bg);
+    border: none;
+    border-radius: 4px;
+    color: var(--copy-button-text);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.highlight:hover .copy-button {
+    opacity: 1;
+}
+
+.copy-button:hover {
+    background: var(--copy-button-hover);
+}
+
+/* Copy success message */
+.copy-button.copied::after {
+    content: "Copied!";
+    position: absolute;
+    top: 0;
+    right: 110%;
+    background: var(--copy-button-bg);
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    animation: fade-out 1.5s forwards;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* Specific syntax elements */
