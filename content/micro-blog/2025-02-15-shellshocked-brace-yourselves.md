@@ -2,6 +2,7 @@
 title: Shellshocked? Brace yourselves!
 date: "2025-02-15"
 description: A neat trick in `bash`!
+tags: ["software-engineering"]
 ---
 
 I just discovered that to capture multiple lines of `stdout` from a shell script and redirect them to a file, you can simply wrap them in braces!

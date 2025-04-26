@@ -4,6 +4,7 @@ date: 2025-01-22
 description: "Rising developer discomfort is a window into the ergonomics of using a framework."
 link: "https://youtu.be/rbu7Zu5X1zI?feature=shared"
 draft: false
+tags: ["design", "software-engineering"]
 ---
 
 > "I wonder how much it is insightful to watch someone doing a workflow and to note when discomfort kicks in. That's a really insightful thing to realize what matters from bitter experience, right?  ... Experience tells you when to worry about something and when not to worry about it" - _Ben Sparks_

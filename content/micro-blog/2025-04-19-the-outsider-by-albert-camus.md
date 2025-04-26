@@ -4,6 +4,7 @@ blog_section:
   - micro-blog
 date: "2025-04-19"
 description: Book review of The Outsider by Albert Camus
+tags: ["books"]
 ---
 
 Just finished The Outsider by Albert Camus (also known as The Stranger). Reading it felt like walking through an impressionist painting. Finishing it, one is left with a slightly blurred picture of a life — bleak yet nostalgic, emotionally distant yet resoundingly poignant.

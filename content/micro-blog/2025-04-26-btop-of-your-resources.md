@@ -5,6 +5,7 @@ blog_section:
   - micro-blog
 description: 'btop: the modern terminal resource monitor with an exceptional TUI'
 link: https://github.com/aristocratos/btop
+tags: ["design"]
 ---
 
 [`btop`](https://github.com/aristocratos/btop) is now my default terminal resource monitor, supplanting `top`, `htop`, and all the others of that ilk. I wanted to spare a few words for its beautiful (and functional!) text-based user interface (TUI):

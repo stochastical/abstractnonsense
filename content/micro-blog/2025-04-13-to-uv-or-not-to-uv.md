@@ -5,6 +5,7 @@ blog_section:
 date: "2025-04-13"
 description: The magic behind uv's speed
 link: https://www.youtube.com/watch?v=gSKTfG1GXYQ
+tags: ["computer-science", "software-engineering"]
 ---
 
 [`uv`](https://github.com/astral-sh/uv) is a blazing fast Python package manager that aims to displace `pip`. It's a really slick tool that lets you go from `git clone` to executing code with all the dependencies seamlessly. All the standard accolades apply: written in Rust, beautiful terminal UI, well thought-out user ergonomics ... all written by [Astral](https://astral.sh), the same company that gave the Python community [`ruff`](https://github.com/astral-sh/ruff).

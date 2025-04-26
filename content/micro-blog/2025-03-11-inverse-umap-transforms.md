@@ -5,6 +5,7 @@ blog_section:
 date: "2025-03-11"
 description: Inverse transforms with UMAP dimensionality reduction
 link: https://umap-learn.readthedocs.io/en/latest/inverse_transform.html
+tags: ["data-science", "mathematics"]
 ---
 
 TIL that the dimensionality reduction algorithm [UMAP](https://umap-learn.readthedocs.io/en/latest/)[^1] has support for [inverse transforms](https://umap-learn.readthedocs.io/en/latest/inverse_transform.html)!

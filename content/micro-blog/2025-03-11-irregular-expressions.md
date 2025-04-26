@@ -4,6 +4,7 @@ blog_section:
   - Microblog
 date: "2025-03-11"
 description: Can you encode Luhn's algorithm into regex?
+tags: ["computer-science"]
 ---
 
 Someone at work asked if it's possible to validate credit card numbers with the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) in regex.
