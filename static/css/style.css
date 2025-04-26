@@ -180,11 +180,11 @@ article {
 }
 
 ul {
-    list-style-type: none;
+    list-style-type: disc;
 }
 
 ul li::marker {
-    content: "\2022   ";
+    content: "";
 }
 
 li {
@@ -369,6 +369,10 @@ a[href*="//"]:after {
     color: var(--textcolor);
     opacity: .25;
 }
+
+a[href*="localhost"]::after {
+    content: none;
+  }
 
 
 a[href*="//"]:hover:after {
