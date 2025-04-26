@@ -5,6 +5,10 @@ title: "Abstract Nonsense"
 params:
   description: "A blog about Mathematics and Computer Science."
 
+# Enable taxonomies for tags
+taxonomies:
+  tag: "tags"
+
 markup:
   goldmark:
     renderer:

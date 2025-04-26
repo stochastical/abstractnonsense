@@ -1,0 +1,15 @@
+{{ define "main" }}
+<section id="tags-list">
+    <h1>All Tags</h1>
+    
+    <ul class="tags-cloud">
+        {{ range .Data.Terms.Alphabetical }}
+            <li>
+                <a href="{{ .Page.Permalink }}" class="tag">
+                    {{ .Page.Title }} ({{ .Count }})
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+</section>
+{{ end }}

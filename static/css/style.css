@@ -1,3 +1,40 @@
+/* Tags styling */
+.post-tags {
+    margin: 0.5em 0 1.5em 0;
+}
+
+.tag {
+    display: inline-block;
+    background-color: rgba(var(--highlight), 0.1);
+    color: var(--highlight);
+    padding: 0.2em 0.8em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 30px;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+}
+
+.tag:hover {
+    background-color: var(--highlight);
+    color: var(--bgcolor);
+    border-bottom: none;
+}
+
+.tags-cloud {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em;
+}
+
+.tags-cloud li {
+    margin: 0;
+}
+
+/* default */
+
 * {
     margin: 0;
     padding: 0;

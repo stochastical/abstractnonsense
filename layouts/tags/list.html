@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section id="tags">
+    <h1>Posts tagged with "{{ .Title }}"</h1>
+    
+    {{ range .Pages }}
+    <article>
+        <h2>
+            <time datetime="{{ .Date }}">{{ .Date.Format "02.01.2006" }}</time>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        <p>
+            {{ .Summary }}
+        </p>
+    </article>
+    {{ end }}
+</section>
+{{ end }}
