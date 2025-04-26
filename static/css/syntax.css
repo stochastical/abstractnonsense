@@ -1,0 +1,157 @@
+/* Light mode syntax highlighting */
+:root {
+    --code-background: rgba(245, 245, 245, 0.9);
+    --code-text: #333333;
+    --code-comment: #8e908c;
+    --code-keyword: #8959a8;
+    --code-number: #f5871f;
+    --code-string: #718c00;
+    --code-variable: #c82829;
+    --code-function: #4271ae;
+    --code-operator: #3e999f;
+    --code-punctuation: #767676;
+}
+
+/* Dark mode syntax highlighting */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --code-background: rgba(40, 44, 52, 0.9);
+        --code-text: #abb2bf;
+        --code-comment: #5c6370;
+        --code-keyword: #c678dd;
+        --code-number: #d19a66;
+        --code-string: #98c379;
+        --code-variable: #e06c75;
+        --code-function: #61afef;
+        --code-operator: #56b6c2;
+        --code-punctuation: #abb2bf;
+    }
+}
+
+/* Apply syntax highlighting styles */
+pre,
+code {
+    font-family: ui-monospace, SF Mono, Menlo, Monaco, Andale Mono, monospace;
+}
+
+pre {
+    background-color: var(--code-background);
+    color: var(--code-text);
+    border-radius: 8px;
+    padding: 1em;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+/* Style inline code differently from code blocks */
+:not(pre)>code:not(a>code) {
+    background-color: var(--code-background);
+    color: var(--code-text);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+/* Syntax highlighting specific classes */
+.highlight {
+    background-color: var(--code-background);
+    border-radius: 8px;
+}
+
+.highlight pre {
+    margin: 0;
+    padding: .6em .9em;
+    margin: .8em 0 1em 0;
+    white-space: pre;
+}
+
+/* Specific syntax elements */
+.highlight .c,
+.highlight .ch,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs,
+.highlight .cp,
+.highlight .cpf {
+    color: var(--code-comment);
+    /* Comment */
+}
+
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt {
+    color: var(--code-keyword);
+    /* Keyword */
+}
+
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il {
+    color: var(--code-number);
+    /* Number */
+}
+
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .ss {
+    color: var(--code-string);
+    /* String */
+}
+
+.highlight .n,
+.highlight .na,
+.highlight .nb,
+.highlight .nc,
+.highlight .no,
+.highlight .nd,
+.highlight .ni,
+.highlight .ne,
+.highlight .nf,
+.highlight .nl,
+.highlight .nn,
+.highlight .nx,
+.highlight .py,
+.highlight .nt,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi,
+.highlight .vm {
+    color: var(--code-variable);
+    /* Name */
+}
+
+.highlight .o,
+.highlight .ow {
+    color: var(--code-operator);
+    /* Operator */
+}
+
+.highlight .p,
+.highlight .pi {
+    color: var(--code-punctuation);
+    /* Punctuation */
+}
+
+/* Function names */
+.highlight .nf,
+.highlight .fm {
+    color: var(--code-function);
+}
