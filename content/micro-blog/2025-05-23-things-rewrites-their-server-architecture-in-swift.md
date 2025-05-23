@@ -5,6 +5,7 @@ blog_section:
 date: "2025-05-23"
 description: Things rewrites their server architecture in Swift
 link: https://www.swift.org/blog/how-swifts-server-support-powers-things-cloud/
+tags: ["software-egineering", "design"]
 ---
 
 I've been a long time user of Cultured Code's [Things](https://culturedcode.com/things/) to-do app. It's slick, has well designed ergonomics, and is perfectly minimalistic. Things' Markdown support is tasteful and its approach to task management structured but pared back.
@@ -15,6 +16,6 @@ From a technical perspective, I've always appreciated its rock-solid proprietary
 
 > “Things” would like to find and connect to devices on your local network. Things uses the local network to provide faster sync between your devices.
 
-I'd always thought they implemented some [CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) data structure and synchronised it on the LAN as well as via the server, but[ according to their FAQ](https://culturedcode.com/things/support/articles/9706121/), they synchronisation is only server-side:
+I'd always thought they implemented some [CRDT](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) data structure and synchronised it on the LAN as well as via the server, but [according to their FAQ](https://culturedcode.com/things/support/articles/9706121/), their synchronisation is only server-side:
 
 > None of your data is transmitted across the local network. Things merely sends a notification to your other devices telling them that new information is available, so that they can download it from the cloud.
