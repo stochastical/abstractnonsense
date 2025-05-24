@@ -25,74 +25,64 @@ jobs:
           body: ${{ github.event.issue.body }}
           issue-form-template: 'new-blog-post.yml'
       
-      - name: Set up Hugo Blog post YAML frontmatter
-        id: output-issue
+      - name: Process blog post metadata for Hugo
+        id: metadata
         env:
-          PARSED_ISSUE_JSON: ${{ steps.issue-parser.outputs.json }}     
+          PARSED_ISSUE_JSON: ${{ steps.issue-parser.outputs.json }}
+          TODAY: $(TZ=Australia/Melbourne date +%Y-%m-%d)
         run: |
           echo "$PARSED_ISSUE_JSON" > parsed_issue.json
-          echo $(jq '.' parsed_issue.json)
 
-          TITLE=$(jq '.title' parsed_issue.json)
-          DATE=$(jq -r '.date' parsed_issue.json)
+          # Set defaults and transform with jq
+          jq --arg today "$TODAY" '
+            .date = (.date // $today) |
+            .content = (.content // "") |
+            .tags = (
+              if .tags then
+                .tags | split(",") | map(gsub("^\\s+|\\s+$"; ""))
+              else 
+                []
+              end
+            )
+          ' parsed_issue.json > processed.json
 
-          # If DATE is not provided, use the current date in Australia/Melbourne timezone
-          if [[ -z "$DATE" || "$DATE" == "null" ]]; then
-            DATE=$(TZ=Australia/Melbourne date +%Y-%m-%d)
-          fi
-          
-          DESCRIPTION=$(jq '.description' parsed_issue.json)
-          LINK=$(jq '.link' parsed_issue.json)
-          CONTENT=$(jq '.content' parsed_issue.json)
-          BLOG_SECTION=$(jq -r '.blog_section[0]' parsed_issue.json)
-          TAGS=$(jq -r -c '.tags // empty | split(",") | map(gsub("^\\s+|\\s+$"; ""))' parsed_issue.json)
+          # Generate filename
+          FILENAME=$(jq -r '"\(.date)-\(.title)"' processed.json | \
+            tr ' ' '-' | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]-.\n')
+          echo "filename=${FILENAME}.md" >> $GITHUB_OUTPUT
+          echo "section=$(jq -r '.blog_section[0]' processed.json)" >> $GITHUB_OUTPUT
 
-          FILENAME=$(echo "$DATE-$TITLE.md" | tr ' ' '-' | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]-.\n')
-           
-          echo "TITLE=$TITLE" >> $GITHUB_ENV
-          echo "DATE=$DATE" >> $GITHUB_ENV
-          echo "DESCRIPTION=$DESCRIPTION" >> $GITHUB_ENV
-          echo "LINK=$LINK" >> $GITHUB_ENV
-          echo "CONTENT=$CONTENT" >> $GITHUB_ENV
-          echo "FILENAME=$FILENAME" >> $GITHUB_ENV
-          echo "BLOG_SECTION=$BLOG_SECTION" >> $GITHUB_ENV
-          echo "TAGS=$TAGS" >> $GITHUB_ENV
-
-      - name: Create blog post file
+      - name: Create blog post
+        env:
+          FILENAME: ${{ steps.metadata.outputs.filename }}
+          SECTION: ${{ steps.metadata.outputs.section }}
         run: |
           {
-            # Extract everything except "content" and "tags" and convert it to YAML-compatible format
             echo "---"
-            jq 'del(.content, .tags)' "parsed_issue.json" | yq -P
-            echo "tags: $TAGS"
+            jq 'del(.content)' processed.json | yq -P
             echo "---"
-            echo ''
-            
-            # Inline "content" key for the body
-            jq -r '.content' "parsed_issue.json"
-          } > content/$BLOG_SECTION/"$FILENAME"
+            echo
+            jq -r '.content' processed.json
+          } > "content/${SECTION}/${FILENAME}"
 
-          cat content/$BLOG_SECTION/"$FILENAME" #NOTE: for debugging
-
-      # - name: Switch to preview branch
-      #   run: |
-      #     git checkout -B preview
-
-      - name: Commit and push changes
+      - name: Commit and push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILENAME: ${{ steps.metadata.outputs.filename }}
+          SECTION: ${{ steps.metadata.outputs.section }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/$BLOG_SECTION/"$FILENAME"
-          git commit -m "Add new blog post (via Actions): "$FILENAME""
+          
+          git add "content/${SECTION}/${FILENAME}"
+          git commit -m "Add new blog post (via Actions): ${FILENAME}"
           git push origin main
 
           gh issue comment ${{ github.event.issue.number }} \
-            --body "Added new blog post to \`content/$BLOG_SECTION/$FILENAME\` at [commit](https://github.com/stochastical/abstractnonsense/commit/$(git rev-parse HEAD))"
+            --body "Added new blog post to \`content/${SECTION}/${FILENAME}\` at [commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/$(git rev-parse HEAD))" 
 
       - name: Close issue
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}
+            gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}
