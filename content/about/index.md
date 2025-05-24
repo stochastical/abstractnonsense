@@ -2,7 +2,7 @@
 layout: "page/single"
 ---
 
-## About Me
+# About Me
 
 Hi, I'm Yossi Frenkel 👋. You can reach me at:
 
