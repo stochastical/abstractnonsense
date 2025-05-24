@@ -37,7 +37,7 @@ jobs:
           
           DATE=$(jq -r '.date // empty' parsed_issue.json)
           # If DATE is not provided, use the current date in Australia/Melbourne timezone
-          if [[ -z "$DATE" || "$DATE" == "_No response_" ]]; then
+          if [[ -z "$DATE" ]]; then
             DATE=$(TZ=Australia/Melbourne date +%Y-%m-%d)
           fi
 
@@ -61,9 +61,10 @@ jobs:
       - name: Create blog post file
         run: |
           {
-            # Extract everything except "content" and "tags" and convert it to YAML-compatible format
+            # Extract everything except "content" and "tags" and "date" and convert it to YAML-compatible format
             echo "---"
-            jq 'del(.content, .tags)' "parsed_issue.json" | yq -P
+            jq 'del(.content, .tags, .date)' "parsed_issue.json" | yq -P
+            echo "date: $DATE"
             echo "tags: $TAGS"
             echo "---"
             echo ''
