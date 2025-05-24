@@ -11,4 +11,4 @@ tags:
   - mathematics
 ---
 
-My friend, [Dania Freidgeim](mailto:daniel.freidgeim@gmail.com), created a [probabilistic model](https://electionfirstpreference.com/methodology/) of First Preference votes for the [2025 Australian Federal Election](https://en.wikipedia.org/wiki/2025_Australian_federal_election). Australia uses a Preferential voting ([Instant-runoff voting](https://en.wikipedia.org/wiki/Instant-runoff_voting)), which makes this a really interesting exercise! Please [go check it out](https://electionfirstpreference.com)!
+My friend, [Dania Freidgeim](mailto:daniel.freidgeim@gmail.com), created a [probabilistic model](https://electionfirstpreference.com/methodology/) of First Preference votes for the [2025 Australian Federal Election](https://en.wikipedia.org/wiki/2025_Australian_federal_election). Australia uses a Preferential voting ([Instant-runoff](https://en.wikipedia.org/wiki/Instant-runoff_voting)) system, which makes this a really interesting exercise! Please [go check it out](https://electionfirstpreference.com)!
