@@ -37,7 +37,7 @@ jobs:
           
           DATE=$(jq -r '.date // empty' parsed_issue.json)
           # If DATE is not provided, use the current date in Australia/Melbourne timezone
-          if [[ -z "$DATE" ]]; then
+          if [[ -z "$DATE" || "$DATE" == "_No response_" ]]; then
             DATE=$(TZ=Australia/Melbourne date +%Y-%m-%d)
           fi
 
