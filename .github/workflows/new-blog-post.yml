@@ -45,6 +45,7 @@ jobs:
           LINK=$(jq '.link' parsed_issue.json)
           CONTENT=$(jq '.content' parsed_issue.json)
           BLOG_SECTION=$(jq -r '.blog_section[0]' parsed_issue.json)
+          TAGS=$(jq -r -c '.tags // empty | split(",") | map(gsub("^\\s+|\\s+$"; ""))' parsed_issue.json)
 
           FILENAME=$(echo "$DATE-$TITLE.md" | tr ' ' '-' | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]-.\n')
            
@@ -55,18 +56,20 @@ jobs:
           echo "CONTENT=$CONTENT" >> $GITHUB_ENV
           echo "FILENAME=$FILENAME" >> $GITHUB_ENV
           echo "BLOG_SECTION=$BLOG_SECTION" >> $GITHUB_ENV
+          echo "TAGS=$TAGS" >> $GITHUB_ENV
 
       - name: Create blog post file
         run: |
           {
-            # Extract everything except "content" and convert it to YAML-compatible format
+            # Extract everything except "content" and "tags" and convert it to YAML-compatible format
             echo "---"
-            jq 'del(.content)' "parsed_issue.json" | yq -P
+            jq 'del(.content, .tags)' "parsed_issue.json" | yq -P
+            echo "tags: $TAGS"
             echo "---"
             echo ''
             
             # Inline "content" key for the body
-            jq -r '.content' "parsed_issue.json" 
+            jq -r '.content' "parsed_issue.json"
           } > content/$BLOG_SECTION/"$FILENAME"
 
           cat content/$BLOG_SECTION/"$FILENAME" #NOTE: for debugging
