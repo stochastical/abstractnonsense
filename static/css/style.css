@@ -214,14 +214,15 @@ ul, ol {
 
 .tag {
     display: inline-block;
-    background-color: rgba(var(--highlight), 0.1);
+    background-color: rgba(39, 73, 201, 0.1);
     color: var(--highlight);
     padding: 0.2em 0.8em;
     margin-right: 0.2em;
     margin-bottom: 0.2em;
     border-radius: 30px;
     font-size: 0.85em;
-    transition: background-color 0.2s ease;
+    opacity: 0.8;
+    transition: all 0.2s ease;
 }
 
 .tag:hover {
