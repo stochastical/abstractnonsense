@@ -3,7 +3,7 @@
     <h1>All Tags</h1>
     
     <ul class="tags-cloud">
-        {{ range .Data.Terms.Alphabetical }}
+        {{ range .Data.Terms.ByCount }}
             <li>
                 <a href="{{ .Page.Permalink }}" class="tag">
                     {{ .Page.Title }} ({{ .Count }})
