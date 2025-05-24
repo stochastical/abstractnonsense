@@ -64,21 +64,27 @@ mark {
 }
 
 blockquote {
-    padding-left: 2ch;
-    opacity: .7;
-    margin-bottom: .6em;
+    padding-left: 2.5ch; /* Increased padding */
+    padding-top: 0.5em; /* Added top padding */
+    padding-bottom: 0.5em; /* Added bottom padding */
+    opacity: .9; /* Slightly adjusted opacity for text if needed, or keep at .7 if preferred */
+    margin-top: 1em; /* Added top margin */
+    margin-bottom: 1em; /* Adjusted bottom margin */
     position: relative;
+    background-color: rgba(var(--highlight-rgb, 39, 73, 201), 0.05); /* Subtle background, ensure --highlight-rgb is defined or use a fixed color */
+    border-radius: 8px; /* Optional: rounded corners */
 }
 
 blockquote:before {
     content: "";
     position: absolute;
-    left: 0;
-    top: .3em;
-    bottom: .3em;
-    background: currentColor;
-    width: 1px;
-    opacity: .2;
+    left: 0.5ch; /* Adjusted position to align with new padding */
+    top: .5em;
+    bottom: .5em;
+    background: var(--highlight); /* Use highlight color for border */
+    width: 3px; /* Thicker border */
+    opacity: 1; /* Full opacity for the border */
+    border-radius: 8px; /* Optional: rounded border */
 }
 
 /* ======= LINKS ======= */
