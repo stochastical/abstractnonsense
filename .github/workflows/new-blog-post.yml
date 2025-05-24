@@ -88,7 +88,8 @@ jobs:
           git commit -m "Add new blog post (via Actions): "$FILENAME""
           git push origin main
 
-          gh issue comment ${{ github.event.issue.number }} --body "Added new blog post to \`content/$BLOG_SECTION/$FILENAME\`"
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "Added new blog post to \`content/$BLOG_SECTION/$FILENAME\` at [commit](https://github.com/stochastical/abstractnonsense/commit/$(git rev-parse HEAD))"
 
       - name: Close issue
         env:
