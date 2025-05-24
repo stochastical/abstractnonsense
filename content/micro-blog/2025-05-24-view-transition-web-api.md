@@ -11,7 +11,9 @@ tags:
 date: "2025-05-24"
 ---
 
-The (relatively) new [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API) is really slick! Simply adding the following CSS to my blog enabled [same-document view transitions](https://developer.chrome.com/docs/web-platform/view-transitions#same-document_view_transitions), no JavaScript required! Go ahead and give it a try now! Simply click a link to another page on this site and you should observe a seamless transition occur.
+The (relatively) new [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API) is really slick! Simply adding the following CSS to my blog enabled [same-document view transitions](https://developer.chrome.com/docs/web-platform/view-transitions#same-document_view_transitions) - no JavaScript required! 
+
+Go ahead and give it a try now! Simply click a link to another page on this site and you should observe a seamless transition occur.
 
 ```css
 @view-transition {
@@ -19,7 +21,7 @@ The (relatively) new [View Transition API](https://developer.mozilla.org/en-US/d
 }
 ```
 
-If you want to add even more pizzaz, you can declare CSS keyframe animations:
+If you want to add even more pizzazz, you can declare CSS keyframe animations:
 
 ```css
 /* Create a custom animation */
