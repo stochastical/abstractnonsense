@@ -49,3 +49,11 @@ body:
       description: Add the content for the blog post.
     validations:
       required: false
+  - type: input
+      id: tags
+      attributes:
+        label: Tags
+        description: Add comma-separated tags for this blog post (optional).
+        placeholder: "design, software-engineering, book"
+      validations:
+        required: false
