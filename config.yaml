@@ -5,6 +5,10 @@ title: "Abstract Nonsense"
 params:
   description: "A blog about Mathematics and Computer Science."
 
+# Pagination settings
+pagination: 
+  pagerSize: 6
+
 # Enable taxonomies for tags
 taxonomies:
   tag: "tags"
