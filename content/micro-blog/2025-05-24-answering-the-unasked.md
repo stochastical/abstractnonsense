@@ -4,7 +4,7 @@ blog_section:
   - micro-blog
 description: A neat exam question
 date: 2025-05-24
-tags: 
+tags: []
 ---
 
 I'm not sure exactly where this originated from, but I'm quite delighted by this exam question:
