@@ -45,7 +45,7 @@ jobs:
           LINK=$(jq '.link' parsed_issue.json)
           CONTENT=$(jq '.content' parsed_issue.json)
           BLOG_SECTION=$(jq -r '.blog_section[0]' parsed_issue.json)
-          TAGS=$(jq -r -c '.tags // empty | split(",") | map(gsub("^\\s+|\\s+$"; ""))' parsed_issue.json)
+          TAGS=$(jq -r -c '.tags // [] | split(",") | map(gsub("^\\s+|\\s+$"; ""))' parsed_issue.json)
 
           FILENAME=$(echo "$DATE-$TITLE.md" | tr ' ' '-' | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]-.\n')
            
