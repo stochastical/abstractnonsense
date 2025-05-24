@@ -132,14 +132,16 @@ header {
     position: absolute;
     width: 100%;
     z-index: 2;
+    align-items: center; /* Adds vertical alignment */
 }
 
 header h1 {
-    font-size: 1em;
+    font-size: 1.5em; /* Increased from 1em */
     flex: 1;
-    /* pushes nav to the right */
     white-space: nowrap;
-    padding: 0 5vw .5em 0;
+    padding: 0 5vw 0 0; /* Removed bottom padding */
+    margin: 0; /* Ensures no extra spacing */
+    line-height: 2; /* Aligns text vertically with nav links */
 }
 
 nav a:not(:last-of-type) {
@@ -181,6 +183,10 @@ article {
 
 ul {
     list-style-type: disc;
+}
+
+ul li::marker {
+    content: "";
 }
 
 li {
