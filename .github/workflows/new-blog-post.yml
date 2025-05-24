@@ -34,13 +34,13 @@ jobs:
           echo $(jq '.' parsed_issue.json)
 
           TITLE=$(jq '.title' parsed_issue.json)
-          DATE=$(jq -r '.date' parsed_issue.json)
-
+          
+          DATE=$(jq -r '.date // empty' parsed_issue.json)
           # If DATE is not provided, use the current date in Australia/Melbourne timezone
-          if [[ -z "$DATE" || "$DATE" == "null" ]]; then
+          if [[ -z "$DATE" ]]; then
             DATE=$(TZ=Australia/Melbourne date +%Y-%m-%d)
           fi
-          
+
           DESCRIPTION=$(jq '.description' parsed_issue.json)
           LINK=$(jq '.link' parsed_issue.json)
           CONTENT=$(jq '.content' parsed_issue.json)
