@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all branches
 
       - name: Parse Issue
         id: issue-parser
@@ -37,6 +39,7 @@ jobs:
           jq --arg today "$TODAY" '
             .date = (.date // $today) |
             .content = (.content // "") |
+            .publish_branch = (.publish_branch[0]) |
             .tags = (
               if .tags then
                 .tags | split(",") | map(gsub("^\\s+|\\s+$"; ""))
@@ -51,6 +54,7 @@ jobs:
             tr ' ' '-' | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]-.\n')
           echo "filename=${FILENAME}.md" >> $GITHUB_OUTPUT
           echo "section=$(jq -r '.blog_section[0]' processed.json)" >> $GITHUB_OUTPUT
+          echo "branch=$(jq -r '.publish_branch' processed.json)" >> $GITHUB_OUTPUT
 
       - name: Create blog post
         env:
@@ -70,16 +74,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FILENAME: ${{ steps.metadata.outputs.filename }}
           SECTION: ${{ steps.metadata.outputs.section }}
+          BRANCH: ${{ steps.metadata.outputs.branch }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
+          git checkout "${BRANCH}"
           git add "content/${SECTION}/${FILENAME}"
           git commit -m "Add new blog post (via Actions): ${FILENAME}"
-          git push origin main
+          git push origin "${BRANCH}"
 
           gh issue comment ${{ github.event.issue.number }} \
-            --body "Added new blog post to \`content/${SECTION}/${FILENAME}\` at [commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/$(git rev-parse HEAD))" 
+            --body "Added new blog post to \`content/${SECTION}/${FILENAME}\` on branch \`${BRANCH}\` at [commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/$(git rev-parse HEAD))" 
 
       - name: Close issue
         env:

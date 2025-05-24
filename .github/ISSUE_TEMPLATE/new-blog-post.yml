@@ -21,6 +21,16 @@ body:
         - blog
     validations:
       required: true
+  - type: dropdown
+    id: publish_branch
+    attributes:
+      label: Publishing Branch
+      description: Select which branch to publish this post to
+      options:
+        - main
+        - preview
+    validations:
+      required: true
   - type: input
     id: date
     attributes:
