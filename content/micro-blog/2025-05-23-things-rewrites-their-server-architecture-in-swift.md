@@ -5,7 +5,7 @@ blog_section:
 date: "2025-05-23"
 description: Things rewrites their server architecture in Swift
 link: https://www.swift.org/blog/how-swifts-server-support-powers-things-cloud/
-tags: ["software-egineering", "design"]
+tags: ["software-engineering", "design"]
 ---
 
 I've been a long time user of Cultured Code's [Things](https://culturedcode.com/things/) to-do app. It's slick, has well designed ergonomics, and is perfectly minimalistic. Things' Markdown support is tasteful and its approach to task management structured but pared back.
