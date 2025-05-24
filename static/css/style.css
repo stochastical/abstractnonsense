@@ -1,3 +1,8 @@
+/* View transition */
+@view-transition {
+  navigation: auto;
+}
+
 /* Tags styling */
 .post-tags {
     margin: 0.2em 0 0.8em 0;
