@@ -1,6 +1,6 @@
 # abstractnonsense
 
-GitHub source code for [abstractnonsense.xyz](https://abstractnonsense.xyz).
+Source code and Markdown content for [abstractnonsense.xyz](https://abstractnonsense.xyz). 
 
 ### Architecture diagram
 
