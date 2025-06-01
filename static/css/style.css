@@ -201,10 +201,6 @@ ul {
     list-style-type: disc;
 }
 
-ul li::marker {
-    content: "";
-}
-
 li {
     margin-bottom: .2em;
 }
