@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section>
+    <article>
+        <h1>
+            <time datetime="{{ .Date }}">{{ .Date.Format "02.01.2006" }}</time>{{ .Title }}
+        </h1>
+        
+        <!-- Add tags display -->
+        {{ if .Params.tags }}
+        <div class="post-tags">
+            {{ range .Params.tags }}
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+        
+        <div>{{ .Content }}</div>
+    </article>
+</section>
+{{ end }}

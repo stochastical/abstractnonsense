@@ -1,5 +1,5 @@
 ---
-layout: "page/single"
+layout: page
 ---
 
 # About Me
