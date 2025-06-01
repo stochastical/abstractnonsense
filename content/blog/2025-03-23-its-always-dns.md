@@ -1,10 +1,7 @@
 ---
 title: "It's always DNS"
-blog_section:
-  - Blog
 date: "2025-03-23"
 description: An ode to debugging DNS diagnostics
-link: ""
 ---
 
 I recently moved to the city. As usual, considering the technological ruin that is the [NBN](https://en.wikipedia.org/wiki/National_Broadband_Network),{{< footnote id="1" label="1" >}}[Every NBN Worker Ever...](https://www.youtube.com/watch?v=8AfEhoU44L0){{< /footnote >}}I was fully expecting to go another round against the ISP gods.
