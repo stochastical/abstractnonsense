@@ -1,12 +1,8 @@
 ---
-title: This blog has been featured by GitHub!
-blog_section:
-  - blog
-publish_branch: main
-description: This blog has been featured by GitHub!
-link: https://issue-ops.github.io/docs/reference/examples
-tags:
-  - abstract-nonsense
+title: "This blog has been featured by GitHub!"
+description: "This blog has been featured by GitHub!"
+link: "https://issue-ops.github.io/docs/reference/examples"
+tags: ["abstract-nonsense"]
 date: "2025-06-03"
 ---
 
@@ -30,6 +26,5 @@ The key advantages of this workflow are:
 - I can sort of abuse GitHub’s user-upload-file-to-Issue CDN for storing media. This is probably sub-optimal, and I should probably migrate to an idiomatic pattern like Cloudflare’s R2 or AWS S3[^1] at some point. But for now, it just works 😉.
 
 And yes, this is indeed an obligatory blog post about how I write blog posts. I spend far too much time thinking about blogging, tweaking my blog internals, or blogging about blogging instead of _actually blogging_. I’m trying to change that, I swear.
-
 
 [^1]: Or just plain old git - premature optimisation is the root of all evil, after all.
