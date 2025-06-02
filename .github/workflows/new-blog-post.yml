@@ -12,7 +12,7 @@ permissions:
 jobs:
   create-post:
     # Restrict to my GitHub username to prevent the public from creating new blog posts
-    if: github.actor == 'stochastical' && github.event.label.name == 'new-blog-post'
+    if: github.event.label.name == 'new-blog-post'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
