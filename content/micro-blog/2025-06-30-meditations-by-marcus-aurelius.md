@@ -9,7 +9,7 @@ tags:
 date: "2025-06-30"
 ---
 
-I picked up a [beauriful copy](https://www.chilternpublishing.co.uk/shop/classics/meditations/) of *Meditations* by Marcus Aurelius in a cute bookstore in Korea (Chiltern Publishing, translated by A.S.L Farquharson).
+I picked up a [beautiful copy](https://www.chilternpublishing.co.uk/shop/classics/meditations/) of *Meditations* by Marcus Aurelius in a cute bookstore in Korea (Chiltern Publishing, translated by A.S.L Farquharson).
 
 I purchased it mostly on a whim - it’d been a while since I’d read any true classics, and the bind was truly delightful (it’s this beautifully embossed, textured cover with a gilt silver coating across the paper edges).
 
