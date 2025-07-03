@@ -5,7 +5,7 @@ blog_section:
 publish_branch: main
 description: Building animations in Manim with LLMs
 date: "2025-07-03"
-tags: []
+tags: ["design", "mathematics"]
 ---
 
 [Manim](https://github.com/3b1b/manim) is a Python animation engine designed to build animated mathematical explainer videos ([examples here](https://www.manim.community/awesome/)) created by Grant Sanderson of the superb YouTube channel [3Blue1Brown](https://www.youtube.com/c/3blue1brown).
