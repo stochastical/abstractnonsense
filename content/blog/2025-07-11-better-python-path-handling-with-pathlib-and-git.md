@@ -47,7 +47,7 @@ repo_root = Path(
 print((repo_root / "data" / "iris.csv").read_text())
 ```
 
-> Side note: I really love [pathlib](https://docs.python.org/3/library/pathlib.html)'s [overloading](https://github.com/python/cpython/blob/175ada2806abef16187361ba4ad5242fb9284f60/Lib/pathlib/_local.py#L148) of the `/` operator to allow syntactic sugar for path augmentation.
+> Side note: I really love [pathlib](https://docs.python.org/3/library/pathlib.html)'s [overloading](https://github.com/python/cpython/blob/175ada2806abef16187361ba4ad5242fb9284f60/Lib/pathlib/_local.py#L148) of the `/` operator to allow syntactic sugar for path augmentation. I'm also a big fan of [`Path.read_text`](https://docs.python.org/3/library/pathlib.html#pathlib.Path.read_text) instead of the standard `with open(file_path) as f` context handler (in most cases).
 
 Also, if you haven't seen it before, I'm using [Python inline script metadata](https://packaging.python.org/en/latest/specifications/inline-script-metadata/) here to specify the dependencies. You can run this script with `uv run --script src/preprocess.py` and [`uv`](https://github.com/astral-sh/uv) will take care of resolving and installing the dependencies within a `venv`.
 
@@ -58,4 +58,7 @@ I'm anticipating that this will probably trigger a lot of people:
 
 And to all this, I say: "yes, that's true". I don't believe that this is idiomatic or good for production or anything close to it. But for adhoc collaborative projects, littered with `*.ipynb` notebooks (this, even I cannot stand), it restores _some_ level of sanity amidst the throes of data science passion.
 
-Please let me know what your preferred path-wrangling design pattern is. I'm just trying to find my path here after all...
+As to the Python module import system? That's a rant for another day...
+I'm still scarred by seeing too many bastardised `sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))`.
+
+Please let me know what your preferred path-wrangling design pattern is. I'm just trying to find _my_ path here after all...
