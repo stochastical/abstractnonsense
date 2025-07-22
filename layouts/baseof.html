@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/syntax.css">
     <!-- For Umami analytics -->
+    {{ if hugo.IsProduction }}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="43ca28a6-2011-4444-b855-23601ce80f46"></script>
+    {{ end }}
 </head>
 
 <body>
