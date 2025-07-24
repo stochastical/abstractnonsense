@@ -3,7 +3,6 @@ title: A Character Study in Alliteration
 blog_section:
   - micro-blog
 publish_branch: main
-description: A Character Study in Alliteration
 tags:
   - poetry
   - books
