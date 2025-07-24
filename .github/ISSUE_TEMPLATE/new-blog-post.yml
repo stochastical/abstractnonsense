@@ -43,7 +43,7 @@ body:
       label: Description
       description: A short description of the blog post.
     validations:
-      required: true
+      required: false
   - type: input
     id: link
     attributes:
