@@ -6,7 +6,7 @@ publish_branch: main
 description: A Character Study in Alliteration
 tags:
   - poetry
-  - book
+  - books
 date: "2025-07-24"
 ---
 
