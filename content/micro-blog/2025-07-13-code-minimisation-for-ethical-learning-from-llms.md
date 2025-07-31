@@ -1,9 +1,8 @@
 ---
-title: Code minimisation for ethical learning from LLMs
+title: Learning from LLMs ethically by practising code minimisation as a discipline
 blog_section:
   - micro-blog
 publish_branch: main
-description: Code minimisation for ethical learning from LLMs
 tags:
   - software-engineering
   - LLM
