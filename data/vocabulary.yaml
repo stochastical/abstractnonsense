@@ -1,0 +1,49 @@
+A:
+  - word: "apricity"
+    definition: "the warmth of the sun in winter"
+    example: "Thursday dawned with grudging apricity."
+  - word: "anfractuous"
+    definition: "sinuous or circuitous"
+    example: "the line of gold extends and becomes anfractuous."
+
+B:
+  - word: "borborygmus"
+    definition: "a rumbling or gurgling noise made by the movement of fluid and gas in the intestines"
+
+C:
+  - word: "cacoethes"
+    definition: "an urge to do something inadvisable"
+  - word: "crepuscular"
+    definition: "resembling or relating to twilight"
+    example: "a kind of crepuscular glow | the drama unfolds in a crepuscular gloom."
+  - word: "conurbation"
+    definition: "an extended urban area, typically consisting of several towns merging with the suburbs of a central city"
+    example: "the major conurbations of London and Birmingham."
+
+E:
+  - word: "eleemosynary"
+    definition: "relating to or dependent on charity; charitable"
+
+G:
+  - word: "gasconade"
+    definition: "extravagant boasting"
+
+H:
+  - word: "hebdomadal"
+    definition: "weekly (used especially of organizations that meet weekly)"
+    example: "Oxford University's Hebdomadal Council."
+
+L:
+  - word: "lucubration"
+    definition: "writing or study"
+    example: "after sixteen years' lucubration he produced this account."
+
+T:
+  - word: "tmesis"
+    definition: "the separation of parts of a compound word by an intervening word or words, used mainly in informal speech for emphasis"
+    example: "can't find it any-blooming-where"
+
+U:
+  - word: "ultracrepidarian"
+    definition: "a person who expresses opinions on matters outside the scope of their knowledge or expertise"
+    example: "most patients are ultracrepidarians when it comes to medicine."

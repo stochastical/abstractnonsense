@@ -42,6 +42,181 @@ p, ul, ol, article {
     margin-bottom: .6em;
 }
 
+/* Definition lists */
+dl {
+    max-width: 45ch;
+    margin-bottom: 1em;
+}
+
+dt {
+    font-family: "Georgia", "Garamond", serif;
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--highlight);
+    margin: 1.2em 0 0.3em 0;
+    position: relative;
+    letter-spacing: 0.01em;
+    display: inline;
+}
+
+dt:first-child {
+    margin-top: 0;
+}
+
+dt::after {
+    content: ": ";
+    position: static;
+    background: none;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    border-radius: 0;
+    color: var(--highlight);
+    font-weight: 700;
+}
+
+dd {
+    font-family: "Georgia", serif;
+    margin: 0 0 0.8em 0;
+    padding-left: 0;
+    border-left: none;
+    line-height: 1.6;
+    position: relative;
+    font-size: 0.95em;
+    display: inline;
+}
+
+@media (prefers-color-scheme: dark) {
+    dd {
+        border-left-color: rgba(255, 196, 0, 0.2);
+    }
+}
+
+dd p {
+    margin-bottom: 0.4em;
+    display: inline;
+}
+
+dd em {
+    font-style: italic;
+    opacity: 0.85;
+    font-size: 0.98em;
+    font-family: "Georgia", serif;
+}
+
+dd::after {
+    content: "";
+    display: block;
+    margin-bottom: 0.8em;
+}
+
+/* Collapsible alphabet sections */
+details {
+    max-width: 45ch;
+    margin-bottom: 0.8em;
+    border: 1px solid rgba(39, 73, 201, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    details {
+        border-color: rgba(255, 196, 0, 0.1);
+    }
+}
+
+details:hover {
+    border-color: rgba(39, 73, 201, 0.2);
+    box-shadow: 0 2px 8px rgba(39, 73, 201, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+    details:hover {
+        border-color: rgba(255, 196, 0, 0.2);
+        box-shadow: 0 2px 8px rgba(255, 196, 0, 0.05);
+    }
+}
+
+summary {
+    font-family: "Georgia", "Garamond", serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: var(--highlight);
+    background-color: rgba(39, 73, 201, 0.03);
+    padding: 0.4em 0.6em;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(39, 73, 201, 0.1);
+    min-height: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+    summary {
+        background-color: rgba(255, 196, 0, 0.03);
+        border-bottom-color: rgba(255, 196, 0, 0.1);
+    }
+}
+
+summary:hover {
+    background-color: rgba(39, 73, 201, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+    summary:hover {
+        background-color: rgba(255, 196, 0, 0.08);
+    }
+}
+
+summary::marker {
+    display: none;
+}
+
+summary::after {
+    content: "▶";
+    margin-left: auto;
+    font-size: 0.65em;
+    transition: transform 0.2s ease;
+    opacity: 0.7;
+}
+
+details[open] summary::after {
+    transform: rotate(90deg);
+}
+
+details[open] summary {
+    border-bottom-color: rgba(39, 73, 201, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+    details[open] summary {
+        border-bottom-color: rgba(255, 196, 0, 0.15);
+    }
+}
+
+details > *:not(summary) {
+    padding: 0.6em 0.7em 0.4em 0.7em;
+}
+
+details dl {
+    margin: 0;
+}
+
+details dt:first-child {
+    margin-top: 0;
+}
+
+details dt {
+    margin-top: 0.6em;
+}
+
+details dt:first-of-type {
+    margin-top: 0;
+}
+
 b, strong {
     font-weight: 600;
 }
@@ -240,7 +415,7 @@ ul, ol {
     font-size: 0.85em;
 }
 
-.tags-cloud {
+tags-cloud {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -413,87 +588,158 @@ label + input + small {
 
 input:checked + small {
     display: block;
-    padding: .8em 0 1em 2.5vw;
+    padding: 0.4em 0.6em;
+    background: rgba(39, 73, 201, 0.03);
+    border-radius: 6px;
+    margin-top: 0.4em;
+    max-width: 90%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* ======= UTILITIES ======= */
-abbr {
-    text-decoration: none;
+input:checked + small:before {
+    content: "✓";
+    margin-right: 0.4em;
+    color: var(--highlight);
 }
 
-abbr[title]:hover {
-    opacity: .7;
-    cursor: help;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
+@media (prefers-color-scheme: dark) {
+    input:checked + small {
+        background: rgba(255, 196, 0, 0.03);
     }
 }
 
-/* View transition */
-@view-transition {
-    navigation: auto;
+/* Code blocks */
+pre {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 6px;
+    padding: 1em;
+    overflow-x: auto;
+    margin: 1.2em 0;
+    position: relative;
 }
 
-/* ======= MEDIA QUERIES ======= */
-@media only screen and (max-width: 680px) {
+code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.95em;
+    color: var(--textcolor);
+}
+
+pre::selection, code::selection {
+    background: rgba(39, 73, 201, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    pre {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    code {
+        color: var(--bgcolor);
+        background: var(--highlight);
+        padding: 0.1em 0.2em;
+        border-radius: 4px;
+    }
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2em 0;
+}
+
+th, td {
+    padding: 0.8em;
+    text-align: left;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: rgba(39, 73, 201, 0.03);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(39, 73, 201, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 0.8em;
+        text-align: left;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th {
+        background: rgba(255, 196, 0, 0.03);
+        color: var(--bgcolor);
+    }
+
+    tr:hover {
+        background: rgba(255, 196, 0, 0.05);
+    }
+}
+
+/* Scrollbar styles */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(39, 73, 201, 0.5) transparent;
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: rgba(39, 73, 201, 0.5);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Misc */
+:root {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Dark mode adjustments */
     body {
-        font-size: 16px;
-    }
-}
-
-@media only screen and (max-width: 540px) {
-    nav {
-        width: 100%;
-    }
-}
-
-/* ======= PRINT STYLES ======= */
-@media print {
-    nav{
-        display: none;
+        background: #121212;
+        color: #e0e0e0;
     }
 
-    article,
-    figure,
-    img {
-        page-break-inside: avoid;
-        break-inside: avoid;
+    h2, h3, h4 {
+        color: #ffc400;
     }
 
-    /* Inline footnotes */
-    label + input + small {
-        display: inline;
+    a {
+        color: #ffc400;
     }
 
-    label + input + small:before {
-        content: "[";
+    hr {
+        background: rgba(255, 255, 255, 0.1);
     }
 
-    label + input + small:after {
-        content: "]";
+    blockquote {
+        background-color: rgba(255, 255, 255, 0.05);
     }
 
-    /* Slides */
-    .slides,
-    .slides figure {
-        position: relative;
-        height: auto;
-        padding: 0;
+    details {
+        border-color: rgba(255, 196, 0, 0.1);
     }
 
-    .slides figure img,
-    .slides figure.cover img {
-        max-height: auto;
-        position: relative;
-        z-index: 1;
-        width: auto;
-        height: 100vh;
-        object-fit: contain;
+    summary {
+        background-color: rgba(255, 196, 0, 0.03);
+        border-bottom-color: rgba(255, 196, 0, 0.1);
     }
+
+    /* Add any other dark mode specific styles here */
 }

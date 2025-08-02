@@ -1,0 +1,9 @@
+{{ $vocab := site.Data.vocabulary }}
+{{ range $letter, $words := $vocab }}
+<details{{ if eq $letter "A" }} open{{ end }}>
+<summary>{{ $letter }}</summary>
+{{ range $words }}
+<p><strong>{{ .word }}</strong>: {{ .definition }}{{ if .example }}: <em>{{ .example }}</em>{{ end }}</p>
+{{ end }}
+</details>
+{{ end }}
