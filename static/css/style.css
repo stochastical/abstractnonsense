@@ -10,6 +10,10 @@
     --highlight: #2749c9;
 }
 
+@view-transition {
+    navigation: auto;
+}
+
 @media (prefers-color-scheme: dark) {
     * {
         --textcolor: #dadada;
