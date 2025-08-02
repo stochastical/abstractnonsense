@@ -76,7 +76,7 @@ dt::after {
 }
 
 dd {
-    font-family: "Georgia", serif;
+    font-family: "Georgia", "Garamond", serif;
     margin: 0 0 0.8em 0;
     padding-left: 0;
     border-left: none;
@@ -101,7 +101,7 @@ dd em {
     font-style: italic;
     opacity: 0.85;
     font-size: 0.98em;
-    font-family: "Georgia", serif;
+    font-family: "Georgia", "Garamond", serif;
 }
 
 dd::after {
@@ -112,6 +112,7 @@ dd::after {
 
 /* Collapsible alphabet sections */
 details {
+    font-family: "Georgia", "Garamond", serif;
     max-width: 100%;
     margin-bottom: 0.8em;
     border: 1px solid rgba(39, 73, 201, 0.1);
@@ -176,11 +177,15 @@ summary::marker {
 }
 
 summary::after {
-    content: "▶";
+    content: "";
     margin-left: auto;
-    font-size: 0.65em;
+    width: 0;
+    height: 0;
+    border-left: 0.4em solid var(--highlight);
+    border-top: 0.25em solid transparent;
+    border-bottom: 0.25em solid transparent;
     transition: transform 0.2s ease;
-    opacity: 0.7;
+    flex-shrink: 0;
 }
 
 details[open] summary::after {
