@@ -8,5 +8,3 @@ tags: ["vocabulary"]
 > This is a living document where I collect new words I encounter in my reading and daily life. All definitions herein are from the Oxford Dictionary of English.
 
 {{< vocabulary >}}
-
-*Last updated: 2025-08-01*

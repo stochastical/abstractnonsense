@@ -13,6 +13,8 @@ pagination:
 taxonomies:
   tag: "tags"
 
+enableGitInfo: true
+
 markup:
   goldmark:
     renderer:

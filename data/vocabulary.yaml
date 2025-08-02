@@ -1,49 +1,43 @@
-A:
-  - word: "apricity"
-    definition: "the warmth of the sun in winter"
-    example: "Thursday dawned with grudging apricity."
-  - word: "anfractuous"
-    definition: "sinuous or circuitous"
-    example: "the line of gold extends and becomes anfractuous."
+- word: "apricity"
+  definition: "the warmth of the sun in winter"
+  example: "Thursday dawned with grudging apricity."
 
-B:
-  - word: "borborygmus"
-    definition: "a rumbling or gurgling noise made by the movement of fluid and gas in the intestines"
+- word: "borborygmus"
+  definition: "a rumbling or gurgling noise made by the movement of fluid and gas in the intestines"
 
-C:
-  - word: "cacoethes"
-    definition: "an urge to do something inadvisable"
-  - word: "crepuscular"
-    definition: "resembling or relating to twilight"
-    example: "a kind of crepuscular glow | the drama unfolds in a crepuscular gloom."
-  - word: "conurbation"
-    definition: "an extended urban area, typically consisting of several towns merging with the suburbs of a central city"
-    example: "the major conurbations of London and Birmingham."
+- word: "cacoethes"
+  definition: "an urge to do something inadvisable"
 
-E:
-  - word: "eleemosynary"
-    definition: "relating to or dependent on charity; charitable"
+- word: "crepuscular"
+  definition: "resembling or relating to twilight"
+  example: "a kind of crepuscular glow | the drama unfolds in a crepuscular gloom."
 
-G:
-  - word: "gasconade"
-    definition: "extravagant boasting"
+- word: "conurbation"
+  definition: "an extended urban area, typically consisting of several towns merging with the suburbs of a central city"
+  example: "the major conurbations of London and Birmingham."
 
-H:
-  - word: "hebdomadal"
-    definition: "weekly (used especially of organizations that meet weekly)"
-    example: "Oxford University's Hebdomadal Council."
+- word: "eleemosynary"
+  definition: "relating to or dependent on charity; charitable"
 
-L:
-  - word: "lucubration"
-    definition: "writing or study"
-    example: "after sixteen years' lucubration he produced this account."
+- word: "gasconade"
+  definition: "extravagant boasting"
 
-T:
-  - word: "tmesis"
-    definition: "the separation of parts of a compound word by an intervening word or words, used mainly in informal speech for emphasis"
-    example: "can't find it any-blooming-where"
+- word: "hebdomadal"
+  definition: "weekly (used especially of organizations that meet weekly)"
+  example: "Oxford University's Hebdomadal Council."
 
-U:
-  - word: "ultracrepidarian"
-    definition: "a person who expresses opinions on matters outside the scope of their knowledge or expertise"
-    example: "most patients are ultracrepidarians when it comes to medicine."
+- word: "lucubration"
+  definition: "writing or study"
+  example: "after sixteen years' lucubration he produced this account."
+
+- word: "tmesis"
+  definition: "the separation of parts of a compound word by an intervening word or words, used mainly in informal speech for emphasis"
+  example: "can't find it any-blooming-where"
+
+- word: "ultracrepidarian"
+  definition: "a person who expresses opinions on matters outside the scope of their knowledge or expertise"
+  example: "most patients are ultracrepidarians when it comes to medicine."
+
+- word: "anfractuous"
+  definition: "sinuous or circuitous"
+  example: "the line of gold extends and becomes anfractuous."

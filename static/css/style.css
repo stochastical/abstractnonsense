@@ -44,7 +44,7 @@ p, ul, ol, article {
 
 /* Definition lists */
 dl {
-    max-width: 45ch;
+    max-width: 60ch;
     margin-bottom: 1em;
 }
 
@@ -112,7 +112,7 @@ dd::after {
 
 /* Collapsible alphabet sections */
 details {
-    max-width: 45ch;
+    max-width: 100%;
     margin-bottom: 0.8em;
     border: 1px solid rgba(39, 73, 201, 0.1);
     border-radius: 4px;
@@ -742,4 +742,43 @@ html::-webkit-scrollbar-track {
     }
 
     /* Add any other dark mode specific styles here */
+}
+
+/* ======= MEDIA QUERIES ======= */
+@media only screen and (max-width: 680px) {
+    body {
+        font-size: 16px;
+    }
+    
+    /* Vocabulary specific mobile adjustments */
+    dl {
+        max-width: 45ch;
+    }
+    
+    details {
+        max-width: 45ch;
+        margin-bottom: 0.6em;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    /* Extra small mobile adjustments */
+    dl {
+        max-width: 95vw;
+    }
+    
+    details {
+        max-width: 95vw;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    /* Larger screen optimizations */
+    dl {
+        max-width: 70ch;
+    }
+    
+    details {
+        max-width: 100%;
+    }
 }

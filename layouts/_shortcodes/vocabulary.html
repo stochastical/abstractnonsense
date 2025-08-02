@@ -1,9 +1,33 @@
 {{ $vocab := site.Data.vocabulary }}
-{{ range $letter, $words := $vocab }}
+{{ $grouped := dict }}
+
+{{/* Group words by first letter */}}
+{{ range $vocab }}
+  {{ $firstLetter := upper (substr .word 0 1) }}
+  {{ $existing := index $grouped $firstLetter | default slice }}
+  {{ $grouped = merge $grouped (dict $firstLetter ($existing | append .)) }}
+{{ end }}
+
+{{/* Create a sorted slice of letters */}}
+{{ $letters := slice }}
+{{ range $letter, $words := $grouped }}
+  {{ $letters = $letters | append $letter }}
+{{ end }}
+{{ $letters = $letters | sort }}
+
+{{/* Render grouped vocabulary in alphabetical order */}}
+{{ range $letter := $letters }}
+  {{ $words := index $grouped $letter }}
 <details{{ if eq $letter "A" }} open{{ end }}>
 <summary>{{ $letter }}</summary>
 {{ range $words }}
 <p><strong>{{ .word }}</strong>: {{ .definition }}{{ if .example }}: <em>{{ .example }}</em>{{ end }}</p>
 {{ end }}
 </details>
+{{ end }}
+
+<hr>
+
+{{ with .Page.GitInfo }}
+<p><em>Page last updated: {{ .CommitDate.Format "2006-01-02" }}</em></p>
 {{ end }}
