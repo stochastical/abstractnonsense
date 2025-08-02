@@ -389,6 +389,53 @@ ul, ol {
     padding-left: 2ch;
 }
 
+/* Pagination */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0;
+    padding: 0;
+    max-width: 80ch;
+    position: relative;
+}
+
+.pagination-prev {
+    position: absolute;
+    left: 0;
+}
+
+.pagination-center {
+    font-size: 0.9em;
+    opacity: 0.7;
+}
+
+.pagination-next {
+    position: absolute;
+    right: 0;
+}
+
+.pagination a {
+    color: var(--highlight);
+    text-decoration: none;
+    font-size: 0.9em;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.pagination a:hover {
+    opacity: 1;
+    border-bottom: 1px solid var(--highlight);
+}
+
+.pagination-prev a::before {
+    content: "← ";
+}
+
+.pagination-next a::after {
+    content: " →";
+}
+
 /* Tags */
 .post-tags {
     margin: 0.2em 0 0.8em 0;
