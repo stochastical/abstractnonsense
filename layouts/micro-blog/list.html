@@ -11,7 +11,7 @@
     {{ range .Paginator.Pages }}
     <article>
         <h2>
-            <time datetime="{{ .Date }}">{{ .Date.Format "02.01.2006" }}</time>
+            <time datetime="{{ .Date }}">{{ .Date.Format "2006.01.02" }}</time>
             <a href="{{ .Permalink }}">{{ .Title }}</a>
         </h2>
         
