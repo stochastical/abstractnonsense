@@ -8,7 +8,11 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/syntax.css">
-    <!-- For Umami analytics -->
+    <!-- Load MathJax if math rendering is enabled -->
+    {{ if .Param "math" }}
+        {{ partialCached "math.html" . }}
+    {{ end }}
+    <!-- Enable Umami analytics -->
     {{ if hugo.IsProduction }}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="43ca28a6-2011-4444-b855-23601ce80f46"></script>
     {{ end }}
@@ -27,6 +31,9 @@
     <main>
         {{ block "main" . }}{{ end }}
     </main>
+    <!-- Add copy-to-clipboard functionality for code blocks -->
+    <script src="/js/copy-code.js"></script>
+
     <!-- Add Mermaid code block rendering support -->
     {{ if .Store.Get "hasMermaid" }}
         <script type="module">
@@ -34,9 +41,6 @@
             mermaid.initialize({ startOnLoad: true });
         </script>
     {{ end }}
-    
-    <!-- Add copy-to-clipboard functionality for code blocks -->
-    <script src="/js/copy-code.js"></script>
 </body>
 
 </html>

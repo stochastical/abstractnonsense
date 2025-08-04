@@ -20,6 +20,18 @@ markup:
     renderer:
       unsafe: true
     extensions:
+      # Reference: https://gohugo.io/content-management/mathematics
+      passthrough:
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
+        enable: true
       definitionList: true
       extras:
         mark:
