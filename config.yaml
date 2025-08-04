@@ -4,6 +4,7 @@ title: "Abstract Nonsense"
 
 params:
   description: "A blog about Mathematics and Computer Science."
+  math: true
 
 # Pagination settings
 pagination: 
