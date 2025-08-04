@@ -1,19 +1,19 @@
-{{ $vocab := site.Data.vocabulary }}
-{{ $grouped := dict }}
+{{- $vocab := site.Data.vocabulary -}}
+{{- $grouped := dict -}}
 
 {{/* Group words by first letter */}}
-{{ range $vocab }}
-  {{ $firstLetter := upper (substr .word 0 1) }}
-  {{ $existing := index $grouped $firstLetter | default slice }}
-  {{ $grouped = merge $grouped (dict $firstLetter ($existing | append .)) }}
-{{ end }}
+{{- range $vocab -}}
+  {{- $firstLetter := upper (substr .word 0 1) -}}
+  {{- $existing := index $grouped $firstLetter | default slice -}}
+  {{- $grouped = merge $grouped (dict $firstLetter ($existing | append .)) -}}
+{{- end -}}
 
 {{/* Create a sorted slice of letters */}}
-{{ $letters := slice }}
-{{ range $letter, $words := $grouped }}
-  {{ $letters = $letters | append $letter }}
-{{ end }}
-{{ $letters = $letters | sort }}
+{{- $letters := slice -}}
+{{- range $letter, $words := $grouped -}}
+  {{- $letters = $letters | append $letter -}}
+{{- end -}}
+{{- $letters = $letters | sort -}}
 
 {{/* Render grouped vocabulary in alphabetical order */}}
 {{ range $letter := $letters }}
