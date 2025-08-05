@@ -501,7 +501,7 @@ article time {
 }
 
 /* Media elements */
-img, svg, video, audio {
+img {
     display: block;
     max-width: 100%;
     height: auto;
@@ -576,44 +576,6 @@ figure.video embed {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-/* Slideshow */
-.slides {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-}
-
-.slides figure {
-    height: 100vh;
-    padding: 0 5vw;
-    margin: 0;
-    display: grid;
-    place-items: center;
-    align-content: center;
-    scroll-snap-align: center;
-}
-
-.slides figure img {
-    max-height: 88vh;
-}
-
-.slides figure.cover {
-    padding: 0;
-}
-
-.slides figure.cover img {
-    max-height: none;
-    position: absolute;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
 }
 
 /* Inline footnotes */
