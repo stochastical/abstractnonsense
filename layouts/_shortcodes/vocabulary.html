@@ -18,7 +18,7 @@
 {{/* Render grouped vocabulary in alphabetical order */}}
 {{ range $letter := $letters }}
   {{ $words := index $grouped $letter }}
-<details{{ if eq $letter "A" }} open{{ end }}>
+<details>
 <summary>{{ $letter }}</summary>
 {{ range $words }}
 <p><strong>{{ .word }}</strong>: {{ .definition }}{{ if .example }}: <em>{{ .example }}</em>{{ end }}</p>
