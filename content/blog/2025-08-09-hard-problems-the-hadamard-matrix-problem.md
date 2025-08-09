@@ -26,7 +26,7 @@ There are constructions of Hadamard matrices for specific sets of orders, such a
 
 What I find more astonishing than the lack of a general solution, is that the current **smallest unknown Hadamard matrix is of order `668`**. That is, to date, no one has been able to successfully construct a Hadamard of this order, or prove that it does not exist (in which case, the entire conjecture collapses!).
 
-Intuitively, it feels like given enough compute power and time, you could simply brute-force your way to a solution. But the search space grows exponentially with the size of the matrix, making it infeasible to check all possibilities even with a NVIDIA-sized compute budgets[^2]. If each entry can be either \(+1\) or \(-1\), then a Hadamard matrix of order \(n\) has \(2^{n^2}\) possible configurations to check. For \(n = 668\), this is a number far, far greater than the number of atoms in the universe at a measly \(\approx 10^{80}\) atoms.
+As always, combinatorial explosion defies comprehension: it feels like given enough compute power and time, you could simply brute-force your way to a solution. But the search space grows exponentially with the size of the matrix, making it infeasible to check all possibilities even with an astronomical compute budget[^2]. If each element can be either \(+1\) or \(-1\), and there are \(n^2\) elements in a Hadamard matrix of order \(n\), then the search space has \(2^{n^2}\) possible configurations to check. For \(n = 668\), this is a number far, far greater than the number of atoms in the universe - clocking in at a measly \(\approx 10^{80}\) atoms.
 
 When I find some time, I'll try to update this post with more content about the Hadamard matrix problem.
 
