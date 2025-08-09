@@ -1,5 +1,5 @@
 ---
-title: 'TIL: An Afternoon Reading the Dictionary'
+title: 'An Afternoon Reading the Dictionary'
 blog_section:
   - blog
 publish_branch: main
