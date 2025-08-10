@@ -1,0 +1,13 @@
+{{- if eq .Destination "fn" -}}
+{{- /* This is a footnote using image syntax */ -}}
+{{- $label := .PlainText | default "note" -}}
+{{- $content := .Title | default "Footnote content" -}}
+{{- $id := .Ordinal -}}
+<label for="fn{{ $id }}" class="footnote-trigger">{{ $label }}</label><input type="checkbox" id="fn{{ $id }}" class="footnote-checkbox" /><small class="footnote-aside" id="fn{{ $id }}">{{ $content | markdownify }}</small>
+{{- else -}}
+{{- /* This is a regular image */ -}}
+<img src="{{ .Destination | safeURL }}"
+  {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- end -}}

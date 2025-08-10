@@ -249,7 +249,7 @@ blockquote {
     margin-top: 1em; /* Added top margin */
     margin-bottom: 1em; /* Adjusted bottom margin */
     position: relative;
-    background-color: rgba(var(--highlight-rgb, 39, 73, 201), 0.05); /* Subtle background, ensure --highlight-rgb is defined or use a fixed color */
+    background-color: rgba(var(--highlight-rgb), 0.05);
     border-radius: 8px; /* Optional: rounded corners */
 }
 
@@ -348,7 +348,6 @@ a[href*="github.com"]::before {
     mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>') center/contain no-repeat;
 }
 
-/* (Old inline code/link rules replaced by unified system above) */
 
 /* ======= LAYOUT ======= */
 /* Header */
@@ -558,102 +557,43 @@ figure figcaption {
     opacity: .7;
 }
 
-/* Inline footnotes */
-label {
+/* Pure CSS inline footnotes using checkbox trick */
+.footnote-trigger {
     cursor: pointer;
     vertical-align: super;
     line-height: 1;
-    font-size: .75em;
-    padding-left: .1em;
-}
-
-label:hover {
+    font-size: .7em;
     color: var(--highlight);
 }
 
-label:before {
+.footnote-trigger:before {
     content: "[";
 }
 
-label:after {
+.footnote-trigger:after {
     content: "]";
 }
 
-label + input,
-label + input + small {
+/* Hide the checkbox input */
+.footnote-checkbox {
     display: none;
 }
 
-input:checked + small {
+/* Hide footnotes by default */
+.footnote-aside {
+    display: none;
+    background-color: rgba(var(--highlight-rgb), 0.05);
+    margin: 0.6m 0;
+    padding: 1em 1.2em 1em 2em;
+    font-size: 0.9em;
+    line-height: 1.6;
+    border-radius: 8px;
+}
+
+/* Show footnote when checkbox is checked OR when hovering over the label */
+.footnote-checkbox:checked + .footnote-aside,
+.footnote-trigger:hover + .footnote-checkbox + .footnote-aside {
     display: block;
-    padding: 0.4em 0.6em;
-    background: rgba(var(--highlight-rgb), 0.03);
-    border-radius: 6px;
-    margin-top: 0.4em;
-    max-width: 90%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-input:checked + small:before {
-    content: "✓";
-    margin-right: 0.4em;
-    color: var(--highlight);
-}
-
-/* Dark mode variant for footnotes now handled by variable swap */
-
-/* (Old code block styles replaced by unified system above) */
-
-/* Tables */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.2em 0;
-}
-
-th, td {
-    padding: 0.8em;
-    text-align: left;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-th { background: rgba(var(--highlight-rgb), 0.03); font-weight: 600; }
-
-tr:hover { background: rgba(var(--highlight-rgb), 0.05); }
-
-@media (prefers-color-scheme: dark) {
-    table {
-        border-collapse: collapse;
-    }
-
-    th, td {
-        padding: 0.8em;
-        text-align: left;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    th {
-        background: rgba(255, 196, 0, 0.03);
-        color: var(--bgcolor);
-    }
-
-    tr:hover {
-        background: rgba(255, 196, 0, 0.05);
-    }
-}
-
-/* Scrollbar styles */
-html { scrollbar-width: thin; scrollbar-color: rgba(var(--highlight-rgb), 0.5) transparent; }
-
-html::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-html::-webkit-scrollbar-thumb { background-color: rgba(var(--highlight-rgb), 0.5); border-radius: 10px; }
-
-html::-webkit-scrollbar-track {
-    background: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -676,6 +616,10 @@ html::-webkit-scrollbar-track {
     }
 
     blockquote {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .footnote-aside {
         background-color: rgba(255, 255, 255, 0.05);
     }
 
