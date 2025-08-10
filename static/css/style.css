@@ -1,13 +1,28 @@
 /* ======= BASE STYLES ======= */
+/* Theme tokens moved to :root for idiomatic custom property usage */
+:root {
+    /* New semantic color tokens (light mode) */
+    --color-fg: #121212;
+    --color-bg: #ffffff;
+    --color-accent: #2749c9;
+    --color-accent-contrast: #ffffff;
+    --color-code-inline-bg: rgba(39, 73, 201, 0.12);
+    --color-code-inline-fg: #111111;
+    --color-code-block-bg: #f5f7fb;
+    --color-code-block-border: #e2e6ef;
+    --color-link: var(--color-accent);
+    /* Legacy variable mapping for existing styles */
+    --textcolor: var(--color-fg);
+    --bgcolor: var(--color-bg);
+    --highlight: var(--color-accent);
+    --highlight-rgb: 39, 73, 201; /* numeric for rgba() usage */
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    /* Color scheme */
-    --textcolor: #121212;
-    --bgcolor: #fff;
-    --highlight: #2749c9;
 }
 
 @view-transition {
@@ -15,10 +30,21 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    * {
-        --textcolor: #dadada;
-        --bgcolor: #141414;
-        --highlight: #ffc400;
+    :root {
+        --color-fg: #e0e0e0;
+        --color-bg: #141414;
+        --color-accent: #ffc400;
+        --color-accent-contrast: #141414;
+        --color-code-inline-bg: rgba(255, 196, 0, 0.20);
+        --color-code-inline-fg: #ffffff;
+        --color-code-block-bg: #1f1f1f;
+        --color-code-block-border: #2a2a2a;
+        --color-link: var(--color-accent);
+        /* Legacy mapping */
+        --textcolor: var(--color-fg);
+        --bgcolor: var(--color-bg);
+        --highlight: var(--color-accent);
+        --highlight-rgb: 255, 196, 0;
     }
 }
 
@@ -119,28 +145,15 @@ details {
     font-family: "Georgia", "Garamond", serif;
     max-width: 100%;
     margin-bottom: 0.8em;
-    border: 1px solid rgba(39, 73, 201, 0.1);
+    border: 1px solid rgba(var(--highlight-rgb), 0.1);
     border-radius: 4px;
     overflow: hidden;
-    transition: all 0.2s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-    details {
-        border-color: rgba(255, 196, 0, 0.1);
-    }
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 details:hover {
-    border-color: rgba(39, 73, 201, 0.2);
-    box-shadow: 0 2px 8px rgba(39, 73, 201, 0.05);
-}
-
-@media (prefers-color-scheme: dark) {
-    details:hover {
-        border-color: rgba(255, 196, 0, 0.2);
-        box-shadow: 0 2px 8px rgba(255, 196, 0, 0.05);
-    }
+    border-color: rgba(var(--highlight-rgb), 0.2);
+    box-shadow: 0 2px 8px rgba(var(--highlight-rgb), 0.05);
 }
 
 summary {
@@ -148,32 +161,19 @@ summary {
     font-weight: 700;
     font-size: 0.9em;
     color: var(--highlight);
-    background-color: rgba(39, 73, 201, 0.03);
+    background-color: rgba(var(--highlight-rgb), 0.03);
     padding: 0.4em 0.6em;
     cursor: pointer;
     user-select: none;
     display: flex;
     align-items: center;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid rgba(39, 73, 201, 0.1);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border-bottom: 1px solid rgba(var(--highlight-rgb), 0.1);
     min-height: 2em;
 }
 
-@media (prefers-color-scheme: dark) {
-    summary {
-        background-color: rgba(255, 196, 0, 0.03);
-        border-bottom-color: rgba(255, 196, 0, 0.1);
-    }
-}
-
 summary:hover {
-    background-color: rgba(39, 73, 201, 0.08);
-}
-
-@media (prefers-color-scheme: dark) {
-    summary:hover {
-        background-color: rgba(255, 196, 0, 0.08);
-    }
+    background-color: rgba(var(--highlight-rgb), 0.08);
 }
 
 summary::marker {
@@ -197,13 +197,7 @@ details[open] summary::after {
 }
 
 details[open] summary {
-    border-bottom-color: rgba(39, 73, 201, 0.15);
-}
-
-@media (prefers-color-scheme: dark) {
-    details[open] summary {
-        border-bottom-color: rgba(255, 196, 0, 0.15);
-    }
+    border-bottom-color: rgba(var(--highlight-rgb), 0.15);
 }
 
 details > *:not(summary) {
@@ -271,49 +265,90 @@ blockquote:before {
     border-radius: 8px; /* Optional: rounded border */
 }
 
-/* ======= LINKS ======= */
+/* ======= LINKS & CODE ======= */
+/* Unified link styling */
 a {
+    color: var(--color-link);
     text-decoration: none;
-    color: var(--highlight);
+    text-underline-offset: 2px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+a:hover, a:focus-visible {
+    text-decoration: underline;
 }
 
-a:hover {
-    border-bottom: 1px solid;
+/* Base monospace font */
+code, pre, kbd, samp {
+    font-family: ui-monospace, "SF Mono", Menlo, Monaco, "Andale Mono", monospace;
+    font-size: 0.95em;
+    line-height: 1.4;
 }
 
-/* External links */
-a[href*="//"]:after {
-    font-weight: 300;
-    font-size: .85em;
-    content: "\2197"; /* top right arrow: ↗ */
-    color: var(--textcolor);
-    opacity: .25;
+/* Inline code */
+code:not(pre code) {
+    background: var(--color-code-inline-bg);
+    color: var(--color-code-inline-fg);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    position: relative;
+    top: -1px; /* optical alignment */
+    white-space: nowrap;
 }
 
-a[href*="localhost"]::after {
-    content: none;
+/* Inline code when inside a link: inherit link color but keep background */
+a code {
+    color: currentColor;
+    background: var(--color-code-inline-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
 }
 
-a[href*="//"]:hover:after {
-    color: var(--highlight);
-    opacity: 1;
+/* SVG icon within links (kept) */
+a svg.icon { width: 1em; height: 1em; vertical-align: text-bottom; margin-right: 0.45em; fill: currentColor; }
+a svg.icon path { fill: currentColor; }
+
+/* Code blocks */
+pre {
+    background: var(--color-code-block-bg);
+    border: 1px solid var(--color-code-block-border);
+    border-radius: 6px;
+    padding: 1em 1.1em;
+    overflow-x: auto;
+    margin: 1.3em 0;
+    position: relative;
+}
+pre code {
+    background: transparent;
+    color: var(--color-fg);
+    padding: 0;
+    white-space: pre;
 }
 
-/* File links */
-a:before {
-    font-size: .7em;
-    margin-right: .4em;
+/* Selection */
+pre::selection, code::selection { background: rgba(var(--highlight-rgb), 0.25); }
+pre code::selection { background: rgba(var(--highlight-rgb), 0.25); }
+
+@media (prefers-color-scheme: dark) {
+    pre code { color: #f5f5f5; }
+    a:hover, a:focus-visible { text-decoration-thickness: 2px; }
 }
 
-a[href$=".pdf"]:before { content: "PDF"; }
-a[href$=".txt"]:before { content: "TXT"; }
-a[href$=".mp3"]:before { content: "MP3"; }
-a[href$=".zip"]:before { content: "ZIP"; }
-a[href$=".rar"]:before { content: "RAR"; }
-a[href$=".jpeg"]:before,
-a[href$=".jpg"]:before,
-a[href$=".gif"]:before,
-a[href$=".png"]:before { content: "IMG"; }
+
+/* GitHub links icon */
+a[href*="github.com"]::before {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.35em;
+    vertical-align: -0.15em;
+    background: currentColor;
+    /* Use mask so color adapts to currentColor */
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>') center/contain no-repeat;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.62 7.62 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>') center/contain no-repeat;
+}
+
+/* (Old inline code/link rules replaced by unified system above) */
 
 /* ======= LAYOUT ======= */
 /* Header */
@@ -409,10 +444,7 @@ ul, ol {
     left: 0;
 }
 
-.pagination-center {
-    font-size: 0.9em;
-    opacity: 0.7;
-}
+.pagination-info { font-size: 0.9em; opacity: 0.7; }
 
 .pagination-next {
     position: absolute;
@@ -447,7 +479,7 @@ ul, ol {
 
 .tag {
     display: inline-block;
-    background-color: rgba(39, 73, 201, 0.1);
+    background-color: rgba(var(--highlight-rgb), 0.1);
     color: var(--highlight);
     padding: 0.2em 0.8em;
     margin-right: 0.2em;
@@ -526,58 +558,6 @@ figure figcaption {
     opacity: .7;
 }
 
-/* Responsive video embeds */
-figure.video {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-}
-
-figure.video iframe,
-figure.video object,
-figure.video embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    visibility: hidden;
-}
-
-/* Images Grid */
-.grid {
-    display: grid;
-    grid-gap: 5vmin;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-flow: dense;
-    padding: 2em 0;
-}
-
-.grid a {
-    position: relative;
-    border: 0;
-}
-
-.grid a:hover {
-    transform: scale(.975);
-}
-
-.grid a:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
-
-.grid a img {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
 /* Inline footnotes */
 label {
     cursor: pointer;
@@ -607,7 +587,7 @@ label + input + small {
 input:checked + small {
     display: block;
     padding: 0.4em 0.6em;
-    background: rgba(39, 73, 201, 0.03);
+    background: rgba(var(--highlight-rgb), 0.03);
     border-radius: 6px;
     margin-top: 0.4em;
     max-width: 90%;
@@ -620,44 +600,9 @@ input:checked + small:before {
     color: var(--highlight);
 }
 
-@media (prefers-color-scheme: dark) {
-    input:checked + small {
-        background: rgba(255, 196, 0, 0.03);
-    }
-}
+/* Dark mode variant for footnotes now handled by variable swap */
 
-/* Code blocks */
-pre {
-    background: rgba(0, 0, 0, 0.03);
-    border-radius: 6px;
-    padding: 1em;
-    overflow-x: auto;
-    margin: 1.2em 0;
-    position: relative;
-}
-
-code {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 0.95em;
-    color: var(--textcolor);
-}
-
-pre::selection, code::selection {
-    background: rgba(39, 73, 201, 0.2);
-}
-
-@media (prefers-color-scheme: dark) {
-    pre {
-        background: rgba(255, 255, 255, 0.05);
-    }
-
-    code {
-        color: var(--bgcolor);
-        background: var(--highlight);
-        padding: 0.1em 0.2em;
-        border-radius: 4px;
-    }
-}
+/* (Old code block styles replaced by unified system above) */
 
 /* Tables */
 table {
@@ -672,14 +617,9 @@ th, td {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-th {
-    background: rgba(39, 73, 201, 0.03);
-    font-weight: 600;
-}
+th { background: rgba(var(--highlight-rgb), 0.03); font-weight: 600; }
 
-tr:hover {
-    background: rgba(39, 73, 201, 0.05);
-}
+tr:hover { background: rgba(var(--highlight-rgb), 0.05); }
 
 @media (prefers-color-scheme: dark) {
     table {
@@ -703,28 +643,17 @@ tr:hover {
 }
 
 /* Scrollbar styles */
-html {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(39, 73, 201, 0.5) transparent;
-}
+html { scrollbar-width: thin; scrollbar-color: rgba(var(--highlight-rgb), 0.5) transparent; }
 
 html::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-html::-webkit-scrollbar-thumb {
-    background-color: rgba(39, 73, 201, 0.5);
-    border-radius: 10px;
-}
+html::-webkit-scrollbar-thumb { background-color: rgba(var(--highlight-rgb), 0.5); border-radius: 10px; }
 
 html::-webkit-scrollbar-track {
     background: transparent;
-}
-
-/* Misc */
-:root {
-    scroll-behavior: smooth;
 }
 
 @media (prefers-color-scheme: dark) {
