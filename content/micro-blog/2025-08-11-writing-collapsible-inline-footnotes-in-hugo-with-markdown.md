@@ -22,15 +22,15 @@ However, Hugo's support for customising the rendering of Markdown into HTML is .
 </small>
 ```
 
-But using it in Markdown means writing something like inordinately verbose and clunky like:
+But using it in Markdown means writing something inordinately verbose and clunky like:
 
 ```markdown
-This is some text,{{< footnote id="1" label="footnote!" >}}and here's some **markdown** in a footnote{{< /footnote >}}
+This is some text,{{</* footnote id="1" label="footnote!" */>}}and here's some **markdown** in a footnote{{</* /footnote */>}}
 ```
 
 I considered switching to [pandoc](https://github.com/jgm/pandoc) for my Markdown preprocessing, but that would mean changing my whole build system and using GitHub Actions with a `pandoc` workflow instead of the (super quick) [Cloudflare Pages Hugo runner](https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site/). I did some browsing and realised that I was not the only one [thinking deeply](https://scottstuff.net/posts/2024/12/17/more-notes-on-notes/) about footnotes and [sidenotes in Hugo](https://scottstuff.net/posts/2024/12/16/sidenotes-in-hugo-with-fixit/).
 
-I've been struggling with this for a while, but I realised that Hugo supports [render hooks](https://gohugo.io/render-hooks/) for select Markdown elements. Unfortunately, footnotes are not included, but [images](https://gohugo.io/render-hooks/images/) are! In Markdown, the standard syntax for images looks like: `![description](destination "title")`, which is not too dissimilar to the footnote syntax `[^label]: footnote`. So I built a little `layouts/_markup/render-image.html` hook 
+I've been struggling with this for a while, but I realised that Hugo supports [render hooks](https://gohugo.io/render-hooks/) for select Markdown elements. Unfortunately, footnotes are not included, but [images](https://gohugo.io/render-hooks/images/) are! In Markdown, the standard syntax for images looks like: `![description](destination "title")`, which is not *too* dissimilar to the footnote syntax `[^label]: footnote`. So I built a little `layouts/_markup/render-image.html` hook:
 
 ```html
 {{- if eq .Destination "fn" -}}
@@ -51,7 +51,7 @@ I've been struggling with this for a while, but I realised that Hugo supports [r
 so that I can write:
 
 ```markdown
-![fun fact](fn "_Abstract Nonsense_ stems from the (joking, I hope) pejorative for the mathematical subject of [Category theory](https://en.wikipedia.org/wiki/Category_theory).")
+![fun fact](fn "_Abstract Nonsense_ is a blog about mathematics and computer science.")
 ```
 
 and, with some pure CSS magic, have it render into a collapsible inline footnote! You can see it live on my website now: I've started using it to add maths proofs and asides as footnotes that expand inline on hover.
