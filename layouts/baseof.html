@@ -25,7 +25,6 @@
             <!-- Highlight the current page in the navigation bar -->
             <a href="{{ "/micro-blog/" | relURL }}"{{ if hasPrefix .RelPermalink "/micro-blog/" }} class="selected"{{ end }}>Microblog</a>
             <a href="{{ "/blog/" | relURL }}"{{ if hasPrefix .RelPermalink "/blog/" }} class="selected"{{ end }}>Blog</a>
-            <a href="{{ "/about/" | relURL }}"{{ if hasPrefix .RelPermalink "/about/" }} class="selected"{{ end }}>About</a>
         </nav>
     </header>
     <main>
