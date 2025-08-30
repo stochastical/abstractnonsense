@@ -72,6 +72,15 @@ p, ul, ol, article {
     margin-bottom: .6em;
 }
 
+/* Articles use Georgia serif font, but not tags */
+article {
+    font-family: "Georgia", "Times New Roman", serif;
+}
+
+article .tag {
+    font-family: system-ui, sans-serif;
+}
+
 /* Definition lists */
 dl {
     max-width: 60ch;
