@@ -128,7 +128,7 @@ $$
 
 where \(\ell\) is the *Luhn double* function as defined above. Note that the \(E\) and \(O\) partial sums swap between the pair in each transition!
 
-To intuit why this works, notice that the transitions are computed *ahead-of-time*. We are defining the computation, and baking it into the DFA as a sort of computational graph. I think this is a wonderfully powerful notion - it demonstrate that a blind automaton[^6] can perform non-trivial (but not arbitrary![^7]) computations by simply following a rulebook of "if in state `X` and next symbol is `Y` then go to state `Z`". After all, isn't that exactly what a computer is? There's something profound about seeing the correspondence between mathematics and computer science at such a deep level.
+To intuit why this works, notice that the transitions are computed *ahead-of-time*. We are defining the computation, and baking it into the DFA as a sort of computational graph. I think this is a wonderfully powerful notion - it demonstrates that a blind automaton[^6] can perform non-trivial (but not arbitrary![^7]) computations by simply following a rulebook of "if in state `X` and next symbol is `Y` then go to state `Z`". After all, isn't that exactly what a computer is? There's something profound about seeing the correspondence between mathematics and computer science at such a deep level.
 
 In Python, we can define the DFA succinctly as:
 
@@ -150,7 +150,7 @@ So there we have it! A DFA with 100 states and 1000 transitions that recognises 
 
 ## How do we build the regex for this DFA?
 
-I've somewhat buried the lede here. You probably clicked here expecting to see some giant regex you could copy-paste into GitHub Secret Scanner and be off. After all, converting between a DFA that recognises a language and a regular expression that matches all words in the same language is mathematically assured. And we've constructed the DFA!
+I've somewhat buried the lede here. You probably clicked here expecting to see some giant regex you could copy-paste into a PII scanner and be off. After all, converting between a DFA that recognises a language and a regular expression that matches all words in the same language is mathematically assured. And we've constructed the DFA!
 
 Unfortunately, conversion procedures between a DFA and the corresponding regex often lead to an *exponential* combinatorial explosion. This is not necessarily the case for all DFAs, but at least here, I'm afraid I cannot see any concise mapping. In some sense, DFAs can be more compact for problems like these as they can store arithmetic state within their states and transitions. Regular expressions don't permit arbitrary transitions in the same way - though the two are equally powerful in expressiveness, in the formal sense.
 
