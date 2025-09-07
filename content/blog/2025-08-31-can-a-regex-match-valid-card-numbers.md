@@ -23,7 +23,7 @@ A [typical formulation](https://rosettacode.org/wiki/Luhn_test_of_credit_card_nu
 
 The Luhn algorithm in Python is:
 
-```python
+```python {hl_lines=[2]}
 def validate_luhn_checkdigit(number: int) -> bool:
     digits: list[int] = [int(d) for d in reversed(str(number))]
     luhn_sum = 0
@@ -37,7 +37,7 @@ def validate_luhn_checkdigit(number: int) -> bool:
 
 However, since DFAs can't walk a string in *reverse* order![1](fn "Regular languages are closed under reversal, but this is not sufficient to reverse a string to build our DFA. For instance, no DFA can recognise the language of palindromic strings."), we'll work with an equivalent *left-to-right* formulation based on the parity of the length of the digits:
 
-```python
+```python {hl_lines=[3, 6]}
 def validate_luhn_checkdigit(number: int) -> bool:
     digits: list[int] = [int(d) for d in str(number)]
     parity = len(digits) % 2
