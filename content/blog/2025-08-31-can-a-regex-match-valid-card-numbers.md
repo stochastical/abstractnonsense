@@ -35,7 +35,7 @@ def validate_luhn_checkdigit(number: int) -> bool:
     return luhn_sum % 10 == 0
 ```
 
-However, since DFAs can't walk a string in *reverse* order[^1], we'll work with an equivalent *left-to-right* formulation based on the parity of the length of the digits:
+However, since DFAs can't walk a string in *reverse* order![1](fn "Regular languages are closed under reversal, but this is not sufficient to reverse a string to build our DFA. For instance, no DFA can recognise the language of palindromic strings."), we'll work with an equivalent *left-to-right* formulation based on the parity of the length of the digits:
 
 ```python
 def validate_luhn_checkdigit(number: int) -> bool:
@@ -95,22 +95,22 @@ But if that's not enough for you: the [powers that be](https://en.wikipedia.org/
 
 ## Working towards a solution
 
-We can make the trivial observation that, as per the spec, payment card numbers have a maximum length. Since all *finite languages* are *regular*, that means it's possible to simply enumerate all possible valid card numbers and union them together with `|` into a mammoth regex. For those tempted to try, it’s worth appreciating the scale of such an endeavour. If we assume a card number has 16 digits, then there's \(10^{15}\) sequences that have a valid checksum at the end[^3].
+We can make the trivial observation that, as per the spec, payment card numbers have a maximum length. Since all *finite languages* are *regular*, that means it's possible to simply enumerate all possible valid card numbers and union them together with `|` into a mammoth regex. For those tempted to try, it’s worth appreciating the scale of such an endeavour. If we assume a card number has 16 digits, then there's \(10^{15}\) sequences that have a valid checksum at the end![2](fn "We're going to ignore leading zeroes or the prefix being one of a small set of possible IINs.").
 
 But the more general question is the one that kept me up at night:
 
 > Does there exist a DFA that recognises the language \(L\) of numbers written in base \(10\) that satisfy the Luhn checkdigit algorithm?
 
-Note that this language is infinite, since we do not restrict the length of the numbers. If such a DFA exists, then the language is regular (by Kleene's theorem[^2]), and hence there *must* be a regular expression that matches all words[^4] in the language.
+Note that this language is infinite, since we do not restrict the length of the numbers. If such a DFA exists, then the language is regular (by Kleene's theorem![3](fn "I propose we rename this to `Kl(e|n)*'s` theorem.")), and hence there *must* be a regular expression that matches all words![4](fn "Note for the programmer: in keeping with the parlance of calling these sets *languages*, elements of a language are often called *words* - this is interchangeable with *strings*.") in the language.
 
 Now it's been a few years since I've touched DFAs or language theory, and at first, I didn't think this problem was solvable. I didn't think too hard about it until I stumbled across the excellent [Arithmancia Automatorum](https://iagoleal.com/posts/automata-divisibility/) which presents *"A Painfully Explicit Construction of The Minimal DFA for Divisibility"*. Understanding how to construct the transition function for a DFA that recognises the language of numbers written in base \(b\) that are divisible by \(m\) gave me hope that there existed a similar transition function to represent the Luhn algorithm as a DFA.
 
-Interestingly, Luhn invented a *mechanical* device[^8] to compute the check digit. If we can do it mechanically, surely this is begging to be implemented as a Discrete Finite Automaton!
+Interestingly, Luhn invented a *mechanical* device![5](fn "The original source of Luhn's algorithm is in a patent (*US patent 2950048A*), which has fortunately been scanned and made accessible as a [PDF via Google Patents](https://patentimages.storage.googleapis.com/ec/2a/f7/b9af046ed26128/US2950048.pdf).") to compute the check digit. If we can do it mechanically, surely this is begging to be implemented as a Discrete Finite Automaton!
 
 
 ## The construction of a DFA to recognise the Luhn algorithm
 
-First we note that *a priori*, the DFA can not know the parity of the string. But that's ok! It just means we need to encode handling both *even* and *odd* length strings into the states of our DFA. The transition function must somehow 'update' the parity as the DFA consumes each digit.[^5]
+First we note that *a priori*, the DFA can not know the parity of the string. But that's ok! It just means we need to encode handling both *even* and *odd* length strings into the states of our DFA. The transition function must somehow 'update' the parity as the DFA consumes each digit.![6](fn "It might actually be easier to motivate the form of the transition function of the DFA at the cost of a more roundabout construction. Since we don’t know whether the string is even or odd at the start, we could traverse along an **NFA** that traces both even and odd paths together using epsilon transitions. And any NFA can be converted into a DFA!")
 
 This motivates the following state construction. We can define two DFAs that recognise the Luhn algorithm: one that recognises the language of even-length strings, and another for the language of odd-length strings. Since regular languages are closed under union, we can then combine these two DFAs into a single DFA. The union construction involves taking the product of each state set and creating a tuple representing the union-state.
 
@@ -123,12 +123,14 @@ Let the alphabet \(\Sigma = \texttt{[0-9]}\) be the set of base-10 digits and th
 We start our DFA from \(s_0 = (0, 0)\) and accept any state \(\{(E, O) \in \mathcal{S} \mid E = 0 \}\). To track our alternating partial Luhn sum as we alternate between string-length parities, we define the transition function \(\delta: \mathcal{S}\times\Sigma \to\mathcal{S}\) from a current state and new digit \(d\) to the next state as follows:
 
 $$
-\delta((E, O), d) = ((O+d) \bmod 10, \, (E + \ell(d)) \bmod 10)
+\boxed{
+    \delta((E, O), d) = ((O+d) \bmod 10, \, (E + \ell(d)) \bmod 10)
+}
 $$
 
 where \(\ell\) is the *Luhn double* function as defined above. Note that the \(E\) and \(O\) partial sums swap between the pair in each transition!
 
-To intuit why this works, notice that the transitions are computed *ahead-of-time*. We are defining the computation, and baking it into the DFA as a sort of computational graph. I think this is a wonderfully powerful notion - it demonstrates that a blind automaton[^6] can perform non-trivial (but not arbitrary![^7]) computations by simply following a rulebook of "if in state `X` and next symbol is `Y` then go to state `Z`". After all, isn't that exactly what a computer is? There's something profound about seeing the correspondence between mathematics and computer science at such a deep level.
+To intuit why this works, notice that the transitions are computed *ahead-of-time*. We are defining the computation, and baking it into the DFA as a sort of computational graph. I think this is a wonderfully powerful notion - it demonstrates that a blind automaton![7](fn "or a very busy beaver") can perform non-trivial (but not arbitrary! ![8](fn "Dam(n), Busy Beavers can't do *everything*")) computations by simply following a rulebook of "if in state `X` and next symbol is `Y` then go to state `Z`". After all, isn't that exactly what a computer is? There's something profound about seeing the correspondence between mathematics and computer science at such a deep level.
 
 In Python, we can define the DFA succinctly as:
 
@@ -167,19 +169,3 @@ Mathematically, this is reassuring. As a programmer, I'm deeply disappointed.
 7. Are there ways to quantify bounds on the size of regexes and DFAs for languages? Is there a theory of [Lexical density](https://en.wikipedia.org/wiki/Lexical_density) for formal languages in the Chomsky hierarchy?
 
 Any errors are entirely my own - if you notice any mistakes, think of any interesting insights, or just want to chat, please reach out!
-
-[^1]: Regular languages are closed under reversal, but this is not sufficient to reverse a string to build our DFA. For instance, no DFA can recognise the language of palindromic strings.
-
-[^2]: I propose we rename this to `Kl(e|n)*'s` theorem.
-
-[^3]: We're going to ignore leading zeroes or the prefix being one of a small set of possible IINs.
-
-[^4]: Note for the programmer: in keeping with the parlance of calling these sets *languages*, elements of a language are often called *words* - this is interchangeable with *strings*.
-
-[^5]: It might actually be easier to motivate the form of the transition function of the DFA at the cost of a more roundabout construction. Since we don’t know whether the string is even or odd at the start, we could traverse along an **NFA** that traces both even and odd paths together using epsilon transitions. And any NFA can be converted into a DFA!
-
-[^6]: or a very busy beaver
-
-[^7]: Dam(n), Busy Beavers can't do *everything*
-
-[^8]: The original source of Luhn's algorithm is in a patent (*US patent 2950048A*), which has fortunately been scanned and made accessible as a [PDF via Google Patents](https://patentimages.storage.googleapis.com/ec/2a/f7/b9af046ed26128/US2950048.pdf).
