@@ -1,47 +1,171 @@
-/* Light mode syntax highlighting */
 :root {
-    --code-background: rgba(245, 245, 245, 0.9);
-    --code-text: #333333;
-    --code-comment: #8e908c;
-    --code-keyword: #8959a8;
-    --code-number: #f5871f;
-    --code-string: #718c00;
-    --code-variable: #c82829;
-    --code-function: #4271ae;
-    --code-operator: #3e999f;
-    --code-punctuation: #767676;
-    --copy-button-bg: rgba(255, 255, 255, 0.7);
-    --copy-button-hover: rgba(255, 255, 255, 0.9);
-    --copy-button-text: #666;
+  /* Light mode */
+  --background: #f5f5f5e6;
+  --pre-wrapper: rgba(245, 245, 245, 0.9);
+  --error: #f6f8fa;
+  --error-bg: transparent;
+  --line-highlight: #e5e5e5;
+  --line-numbers-table: #7f7f7f;
+  --linenumbers: #7f7f7f;
+  --keyword: #cf222e;
+  --keyword-constant: #cf222e;
+  --keyword-declaration: #cf222e;
+  --keyword-namespace: #cf222e;
+  --keyword-pseudo: #cf222e;
+  --keyword-reserved: #cf222e;
+  --keyword-type: #cf222e;
+  --name-attribute: rgb(224, 108, 117);
+  --name-class: #1f2328;
+  --name-constant: #0550ae;
+  --name-decorator: #0550ae;
+  --name-entity: #6639ba;
+  --name-label: #900;
+  --name-namespace: #24292e;
+  --name-other: #1f2328;
+  --name-tag: rgb(224, 108, 117);
+  --name-builtin: #6639ba;
+  --name-builtin-pseudo: #6a737d;
+  --name-variable: #953800;
+  --name-variable-class: #953800;
+  --name-variable-global: #953800;
+  --name-variable-instance: #953800;
+  --name-variable-magic: #953800;
+  --name-function: #6639ba;
+  --name-function-magic: #6639ba;
+  --literal-string: rgb(113, 140, 0);
+  --literal-string-affix: var(--literal-string);
+  --literal-string-backtick: var(--literal-string);
+  --literal-string-char: var(--literal-string);
+  --literal-string-delimiter: var(--literal-string);
+  --literal-string-doc: var(--literal-string);
+  --literal-string-double: var(--literal-string);
+  --literal-string-escape: var(--literal-string);
+  --literal-string-heredoc: var(--literal-string);
+  --literal-string-interpol: var(--literal-string);
+  --literal-string-other: var(--literal-string);
+  --literal-string-regex: var(--literal-string);
+  --literal-string-single: var(--literal-string);
+  --literal-string-symbol: var(--literal-string);
+  --literal-number: rgb(245, 135, 31);
+  --literal-number-bin: rgb(245, 135, 31);
+  --literal-number-float: rgb(245, 135, 31);
+  --literal-number-hex: rgb(245, 135, 31);
+  --literal-number-integer: rgb(245, 135, 31);
+  --literal-number-integer-long: rgb(245, 135, 31);
+  --literal-number-oct:rgb(245, 135, 31);
+  --operator: rgb(62, 153, 159);
+  --operator-word: #0550ae;
+  --punctuation: rgb(118, 118, 118);;
+  --comment: #57606a;
+  --comment-hashbang: #57606a;
+  --comment-multiline: #57606a;
+  --comment-single: #57606a;
+  --comment-special: #57606a;
+  --comment-preproc: #57606a;
+  --comment-preproc-file: #57606a;
+  --generic-deleted: #82071e;
+  --generic-deleted-bg: #ffebe9;
+  --generic-emph: #1f2328;
+  --generic-inserted: #116329;
+  --generic-inserted-bg: #dafbe1;
+  --generic-output: #1f2328;
+  --text-whitespace: #fff;
+
+  /* Copy button */
+  --copy-button-bg: rgba(255, 255, 255, 0.7);
+  --copy-button-hover: rgba(255, 255, 255, 0.9);
+  --copy-button-text: #666;
+  --code-text: #222;
 }
 
-/* Dark mode syntax highlighting */
 @media (prefers-color-scheme: dark) {
-    :root {
-        --code-background: rgba(40, 44, 52, 0.9);
-        --code-text: #abb2bf;
-        --code-comment: #5c6370;
-        --code-keyword: #c678dd;
-        --code-number: #d19a66;
-        --code-string: #98c379;
-        --code-variable: #e06c75;
-        --code-function: #61afef;
-        --code-operator: #56b6c2;
-        --code-punctuation: #abb2bf;
-        --copy-button-bg: rgba(30, 34, 42, 0.7);
-        --copy-button-hover: rgba(30, 34, 42, 0.9);
-        --copy-button-text: #aaa;
-    }
+  :root {
+    /* Dark mode */
+    --background: rgba(40, 44, 52, 0.9);
+    --pre-wrapper: rgba(40, 44, 52, 0.9);
+    --error: #f6f8fa;
+    --error-bg: transparent;
+    --line-highlight: #6e7681;
+    --line-numbers-table: #737679;
+    --linenumbers: #6e7681;
+    --keyword: rgb(255, 123, 114);
+    --keyword-constant: #79c0ff;
+    --keyword-declaration: #ff7b72;
+    --keyword-namespace: #ff7b72;
+    --keyword-pseudo: #79c0ff;
+    --keyword-reserved: #ff7b72;
+    --keyword-type: #ff7b72;
+    --name-attribute: rgb(224, 108, 117);
+    --name-class: #f0883e;
+    --name-constant: #79c0ff;
+    --name-decorator: #d2a8ff;
+    --name-entity: #ffa657;
+    --name-label: #79c0ff;
+    --name-namespace: #ff7b72;
+    --name-other: inherit;
+    --name-tag: rgb(224, 108, 117);
+    --name-builtin: rgb(210, 168, 255);
+    --name-builtin-pseudo: #6639ba;
+    --name-variable: #79c0ff;
+    --name-variable-class: #79c0ff;
+    --name-variable-global: #79c0ff;
+    --name-variable-instance: #79c0ff;
+    --name-variable-magic: #79c0ff;
+    --name-function: #d2a8ff;
+    --name-function-magic: #d2a8ff;
+    --literal-string: rgb(152, 195, 121);
+    --literal-string-affix: rgb(152, 195, 121);
+    --literal-string-backtick: rgb(152, 195, 121);
+    --literal-string-char: rgb(152, 195, 121);
+    --literal-string-delimiter: rgb(152, 195, 121);
+    --literal-string-doc: rgb(152, 195, 121);
+    --literal-string-double: rgb(152, 195, 121);
+    --literal-string-escape: rgb(152, 195, 121);
+    --literal-string-heredoc: rgb(152, 195, 121);
+    --literal-string-interpol: rgb(152, 195, 121);
+    --literal-string-other: rgb(152, 195, 121);
+    --literal-string-regex: rgb(152, 195, 121);
+    --literal-string-single: rgb(152, 195, 121);
+    --literal-string-symbol: rgb(152, 195, 121);
+    --literal-number: rgb(165, 214, 255);
+    --literal-number-bin: rgb(165, 214, 255);
+    --literal-number-float: rgb(165, 214, 255);
+    --literal-number-hex: #a5d6ff;
+    --literal-number-integer: #a5d6ff;
+    --literal-number-integer-long: #a5d6ff;
+    --literal-number-oct: #a5d6ff;
+    --operator: rgb(86, 182, 194);;
+    --operator-word: #ff7b72;
+    --punctuation: rgb(171, 178, 191);
+    --comment: #8b949e;
+    --comment-hashbang: #8b949e;
+    --comment-multiline: #8b949e;
+    --comment-single: #8b949e;
+    --comment-special: #8b949e;
+    --comment-preproc: #8b949e;
+    --comment-preproc-file: #8b949e;
+    --generic-deleted: #ffa198;
+    --generic-deleted-bg: #490202;
+    --generic-emph: inherit;
+    --generic-inserted: #56d364;
+    --generic-inserted-bg: #0f5323;
+    --generic-output: #8b949e;
+    --text-whitespace: #6e7681;
+
+    --copy-button-bg: rgba(30, 34, 42, 0.7);
+    --copy-button-hover: rgba(30, 34, 42, 0.9);
+    --copy-button-text: #aaa;
+    --code-text: #e6edf3;
+  }
 }
 
-/* Apply syntax highlighting styles */
 pre,
 code {
     font-family: ui-monospace, SF Mono, Menlo, Monaco, Andale Mono, monospace;
 }
 
 pre {
-    background-color: var(--code-background);
+    background-color: var(--background);
     color: var(--code-text);
     border-radius: 8px;
     padding: 1em;
@@ -51,7 +175,7 @@ pre {
 
 /* Style inline code differently from code blocks */
 :not(pre)>code:not(a>code) {
-    background-color: var(--code-background);
+    background-color: var(--background);
     color: var(--code-text);
     padding: 0.1em 0.3em;
     border-radius: 3px;
@@ -59,7 +183,7 @@ pre {
 
 /* Syntax highlighting specific classes */
 .highlight {
-    background-color: var(--code-background);
+    background-color: var(--background);
     border-radius: 8px;
     position: relative;
 }
@@ -73,147 +197,147 @@ pre {
 
 /* Copy button styling */
 .copy-button {
-    position: absolute;
-    top: 0.5em;
-    right: 0.5em;
-    padding: 0.25em 0.5em;
-    font-size: 0.8em;
-    background: var(--copy-button-bg);
-    border: none;
-    border-radius: 4px;
-    color: var(--copy-button-text);
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out, background-color 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.3em;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0.25em 0.5em;
+  font-size: 0.8em;
+  background: var(--copy-button-bg);
+  border: none;
+  border-radius: 4px;
+  color: var(--copy-button-text);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  z-index: 10;
 }
 
 .highlight:hover .copy-button {
-    opacity: 1;
+  opacity: 1;
 }
 
 .copy-button:hover {
-    background: var(--copy-button-hover);
+  background: var(--copy-button-hover);
 }
 
 /* Copy success message */
 .copy-button.copied::after {
-    content: "Copied!";
-    position: absolute;
-    top: 0;
-    right: 110%;
-    background: var(--copy-button-bg);
-    padding: 0.25em 0.5em;
-    border-radius: 4px;
-    font-size: 0.9em;
-    white-space: nowrap;
-    animation: fade-out 1.5s forwards;
+  content: "Copied!";
+  position: absolute;
+  top: 0;
+  right: 110%;
+  background: var(--copy-button-bg);
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  white-space: nowrap;
+  animation: fade-out 1.5s forwards;
 }
 
 @keyframes fade-out {
-    0% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-/* Specific syntax elements */
-.highlight .c,
-.highlight .ch,
-.highlight .cm,
-.highlight .c1,
-.highlight .cs,
-.highlight .cp,
-.highlight .cpf {
-    color: var(--code-comment);
-    /* Comment */
-}
+/* Chroma classes used by Hugo for server-side syntax highlighting */
+/* Background */ .bg { background-color: var(--background); }
+/* PreWrapper */ .chroma { background-color: var(--pre-wrapper); }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: var(--error); background-color: var(--error-bg); }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline:none;text-decoration:none;color:inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align:top;padding:0;margin:0;border:0; }
+/* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
+/* LineHighlight */ .chroma .hl { background-color: var(--line-highlight); }
+/* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color: var(--line-numbers-table); }
+/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color: var(--line-numbers); }
+/* Line */ .chroma .line { display:flex; }
+/* Keyword */ .chroma .k { color: var(--keyword); }
+/* KeywordConstant */ .chroma .kc { color: var(--keyword-constant); }
+/* KeywordDeclaration */ .chroma .kd { color: var(--keyword-declaration); }
+/* KeywordNamespace */ .chroma .kn { color: var(--keyword-namespace); }
+/* KeywordPseudo */ .chroma .kp { color: var(--keyword-pseudo); }
+/* KeywordReserved */ .chroma .kr { color: var(--keyword-reserved); }
+/* KeywordType */ .chroma .kt { color: var(--keyword-type); }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: var(--name-attribute); }
+/* NameClass */ .chroma .nc { color: var(--name-class); }
+/* NameConstant */ .chroma .no { color: var(--name-constant); }
+/* NameDecorator */ .chroma .nd { color: var(--name-decorator); }
+/* NameEntity */ .chroma .ni { color: var(--name-entity); }
+/* NameException */ .chroma .ne {  }
+/* NameLabel */ .chroma .nl { color: var(--name-label); font-weight:bold }
+/* NameNamespace */ .chroma .nn { color: var(--name-namespace); }
+/* NameOther */ .chroma .nx { color: var(--name-other); }
+/* NameProperty */ .chroma .py {  }
+/* NameTag */ .chroma .nt { color: var(--name-tag); }
+/* NameBuiltin */ .chroma .nb { color: var(--name-builtin); }
+/* NameBuiltinPseudo */ .chroma .bp { color: var(--name-builtin-pseudo); }
+/* NameVariable */ .chroma .nv { color: var(--name-variable); }
+/* NameVariableClass */ .chroma .vc { color: var(--name-variable-class); }
+/* NameVariableGlobal */ .chroma .vg { color: var(--name-variable-global); }
+/* NameVariableInstance */ .chroma .vi { color: var(--name-variable-instance); }
+/* NameVariableMagic */ .chroma .vm { color: var(--name-variable-magic); }
+/* NameFunction */ .chroma .nf { color: var(--name-function); }
+/* NameFunctionMagic */ .chroma .fm { color: var(--name-function-magic); }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: var(--literal-string); }
+/* LiteralStringAffix */ .chroma .sa { color: var(--literal-string-affix); }
+/* LiteralStringBacktick */ .chroma .sb { color: var(--literal-string-backtick); }
+/* LiteralStringChar */ .chroma .sc { color: var(--literal-string-char); }
+/* LiteralStringDelimiter */ .chroma .dl { color: var(--literal-string-delimiter); }
+/* LiteralStringDoc */ .chroma .sd { color: var(--literal-string-doc); }
+/* LiteralStringDouble */ .chroma .s2 { color: var(--literal-string-double); }
+/* LiteralStringEscape */ .chroma .se { color: var(--literal-string-escape); }
+/* LiteralStringHeredoc */ .chroma .sh { color: var(--literal-string-heredoc); }
+/* LiteralStringInterpol */ .chroma .si { color: var(--literal-string-interpol); }
+/* LiteralStringOther */ .chroma .sx { color: var(--literal-string-other); }
+/* LiteralStringRegex */ .chroma .sr { color: var(--literal-string-regex); }
+/* LiteralStringSingle */ .chroma .s1 { color: var(--literal-string-single); }
+/* LiteralStringSymbol */ .chroma .ss { color: var(--literal-string-symbol); }
+/* LiteralNumber */ .chroma .m { color: var(--literal-number); }
+/* LiteralNumberBin */ .chroma .mb { color: var(--literal-number-bin); }
+/* LiteralNumberFloat */ .chroma .mf { color: var(--literal-number-float); }
+/* LiteralNumberHex */ .chroma .mh { color: var(--literal-number-hex); }
+/* LiteralNumberInteger */ .chroma .mi { color: var(--literal-number-integer); }
+/* LiteralNumberIntegerLong */ .chroma .il { color: var(--literal-number-integer-long); }
+/* LiteralNumberOct */ .chroma .mo { color: var(--literal-number-oct); }
+/* Operator */ .chroma .o { color: var(--operator); }
+/* OperatorWord */ .chroma .ow { color: var(--operator-word); }
+/* Punctuation */ .chroma .p { color: var(--punctuation); }
+/* Comment */ .chroma .c { color: var(--comment); }
+/* CommentHashbang */ .chroma .ch { color: var(--comment-hashbang); }
+/* CommentMultiline */ .chroma .cm { color: var(--comment-multiline); }
+/* CommentSingle */ .chroma .c1 { color: var(--comment-single); }
+/* CommentSpecial */ .chroma .cs { color: var(--comment-special); }
+/* CommentPreproc */ .chroma .cp { color: var(--comment-preproc); }
+/* CommentPreprocFile */ .chroma .cpf { color: var(--comment-preproc-file); }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: var(--generic-deleted); background-color: var(--generic-deleted-bg); }
+/* GenericEmph */ .chroma .ge { color: var(--generic-emph); }
+/* GenericError */ .chroma .gr {  }
+/* GenericHeading */ .chroma .gh {  }
+/* GenericInserted */ .chroma .gi { color: var(--generic-inserted); background-color: var(--generic-inserted-bg); }
+/* GenericOutput */ .chroma .go { color: var(--generic-output); }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs {  }
+/* GenericSubheading */ .chroma .gu {  }
+/* GenericTraceback */ .chroma .gt {  }
+/* GenericUnderline */ .chroma .gl { text-decoration:underline }
+/* TextWhitespace */ .chroma .w { color: var(--text-whitespace); }
 
-.highlight .k,
-.highlight .kc,
-.highlight .kd,
-.highlight .kn,
-.highlight .kp,
-.highlight .kr,
-.highlight .kt {
-    color: var(--code-keyword);
-    /* Keyword */
-}
-
-.highlight .m,
-.highlight .mb,
-.highlight .mf,
-.highlight .mh,
-.highlight .mi,
-.highlight .mo,
-.highlight .il {
-    color: var(--code-number);
-    /* Number */
-}
-
-.highlight .s,
-.highlight .sa,
-.highlight .sb,
-.highlight .sc,
-.highlight .dl,
-.highlight .sd,
-.highlight .s2,
-.highlight .sh,
-.highlight .si,
-.highlight .sx,
-.highlight .sr,
-.highlight .s1,
-.highlight .ss {
-    color: var(--code-string);
-    /* String */
-}
-
-.highlight .n,
-.highlight .na,
-.highlight .nb,
-.highlight .nc,
-.highlight .no,
-.highlight .nd,
-.highlight .ni,
-.highlight .ne,
-.highlight .nf,
-.highlight .nl,
-.highlight .nn,
-.highlight .nx,
-.highlight .py,
-.highlight .nt,
-.highlight .nv,
-.highlight .vc,
-.highlight .vg,
-.highlight .vi,
-.highlight .vm {
-    color: var(--code-variable);
-    /* Name */
-}
-
-.highlight .o,
-.highlight .ow {
-    color: var(--code-operator);
-    /* Operator */
-}
-
-.highlight .p,
-.highlight .pi {
-    color: var(--code-punctuation);
-    /* Punctuation */
-}
-
-/* Function names */
-.highlight .nf,
-.highlight .fm {
-    color: var(--code-function);
+/* Ensure code block container is positioned for absolute children */
+.highlight, .chroma {
+  position: relative;
 }
