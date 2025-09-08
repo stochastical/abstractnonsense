@@ -1,8 +1,5 @@
 ---
 title: From Lambda Calculus to Lifelong Learning
-blog_section:
-  - micro-blog
-publish_branch: main
 tags:
   - mathematics
   - computer-science
@@ -10,7 +7,7 @@ tags:
 date: "2025-08-18"
 ---
 
-When I was 14, whilst meandering through a late-night Wikipedia rabbit hole![*](fn "Some things haven't changed at all"), I stumbled across the page for the [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus).
+About a decade ago, whilst meandering through a late-night Wikipedia rabbit hole![*](fn "Some things haven't changed at all"), I stumbled across the page for the [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus).
 
 A small footnote linked to [An Introduction to Lambda Calculus and Scheme](https://www.cs.unc.edu/~stotts/723/Lambda/scheme.html), a transcript of a short talk presented by Jim Larson, and, well, I fell in love. I loved the fact that there was this beautiful correspondence between foundational mathematics and models of computation; and that you could describe it through these symbolic wrappers called Lambda terms. There was something deep and abstract about it that I felt immensely drawn to.
 

@@ -1,10 +1,7 @@
 ---
 title: The font of all knowledge
-blog_section:
-  - micro-blog
-publish_branch: main
 date: "2025-09-04"
-tags: []
+tags: ["design"]
 ---
 
 TIL that Google Search has a font-based Easter Egg. If you search for ["Georgia font"](https://www.google.com/search?q=Georgia+font), the results page will change the typeface to [Georgia](https://en.wikipedia.org/wiki/Georgia_(typeface)). I initially thought it was limited to System-fonts, but [Wikipedia](https://en.wikipedia.org/wiki/List_of_Google_Easter_eggs) shows that it works for [Roboto](https://en.wikipedia.org/wiki/Roboto) too!
