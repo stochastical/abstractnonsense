@@ -301,7 +301,6 @@ code:not(pre code) {
     border-radius: 4px;
     position: relative;
     top: -1px; /* optical alignment */
-    word-break: break-word;
     overflow-wrap: break-word;
 }
 
