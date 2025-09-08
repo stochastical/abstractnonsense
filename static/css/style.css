@@ -301,7 +301,8 @@ code:not(pre code) {
     border-radius: 4px;
     position: relative;
     top: -1px; /* optical alignment */
-    white-space: nowrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Inline code when inside a link: inherit link color but keep background */
