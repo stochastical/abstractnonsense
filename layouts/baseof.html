@@ -10,7 +10,18 @@
     <link rel="stylesheet" href="/css/syntax.css">
     <!-- Load MathJax if math rendering is enabled -->
     {{ if .Param "math" }}
-        {{ partialCached "math.html" . }}
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
+        <script>
+          MathJax = {
+            tex: {
+              displayMath: [['\\[', '\\]'], ['$$', '$$']],  // block
+              inlineMath: [['\\(', '\\)']]                  // inline
+            },
+            loader:{
+              load: ['ui/safe']
+            },
+          };
+        </script>
     {{ end }}
     <!-- Enable Umami analytics -->
     {{ if hugo.IsProduction }}
