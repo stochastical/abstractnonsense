@@ -392,6 +392,12 @@ header h1 {
 }
 
 /* Navigation */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+}
+
 nav a {
     position: relative;
     padding: 0.5em 1em;
@@ -407,7 +413,7 @@ nav a:hover {
 }
 
 nav a:not(:last-of-type) {
-    margin-right: 1.5vw;
+    margin-right: 0;
 }
 
 /* RSS link styling */
