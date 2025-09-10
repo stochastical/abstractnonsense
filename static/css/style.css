@@ -410,6 +410,19 @@ nav a:not(:last-of-type) {
     margin-right: 1.5vw;
 }
 
+/* RSS link styling */
+nav a.rss-link {
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+nav a.rss-link:hover {
+    opacity: 1;
+    background-color: var(--highlight);
+    color: var(--bgcolor);
+    border-radius: 30px;
+}
+
 /* Sections */
 main, section {
     padding-top: calc(5vw + 50px);
