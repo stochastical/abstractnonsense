@@ -2,7 +2,7 @@
   /* Light mode */
   --background: #f5f5f5e6;
   --pre-wrapper: rgba(245, 245, 245, 0.9);
-  --error: #f6f8fa;
+  --error: var(--punctuation);
   --error-bg: transparent;
   --line-highlight: #e5e5e5;
   --line-numbers-table: #7f7f7f;
@@ -83,7 +83,7 @@
     /* Dark mode */
     --background: rgba(40, 44, 52, 0.9);
     --pre-wrapper: rgba(40, 44, 52, 0.9);
-    --error: #f6f8fa;
+    --error: var(--punctuation);
     --error-bg: transparent;
     --line-highlight: #6e7681;
     --line-numbers-table: #737679;

@@ -288,7 +288,14 @@ a:hover, a:focus-visible {
     text-decoration: underline;
 }
 
-/* Base monospace font */
+/* Fixes iOS font sizing anomaly */
+code {
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 code, pre, kbd, samp {
     font-family: ui-monospace, "SF Mono", Menlo, Monaco, "Andale Mono", monospace;
     font-size: 0.95em;

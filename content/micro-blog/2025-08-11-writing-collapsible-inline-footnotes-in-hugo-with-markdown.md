@@ -14,7 +14,7 @@ I use [Hugo](https://github.com/gohugoio/hugo) as the static site builder for my
 
 However, Hugo's support for customising the rendering of Markdown into HTML is ... lacking, to say the least. Hugo uses [Goldmark](https://github.com/yuin/goldmark/) under the hood, which supports [Extensions](https://github.com/yuin/goldmark/?tab=readme-ov-file#list-of-extensions), but Hugo doesn't natively plug in to those. I'd previously been using a Hugo [shortcode](https://gohugo.io/content-management/shortcodes/) to wrap around some arbitrary Markdown and convert it into a footnote HTML:
 
-```html
+```go-html-template
 <label for="fn{{ .Get "id" }}">{{ .Get "label" }}</label>
 <input type="checkbox" id="fn{{ .Get "id" }}" />
 <small id="fn{{ .Get "id" }}">
@@ -32,7 +32,7 @@ I considered switching to [pandoc](https://github.com/jgm/pandoc) for my Markdow
 
 I've been struggling with this for a while, but I realised that Hugo supports [render hooks](https://gohugo.io/render-hooks/) for select Markdown elements. Unfortunately, footnotes are not included, but [images](https://gohugo.io/render-hooks/images/) are! In Markdown, the standard syntax for images looks like: `![description](destination "title")`, which is not *too* dissimilar to the footnote syntax `[^label]: footnote`. So I built a little `layouts/_markup/render-image.html` hook:
 
-```html
+```go-html-template
 {{- if eq .Destination "fn" -}}
 {{- /* This is a footnote using image syntax */ -}}
 {{- $label := .PlainText | default "note" -}}
