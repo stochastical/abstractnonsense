@@ -5,6 +5,9 @@ title: "Abstract Nonsense"
 params:
   description: "A blog about Mathematics and Computer Science."
   math: true
+  author:
+    name: Yossi Frenkel
+    email: hello@abstractnonsense.xyz
 
 # Pagination settings
 pagination: 
