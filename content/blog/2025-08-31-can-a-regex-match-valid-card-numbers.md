@@ -152,11 +152,93 @@ So there we have it! A DFA with 100 states and 1000 transitions that recognises 
 
 ## How do we build the regex for this DFA?
 
-I've somewhat buried the lede here. You probably clicked here expecting to see some giant regex you could copy-paste into a PII scanner and be off. After all, converting between a DFA that recognises a language and a regular expression that matches all words in the same language is mathematically assured. And we've constructed the DFA!
+I've somewhat buried the lede here. You probably clicked here expecting to see some giant regex you could copy-paste into a PII scanner and be off. After all, converting between a DFA that recognises a language and a regular expression that matches all words in the same language is mathematically assured. And we've constructed the DFA! Unfortunately, conversion procedures between a DFA and the corresponding regex often lead to an *exponential* combinatorial explosion.
 
-Unfortunately, conversion procedures between a DFA and the corresponding regex often lead to an *exponential* combinatorial explosion. This is not necessarily the case for all DFAs, but at least here, I'm afraid I cannot see any concise mapping. In some sense, DFAs can be more compact for problems like these as they can store arithmetic state within their states and transitions. Regular expressions don't permit arbitrary transitions in the same way - though the two are equally powerful in expressiveness, in the formal sense.
+Now, an earlier version of this post didn't think that this conversion would be computationally tractable. But, I wasn't done tilting at windmills! After a email and code exchange with the wonderfully helpful [Alok Menghrajani](https://www.quaxio.com), who pointed me to the regular expression manipulation library [greenery](https://github.com/qntm/greenery), I have a regex!
 
-Mathematically, this is reassuring. As a programmer, I'm deeply disappointed. 
+Or, more correctly, the following code defines a DFA for both even and odd-length Luhn-valid strings ![*](fn "Of course, once you have both regexes, you can union them together with `|` for a single regex."), and uses `greenery`'s [implementation](https://github.com/qntm/greenery/blob/e55c96712677d56ef14664a1595a47fb7f26bc01/greenery/rxelems.py#L260C4-L260C4) of the Brzozowski algebraic method to convert the DFA to a regex.
+
+For the intrepid explorer who's made it this far, be warned that the resulting regex pairs are *enormous*. It takes ~20 minutes per even/odd expression computation on my M1 Air, and the resulting regexes are `32,461,605`, `48,236,673` characters long, respectively.
+
+```python
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "greenery",
+# ]
+# ///
+
+import time
+from pathlib import Path
+
+import greenery
+
+
+def build_luhn_dfa(parity: int) -> greenery.fsm.Fsm:
+    def luhn_double(d: int) -> int:
+        return 2 * d if 2 * d < 10 else 2 * d - 9
+
+    digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
+    non_digits = ~greenery.Charclass((('0', '9'),))
+    alphabet = {greenery.Charclass(c) for c in digits}
+    states = range(0, 2 * 10)
+    initial = 0 if parity else 10
+    finals = {10}
+
+    transition_map = {}
+    for from_state in states:
+        state_transition = {}
+        for c in digits:
+            d = int(c)
+            next_state = -1
+            if from_state < 10:
+                next_state = (d + from_state) % 10 + 10
+            else:
+                next_state = (luhn_double(d) + from_state - 10) % 10
+            state_transition[greenery.Charclass(c)] = next_state
+        state_transition[non_digits] = 0
+        transition_map[from_state] = state_transition
+
+    return greenery.fsm.Fsm(
+        alphabet=alphabet | {non_digits},
+        states=states,
+        initial=initial,
+        finals=finals,
+        map=transition_map,
+    )
+
+
+if __name__ == "__main__":
+    # Even-length strings
+    print('== Even-length Luhn strings ==')
+    luhn_dfa_even = build_luhn_dfa(0)
+    print(luhn_dfa_even)
+
+    # Build and save regex
+    start = time.time()
+    regex_even: greenery.Pattern = greenery.rxelems.from_fsm(luhn_dfa_even)
+    print(f'Built regex for decimal even-length strings in {time.time() - start:.1f}s')
+    regex_str_even = str(regex_even)
+    print(f'{len(regex_str_even)=} with {regex_str_even[:100]=}')
+    Path('luhn-regex-even.txt').write_text(regex_str_even)
+
+    # Odd-length strings
+    print('== Odd-length Luhn strings ==')
+    luhn_dfa_odd = build_luhn_dfa(1)
+    print(luhn_dfa_odd)
+
+    # Build and save regex
+    start = time.time()
+    regex_odd: greenery.Pattern = greenery.rxelems.from_fsm(luhn_dfa_odd)
+    print(f'Built regex for decimal odd-length strings in {time.time() - start:.1f}s')
+    regex_str_odd = str(regex_odd)
+    print(f'{len(regex_str_odd)=} with {regex_str_odd[:100]=}')
+    Path('luhn-regex-odd.txt').write_text(regex_str_odd)
+```
+
+In case you're wondering, is this actually executable by any regex engine? I'm delighted to report that it sure is! Attempting to run it with `grep` or [`ripgrep`](https://github.com/BurntSushi/ripgrep) results in the process being killed from memory exhaustion. But Python's [`re` module](https://docs.python.org/3/library/re.html) can handle it just fine!
+
+In some sense, DFAs can be more compact for problems like these as they can store arithmetic state within their states and transitions. Regular expressions don't permit arbitrary transitions in the same way - though the two are equally powerful in expressiveness, in the formal sense.
 
 ## What's next?
 
