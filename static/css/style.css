@@ -11,6 +11,7 @@
     --color-code-block-bg: #f5f7fb;
     --color-code-block-border: #e2e6ef;
     --color-link: var(--color-accent);
+    --color-rss: #f79f1a;
     /* Legacy variable mapping for existing styles */
     --textcolor: var(--color-fg);
     --bgcolor: var(--color-bg);
@@ -40,6 +41,7 @@
         --color-code-block-bg: #1f1f1f;
         --color-code-block-border: #2a2a2a;
         --color-link: var(--color-accent);
+        --color-rss: #ff9f1a;
         /* Legacy mapping */
         --textcolor: var(--color-fg);
         --bgcolor: var(--color-bg);
@@ -465,6 +467,77 @@ ul, ol {
 }
 
 .pagination-info { font-size: 0.9em; opacity: 0.7; }
+
+/* Header RSS icon */
+.rss-icon-link {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.5rem;
+    color: var(--color-rss);
+    position: relative; /* enable pseudo-element pulse */
+}
+.rss-icon-link:hover,
+.rss-icon-link:focus {
+    filter: brightness(1.1);
+}
+.rss-icon {
+    width: 20px;
+    height: 20px;
+    transform-origin: center;
+    transition: transform 150ms ease, filter 150ms ease;
+}
+
+/* Cute hover animation: wiggle + broadcast pulse */
+.rss-icon-link:hover .rss-icon,
+.rss-icon-link:focus-visible .rss-icon {
+    animation: rss-wiggle 450ms ease both;
+}
+.rss-icon-link:active .rss-icon {
+    transform: scale(0.9);
+}
+
+/* Broadcast pulse ring */
+.rss-icon-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.6);
+    pointer-events: none;
+}
+.rss-icon-link:hover::after,
+.rss-icon-link:focus-visible::after {
+    animation: rss-pulse 600ms ease-out 1;
+}
+
+@keyframes rss-wiggle {
+    0%   { transform: rotate(0deg); }
+    30%  { transform: rotate(12deg); }
+    60%  { transform: rotate(-8deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes rss-pulse {
+    0%   { opacity: 0.35; transform: scale(0.6); }
+    70%  { opacity: 0.15; transform: scale(1.4); }
+    100% { opacity: 0;    transform: scale(1.8); }
+}
+
+/* Reduced motion: keep it calm */
+@media (prefers-reduced-motion: reduce) {
+    .rss-icon { transition: none; }
+    .rss-icon-link:hover .rss-icon,
+    .rss-icon-link:focus-visible .rss-icon { animation: none; }
+    .rss-icon-link:hover::after,
+    .rss-icon-link:focus-visible::after { animation: none; }
+}
 
 .pagination-next {
     position: absolute;
