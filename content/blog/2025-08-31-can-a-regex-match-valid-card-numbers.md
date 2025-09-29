@@ -6,7 +6,7 @@ tags: ['mathematics', 'DFA', 'algorithms']
 
 Sometimes the mere existence of a question is dangerous. A [colleague recently asked](/micro-blog/2025-03-11-irregular-expressions/) me whether it's possible to validate credit card numbers in regex using the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm), and, well, I was thoroughly [nerd-sniped](https://xkcd.com/356/). I'll outline the problem briefly and we'll try to explicate a solution together.
 
-For what follows, it'll be helpful if you've encountered concepts such as [Deterministic Finite Automata (DFA)](https://en.wikipedia.org/wiki/Deterministic_finite_automaton), [Regular languages](https://en.wikipedia.org/wiki/Regular_language) and [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) before. If you haven't, I think a quick skim at the Wikipedia pages should be sufficient to follow. I'll also pair the mathematical formalisms with Python code in the exposition to make it easier to follow.
+For what follows, it'll be helpful if you've encountered concepts such as [Deterministic Finite Automata (DFA)](https://en.wikipedia.org/wiki/Deterministic_finite_automaton), [Regular languages](https://en.wikipedia.org/wiki/Regular_language) and [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic) before. If you haven't, I think a quick skim through the Wikipedia pages should be sufficient to follow. I'll also pair the mathematical formalisms with Python code in the exposition to make it easier to follow.
 
 ## What's in a card number, anyways?
 
