@@ -1,7 +1,7 @@
 ---
 title: "It's always DNS"
 date: "2025-03-23"
-description: "Debugging an internet issue led me me into the dark arts of DNS and an afternoon benchmarking DNS resolvers."
+description: "Debugging an internet issue led me into the dark arts of DNS and an afternoon benchmarking DNS resolvers."
 ---
 
 I recently moved to the city. As usual, considering the technological ruin that is the [NBN](https://en.wikipedia.org/wiki/National_Broadband_Network), I was fully expecting to go another round against the ISP gods.
