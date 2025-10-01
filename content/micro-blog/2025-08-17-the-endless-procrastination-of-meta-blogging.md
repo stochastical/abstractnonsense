@@ -1,10 +1,6 @@
 ---
 title: The endless procrastination of meta-blogging
-blog_section:
-  - micro-blog
-publish_branch: main
-tags:
-  - abstract-nonsense
+tags: ["abstractnonsense.xyz"]
 date: "2025-08-17"
 ---
 
