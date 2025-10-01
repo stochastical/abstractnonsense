@@ -2,18 +2,18 @@
 /* Semantic color tokens for theming */
 :root {
     /* Light mode color tokens */
-    --color-fg: #121212;
     --color-fg-rgb: 18, 18, 18;
+    --color-fg: rgb(var(--color-fg-rgb));
     --color-bg: #ffffff;
-    --color-accent: #2749c9;
     --color-accent-rgb: 39, 73, 201;
-    --color-accent-contrast: #ffffff;
-    --color-code-inline-bg: rgba(39, 73, 201, 0.12);
+    --color-accent: rgb(var(--color-accent-rgb));
+    --color-code-inline-bg: rgba(var(--color-accent-rgb), 0.12);
     --color-code-inline-fg: #111111;
     --color-code-block-bg: #f5f7fb;
     --color-code-block-border: #e2e6ef;
     --color-link: var(--color-accent);
     --color-rss: #f79f1a;
+    --color-mark-bg: #fcf8e3;
     scroll-behavior: smooth;
 }
 
@@ -30,13 +30,12 @@
 @media (prefers-color-scheme: dark) {
     :root {
         /* Dark mode color tokens */
-        --color-fg: #e0e0e0;
         --color-fg-rgb: 224, 224, 224;
+        --color-fg: rgb(var(--color-fg-rgb));
         --color-bg: #141414;
-        --color-accent: #ffc400;
         --color-accent-rgb: 255, 196, 0;
-        --color-accent-contrast: #141414;
-        --color-code-inline-bg: rgba(255, 196, 0, 0.20);
+        --color-accent: rgb(var(--color-accent-rgb));
+        --color-code-inline-bg: rgba(var(--color-accent-rgb), 0.20);
         --color-code-inline-fg: #ffffff;
         --color-code-block-bg: #1f1f1f;
         --color-code-block-border: #2a2a2a;
@@ -76,7 +75,7 @@ p, ul, ol, article {
 
 /* Articles use Georgia serif font, but not tags */
 article {
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: "Georgia", serif;
 }
 
 article .tag {
@@ -125,12 +124,6 @@ dd {
     position: relative;
     font-size: 0.95em;
     display: inline;
-}
-
-@media (prefers-color-scheme: dark) {
-    dd {
-        border-left-color: rgba(255, 196, 0, 0.2);
-    }
 }
 
 dd p {
@@ -248,7 +241,7 @@ hr {
 }
 
 mark {
-    background-color: #fcf8e3;
+    background-color: var(--color-mark-bg);
     padding: .2em;
 }
 
@@ -345,12 +338,6 @@ pre code {
 /* Selection */
 pre::selection, code::selection { background: rgba(var(--color-accent-rgb), 0.25); }
 pre code::selection { background: rgba(var(--color-accent-rgb), 0.25); }
-
-@media (prefers-color-scheme: dark) {
-    pre code { color: #f5f5f5; }
-    a:hover, a:focus-visible { text-decoration-thickness: 2px; }
-}
-
 
 /* GitHub links icon */
 a[href*="github.com"]::before {
@@ -806,43 +793,57 @@ figure figcaption {
     display: block;
 }
 
+/* ======= DARK MODE ======= */
 @media (prefers-color-scheme: dark) {
-    /* Dark mode adjustments */
+    /* Note: Color tokens are defined in :root at the top of this file */
+    
+    /* These overrides are for styles that don't use CSS variables */
     body {
-        background: #121212;
-        color: #e0e0e0;
+        background: var(--color-bg);
+        color: var(--color-fg);
     }
 
     h2, h3, h4 {
-        color: #ffc400;
+        color: var(--color-accent);
     }
 
     a {
-        color: #ffc400;
+        color: var(--color-accent);
+    }
+    
+    a:hover, 
+    a:focus-visible { 
+        text-decoration-thickness: 2px; 
     }
 
     hr {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(var(--color-fg-rgb), 0.1);
     }
 
     blockquote {
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: rgba(var(--color-fg-rgb), 0.05);
+    }
+    
+    pre code { 
+        color: var(--color-fg); 
     }
     
     .footnote-aside {
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: rgba(var(--color-fg-rgb), 0.05);
+    }
+    
+    dd {
+        border-left-color: rgba(var(--color-accent-rgb), 0.2);
     }
 
     details {
-        border-color: rgba(255, 196, 0, 0.1);
+        border-color: rgba(var(--color-accent-rgb), 0.1);
     }
 
     summary {
-        background-color: rgba(255, 196, 0, 0.03);
-        border-bottom-color: rgba(255, 196, 0, 0.1);
+        background-color: rgba(var(--color-accent-rgb), 0.03);
+        border-bottom-color: rgba(var(--color-accent-rgb), 0.1);
     }
-
-    /* Add any other dark mode specific styles here */
 }
 
 /* ======= RESPONSIVE DESIGN ======= */
