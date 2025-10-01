@@ -4,26 +4,34 @@
     <article>
         <blockquote>A place for long-form blog posts.</blockquote>
     </article>
-    {{ range .Pages }}
-    <article>
-        <h2>
-            <time datetime="{{ .Date }}">{{ .Date.Format "2006.01.02" }}</time>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h2>
-        
-        <!-- Add tags display -->
-        {{ if .Params.tags }}
-        <div class="post-tags">
-            {{ range .Params.tags }}
-                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-            {{ end }}
-        </div>
+    
+    <div class="blog-list">
+        {{ range .Pages }}
+        <article class="blog-item">
+            <div class="blog-meta">
+                <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
+            </div>
+            
+            <div class="blog-content">
+                <h2 class="blog-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+                
+                {{ if .Params.tags }}
+                <div class="post-tags">
+                    {{ range .Params.tags }}
+                        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                {{ if .Params.description }}
+                <div class="blog-description">{{ .Params.description | markdownify }}</div>
+                {{ end }}
+            </div>
+        </article>
         {{ end }}
-        
-        <p>
-            {{ .Content }}
-        </p>
-    </article>
-    {{ end }}
+    </div>
+    
 </section>
 {{ end }}

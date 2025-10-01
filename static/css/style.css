@@ -1,10 +1,12 @@
 /* ======= BASE STYLES ======= */
-/* Theme tokens moved to :root for idiomatic custom property usage */
+/* Semantic color tokens for theming */
 :root {
-    /* New semantic color tokens (light mode) */
+    /* Light mode color tokens */
     --color-fg: #121212;
+    --color-fg-rgb: 18, 18, 18;
     --color-bg: #ffffff;
     --color-accent: #2749c9;
+    --color-accent-rgb: 39, 73, 201;
     --color-accent-contrast: #ffffff;
     --color-code-inline-bg: rgba(39, 73, 201, 0.12);
     --color-code-inline-fg: #111111;
@@ -12,11 +14,6 @@
     --color-code-block-border: #e2e6ef;
     --color-link: var(--color-accent);
     --color-rss: #f79f1a;
-    /* Legacy variable mapping for existing styles */
-    --textcolor: var(--color-fg);
-    --bgcolor: var(--color-bg);
-    --highlight: var(--color-accent);
-    --highlight-rgb: 39, 73, 201; /* numeric for rgba() usage */
     scroll-behavior: smooth;
 }
 
@@ -32,9 +29,12 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        /* Dark mode color tokens */
         --color-fg: #e0e0e0;
+        --color-fg-rgb: 224, 224, 224;
         --color-bg: #141414;
         --color-accent: #ffc400;
+        --color-accent-rgb: 255, 196, 0;
         --color-accent-contrast: #141414;
         --color-code-inline-bg: rgba(255, 196, 0, 0.20);
         --color-code-inline-fg: #ffffff;
@@ -42,24 +42,21 @@
         --color-code-block-border: #2a2a2a;
         --color-link: var(--color-accent);
         --color-rss: #ff9f1a;
-        /* Legacy mapping */
-        --textcolor: var(--color-fg);
-        --bgcolor: var(--color-bg);
-        --highlight: var(--color-accent);
-        --highlight-rgb: 255, 196, 0;
     }
 }
 
 body {
     font-family: system-ui, sans-serif;
-    font-size: 18px;
+    font-size: clamp(16px, 1rem + 0.25vw, 18px);
     line-height: 1.4;
-    color: var(--textcolor);
-    background: var(--bgcolor);
+    color: var(--color-fg);
+    background: var(--color-bg);
     position: relative;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    container-type: inline-size;
+    container-name: body;
 }
 
 /* ======= TYPOGRAPHY ======= */
@@ -93,7 +90,7 @@ dt {
     font-family: "Georgia", "Garamond", serif;
     font-weight: 700;
     font-size: 1.1em;
-    color: var(--highlight);
+    color: var(--color-accent);
     margin: 1.2em 0 0.3em 0;
     position: relative;
     letter-spacing: 0.01em;
@@ -112,7 +109,7 @@ dt::after {
     height: auto;
     opacity: 1;
     border-radius: 0;
-    color: var(--highlight);
+    color: var(--color-accent);
     font-weight: 700;
 }
 
@@ -156,35 +153,35 @@ details {
     font-family: "Georgia", "Garamond", serif;
     max-width: 100%;
     margin-bottom: 0.8em;
-    border: 1px solid rgba(var(--highlight-rgb), 0.1);
+    border: 1px solid rgba(var(--color-accent-rgb), 0.1);
     border-radius: 4px;
     overflow: hidden;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 details:hover {
-    border-color: rgba(var(--highlight-rgb), 0.2);
-    box-shadow: 0 2px 8px rgba(var(--highlight-rgb), 0.05);
+    border-color: rgba(var(--color-accent-rgb), 0.2);
+    box-shadow: 0 2px 8px rgba(var(--color-accent-rgb), 0.05);
 }
 
 summary {
     font-family: "Georgia", "Garamond", serif;
     font-weight: 700;
     font-size: 0.9em;
-    color: var(--highlight);
-    background-color: rgba(var(--highlight-rgb), 0.03);
+    color: var(--color-accent);
+    background-color: rgba(var(--color-accent-rgb), 0.03);
     padding: 0.4em 0.6em;
     cursor: pointer;
     user-select: none;
     display: flex;
     align-items: center;
     transition: background-color 0.2s ease, border-color 0.2s ease;
-    border-bottom: 1px solid rgba(var(--highlight-rgb), 0.1);
+    border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.1);
     min-height: 2em;
 }
 
 summary:hover {
-    background-color: rgba(var(--highlight-rgb), 0.08);
+    background-color: rgba(var(--color-accent-rgb), 0.08);
 }
 
 summary::marker {
@@ -196,7 +193,7 @@ summary::after {
     margin-left: auto;
     width: 0;
     height: 0;
-    border-left: 0.4em solid var(--highlight);
+    border-left: 0.4em solid var(--color-accent);
     border-top: 0.25em solid transparent;
     border-bottom: 0.25em solid transparent;
     transition: transform 0.2s ease;
@@ -208,7 +205,7 @@ details[open] summary::after {
 }
 
 details[open] summary {
-    border-bottom-color: rgba(var(--highlight-rgb), 0.15);
+    border-bottom-color: rgba(var(--color-accent-rgb), 0.15);
 }
 
 details > *:not(summary) {
@@ -253,27 +250,27 @@ mark {
 }
 
 blockquote {
-    padding-left: 2.5ch; /* Increased padding */
-    padding-top: 0.5em; /* Added top padding */
-    padding-bottom: 0.5em; /* Added bottom padding */
-    opacity: .9; /* Slightly adjusted opacity for text if needed, or keep at .7 if preferred */
-    margin-top: 1em; /* Added top margin */
-    margin-bottom: 1em; /* Adjusted bottom margin */
+    padding-left: 2.5ch;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    opacity: .9;
+    margin-top: 1em;
+    margin-bottom: 1em;
     position: relative;
-    background-color: rgba(var(--highlight-rgb), 0.05);
-    border-radius: 8px; /* Optional: rounded corners */
+    background-color: rgba(var(--color-accent-rgb), 0.05);
+    border-radius: 8px;
 }
 
 blockquote:before {
     content: "";
     position: absolute;
-    left: 0.5ch; /* Adjusted position to align with new padding */
+    left: 0.5ch;
     top: .5em;
     bottom: .5em;
-    background: var(--highlight); /* Use highlight color for border */
-    width: 3px; /* Thicker border */
-    opacity: 1; /* Full opacity for the border */
-    border-radius: 8px; /* Optional: rounded border */
+    background: var(--color-accent);
+    width: 3px;
+    opacity: 1;
+    border-radius: 8px;
 }
 
 /* ======= LINKS & CODE ======= */
@@ -343,8 +340,8 @@ pre code {
 }
 
 /* Selection */
-pre::selection, code::selection { background: rgba(var(--highlight-rgb), 0.25); }
-pre code::selection { background: rgba(var(--highlight-rgb), 0.25); }
+pre::selection, code::selection { background: rgba(var(--color-accent-rgb), 0.25); }
+pre code::selection { background: rgba(var(--color-accent-rgb), 0.25); }
 
 @media (prefers-color-scheme: dark) {
     pre code { color: #f5f5f5; }
@@ -382,41 +379,64 @@ a[href^="mailto:"]::before {
 /* ======= LAYOUT ======= */
 /* Header */
 header {
-    padding: 5vw 5vw 0 5vw;
+    padding: clamp(3vw, 5vw, 6vw) clamp(4vw, 5vw, 5vw) 0;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
     width: 100%;
     z-index: 2;
     align-items: center;
+    gap: clamp(0.8em, 1em, 1.5em);
 }
 
 header h1 {
-    font-size: 1.5em;
+    font-size: clamp(1.4em, 1.25em + 0.5vw, 1.6em);
     flex: 1;
     white-space: nowrap;
-    padding: 0 5vw 0 0;
+    padding: 0;
     margin: 0;
-    line-height: 2;
+    line-height: clamp(1.2, 1.5, 2);
 }
 
 /* Navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.5em, 1.5vw, 1em);
+}
+
 nav a {
     position: relative;
-    padding: 0.5em 1em;
-    background-color: var(--bgcolor);
-    color: var(--highlight);
+    padding: clamp(0.5em, 0.5em, 0.6em) clamp(1em, 1.1em, 1.2em);
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+    font-size: clamp(0.9em, 0.9em + 0.05vw, 0.95em);
+    border-radius: clamp(18px, 20px, 22px);
 }
 
 nav a.selected,
 nav a:hover {
-    background-color: var(--highlight);
-    color: var(--bgcolor);
-    border-radius: 30px;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
 }
 
-nav a:not(:last-of-type) {
-    margin-right: 1.5vw;
+/* Mobile header layout via container query */
+@container body (max-width: 40em) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: clamp(2vw, 3vw, 4vw);
+    }
+    
+    header h1 {
+        line-height: 1.2;
+    }
+    
+    .rss-icon {
+        width: 18px;
+        height: 18px;
+        vertical-align: -2px;
+    }
 }
 
 /* Sections */
@@ -425,13 +445,15 @@ main, section {
 }
 
 section {
-    padding: calc(6em + 5vw) 5vw 8vw 5vw;
+    padding: clamp(5em, 6em + 4vw, 8em) clamp(4vw, 5vw, 5vw) clamp(6vw, 8vw, 10vw);
     display: block;
     position: absolute;
     top: 0;
     min-height: 100vh;
     width: 100%;
-    background: var(--bgcolor);
+    background: var(--color-bg);
+    container-type: inline-size;
+    container-name: section;
 }
 
 section#home {
@@ -552,7 +574,7 @@ ul, ol {
 }
 
 .pagination a {
-    color: var(--highlight);
+    color: var(--color-accent);
     text-decoration: none;
     font-size: 0.9em;
     opacity: 0.8;
@@ -561,7 +583,7 @@ ul, ol {
 
 .pagination a:hover {
     opacity: 1;
-    border-bottom: 1px solid var(--highlight);
+    border-bottom: 1px solid var(--color-accent);
 }
 
 .pagination-prev a::before {
@@ -573,26 +595,22 @@ ul, ol {
 }
 
 /* Tags */
-.post-tags {
-    margin: 0.2em 0 0.8em 0;
-}
-
 .tag {
     display: inline-block;
-    background-color: rgba(var(--highlight-rgb), 0.1);
-    color: var(--highlight);
+    background-color: rgba(var(--color-accent-rgb), 0.1);
+    color: var(--color-accent);
     padding: 0.2em 0.8em;
     margin-right: 0.2em;
     margin-bottom: 0.2em;
     border-radius: 30px;
-    font-size: 0.85em;
+    font-size: clamp(0.8em, 0.75em + 0.1vw, 0.85em);
     opacity: 0.8;
     transition: all 0.2s ease;
 }
 
 .tag:hover {
-    background-color: var(--highlight);
-    color: var(--bgcolor);
+    background-color: var(--color-accent);
+    color: var(--color-bg);
     border-bottom: none;
 }
 
@@ -615,6 +633,12 @@ tags-cloud {
     margin: 0;
 }
 
+/* Post preview container */
+.post-preview {
+    margin: 0.8em 0;
+    line-height: 1.6;
+}
+
 /* Articles */
 article + article {
     margin-top: 2.5em;
@@ -630,6 +654,88 @@ article time {
     font-size: .8em;
     font-weight: 400;
     opacity: .7;
+}
+
+/* Blog list specific styles - Modern fluid design */
+
+.blog-list {
+    container-type: inline-size;
+    container-name: blog-list;
+}
+
+.blog-item {
+    display: flex;
+    align-items: baseline;
+    gap: clamp(0.8em, 2vw, 1.5em);
+    padding: clamp(0.2em, 0.3em + 0.5vw, 1.5em) 0;
+}
+
+.blog-item:first-child {
+    padding-top: 0;
+}
+
+.blog-date {
+    display: block;
+    font-size: clamp(0.85em, 0.8em + 0.2vw, 0.9em);
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+.blog-meta {
+    flex-shrink: 0;
+    width: clamp(100px, 15vw, 140px);
+}
+
+.blog-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.blog-title {
+    margin: 0 0 0.5em 0;
+    font-size: clamp(1.15em, 1em + 0.4vw, 1.5em);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.blog-title a {
+    color: var(--color-fg);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.blog-title a:hover {
+    color: var(--color-accent);
+}
+
+.blog-description {
+    line-height: clamp(1.4, 1.35 + 0.1vw, 1.6);
+    font-family: system-ui, sans-serif;
+    font-size: clamp(0.9em, 0.85em + 0.15vw, 1em);
+}
+
+.post-tags {
+    margin: clamp(0.3em, 0.4em, 0.5em) 0 clamp(0.1em, 0.15em, 0.2em) 0;
+}
+
+/* Container query for mobile layout */
+@container blog-list (max-width: 40em) {
+    .blog-item {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .blog-meta {
+        width: 100%;
+        margin-bottom: clamp(0.5em, 0.6em, 0.7em);
+    }
+    
+    .blog-title {
+        margin-bottom: clamp(0.6em, 0.65em, 0.7em);
+        line-height: 1.35;
+    }
 }
 
 /* Media elements */
@@ -664,7 +770,7 @@ figure figcaption {
     vertical-align: super;
     line-height: 1;
     font-size: .7em;
-    color: var(--highlight);
+    color: var(--color-accent);
 }
 
 .footnote-trigger:before {
@@ -683,8 +789,8 @@ figure figcaption {
 /* Hide footnotes by default */
 .footnote-aside {
     display: none;
-    background-color: rgba(var(--highlight-rgb), 0.05);
-    margin: 0.6m 0;
+    background-color: rgba(var(--color-accent-rgb), 0.05);
+    margin: 0.6em 0;
     padding: 1em 1.2em 1em 2em;
     font-size: 0.9em;
     line-height: 1.6;
@@ -736,41 +842,39 @@ figure figcaption {
     /* Add any other dark mode specific styles here */
 }
 
-/* ======= MEDIA QUERIES ======= */
-@media only screen and (max-width: 680px) {
-    body {
-        font-size: 16px;
-    }
-    
-    /* Vocabulary specific mobile adjustments */
-    dl {
-        max-width: 45ch;
+/* ======= RESPONSIVE DESIGN ======= */
+/* Mobile-first approach: base styles above are for mobile, then scale up */
+
+/* Container-based responsive adjustments */
+@container section (max-width: 40em) {
+    /* Vocabulary adjustments for narrow containers */
+    dl, details {
+        max-width: 100%;
     }
     
     details {
-        max-width: 45ch;
         margin-bottom: 0.6em;
     }
-}
-
-@media only screen and (max-width: 540px) {
-    /* Extra small mobile adjustments */
-    dl {
-        max-width: 95vw;
-    }
     
-    details {
-        max-width: 95vw;
+    .tag {
+        padding: 0.2em 0.6em;
     }
 }
 
-@media only screen and (min-width: 1024px) {
-    /* Larger screen optimizations */
+@container body (min-width: 64em) {
+    /* Optimize for larger screens */
     dl {
         max-width: 70ch;
     }
     
     details {
         max-width: 100%;
+    }
+}
+
+@container body (min-width: 75em) {
+    /* Wider content on large screens */
+    p, ul, ol, article {
+        max-width: 85ch;
     }
 }
