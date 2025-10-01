@@ -45,12 +45,15 @@
     }
 }
 
+html {
+    background: var(--color-bg);
+}
+
 body {
     font-family: system-ui, sans-serif;
     font-size: clamp(16px, 1rem + 0.25vw, 18px);
     line-height: 1.4;
     color: var(--color-fg);
-    background: var(--color-bg);
     position: relative;
     max-width: 1200px;
     margin-left: auto;
