@@ -1,5 +1,9 @@
 ---
 title: "Hard problems: the Hadamard matrix problem"
+description: |
+    It’d be a bit imprecise to define a measure on the set of open problems, but I’d wager that it is much larger than the set of solved problems.
+
+    One such open conjecture is the Hadamard matrix problem, an unsolved problem in mathematics that keeps me up at night. Do square matrices \(H\) with entries \(\pm 1\) satisfying \(HH^T = nI_n\) exist for all \(n = 4k\)? The smallest unknown case is of order 668; like [Order 66](https://en.wikipedia.org/wiki/Jedi#Great_Jedi_Purge), but for mathematicians instead of Jedi.
 date: "2025-08-09"
 tags: ['mathematics', 'unsolved-problems']
 ---
@@ -16,7 +20,7 @@ $$ H H^\intercal = n I_n .$$
 
 You can use this to show
 ![proof](fn "Applying standard properties of the determinant, if \(HH^\intercal = n I_n\), then \( \det(HH^\intercal) = \det(n I_n) \implies \det(H)^2 = n^n \implies \det(H) = \pm n^{n / 2} \)")
-that \(\det(H) = \pm n^{n / 2}\) which is the maximum determinant value that any matrix with elements bounded in magnitude by \(1\) can achieve, by the [Hadamard inequality](https://en.wikipedia.org/wiki/Hadamard%27s_inequality).
+that \(\det(H) = \pm n^{n / 2}\) which is the maximum magnitude determinant value that any matrix with elements bounded in magnitude by \(1\) can achieve, by the [Hadamard inequality](https://en.wikipedia.org/wiki/Hadamard%27s_inequality).
 
 The Hadamard conjecture posits that
 

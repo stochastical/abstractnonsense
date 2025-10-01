@@ -1,10 +1,8 @@
 ---
-title: 'An Afternoon Reading the Dictionary'
-blog_section:
-  - blog
-publish_branch: main
-tags:
-  - words
+title: "An Afternoon Reading the Dictionary"
+description: |
+    I scripted the extraction of dictionary definitions from macOS' built-in Oxford Dictionary archive to automate my new-vocabulary blog page. As all good automation projects, I probably spent more time automating the process than it would've taken to do it manually.
+tags: ["words"]
 date: "2025-08-09"
 ---
 

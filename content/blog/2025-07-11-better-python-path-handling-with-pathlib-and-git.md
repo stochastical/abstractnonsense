@@ -1,11 +1,8 @@
 ---
 title: Better Python path handling with Pathlib and Git
-blog_section:
-  - blog
-publish_branch: main
-description: Better Python path handling using Pathlib and Git
-tags:
-  - software-engineering
+description: |
+    Abusing `git` pathing to make repositories more portable. This is not idiomatic, but it works for adhoc data science projects.
+tags: ["software-engineering"]
 date: "2025-07-11"
 ---
 

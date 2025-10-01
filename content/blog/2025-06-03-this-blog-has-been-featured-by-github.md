@@ -1,9 +1,9 @@
 ---
 title: "This blog has been featured by GitHub!"
-description: "This blog has been featured by GitHub!"
-link: "https://issue-ops.github.io/docs/reference/examples"
-tags: ["abstract-nonsense"]
 date: "2025-06-03"
+tags: ["abstractnonsense.xyz"]
+description: |
+    How I built a mobile-friendly blogging workflow using GitHub Issues, with automated deployment via GitHub Actions and Cloudflare Pages and got featured in GitHub's [IssueOps Docs](https://issue-ops.github.io/docs/reference/examples).
 ---
 
 This blog has been featured by GitHub!*

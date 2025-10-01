@@ -2,6 +2,8 @@
 title: "Can a regex match valid card numbers?"
 date: "2025-08-31"
 tags: ['mathematics', 'DFA', 'algorithms']
+description: |
+    We construct a [Deterministic Finite Automaton](https://en.wikipedia.org/wiki/Deterministic_finite_automaton) that recognises the set of arbitrary-length valid card numbers as per the [Luhn check digit algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) and abuse reality to derive an (executable!) regex with millions of characters.
 ---
 
 Sometimes the mere existence of a question is dangerous. A [colleague recently asked](/micro-blog/2025-03-11-irregular-expressions/) me whether it's possible to validate credit card numbers in regex using the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm), and, well, I was thoroughly [nerd-sniped](https://xkcd.com/356/). I'll outline the problem briefly and we'll try to explicate a solution together.
