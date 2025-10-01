@@ -15,7 +15,7 @@ I studied Mathematics and Computer Science at the [University of Melbourne](http
 
 ## Contact details
 
-Feel free to email me at [<code>hello@abstractnonsense.xyz</code>](mailto:hello@abstractnonsense.xyz?subject=Hi&body=Hello,) or start a [discussion on GitHub](https://github.com/stochastical/abstractnonsense/discussions).
+Feel free to email me at [`hello@abstractnonsense.xyz`](mailto:hello@abstractnonsense.xyz?subject=Hi&body=Hello,) or start a [discussion on GitHub](https://github.com/stochastical/abstractnonsense/discussions).
 
 I'd love to hear from you!
 
