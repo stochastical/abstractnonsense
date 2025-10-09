@@ -1,0 +1,55 @@
+name: Add Vocabulary Word
+
+on:
+  issues:
+    types:
+      - labeled
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  add-word:
+    if: github.event.label.name == 'new-vocabulary-word'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Parse Issue
+        id: issue-parser
+        uses: issue-ops/parser@v4.2.0
+        with:
+          body: ${{ github.event.issue.body }}
+          issue-form-template: 'new-vocabulary-word.yml'
+
+      - name: Add word to vocabulary.yaml
+        run: |
+          echo '${{ steps.issue-parser.outputs.json }}' | jq -r '
+            "- word: \"\(.word)\"\n  definition: \"\(.definition)\"" +
+            (if .example and .example != "" then "\n  example: \"\(.example)\"" else "" end) +
+            "\n"
+          ' | cat - data/vocabulary.yaml > data/vocabulary.yaml.tmp
+          mv data/vocabulary.yaml.tmp data/vocabulary.yaml
+
+      - name: Commit and push
+        run: |
+          WORD=$(echo '${{ steps.issue-parser.outputs.json }}' | jq -r '.word')
+          
+          git config --global user.name "stochastical"
+          git config --global user.email "${{ github.event.issue.user.id }}+${{ github.event.issue.user.login }}@users.noreply.github.com"
+          
+          git add data/vocabulary.yaml
+          git commit -m "Add vocabulary word (via Actions): ${WORD}"
+          git push origin main
+
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "Added **${WORD}** to \`data/vocabulary.yaml\` at [commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/$(git rev-parse HEAD))"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Close issue
+        run: gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
