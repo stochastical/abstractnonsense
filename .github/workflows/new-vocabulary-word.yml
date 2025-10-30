@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   add-word:
-    if: github.event.label.name == 'new-vocabulary-word'
+    if: github.actor == 'stochastical' && github.triggering_actor == 'stochastical' && github.event.label.name == 'new-vocabulary-word'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
