@@ -1,0 +1,31 @@
+name: Add Vocabulary Word
+description: "Add a new word to the `vocabulary.yaml` file"
+title: "[New Vocabulary Word] <word>"
+labels: [new-vocabulary-word]
+body:
+  - type: input
+    id: word
+    attributes:
+      label: Word
+      description: The word you want to add
+      placeholder: "autological"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: definition
+    attributes:
+      label: Definition
+      description: Definition of the word
+      placeholder: "of a word, possessing the property it describes."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: example
+    attributes:
+      label: Example Sentence
+      description: An example sentence using the word (optional)
+      placeholder: "The word polysyllabic is autological, but the word monosyllabic is not."
+    validations:
+      required: false
