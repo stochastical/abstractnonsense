@@ -658,8 +658,7 @@ article time {
 .blog-item {
     display: flex;
     align-items: baseline;
-    gap: clamp(0.8em, 2vw, 1.5em);
-    padding: clamp(0.2em, 0.3em + 0.5vw, 1.5em) 0;
+    gap: clamp(0.6em, 2vw, 1.5em);
 }
 
 .blog-item:first-child {
