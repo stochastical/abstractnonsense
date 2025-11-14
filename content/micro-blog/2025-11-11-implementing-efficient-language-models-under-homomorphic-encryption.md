@@ -2,6 +2,7 @@
 title: 'Talk: Implementing Efficient Language Models under Homomorphic Encryption'
 date: 2025-11-11
 tags: ['homomorphic-encryption', 'LLMs', 'mathematics', 'lecture']
+description: 'A summary of a talk on implementing efficient language models under homomorphic encryption by Donghwan Rho at Seoul National University.'
 ---
 
 Today ([11/11 Pepero Day](https://en.wikipedia.org/wiki/Pepero_Day) in Korea), I had the pleasure of attending a fascinating talk on *Implementing Efficient Language Models under Homomorphic Encryption* by [Donghwan Rho (노동환)](https://donghwan-rho.github.io) at the Seoul National University Research Institute of Mathematics' [2025 11.11 Symposium](https://rim.math.snu.ac.kr/bbs/board.php?bo_table=Math_Event&wr_id=81).
@@ -32,3 +33,5 @@ The talk was partitioned into three sections:
 Many thanks to Donghwan Rho for the talk! I'm looking forward to reading the papers in more detail when I have some time and hope to update this page or blog more about what I learn in the future!
 
 <!-- TODO: Add in photos I took of campus -->
+
+![Seoul National University Campus](/micro-blog/IMG_9308.jpeg)
