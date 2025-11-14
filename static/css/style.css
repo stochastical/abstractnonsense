@@ -444,6 +444,26 @@ nav a:hover::after {
     width: 100%;
 }
 
+/* Touch-first optimizations: make taps feel instant */
+@media (hover: none), (pointer: coarse) {
+    /* Remove animations on tap to avoid artifacts and delays */
+    nav a,
+    nav a::after {
+        transition: none !important;
+    }
+    /* Remove iOS grey tap highlight */
+    nav a { -webkit-tap-highlight-color: transparent; }
+    /* Ensure immediate visual feedback without animation */
+    nav a:active { color: var(--color-fg); text-decoration: none; }
+    nav a:active::after { width: 100%; transition: none; }
+}
+
+/* Only enable hover underline animation on devices that actually hover */
+@media (hover: hover) and (pointer: fine) {
+    nav a:hover { color: var(--color-fg); text-decoration: none; }
+    nav a:hover::after { width: 100%; }
+}
+
 /* Mobile header layout via container query */
 @container body (max-width: 40em) {
     header {
