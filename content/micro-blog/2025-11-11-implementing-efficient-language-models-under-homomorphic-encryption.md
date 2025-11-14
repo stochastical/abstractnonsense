@@ -33,5 +33,3 @@ The talk was partitioned into three sections:
 Many thanks to Donghwan Rho for the talk! I'm looking forward to reading the papers in more detail when I have some time and hope to update this page or blog more about what I learn in the future!
 
 <!-- TODO: Add in photos I took of campus -->
-
-![Seoul National University Campus](/micro-blog/IMG_9308.jpeg)
