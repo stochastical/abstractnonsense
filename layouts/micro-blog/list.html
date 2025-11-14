@@ -8,27 +8,31 @@
         </blockquote>
     </article>
 
-    {{ range .Paginator.Pages }}
-    <article>
-        <h2>
-            <time datetime="{{ .Date }}">{{ .Date.Format "2006.01.02" }}</time>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h2>
-        
-        <!-- Add tags display -->
-        {{ if .Params.tags }}
-        <div class="post-tags">
-            {{ range .Params.tags }}
-                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-            {{ end }}
-        </div>
+    <div class="blog-list">
+        {{ range .Paginator.Pages }}
+        <article class="blog-item">
+            <div class="blog-meta">
+                <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
+            </div>
+            
+            <div class="blog-content">
+                <h2 class="blog-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+                
+                {{ if .Params.tags }}
+                <div class="post-tags">
+                    {{ range .Params.tags }}
+                        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+                
+                <div class="blog-description">{{ .Content }}</div>
+            </div>
+        </article>
         {{ end }}
-        
-        <p>
-            {{ .Content }}
-        </p>
-    </article>
-    {{ end }}
+    </div>
     
     <!-- Pagination navigation -->
     {{ if gt .Paginator.TotalPages 1 }}
