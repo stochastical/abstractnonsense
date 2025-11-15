@@ -21,6 +21,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    min-width: 0;
+}
+
+*:not(pre):not(code) {
+    overflow-wrap: break-word;
 }
 
 @view-transition {
@@ -46,6 +51,7 @@
 
 html {
     background: var(--color-bg);
+    overflow-x: hidden;
 }
 
 body {
@@ -54,9 +60,9 @@ body {
     line-height: 1.4;
     color: var(--color-fg);
     position: relative;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 max(1rem, 5vw);
     container-type: inline-size;
     container-name: body;
 }
@@ -68,7 +74,7 @@ h2, h3, h4 {
     margin: 1.6em 0 .6em 0;
 }
 
-p, ul, ol, article {
+p, ul, ol {
     max-width: 80ch;
     margin-bottom: .6em;
 }
@@ -76,6 +82,8 @@ p, ul, ol, article {
 /* Articles use Georgia serif font, but not tags */
 article {
     font-family: "Georgia", serif;
+    max-width: 80ch;
+    margin-bottom: .6em;
 }
 
 article .tag {
@@ -84,7 +92,7 @@ article .tag {
 
 /* Definition lists */
 dl {
-    max-width: 60ch;
+    max-width: min(60ch, 100%);
     margin-bottom: 1em;
 }
 
@@ -105,12 +113,6 @@ dt:first-child {
 
 dt::after {
     content: ": ";
-    position: static;
-    background: none;
-    width: auto;
-    height: auto;
-    opacity: 1;
-    border-radius: 0;
     color: var(--color-accent);
     font-weight: 700;
 }
@@ -118,10 +120,7 @@ dt::after {
 dd {
     font-family: "Georgia", "Garamond", serif;
     margin: 0 0 0.8em 0;
-    padding-left: 0;
-    border-left: none;
     line-height: 1.6;
-    position: relative;
     font-size: 0.95em;
     display: inline;
 }
@@ -212,10 +211,6 @@ details dl {
     margin: 0;
 }
 
-details dt:first-child {
-    margin-top: 0;
-}
-
 details dt {
     margin-top: 0.6em;
 }
@@ -246,12 +241,10 @@ mark {
 }
 
 blockquote {
-    padding-left: 2.5ch;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding: 0.5em 1ch 0.5em 2.5ch;
+    margin: 1em 0;
+    max-width: min(80ch, 100%);
     opacity: .9;
-    margin-top: 1em;
-    margin-bottom: 1em;
     position: relative;
     background-color: rgba(var(--color-accent-rgb), 0.05);
     border-radius: 8px;
@@ -263,9 +256,8 @@ blockquote:before {
     left: 0.5ch;
     top: .5em;
     bottom: .5em;
-    background: var(--color-accent);
     width: 3px;
-    opacity: 1;
+    background: var(--color-accent);
     border-radius: 8px;
 }
 
@@ -309,9 +301,6 @@ code:not(pre code) {
 /* Inline code when inside a link: inherit link color but keep background */
 a code {
     color: currentColor;
-    background: var(--color-code-inline-bg);
-    padding: 0.15em 0.4em;
-    border-radius: 4px;
 }
 
 /* SVG icon within links (kept) */
@@ -327,6 +316,8 @@ pre {
     overflow-x: auto;
     margin: 1.3em 0;
     position: relative;
+    max-width: min(100%, 80ch);
+    box-sizing: border-box;
 }
 pre code {
     background: transparent;
@@ -369,11 +360,17 @@ a[href^="mailto:"]::before {
 /* ======= LAYOUT ======= */
 /* Header */
 header {
-    padding: clamp(2.5em, 4vw, 3.5em) clamp(4vw, 5vw, 5vw) 0;
+    padding: clamp(2.5em, 4vw, 3.5em) 0 0;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
     width: 100%;
+    max-width: inherit;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: max(1rem, 5vw);
+    padding-right: max(1rem, 5vw);
+    box-sizing: border-box;
     z-index: 2;
     align-items: center;
     justify-content: space-between;
@@ -405,14 +402,12 @@ nav {
 nav a {
     position: relative;
     padding: 0.3em 0;
-    background: none;
     color: rgba(var(--color-fg-rgb), 0.8);
     font-size: clamp(0.95em, 0.92em + 0.08vw, 1em);
     font-weight: 400;
     letter-spacing: 0.01em;
     text-decoration: none;
     transition: color 0.2s ease;
-    border-bottom: none;
 }
 
 nav a::after {
@@ -469,7 +464,7 @@ nav a:hover::after {
     header {
         flex-direction: column;
         align-items: flex-start;
-        padding-bottom: clamp(2em, 4vw, 2.5em);
+        padding-bottom: clamp(1.5em, 3vw, 2em);
         gap: 0.8em;
     }
     
@@ -495,19 +490,30 @@ main, section {
 }
 
 section {
-    padding: clamp(6em, 7em + 4vw, 9em) clamp(4vw, 5vw, 5vw) clamp(6vw, 8vw, 10vw);
+    padding-top: 5.5em;
+    padding-bottom: clamp(6vw, 8vw, 10vw);
     display: block;
     position: absolute;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     min-height: 100vh;
     width: 100%;
+    max-width: 960px;
+    padding-left: max(1rem, 5vw);
+    padding-right: max(1rem, 5vw);
+    box-sizing: border-box;
     background: var(--color-bg);
     container-type: inline-size;
     container-name: section;
+    overflow-x: hidden;
 }
 
-section#home {
-    display: block;
+/* Increase section top padding when header is in vertical layout (mobile) */
+@container body (max-width: 40em) {
+    section {
+        padding-top: 8.5em;
+    }
 }
 
 section h1 {
@@ -538,7 +544,7 @@ ul, ol {
     justify-content: center;
     margin: 2em 0;
     padding: 0;
-    max-width: 80ch;
+    max-width: min(80ch, 100%);
     position: relative;
 }
 
@@ -553,7 +559,6 @@ ul, ol {
 .rss-icon-link {
     display: inline-flex;
     align-items: center;
-    margin-left: 0;
     color: var(--color-rss);
     position: relative;
 }
@@ -692,6 +697,15 @@ tags-cloud {
 }
 
 /* Articles */
+article {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+article > * {
+    max-width: 100%;
+}
+
 article + article {
     margin-top: 2.5em;
 }
@@ -719,6 +733,8 @@ article time {
     display: flex;
     align-items: baseline;
     gap: clamp(0.6em, 2vw, 1.5em);
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .blog-item:first-child {
@@ -742,6 +758,8 @@ article time {
 .blog-content {
     flex: 1;
     min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .blog-title {
@@ -765,6 +783,18 @@ article time {
     line-height: clamp(1.4, 1.35 + 0.1vw, 1.6);
     font-family: system-ui, sans-serif;
     font-size: clamp(0.9em, 0.85em + 0.15vw, 1em);
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.blog-description > * {
+    max-width: 100%;
+}
+
+.blog-description img,
+.blog-description iframe,
+.blog-description table {
+    max-width: 100%;
 }
 
 .post-tags {
@@ -794,7 +824,17 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
-    fill: currentColor;
+}
+
+table {
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+    border-collapse: collapse;
+}
+
+iframe {
+    max-width: 100%;
 }
 
 .icon {
@@ -807,6 +847,12 @@ img {
 /* Figures */
 figure {
     margin: 2em 0 1.5em 0;
+    max-width: 100%;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
 }
 
 figure figcaption {
@@ -846,6 +892,7 @@ figure figcaption {
     font-size: 0.9em;
     line-height: 1.6;
     border-radius: 8px;
+    max-width: min(80ch, 100%);
 }
 
 /* Show footnote when checkbox is checked OR when hovering over the label */
@@ -892,10 +939,6 @@ figure figcaption {
     .footnote-aside {
         background-color: rgba(var(--color-fg-rgb), 0.05);
     }
-    
-    dd {
-        border-left-color: rgba(var(--color-accent-rgb), 0.2);
-    }
 
     details {
         border-color: rgba(var(--color-accent-rgb), 0.1);
@@ -909,6 +952,23 @@ figure figcaption {
 
 /* ======= RESPONSIVE DESIGN ======= */
 /* Mobile-first approach: base styles above are for mobile, then scale up */
+
+/* Extra small screens: reduce padding further */
+@media (max-width: 480px) {
+    body {
+        padding: 0 1rem;
+    }
+    
+    header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
 
 /* Container-based responsive adjustments */
 @container section (max-width: 40em) {
@@ -941,5 +1001,9 @@ figure figcaption {
     /* Wider content on large screens */
     p, ul, ol, article {
         max-width: 85ch;
+    }
+    
+    pre {
+        max-width: min(100%, 85ch);
     }
 }
