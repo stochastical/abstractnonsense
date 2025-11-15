@@ -189,7 +189,6 @@ pre {
 }
 
 .highlight pre {
-    margin: 0;
     padding: .6em .9em;
     margin: .8em 0 1em 0;
     white-space: pre;
@@ -260,7 +259,7 @@ pre {
 /* LineTable */ .chroma .lntable { border-spacing:0;padding:0;margin:0;border:0; }
 /* LineHighlight */ .chroma .hl { background-color: var(--line-highlight); }
 /* LineNumbersTable */ .chroma .lnt { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color: var(--line-numbers-table); }
-/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color: var(--line-numbers); }
+/* LineNumbers */ .chroma .ln { white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color: var(--linenumbers); }
 /* Line */ .chroma .line { display:flex; }
 /* Keyword */ .chroma .k { color: var(--keyword); }
 /* KeywordConstant */ .chroma .kc { color: var(--keyword-constant); }
@@ -340,4 +339,22 @@ pre {
 /* Ensure code block container is positioned for absolute children */
 .highlight, .chroma {
   position: relative;
+}
+
+/* --- Mobile containment (no soft wrap) --- */
+.highlight,
+.highlight pre,
+pre {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.highlight { overflow-x: auto; }
+pre { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+@media (max-width: 600px) {
+  .highlight pre {
+    padding: 0.75em 0.85em;
+    font-size: 0.9em;
+  }
 }
