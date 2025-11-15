@@ -341,3 +341,12 @@ pre {
 .highlight, .chroma {
   position: relative;
 }
+
+/* Highlight code block line on hover */
+.chroma .line {
+  transition: background 0.18s;
+  border-radius: 0.25em;
+}
+.chroma .line:hover {
+  background: rgba(200, 220, 255, 0.35);
+}
