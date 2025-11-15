@@ -21,7 +21,7 @@ There are various schemes for homomorphic encryption, each with their own set of
 
 ## Talk Summary
 
-Full disclaimer: The talk was delivered in Korean, which I sadly do not speak, so I followed the talk partially via live English translation and partially via the English slides. Donghwan was kind enough to share his slides with me afterwards, but they're not currently publicly available. 
+Full disclaimer: The talk was delivered in Korean, which I sadly do not speak, so I followed the talk partially via live translation and partially via the English slides ([available here](https://donghwan-rho.github.io/assets/pdf/RMS_HE+LLM.pdf)).
 
 The talk was partitioned into three sections:
 
