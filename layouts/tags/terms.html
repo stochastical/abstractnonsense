@@ -1,15 +1,11 @@
 {{ define "main" }}
-<section id="tags-list">
-    <h1>All Tags</h1>
-    
-    <ul class="tags-cloud">
-        {{ range .Data.Terms.ByCount }}
-            <li>
-                <a href="{{ .Page.Permalink }}" class="tag">
-                    {{ lower .Page.Title }} ({{ .Count }})
-                </a>
-            </li>
-        {{ end }}
-    </ul>
-</section>
+<h1>All Tags</h1>
+
+<div class="tags-cloud">
+    {{ range .Data.Terms.ByCount }}
+        <a href="{{ .Page.Permalink }}" class="tag">
+            {{ lower .Page.Title }} ({{ .Count }})
+        </a>
+    {{ end }}
+</div>
 {{ end }}

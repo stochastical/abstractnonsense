@@ -1,37 +1,31 @@
 {{ define "main" }}
-<section id="blog">
-    
-    <article>
-        <blockquote>A place for long-form blog posts.</blockquote>
-    </article>
-    
-    <div class="blog-list">
-        {{ range .Pages }}
-        <article class="blog-item">
-            <div class="blog-meta">
-                <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
-            </div>
+<blockquote>A place for long-form blog posts.</blockquote>
+
+<div class="blog-list">
+    {{ range .Pages }}
+    <article class="blog-item">
+        <div class="blog-meta">
+            <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
+        </div>
+        
+        <div class="blog-content">
+            <h2 class="blog-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
             
-            <div class="blog-content">
-                <h2 class="blog-title">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </h2>
-                
-                {{ if .Params.tags }}
-                <div class="post-tags">
-                    {{ range .Params.tags }}
-                        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-                    {{ end }}
-                </div>
-                {{ end }}
-                
-                {{ if .Params.description }}
-                <div class="blog-description">{{ .Params.description | markdownify }}</div>
+            {{ if .Params.tags }}
+            <div class="post-tags">
+                {{ range .Params.tags }}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
                 {{ end }}
             </div>
-        </article>
-        {{ end }}
-    </div>
-    
-</section>
+            {{ end }}
+            
+            {{ if .Params.description }}
+            <div class="blog-description">{{ .Params.description | markdownify }}</div>
+            {{ end }}
+        </div>
+    </article>
+    {{ end }}
+</div>
 {{ end }}

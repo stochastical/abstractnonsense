@@ -1,54 +1,49 @@
 {{ define "main" }}
-<section id="micro-blog">
+<blockquote>
+    A place for musings, observations, design notes, code snippets -
+    <em>my thought gists</em>.
+</blockquote>
 
-    <article>
-        <blockquote>
-            A place for musings, observations, design notes, code snippets -
-            <em>my thought gists</em>.
-        </blockquote>
-    </article>
-
-    <div class="blog-list">
-        {{ range .Paginator.Pages }}
-        <article class="blog-item">
-            <div class="blog-meta">
-                <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
-            </div>
+<div class="blog-list">
+    {{ range .Paginator.Pages }}
+    <article class="blog-item">
+        <div class="blog-meta">
+            <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
+        </div>
+        
+        <div class="blog-content">
+            <h2 class="blog-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
             
-            <div class="blog-content">
-                <h2 class="blog-title">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </h2>
-                
-                {{ if .Params.tags }}
-                <div class="post-tags">
-                    {{ range .Params.tags }}
-                        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-                    {{ end }}
-                </div>
+            {{ if .Params.tags }}
+            <div class="post-tags">
+                {{ range .Params.tags }}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
                 {{ end }}
-                
-                <div class="blog-description">{{ .Content }}</div>
             </div>
-        </article>
-        {{ end }}
-    </div>
-    
-    <!-- Pagination navigation -->
-    {{ if gt .Paginator.TotalPages 1 }}
-    <nav class="pagination">
-        {{ if .Paginator.HasPrev }}
-            <a href="{{ .Paginator.Prev.URL }}" class="pagination-prev">← Previous</a>
-        {{ end }}
-        
-        <span class="pagination-info">
-            Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
-        </span>
-        
-        {{ if .Paginator.HasNext }}
-            <a href="{{ .Paginator.Next.URL }}" class="pagination-next">Next →</a>
-        {{ end }}
-    </nav>
+            {{ end }}
+            
+            <div class="blog-description">{{ .Content }}</div>
+        </div>
+    </article>
     {{ end }}
-</section>
+</div>
+
+<!-- Pagination navigation -->
+{{ if gt .Paginator.TotalPages 1 }}
+<nav class="pagination">
+    {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" class="pagination-prev">← Previous</a>
+    {{ end }}
+    
+    <span class="pagination-info">
+        Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
+    </span>
+    
+    {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" class="pagination-next">Next →</a>
+    {{ end }}
+</nav>
+{{ end }}
 {{ end }}

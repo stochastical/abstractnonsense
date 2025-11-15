@@ -1,9 +1,8 @@
 {{ define "main" }}
-<section>
-    <article>
-        <h1>
-            <time datetime="{{ .Date }}">{{ .Date.Format "2006.01.02" }}</time>{{ .Title }}
-        </h1>
+<article>
+    <header>
+        <time datetime="{{ .Date }}">{{ .Date.Format "2006.01.02" }}</time>
+        <h1>{{ .Title }}</h1>
         
         <!-- Add tags display -->
         {{ if .Params.tags }}
@@ -13,8 +12,8 @@
             {{ end }}
         </div>
         {{ end }}
-        
-        <div>{{ .Content }}</div>
-    </article>
-</section>
+    </header>
+    
+    {{ .Content }}
+</article>
 {{ end }}

@@ -1,17 +1,25 @@
 {{ define "main" }}
-<section id="tags">
-    <h1>Posts tagged with "{{ .Title }}"</h1>
-    
+<h1>Posts tagged with "{{ .Title }}"</h1>
+
+<ul class="blog-list">
     {{ range .Pages }}
-    <article>
-        <h2>
-            <time datetime="{{ .Date }}">{{ .Date.Format "2006.01.02" }}</time>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h2>
-        <p>
-            {{ .Summary }}
-        </p>
-    </article>
+    <li class="blog-item">
+        <div class="blog-meta">
+            <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
+        </div>
+        
+        <div class="blog-content">
+            <h2 class="blog-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+            
+            {{ if .Summary }}
+            <div class="blog-description">
+                <p>{{ .Summary }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </li>
     {{ end }}
-</section>
+</ul>
 {{ end }}
