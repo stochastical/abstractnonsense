@@ -1,0 +1,4 @@
+{{ range .Page.Resources.Match "**.html" }}
+  {{ $publishPath := urls.JoinPath $.Page.RelPermalink .Name }}
+  {{ (.Content | resources.FromString $publishPath).Publish }}
+{{ end }}
