@@ -52,13 +52,13 @@ def validate_luhn_checkdigit(number: int) -> bool:
     return luhn_sum % 10 == 0
 ```
 
-The “*Luhn double*” function \(\ell: \texttt{[0-9]} \to \texttt{[0-9]}\) is defined as follows:
+The “*Luhn double*” function $\ell: \texttt{[0-9]} \to \texttt{[0-9]}$ is defined as follows:
 
 $$
 \ell(d) = \begin{cases} 2d & 2d < 10 \\ 2d - 9 & 2d \ge 10 \end{cases}
 $$
 
-where \(\texttt{[0-9]}\) is a shorthand for the set of integers \(\{0, 1, \dots, 9\}\).
+where $\texttt{[0-9]}$ is a shorthand for the set of integers $\{0, 1, \dots, 9\}$.
 
 In Python this is equivalent to:
 
@@ -79,7 +79,7 @@ def luhn_double(d: int) -> int:
  (9, 9)]
 ```
 
-Notice that the reason we guard against erroneous transpositions with the “Luhn doubling” function is that it’s just a *permutation* function on the digits \(\{0, \dots, 9\}\). Meaning two distinct digit inputs are guaranteed to map to distinct outputs, and thus contribute to the rolling sum differently, mutating the checkdigit.
+Notice that the reason we guard against erroneous transpositions with the “Luhn doubling” function is that it’s just a *permutation* function on the digits $\{0, \dots, 9\}$. Meaning two distinct digit inputs are guaranteed to map to distinct outputs, and thus contribute to the rolling sum differently, mutating the checkdigit.
 
 Please note that whilst DFAs are defined on alphabets and *strings*, we're defining the implementation here to accept an *integer*. That's ok, we'll be a bit informal and treat an integer as a digit-string. You may notice this ignores left-padding with zeroes (for instance, `02` is not a defined decimal literal in Python) or degenerate cases like empty strings.
 
@@ -97,15 +97,15 @@ But if that's not enough for you: the [powers that be](https://en.wikipedia.org/
 
 ## Working towards a solution
 
-We can make the trivial observation that, as per the spec, payment card numbers have a maximum length. Since all *finite languages* are *regular*, that means it's possible to simply enumerate all possible valid card numbers and union them together with `|` into a mammoth regex. For those tempted to try, it’s worth appreciating the scale of such an endeavour. If we assume a card number has 16 digits, then there's \(10^{15}\) sequences that have a valid checksum at the end![2](fn "We're going to ignore leading zeroes or the prefix being one of a small set of possible IINs.").
+We can make the trivial observation that, as per the spec, payment card numbers have a maximum length. Since all *finite languages* are *regular*, that means it's possible to simply enumerate all possible valid card numbers and union them together with `|` into a mammoth regex. For those tempted to try, it’s worth appreciating the scale of such an endeavour. If we assume a card number has 16 digits, then there's $10^{15}$ sequences that have a valid checksum at the end![2](fn "We're going to ignore leading zeroes or the prefix being one of a small set of possible IINs.").
 
 But the more general question is the one that kept me up at night:
 
-> Does there exist a DFA that recognises the language \(L\) of numbers written in base \(10\) that satisfy the Luhn checkdigit algorithm?
+> Does there exist a DFA that recognises the language $L$ of numbers written in base $10$ that satisfy the Luhn checkdigit algorithm?
 
 Note that this language is infinite, since we do not restrict the length of the numbers. If such a DFA exists, then the language is regular (by Kleene's theorem![3](fn "I propose we rename this to `Kl(e|n)*'s` theorem.")), and hence there *must* be a regular expression that matches all words![4](fn "Note for the programmer: in keeping with the parlance of calling these sets *languages*, elements of a language are often called *words* - this is interchangeable with *strings*.") in the language.
 
-Now it's been a few years since I've touched DFAs or language theory, and at first, I didn't think this problem was solvable. I didn't think too hard about it until I stumbled across the excellent [Arithmancia Automatorum](https://iagoleal.com/posts/automata-divisibility/) which presents *"A Painfully Explicit Construction of The Minimal DFA for Divisibility"*. Understanding how to construct the transition function for a DFA that recognises the language of numbers written in base \(b\) that are divisible by \(m\) gave me hope that there existed a similar transition function to represent the Luhn algorithm as a DFA.
+Now it's been a few years since I've touched DFAs or language theory, and at first, I didn't think this problem was solvable. I didn't think too hard about it until I stumbled across the excellent [Arithmancia Automatorum](https://iagoleal.com/posts/automata-divisibility/) which presents *"A Painfully Explicit Construction of The Minimal DFA for Divisibility"*. Understanding how to construct the transition function for a DFA that recognises the language of numbers written in base $b$ that are divisible by $m$ gave me hope that there existed a similar transition function to represent the Luhn algorithm as a DFA.
 
 Interestingly, Luhn invented a *mechanical* device![5](fn "The original source of Luhn's algorithm is in a patent (*US patent 2950048A*), which has fortunately been scanned and made accessible as a [PDF via Google Patents](https://patentimages.storage.googleapis.com/ec/2a/f7/b9af046ed26128/US2950048.pdf).") to compute the check digit. If we can do it mechanically, surely this is begging to be implemented as a Discrete Finite Automaton!
 
@@ -120,9 +120,9 @@ The second observation is that modular arithmetic distributes nicely with additi
 
 Let's formalise the above now. The following will get a bit mathematically involved - feel free to skip ahead to the final construction and accompanying code if you'd prefer.
 
-Let the alphabet \(\Sigma = \texttt{[0-9]}\) be the set of base-10 digits and the state set \(\mathcal{S} = (E, O) = \texttt{[0-9]} \times \texttt{[0-9]}\) represent the partial Luhn-sum modulo 10 for even and odd-length strings, respectively.
+Let the alphabet $\Sigma = \texttt{[0-9]}$ be the set of base-10 digits and the state set $\mathcal{S} = (E, O) = \texttt{[0-9]} \times \texttt{[0-9]}$ represent the partial Luhn-sum modulo 10 for even and odd-length strings, respectively.
 
-We start our DFA from \(s_0 = (0, 0)\) and accept any state \(\{(E, O) \in \mathcal{S} \mid E = 0 \}\). To track our alternating partial Luhn sum as we alternate between string-length parities, we define the transition function \(\delta: \mathcal{S}\times\Sigma \to\mathcal{S}\) from a current state and new digit \(d\) to the next state as follows:
+We start our DFA from $s_0 = (0, 0)$ and accept any state $\{(E, O) \in \mathcal{S} \mid E = 0 \}$. To track our alternating partial Luhn sum as we alternate between string-length parities, we define the transition function $\delta: \mathcal{S}\times\Sigma \to\mathcal{S}$ from a current state and new digit $d$ to the next state as follows:
 
 $$
 \boxed{
@@ -130,7 +130,7 @@ $$
 }
 $$
 
-where \(\ell\) is the *Luhn double* function as defined above. Note that the \(E\) and \(O\) partial sums swap between the pair in each transition!
+where $\ell$ is the *Luhn double* function as defined above. Note that the $E$ and $O$ partial sums swap between the pair in each transition!
 
 To intuit why this works, notice that the transitions are computed *ahead-of-time*. We are defining the computation, and baking it into the DFA as a sort of computational graph. I think this is a wonderfully powerful notion - it demonstrates that a blind automaton![7](fn "or a very busy beaver") can perform non-trivial (but not arbitrary! ![8](fn "Dam(n), Busy Beavers can't do *everything*")) computations by simply following a rulebook of "if in state `X` and next symbol is `Y` then go to state `Z`". After all, isn't that exactly what a computer is? There's something profound about seeing the correspondence between mathematics and computer science at such a deep level.
 

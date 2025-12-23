@@ -14,17 +14,17 @@ Oh boy.
 
 First up, the new apartment already had an Optus Ultra Wi-Fi Gen 2 modem-router along with a terrible Optus NBN plan. Since I'm lucky enough to get a 50% discount on [More NBN](https://www.more.com.au) through work, the first step was to switch ISPs.
 
-Small problem: Optus gives you the modem for "free"... if you stay with them for 36 months. Unfortunately for them, I had _no_ intention of staying locked-in for another 24 months. So now we owed Optus ~$200 for the privilege of keeping a terrible modem.
+Small problem: Optus gives you the modem for "free"... if you stay with them for 36 months. Unfortunately for them, I had _no_ intention of staying locked-in for another 24 months. So now we owed Optus ~\$200 for the privilege of keeping a terrible modem.
 
 A few escalations, an increasingly tired me, multiple mentions of the [Telecommunications Industry Ombudsman](https://www.tio.com.au) ![](fn "ISPs really do hate this one simple trick"), and the fee was waived. They even let us keep the modem. Success?
 
 Not a chance.
 
-It turns out More NBN is just a reseller of Vocus NBN, which uses [PPoE](https://en.wikipedia.org/wiki/Point-to-Point_Protocol_over_Ethernet) authentication. Unfortunately for me, PPoE isn't supported by the $306 OPTUS Ultra Wi-Fi Gen 2™️ modem-router.
+It turns out More NBN is just a reseller of Vocus NBN, which uses [PPoE](https://en.wikipedia.org/wiki/Point-to-Point_Protocol_over_Ethernet) authentication. Unfortunately for me, PPoE isn't supported by the \$306 OPTUS Ultra Wi-Fi Gen 2™️ modem-router.
 
 Yay.
 
-One quick Facebook Marketplace sale later, and I was the proud owner of a Telstra Smart Modem Gen 2 for $40![](fn "I actually like these modems - they've got a little 4G chip that activates if the NBN goes down. Amazingly, this also works for free even if you don't have an active Telstra NBN plan!"). Phew. Long day, but problem solved, right?
+One quick Facebook Marketplace sale later, and I was the proud owner of a Telstra Smart Modem Gen 2 for \$40![](fn "I actually like these modems - they've got a little 4G chip that activates if the NBN goes down. Amazingly, this also works for free even if you don't have an active Telstra NBN plan!"). Phew. Long day, but problem solved, right?
 
 Well, almost.
 

@@ -10,7 +10,7 @@ tag: ['LLM', 'paper']
 
 As of late there's been a [lot of thinking](https://www.seangoedecke.com/illusion-of-thinking/) engendered by Apple's [The Illusion of Thinking](https://machinelearning.apple.com/research/illusion-of-thinking) paper.
 
-I propose we get ahead of this sequence of paper-rebuttal-paper and define the [iterated function](https://en.wikipedia.org/wiki/Iterated_function) sequence \( \{  n \ge 1:  \textsf{(The Illusion of)}^{n} \textsf{(Thinking)} \} \). Whether this series of thoughts will converge to any [fixed point](https://en.wikipedia.org/wiki/Fixed_point_(mathematics)) is left as a conjecture for the reader.
+I propose we get ahead of this sequence of paper-rebuttal-paper and define the [iterated function](https://en.wikipedia.org/wiki/Iterated_function) sequence $\{  n \ge 1:  \textsf{(The Illusion of)}^{n} \textsf{(Thinking)} \}$. Whether this series of thoughts will converge to any [fixed point](https://en.wikipedia.org/wiki/Fixed_point_(mathematics)) is left as a conjecture for the reader.
 
 A [new post](https://www.seangoedecke.com/real-reasoning/) by [Sean Godecke](https://www.seangoedecke.com), commenting on a recent publication [_Is chain-of-thought AI reasoning a mirage?_](https://arxiv.org/pdf/2508.01191) includes this incisive critique:
 

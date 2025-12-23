@@ -20,7 +20,7 @@ $$
 \end{cases}
 $$
 
-and with a couple of basic reduction operations ([\(\alpha\)-reduction](https://en.wikipedia.org/wiki/Lambda_calculus#α-conversion) and [\(\beta\)-reduction](https://en.wikipedia.org/wiki/Lambda_calculus#β-reduction)) construct the [ternary conditional](https://en.wikipedia.org/wiki/Ternary_conditional_operator):
+and with a couple of basic reduction operations ([$\alpha$-reduction](https://en.wikipedia.org/wiki/Lambda_calculus#α-conversion) and [$\beta$-reduction](https://en.wikipedia.org/wiki/Lambda_calculus#β-reduction)) construct the [ternary conditional](https://en.wikipedia.org/wiki/Ternary_conditional_operator):
 
 $$
 \textsf{if-then-else} = \lambda a.\lambda b.\lambda c.((a)b)c

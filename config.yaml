@@ -36,8 +36,8 @@ markup:
           - - $$
             - $$
           inline:
-          - - \(
-            - \)
+          - - $
+            - $
         enable: true
       definitionList: true
       extras:
