@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Gershgorin Circle Theorem</title>
+    <style>
+        /* Light mode colors - matching blog's design tokens */
+        :root {
+            --color-fg: #121212;
+            --color-bg: #ffffff;
+            --color-accent: #2749c9;
+            --color-accent-rgb: 39, 73, 201;
+            --svg-axis: #121212;
+            --svg-label: #121212;
+            --svg-circle: #2749c9;
+            --svg-eigval: #2749c9;
+            --svg-dot: #f59e42;
+            --circle-0: #2749c9;
+            --circle-1: #f59e42;
+            --circle-2: #27c971;
+            --circle-3: #c92749;
+            --circle-4: #9027c9;
+            --circle-5: #c9c927;
+            --circle-6: #27c9c9;
+            --circle-7: #c92790;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-fg: #e6eaf0;
+                --color-bg: #23272e;
+                --color-accent: #7bb0ff;
+                --color-accent-rgb: 123, 176, 255;
+                --svg-axis: #e6eaf0;
+                --svg-label: #e6eaf0;
+                --svg-circle: #7bb0ff;
+                --svg-eigval: #ffd166;
+                --svg-dot: #ffb347;
+                --circle-0: #7bb0ff;
+                --circle-1: #ffb347;
+                --circle-2: #5edc7a;
+                --circle-3: #ff6b8a;
+                --circle-4: #b87edc;
+                --circle-5: #ffd166;
+                --circle-6: #5edce3;
+                --circle-7: #ff6bc8;
+            }
+        }
+
+        body {
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-block-start: 0;
+            margin-block-end: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-fg);
+            letter-spacing: -0.01em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--color-fg);
+            opacity: 0.85;
+        }
+
+        label code {
+            font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+            font-size: 0.88em;
+            background: rgba(var(--color-accent-rgb), 0.12);
+            color: var(--color-fg);
+            padding: 0.15em 0.35em;
+            border-radius: 3px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 0.625rem;
+            margin-block-end: 1rem;
+        }
+
+        #matrixInput {
+            flex: 1;
+            padding: 0.65em 0.85em;
+            font-size: 0.95rem;
+            font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+            border: 1px solid rgba(var(--color-accent-rgb), 0.25);
+            border-radius: 6px;
+            transition: border 0.2s, background 0.2s;
+            background: rgba(var(--color-accent-rgb), 0.03);
+            color: var(--color-fg);
+            min-width: 0;
+        }
+
+        #matrixInput:focus {
+            border-color: var(--color-accent);
+            outline: none;
+            background: rgba(var(--color-accent-rgb), 0.06);
+        }
+
+        #computeBtn {
+            padding: 0.65em 1.1em;
+            font-size: 0.95rem;
+            font-weight: 500;
+            background: var(--color-accent);
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            white-space: nowrap;
+        }
+
+        #computeBtn:is(:hover, :focus) {
+            opacity: 0.85;
+        }
+
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-block-start: 1.25rem;
+            background: rgba(var(--color-accent-rgb), 0.04);
+            border-radius: 8px;
+            padding: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        svg {
+            border: 1px solid rgba(var(--color-accent-rgb), 0.15);
+            background: var(--color-bg);
+            border-radius: 6px;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-width: 500px;
+            display: block;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: var(--color-bg);
+            color: var(--color-fg);
+            padding: 0.5em 0.75em;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.15s ease;
+            border: 1px solid rgba(var(--color-accent-rgb), 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: min(300px, 90vw);
+            word-wrap: break-word;
+        }
+
+        .tooltip.visible {
+            opacity: 1;
+        }
+
+        @media (max-width: 500px) {
+            .input-row {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            #matrixInput,
+            #computeBtn {
+                font-size: 0.92rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .svg-container {
+                padding: 0.5rem;
+            }
+
+            svg {
+                max-width: 100%;
+                max-height: 80vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gershgorin Circle Theorem</h1>
+        <label for="matrixInput">
+            Enter a square matrix with complex values in comma-separated, row-major order. Hover or click on points to see coordinates.<br>
+            Examples: <code>2+i,1,3,4,5-i,6,5-2i,8,9-i</code>; <code>1,-1,1,-1,1,-1,-1,1,1,1,-1,-1,1,1,1,1</code>
+        </label>
+        <div class="input-row">
+            <input type="text" id="matrixInput" value="2,-1,0,1,1,0,0,0,5" autocomplete="off" />
+            <button id="computeBtn">Compute</button>
+        </div>
+        <div class="svg-container">
+            <svg id="svg" width="400" height="400" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet"></svg>
+        </div>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+    <script type="module">
+        import init, { Complex, Matrix } from "./pkg/gershgorin_circle_theorem.js";
+        console.info("Imported bindings from ./pkg/gershgorin_circle_theorem.js");
+
+        // Parse a string representation of a complex number
+        // Reference: https://github.com/rawify/Complex.js/blob/fe13869913d52939ba5fc23e39fb4b17835e47a9/src/complex.js#L179
+        const parseComplex = s => {
+            const z = { re: 0, im: 0 };
+            const tokens = s.replaceAll('_', '').match(/\d+\.?\d*e[+-]?\d+|\d+\.?\d*|\.\d+|./g);
+            let plus = 1, minus = 0;
+            if (!tokens) throw new Error(`Error parsing complex number format: ${s}`);
+            for (let i = 0; i < tokens.length; i++) {
+                const c = tokens[i];
+                if (/\s/.test(c)) continue;
+                if (c === '+') plus++;
+                else if (c === '-') minus++;
+                else if (c === 'i' || c === 'I') {
+                    if (plus + minus === 0) throw new Error(`Error parsing complex number format: ${s}`);
+                    if (tokens[i + 1] && !Number.isNaN(+tokens[i + 1])) {
+                        z.im += parseFloat((minus % 2 ? '-' : '') + tokens[++i]);
+                    } else {
+                        z.im += parseFloat((minus % 2 ? '-' : '') + '1');
+                    }
+                    plus = minus = 0;
+                } else {
+                    if (plus + minus === 0 || Number.isNaN(+c)) throw new Error(`Error parsing complex number format: ${s}`);
+                    if (tokens[i + 1] === 'i' || tokens[i + 1] === 'I') {
+                        z.im += parseFloat((minus % 2 ? '-' : '') + c);
+                        i++;
+                    } else {
+                        z.re += parseFloat((minus % 2 ? '-' : '') + c);
+                    }
+                    plus = minus = 0;
+                }
+            }
+            if (plus + minus > 0) throw new Error(`Error parsing complex number format: ${s}`);
+            return new Complex(z.re, z.im);
+        };
+
+        init().then(() => {
+            console.info("WASM initialised");
+            const svg = document.getElementById('svg');
+            const input = document.getElementById('matrixInput');
+            const btn = document.getElementById('computeBtn');
+            const tooltip = document.getElementById('tooltip');
+
+            // SVG dimensions from viewBox
+            const SVG_SIZE = 400;
+
+            // Helper function to create SVG elements
+            const createSVG = (type, attrs = {}) => {
+                const el = document.createElementNS('http://www.w3.org/2000/svg', type);
+                Object.entries(attrs).forEach(([key, value]) => el.setAttribute(key, value));
+                return el;
+            };
+
+            const computeVisualization = () => {
+                try {
+                    const values = input.value.split(',').map(parseComplex);
+                    const order = Math.sqrt(values.length);
+                    if (order % 1 !== 0) {
+                        alert('Invalid matrix size. Please enter a perfect square number of values.');
+                        return;
+                    }
+
+                    const matrix = new Matrix(order, values);
+                    const circles = matrix.gershgorin_circles();
+                    const eigvals = matrix.qr_algorithm(10n, 1e-8);
+                    console.info('Input matrix', matrix);
+                    console.info('Gershgorin Circles', circles)
+                    console.info('Computed eigenvalues', eigvals);
+
+                    svg.innerHTML = '';
+
+                    let min_re = Infinity, max_re = -Infinity, min_im = Infinity, max_im = -Infinity;
+                    circles.forEach(({ centre: c, radius: r }) => {
+                        min_re = Math.min(min_re, c.re - r);
+                        max_re = Math.max(max_re, c.re + r);
+                        min_im = Math.min(min_im, c.im - r);
+                        max_im = Math.max(max_im, c.im + r);
+                    });
+                    const range_re = max_re - min_re || 1;
+                    const range_im = max_im - min_im || 1;
+                    const max_range = Math.max(range_re, range_im);
+                    const scale = 380 / max_range;
+                    const centre_re = (min_re + max_re) / 2;
+                    const centre_im = (min_im + max_im) / 2;
+                    const offset_x = 200 - centre_re * scale;
+                    const offset_y = 200 + centre_im * scale;
+
+                    // Compute SVG coordinates of the complex origin (0 + 0i)
+                    const originX = offset_x; // 0 * scale + offset_x
+                    const originY = offset_y; // -0 * scale + offset_y = offset_y
+
+                    // Draw axes so they intersect at the complex origin
+                    svg.appendChild(createSVG('line', {
+                        x1: 0,
+                        y1: originY,
+                        x2: SVG_SIZE,
+                        y2: originY,
+                        stroke: 'var(--svg-axis)',
+                        'stroke-width': '1.5',
+                        opacity: '0.3'
+                    }));
+
+                    svg.appendChild(createSVG('line', {
+                        x1: originX,
+                        y1: 0,
+                        x2: originX,
+                        y2: SVG_SIZE,
+                        stroke: 'var(--svg-axis)',
+                        'stroke-width': '1.5',
+                        opacity: '0.3'
+                    }));
+
+                    // Axis labels placed relative to the origin (clamped inside viewBox)
+                    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+                    const labelMargin = 15;
+                    const labelPadding = 10;
+                    const realLabelY = clamp(originY + labelMargin, 16, SVG_SIZE - 16);
+                    const imagLabelX = clamp(originX + labelMargin, labelPadding, SVG_SIZE - labelPadding);
+
+                    const realLabel = createSVG('text', {
+                        x: SVG_SIZE - labelPadding,
+                        y: realLabelY,
+                        fill: 'var(--svg-label)',
+                        'font-size': '16',
+                        'text-anchor': 'end'
+                    });
+                    realLabel.textContent = 'Re';
+                    svg.appendChild(realLabel);
+
+                    const imagLabel = createSVG('text', {
+                        x: imagLabelX,
+                        y: labelMargin,
+                        fill: 'var(--svg-label)',
+                        'font-size': '16',
+                        'text-anchor': 'start'
+                    });
+                    imagLabel.textContent = 'Im';
+                    svg.appendChild(imagLabel);
+
+                    // Helper to format number with sign (like printf %+)
+                    const withSign = n => (n >= 0 ? '+' : '') + n;
+
+                    // Tooltip helper functions
+                    const showTooltip = (element, event) => {
+                        const text = element.getAttribute('aria-label') || '';
+                        tooltip.textContent = text;
+                        tooltip.classList.add('visible');
+
+                        // Handle both mouse and touch events
+                        const clientX = event.clientX ?? event.touches?.[0]?.clientX ?? 0;
+                        const clientY = event.clientY ?? event.touches?.[0]?.clientY ?? 0;
+                        const offset = 10;
+                        let left = clientX + offset;
+                        let top = clientY + offset;
+
+                        requestAnimationFrame(() => {
+                            const rect = tooltip.getBoundingClientRect();
+                            const viewportWidth = window.innerWidth;
+                            const viewportHeight = window.innerHeight;
+
+                            // Adjust horizontal position if tooltip would overflow right edge
+                            if (left + rect.width > viewportWidth - offset) {
+                                left = clientX - rect.width - offset;
+                            }
+
+                            // Adjust vertical position if tooltip would overflow bottom edge
+                            if (top + rect.height > viewportHeight - offset) {
+                                top = clientY - rect.height - offset;
+                            }
+
+                            // Ensure tooltip doesn't overflow left edge
+                            if (left < offset) {
+                                left = offset;
+                            }
+
+                            // Ensure tooltip doesn't overflow top edge
+                            if (top < offset) {
+                                top = offset;
+                            }
+
+                            tooltip.style.left = `${left}px`;
+                            tooltip.style.top = `${top}px`;
+                        });
+                    };
+
+                    const hideTooltip = () => {
+                        tooltip.classList.remove('visible');
+                    };
+
+                    // Helper to attach tooltip listeners to an element
+                    const makeInteractive = (element) => {
+                        element.style.cursor = 'pointer';
+                        element.addEventListener('mouseenter', e => showTooltip(element, e));
+                        element.addEventListener('mousemove', e => showTooltip(element, e));
+                        element.addEventListener('mouseleave', hideTooltip);
+                        element.addEventListener('touchstart', e => { e.preventDefault(); showTooltip(element, e); }, { passive: false });
+                        element.addEventListener('touchend', hideTooltip);
+                    };
+
+                    // Color palette for circles (uses CSS variables that adapt to dark mode)
+                    const circleColors = [
+                        'var(--circle-0)',
+                        'var(--circle-1)',
+                        'var(--circle-2)',
+                        'var(--circle-3)',
+                        'var(--circle-4)',
+                        'var(--circle-5)',
+                        'var(--circle-6)',
+                        'var(--circle-7)',
+                    ];
+
+                    // Eigenvalues
+                    eigvals.forEach(ev => {
+                        const cx = ev.re * scale + offset_x;
+                        const cy = -ev.im * scale + offset_y;
+                        const tooltipText = `Eigenvalue: ${ev.re}${withSign(ev.im)}i`;
+                        const t = createSVG('text', {
+                            x: cx,
+                            y: cy,
+                            fill: 'var(--svg-eigval)',
+                            'font-family': 'ui-monospace, "SF Mono", Menlo, Monaco, monospace',
+                            'font-size': '24',
+                            'text-anchor': 'middle',
+                            'dominant-baseline': 'middle',
+                            'aria-label': tooltipText,
+                            role: 'img'
+                        });
+                        t.textContent = 'λ';
+                        makeInteractive(t);
+                        svg.appendChild(t);
+                    });
+
+                    // Circles and centres
+                    circles.forEach(({ centre, radius }, index) => {
+                        const cx = centre.re * scale + offset_x;
+                        const cy = -centre.im * scale + offset_y;
+                        const r = radius * scale;
+                        const color = circleColors[index % circleColors.length];
+
+                        const circ = createSVG('circle', {
+                            cx,
+                            cy,
+                            r,
+                            fill: color,
+                            opacity: '0.15'
+                        });
+                        circ.style.pointerEvents = 'none';
+                        svg.appendChild(circ);
+
+                        const tooltipText = `Circle ${index + 1}: (centre: ${centre.re}${withSign(centre.im)}i, radius: ${radius})`;
+                        const dot = createSVG('circle', {
+                            cx,
+                            cy,
+                            r: 4,
+                            fill: color,
+                            'aria-label': tooltipText,
+                            role: 'img'
+                        });
+                        makeInteractive(dot);
+                        svg.appendChild(dot);
+                    });
+                } catch (error) {
+                    console.error('Error computing visualization:', error);
+                    alert(`Error: ${error.message || 'Failed to compute visualization'}`);
+                }
+            };
+
+            btn.addEventListener('click', computeVisualization);
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    computeVisualization();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
