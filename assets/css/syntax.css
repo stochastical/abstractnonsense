@@ -105,7 +105,7 @@
     --name-other: inherit;
     --name-tag: rgb(224, 108, 117);
     --name-builtin: rgb(210, 168, 255);
-    --name-builtin-pseudo: #6639ba;
+    --name-builtin-pseudo: #f0883e;
     --name-variable: #79c0ff;
     --name-variable-class: #79c0ff;
     --name-variable-global: #79c0ff;
@@ -342,11 +342,116 @@ pre {
   position: relative;
 }
 
-/* Highlight code block line on hover */
+/* ===== COLLAPSIBLE CODE BLOCKS ===== */
+.code-details {
+  margin: 1.5em 0;
+}
+
+.code-summary {
+  background: var(--background);
+  color: var(--code-text);
+  padding: 0.6em 0.9em;
+  font-size: 0.85em;
+  font-family: ui-monospace, SF Mono, Menlo, Monaco, Andale Mono, monospace;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  border-radius: 8px 8px 0 0;
+}
+
+.code-summary:hover {
+  opacity: 1;
+}
+
+/* Hide default disclosure markers */
+.code-summary::-webkit-details-marker,
+.code-summary::marker {
+  display: none;
+}
+
+/* Custom disclosure triangle */
+.code-summary::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1;
+  transition: transform 0.2s ease;
+  color: var(--code-text);
+  flex-shrink: 0;
+}
+
+.code-details[open] .code-summary::before {
+  transform: rotate(90deg);
+}
+
+.code-summary-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* File icon only for custom filenames */
+.code-summary[data-has-filename] .code-summary-text::before {
+  content: "📄";
+  font-size: 0.9em;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* When closed, round all corners */
+.code-details:not([open]) .code-summary {
+  border-radius: 8px;
+  border-bottom: none;
+}
+
+/* Strip .highlight styling inside collapsible blocks */
+.code-details .highlight {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.code-details .highlight pre {
+  margin: 0;
+  padding: 0.6em 0.9em;
+  border-radius: 0 0 8px 8px;
+  background-color: var(--background);
+}
+
+/* Copy button positioning */
+.code-details .copy-button {
+  top: 0.5em;
+  right: 0.5em;
+}
+
+.code-details:not([open]) .copy-button {
+  display: none;
+}
+
+.code-details[open] .highlight:hover .copy-button {
+  opacity: 1;
+}
+
+/* Line hover effect with theme-aware colors */
 .chroma .line {
   transition: background 0.18s;
   border-radius: 0.25em;
+  padding: 0 0.25em;
+  margin: 0 -0.25em;
 }
+
 .chroma .line:hover {
   background: rgba(200, 220, 255, 0.35);
 }

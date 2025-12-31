@@ -1,0 +1,59 @@
+{{- $source := .Attributes.source -}}
+{{- $id := .Attributes.id -}}
+{{- $filename := .Attributes.filename -}}
+{{- $collapsed := .Attributes.collapsed | default false -}}
+{{- $content := .Inner -}}
+
+{{- /* Extract snippet from source file if source and id are provided */ -}}
+{{- if and $source $id -}}
+  {{- with .Page.Resources.GetMatch $source -}}
+    {{- $lines := split .Content "\n" -}}
+    {{- $tag := printf ":%s" $id -}}
+    {{- $start := -1 -}}
+    {{- $end := -1 -}}
+    {{- $n := 0 -}}
+
+    {{- range $i, $line := $lines -}}
+      {{- if hasSuffix $line $tag -}}
+        {{- if eq $n 0 -}}
+          {{- $start = $i -}}
+        {{- else -}}
+          {{- $end = $i -}}
+        {{- end -}}
+        {{- $n = add $n 1 -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if or (lt $start 0) (lt $end 0) -}}
+      {{- errorf "Snippet with id '%s' requires two :%s tags in %s, found %d" $id $id $source $n -}}
+    {{- end -}}
+
+    {{- $content = delimit (first (sub $end $start 1) (after (add $start 1) $lines)) "\n" -}}
+    {{- $content = trim $content "\n\r" -}}
+  {{- else -}}
+    {{- errorf "Source file '%s' not found in page resources" $source -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Render the collapsible code block */ -}}
+<details class="code-details"{{- if not $collapsed }} open{{- end }}>
+  {{- if $filename -}}
+  <summary class="code-summary" data-has-filename>
+    <span class="code-summary-text">{{ $filename | markdownify }}</span>
+  </summary>
+  {{- else -}}
+  <summary class="code-summary">
+    <span class="code-summary-text">{{ .Type }}</span>
+  </summary>
+  {{- end -}}
+  {{- if and $source $id -}}
+    {{- /* For extracted snippets, create a custom context for HighlightCodeBlock */ -}}
+    {{- $opts := .Attributes.options | default "" -}}
+    {{- $result := transform.Highlight $content .Type $opts -}}
+    {{- $result -}}
+  {{- else -}}
+    {{- /* Use HighlightCodeBlock for regular inline code blocks */ -}}
+    {{- $result := transform.HighlightCodeBlock . -}}
+    {{- $result.Wrapped -}}
+  {{- end -}}
+</details>

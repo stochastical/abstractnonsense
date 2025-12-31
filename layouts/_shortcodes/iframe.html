@@ -1,30 +1,29 @@
 {{/*
 Shortcode: iframe.html
 Usage:
-  {{< iframe src="wasm/index.html" width="420" height="480" title="My Widget" caption="A custom caption" style="border:2px solid #333;" >}}
+  {{< iframe src="wasm/index.html" width="420" height="480" title="My Widget" style="border:2px solid #333;" >}}
 Params:
   src     (required): resource path in page bundle
-  width   (optional): iframe width (default: 420)
+  width   (optional): iframe width (default: 100%)
   height  (optional): iframe height (default: 480)
   title   (optional): iframe title (default: "Embedded Resource")
-  caption (optional): caption below iframe (default: none)
   style   (optional): extra CSS for iframe (default: sensible border/shadow)
 */}}
 {{ $src := .Get "src" }}
 {{ $width := .Get "width" | default "100%" }}
-{{ $height := .Get "height" | default "800" }}
-{{ $title := .Get "title" | default "Embedded Resource" }}
-{{ $caption := .Get "caption" }}
-{{ $style := .Get "style" | default "border:none !important; outline:none !important; box-shadow:none !important; background:transparent; max-width:900px; min-width:320px; margin:auto; display:block;" }}
+{{ $height := .Get "height" | default "auto" }}
+{{ $title := .Get "title" | default "Embedded Component" }}
+{{ $style := .Get "style" | default "" }}
 <div class="iframe-embed">
-  <iframe src="{{ $src }}" width="{{ $width }}" height="{{ $height }}" style="{{ $style }}" loading="lazy" title="{{ $title }}" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-  {{ with $caption }}
-    <div class="iframe-caption">{{ . }}</div>
-  {{ end }}
-  <div class="iframe-link-row">
-    <a href="{{ $src }}" target="_blank" rel="noopener noreferrer" class="iframe-ext-link" aria-label="Open component in new tab">
-      <span class="iframe-ext-icon" aria-hidden="true">⚙️</span>
-      <span class="iframe-ext-text">Open component in new tab</span>
-    </a>
-  </div>
+  <iframe
+    src="{{ $src }}"
+    width="{{ $width }}"
+    height="{{ $height }}"
+    style="{{ $style }}"
+    loading="eager"
+    title="{{ $title }}"
+    frameborder="0"
+    scrolling="no"
+    >
+  </iframe>
 </div>
