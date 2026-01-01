@@ -298,7 +298,7 @@ To compile our Rust source code into WebAssembly, I used [`wasm-pack`](https://g
 
 ```shell
 $ cargo new --lib gershgorin-circle-theorem
-$ wasm-pack build --target web
+$ wasm-pack build --target web --no-typescript --no-pack
 ```
 
 After a bit of renaming and tweaking, the directory tree looks like this:
@@ -312,17 +312,14 @@ content/blog/eigenvalue-solver-in-rust-for-webassembly
     ├── component.html
     ├── pkg
     │   ├── gershgorin_circle_theorem_bg.wasm
-    │   ├── gershgorin_circle_theorem_bg.wasm.d.ts
-    │   ├── gershgorin_circle_theorem.d.ts
-    │   ├── gershgorin_circle_theorem.js
-    │   └── package.json
+    │   └── gershgorin_circle_theorem.js
     ├── src
     │   ├── lib.rs
     │   └── tests.rs
     └── target
 ```
 
-The `index.md` file contains this blog post and is compiled into `index.html` by Hugo. The `component.html` is embedded into the generated `index.html` as an `iframe`. The `src` directory stores our Rust code, and `pkg` contains both the compiled `.wasm` and auto-generated JS bindings artifacts![*](fn "I haven't published the `tests.rs` file or some of the unnecessary TypeScript and `npm` files."). If you're interested, open the iframe above in a new tab and poke around the paths to check out the source files (or view the blog repository on GitHub).
+The `index.md` file contains this blog post and is compiled into `index.html` by Hugo. The `component.html` is embedded into the generated `index.html` as an `iframe`. The `src` directory stores our Rust code, and `pkg` contains both the compiled `.wasm` and auto-generated JS bindings artifacts![*](fn "I haven't published the `tests.rs` file."). If you're interested, open the iframe above in a new tab and poke around the paths to check out the source files (or view the blog repository on GitHub).
 
 To view the interactive component in your browser, start a web server to serve the files in the `pkg/` directory. I'm using `hugo serve` since I'm publishing it through my blog.
 
