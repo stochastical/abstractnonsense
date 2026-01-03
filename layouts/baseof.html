@@ -8,13 +8,13 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     <link rel="stylesheet" href="{{ (resources.Get "css/style.css" | minify | fingerprint).RelPermalink }}">
     <link rel="stylesheet" href="{{ (resources.Get "css/syntax.css" | minify | fingerprint).RelPermalink }}">
-
-    {{with .OutputFormats.Get "rss" }}
+    <!-- RSS feed -->
+    {{- with .OutputFormats.Get "rss" -}}
         {{- printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML -}}
     {{- end -}}
     <!-- Load MathJax if math rendering is enabled -->
     {{ if .Param "math" }}
-        {{ partialCached "math.html" . }}
+    {{ partialCached "math.html" . }}
     {{ end }}
     <!-- Enable Umami analytics -->
     {{ if hugo.IsProduction }}
@@ -41,7 +41,7 @@
         {{ block "main" . }}{{ end }}
     </main>
     <!-- Add copy-to-clipboard functionality for code blocks -->
-    <script src="{{ (resources.Get "js/copy-code.js").RelPermalink }}"></script>
+    <script src="{{ (resources.Get "js/copy-code.js" | minify | fingerprint).RelPermalink }}"></script>
 
     <!-- Add Mermaid code block rendering support -->
     {{ if .Store.Get "hasMermaid" }}
