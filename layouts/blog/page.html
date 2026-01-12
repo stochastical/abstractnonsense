@@ -3,17 +3,20 @@
     <header>
         <time datetime="{{ .Date }}">{{ .Date.Format "2006.01.02" }}</time>
         <h1>{{ .Title }}</h1>
-        
-        <!-- Add tags display -->
-        {{ if .Params.tags }}
-        <div class="post-tags">
-            {{ range .Params.tags }}
-                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-            {{ end }}
-        </div>
-        {{ end }}
     </header>
-    
+
     {{ .Content }}
+    <!-- Add tags -->
+    {{ if .Params.tags }}
+    <hr>
+    <footer>
+        <div class="post-tags">
+        {{ range .Params.tags }}
+            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-card"><span class="tag-name">{{ . }}</span></a>
+        {{ end }}
+        </div>
+    </footer>
+    {{ end }}
 </article>
+
 {{ end }}

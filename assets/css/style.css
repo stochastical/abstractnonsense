@@ -503,14 +503,6 @@ article header h1 {
     overflow-wrap: break-word;
 }
 
-article header .post-tags {
-    margin: 0;
-}
-
-article .tag {
-    font-family: system-ui, -apple-system, sans-serif;
-}
-
 /* ======= BLOG LIST ======= */
 .blog-list {
     display: grid;
@@ -574,16 +566,7 @@ ul.blog-list {
     margin-bottom: 0;
 }
 
-.blog-content .post-tags {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-sm);
-}
-
-/* Blog list on tags pages */
-ul.blog-list article {
-    font-family: system-ui, -apple-system, sans-serif;
-}
-
+/* Blog list on blog pages */
 ul.blog-list article header {
     margin-bottom: var(--space-sm);
 }
@@ -602,53 +585,6 @@ ul.blog-list article header time {
 ul.blog-list article p {
     font-size: 0.95rem;
     color: rgba(var(--color-fg-rgb), 0.85);
-}
-
-/* ======= TAGS ======= */
-.post-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
-    margin-top: var(--space-sm);
-}
-
-.tag {
-    display: inline-block;
-    background-color: rgba(var(--color-accent-rgb), 0.1);
-    color: var(--color-accent);
-    padding: 0.2em 0.8em;
-    border-radius: 30px;
-    font-size: clamp(0.8em, 0.75em + 0.1vw, 0.85em);
-    font-weight: 500;
-    opacity: 0.8;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.tag:hover {
-    background-color: var(--color-accent);
-    color: var(--color-bg);
-    text-decoration: none;
-}
-
-.tag::before {
-    content: "#";
-    margin-right: 0.05em;
-    opacity: 0.8;
-    font-size: 0.85em;
-}
-
-.tags-cloud {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-sm);
-    margin: var(--space-md) 0;
-}
-
-.tags-cloud li {
-    margin: 0;
-    list-style: none;
 }
 
 /* ======= PAGINATION ======= */
@@ -803,3 +739,145 @@ table {
   height: 700px;
   min-height: 600px;
 }
+
+/* ======= TAGS ======= */
+.blog-content .post-tags {
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+}
+
+/* Unified tag-card style (used for inline and grid tags) */
+.tag-name {
+    font-family: ui-monospace, monospace;
+    font-weight: 600;
+    color: rgba(var(--color-fg-rgb), 0.92);
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    display: block;
+    max-width: 100%;
+    font-size: 0.90rem;
+    line-height: 1.15;
+}
+
+.tag-count {
+    background: rgba(var(--color-fg-rgb), 0.04);
+    color: rgba(var(--color-fg-rgb), 0.86);
+    padding: 0.08em 0.45em;
+    border-radius: 5px;
+    font-size: 0.82em;
+    font-weight: 600;
+    align-self: center;
+}
+
+.tag-card {
+    padding: 0.24em 0.35em;
+    border-radius: 7px;
+    border: none;
+    background: rgba(var(--color-fg-rgb), 0.08);
+    text-decoration: none;
+    font-weight: 350;
+    letter-spacing: 0.01em;
+    transition: background 120ms ease, color 120ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.32rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: clamp(0.87em, 0.8em + 0.13vw, 1em);
+    opacity: 1;
+}
+
+.tag-card:hover, .tag-card:focus-visible {
+    background: rgba(var(--color-fg-rgb), 0.13);
+    color: rgba(var(--color-fg-rgb), 0.82);
+    outline: none;
+    text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .tag-card {
+        background: rgba(var(--color-fg-rgb), 0.13);
+        color: rgba(var(--color-fg-rgb), 0.68);
+        border: none;
+        border-radius: 7px;
+        opacity: 1;
+    }
+    .tag-card:hover, .tag-card:focus-visible {
+        background: rgba(var(--color-fg-rgb), 0.22);
+        color: rgba(var(--color-fg-rgb), 0.82);
+        outline: none;
+    }
+}
+
+/* When used inside the grid, make the card fill the cell */
+.tags-grid .tag-card {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 40px;
+}
+.tags-page {
+    padding-bottom: var(--space-lg);
+}
+.tags-header h1 {
+    margin: 0 0 var(--space-xs) 0;
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+    font-weight: 700;
+    font-family: Georgia, serif;
+    color: var(--color-fg);
+}
+.tags-sub {
+    margin: 0 0 var(--space-md) 0;
+    color: rgba(var(--color-fg-rgb), 0.65);
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+/* Header layout tweaks for tags page */
+.tags-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+.tags-header .tag-card {
+    margin: 0;
+    padding: 0.32em 0.6em;
+    min-height: 36px;
+}
+.tags-header h1 { margin: 0; }
+.tags-header .tags-sub {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: rgba(var(--color-fg-rgb), 0.75);
+    font-size: 0.95rem;
+}
+.tags-header .tag-card { display: inline-flex; }
+
+.tag-posts .blog-item {
+    padding: calc(var(--space-xs) / 2) 0;
+    border-bottom: 1px solid rgba(var(--color-fg-rgb), 0.06);
+}
+.tag-posts .blog-item:last-child { border-bottom: none; }
+
+.tags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: calc(var(--space-sm));
+}
+
+.tag-card .tag-count {
+    margin-left: 0.6rem;
+}
+
+/* Tighter spacing for tag-posts list */
+ul.blog-list.tag-posts { gap: calc(var(--space-xs)); }

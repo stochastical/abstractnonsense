@@ -1,9 +1,15 @@
 {{ define "main" }}
-<h1>Posts tagged with "{{ .Title }}"</h1>
 
-<ul class="blog-list">
+<div class="tags-page">
+    <header class="tags-header">
+        <p class="tags-sub">Showing <span class="tag-count">{{ len .Pages }}</span> post{{ if gt (len .Pages) 1 }}s{{ end }} tagged with
+            <span class="tag-card"><span class="tag-name">{{ lower .Title }}</span></span>
+        </p>
+    </header>
+
+    <div class="blog-list">
     {{ range .Pages }}
-    <li class="blog-item">
+    <article class="blog-item">
         <div class="blog-meta">
             <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
         </div>
@@ -12,14 +18,10 @@
             <h2 class="blog-title">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
             </h2>
-            
-            {{ if .Summary }}
-            <div class="blog-description">
-                <p>{{ .Summary }}</p>
-            </div>
-            {{ end }}
         </div>
-    </li>
+    </article>
     {{ end }}
-</ul>
+</div>
+
+</div>
 {{ end }}

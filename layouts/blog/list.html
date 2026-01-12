@@ -13,13 +13,6 @@
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
             </h2>
             
-            {{ if .Params.tags }}
-            <div class="post-tags">
-                {{ range .Params.tags }}
-                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-                {{ end }}
-            </div>
-            {{ end }}
             
             {{ if .Params.description }}
             <div class="blog-description">{{ .Params.description | markdownify }}</div>
