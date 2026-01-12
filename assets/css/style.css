@@ -73,16 +73,25 @@ body {
         --color-rss: #ff9f1a;
     }
 
-    h2, h3, h4 {
-        color: var(--color-accent);
-    }
-    
     hr {
         background: rgba(var(--color-fg-rgb), 0.15);
     }
     
     blockquote {
         background-color: rgba(var(--color-fg-rgb), 0.05);
+    }
+
+    .tag-card {
+        background: rgba(var(--color-fg-rgb), 0.13);
+        color: rgba(var(--color-fg-rgb), 0.68);
+        border: none;
+        border-radius: 7px;
+        opacity: 1;
+    }
+    .tag-card:hover, .tag-card:focus-visible {
+        background: rgba(var(--color-fg-rgb), 0.22);
+        color: rgba(var(--color-fg-rgb), 0.82);
+        outline: none;
     }
 }
 
@@ -799,21 +808,6 @@ table {
     color: rgba(var(--color-fg-rgb), 0.82);
     outline: none;
     text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    .tag-card {
-        background: rgba(var(--color-fg-rgb), 0.13);
-        color: rgba(var(--color-fg-rgb), 0.68);
-        border: none;
-        border-radius: 7px;
-        opacity: 1;
-    }
-    .tag-card:hover, .tag-card:focus-visible {
-        background: rgba(var(--color-fg-rgb), 0.22);
-        color: rgba(var(--color-fg-rgb), 0.82);
-        outline: none;
-    }
 }
 
 /* When used inside the grid, make the card fill the cell */
