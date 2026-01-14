@@ -1,12 +1,9 @@
 ---
 title: GitHub hijacks and breaks browser search
-blog_section:
-  - micro-blog
-publish_branch: main
+date: "2026-01-14"
 tags:
   - design
   - ui
-date: "2026-01-14"
 ---
 
 I like to keep a [word list](https://abstractnonsense.xyz/blog/2025-08-01-a-living-log-of-lexical-learnings/) of any new and interesting words I come across day-to-day. Today I was curious how many entries were in my list and went to search the [YAML file](https://github.com/stochastical/abstractnonsense/blob/main/data/vocabulary.yaml) on GitHub.
@@ -31,4 +28,4 @@ Luckily, Firefox retains its native search experience:
 
 <img width="1637" height="963" alt="Firefox GitHub search" src="https://github.com/user-attachments/assets/38a9d0e5-ddfd-4e4c-a7af-1c604039acac" />
 
-Maybe I'm getting this all wrong, and I'd love to be corrected. But it sure feels like GitHub's UI&UX has become increasingly slow and unfriendly as of late.
+Maybe I'm getting this all wrong, and I'd love to be corrected. But it sure feels like GitHub's UI&UX has become increasingly slow and unfriendly as of late. In any case, I've reported this bug and I'll update if I hear anything back.
