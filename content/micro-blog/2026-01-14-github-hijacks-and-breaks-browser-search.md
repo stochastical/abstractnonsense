@@ -23,7 +23,7 @@ A quickly-disappearing hint on the GitHub search model reported that hitting `Cm
 
 <img width="1680" height="916" alt="Viewport bug Safari GitHub" src="https://github.com/user-attachments/assets/75a3616c-4598-40ef-8c62-b773b12317d4" />
 
-... and hit a render error. This is another lovely bug I've been running into when the viewport changes quickly in Safari. I can see a `data-target="react-app.reactRoot"` attribute lurking in the dark: maybe I shouldn't besmirch the React-ification of GitHub's UI, though. After all, the [raw](https://raw.githubusercontent.com/stochastical/abstractnonsense/refs/heads/main/data/vocabulary.yaml) file searches instantly in the browser:
+... and hit a render error. This is another lovely bug I've been running into when the viewport changes quickly in Safari. I can see a `data-target="react-app.reactRoot"` attribute lurking in the dark: maybe I shouldn't besmirch the React-ification of GitHub's UI, though. After all, at least the [raw](https://raw.githubusercontent.com/stochastical/abstractnonsense/refs/heads/main/data/vocabulary.yaml) file searches instantly in the browser:
 
 <img width="1680" height="959" alt="Safari GitHub raw search" src="https://github.com/user-attachments/assets/5fd44a7e-5bf7-46b7-8ddd-72a06bf370a8" />
 
