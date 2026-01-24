@@ -69,7 +69,7 @@ with open('mydata.db', 'rb') as f:
 
 ## 13 The Word Server
 
-In this project you have to build up a server-side packet stream that encodes words (English words that is, not machine words) and a client that consumes the packets and parses them. I don't think my construction here is the cleanest, but I think it does the job for working within the scaffold of the solution and keeping it imperative.
+In this project you have to build up a server-side packet stream that encodes words (English words that is, not machine words) and a client that consumes the packets and parses them. I don't think my construction here is the cleanest, but I think it does the job for working within the scaffold of the solution and keeping it imperative. I also went down some side exploration on Python's [`struct`](https://docs.python.org/3/library/struct.html) standard library module, and [`protobufs`](https://github.com/protocolbuffers/protobuf).
 
 ## 16 Validating a TCP Packet
 
