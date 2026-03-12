@@ -4,11 +4,11 @@ layout: page
 
 ## Hi, I'm Yossi Frenkel
 
-Welcome to _Abstract Nonsense_! ![hover here](fn "[Abstract Nonsense](https://en.wikipedia.org/wiki/Abstract_nonsense) is a (hopefully, joking) pejorative for the mathematical subject of [Category theory](https://en.wikipedia.org/wiki/Category_theory), or, really, all things arcane.")
+Welcome to _Abstract Nonsense_! ![hover here](fn "[Abstract Nonsense](https://en.wikipedia.org/wiki/Abstract_nonsense) is a whimsical name for the mathematical subject of [Category theory](https://en.wikipedia.org/wiki/Category_theory). It's also my domain of all things arcane.")
 
-I studied mathematics and computer science at the [University of Melbourne](https://www.unimelb.edu.au), and currently work as an early-career AI researcher and data scientist at CommBank AI Labs. I enjoy writing about maths, computer science, and anything that piques my interest!
+I studied mathematics and computer science at the _University of Melbourne_, and currently work as an early-career AI researcher and data scientist at the Commonwealth Bank of Australia's AI Labs. I enjoy writing about maths, computer science, and anything that piques my curiosity!
 
-## What's Here?
+## Sections
 
 - [Microblog](/micro-blog/): Quick thoughts, interesting finds, and daily musings.
 - [Blog](/blog/): Deep dives into maths, computer science, and everything in between.
