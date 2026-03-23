@@ -1,10 +1,7 @@
 ---
 title: Migrating email hosting from Cloudflare to iCloud Mail
-blog_section:
-  - micro-blog
-publish_branch: main
 tags:
-  - abstractnonsense
+  - abstractnonsense.xyz
 date: "2026-03-23"
 ---
 
