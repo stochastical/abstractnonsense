@@ -22,7 +22,7 @@ jobs:
 
       - name: Parse Issue
         id: issue-parser
-        uses: issue-ops/parser@v4.1.0
+        uses: issue-ops/parser@v5.0.0
         with:
           body: ${{ github.event.issue.body }}
           issue-form-template: 'new-blog-post.yml'
