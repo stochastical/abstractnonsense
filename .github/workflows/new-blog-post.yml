@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0  # Fetch all branches
 
@@ -63,7 +63,7 @@ jobs:
         run: |
           {
             echo "---"
-            jq 'del(.content)' processed.json | yq -P
+            jq 'del(.content, .blog_section, .publish_branch)' processed.json | yq -P
             echo "---"
             echo
             jq -r '.content' processed.json
