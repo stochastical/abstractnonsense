@@ -8,7 +8,7 @@ date: "2025-08-09"
 
 I'm a heavy user of Apple's [Look Up for words](https://support.apple.com/en-au/guide/mac-help/mchl3983326c/mac) on macOS. With a quick [force click](https://support.apple.com/en-au/guide/mac-help/mchl3983326c/mac) you can instantly summon the dictionary or thesaurus for a selected word, which removes the friction of pursuing "hmm, that's a new word - what does it mean?"
 
-I’ve been collecting new words I discover in an Apple Note for years and recently started migrating my list to a [living blog page](https://abstractnonsense.xyz/blog/2025-08-01-a-living-log-of-lexical-learnings/). Rather than manually collecting the macOS built-in _Oxford Dictionary_ definition for each word (of which I have hundreds), I thought I'd script it. It turns out that Oxford Dictionaries has a very neat [API](https://developer.oxforddictionaries.com/documentation), but unfortunately it's exorbitantly [expensive](https://account.oxforddictionaries.com/pricing).
+I’ve been collecting new words I discover in an Apple Note for years and recently started migrating my list to a [living blog page](/library/words/). Rather than manually collecting the macOS built-in _Oxford Dictionary_ definition for each word (of which I have hundreds), I thought I'd script it. It turns out that Oxford Dictionaries has a very neat [API](https://developer.oxforddictionaries.com/documentation), but unfortunately it's exorbitantly [expensive](https://account.oxforddictionaries.com/pricing).
 
 Poking around some more, I noticed an [Apple Shortcut](https://support.apple.com/en-au/guide/shortcuts-mac/apdf22b0444c/mac) called `Show definition of`, but it just opens `Dictionary.app` with a deep link to the word entry.
 

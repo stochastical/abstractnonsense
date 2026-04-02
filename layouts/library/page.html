@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article>
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+
+    {{ .Content }}
+    {{ if .Params.tags }}
+    <hr>
+    <footer>
+        <div class="post-tags">
+        {{ range .Params.tags }}
+            <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-card"><span class="tag-name">{{ . }}</span></a>
+        {{ end }}
+        </div>
+    </footer>
+    {{ end }}
+</article>
+{{ end }}

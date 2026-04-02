@@ -912,3 +912,49 @@ tbody tr:nth-child(even):hover {
 
 /* Tighter spacing for tag-posts list */
 ul.blog-list.tag-posts { gap: calc(var(--space-xs)); }
+
+/* ======= COLLECTIONS ======= */
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.collection-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+    border: 1px solid rgba(var(--color-fg-rgb), 0.12);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--color-fg);
+    transition: border-color 150ms ease, background 150ms ease;
+    background: transparent;
+}
+
+.collection-card:hover,
+.collection-card:focus-visible {
+    border-color: var(--color-accent);
+    background: rgba(var(--color-accent-rgb), 0.05);
+    text-decoration: none;
+    outline: none;
+}
+
+.collection-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: Georgia, serif;
+    color: var(--color-fg);
+}
+
+.collection-description {
+    font-size: 0.92rem;
+    color: rgba(var(--color-fg-rgb), 0.65);
+    line-height: 1.45;
+}
+
+.collection-description p {
+    margin: 0;
+}

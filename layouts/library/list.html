@@ -1,0 +1,14 @@
+{{ define "main" }}
+<blockquote>A curated library of things I find interesting.</blockquote>
+
+<div class="collections-grid">
+    {{ range .Pages }}
+    <a class="collection-card" href="{{ .Permalink }}">
+        <span class="collection-title">{{ .Title }}</span>
+        {{ if .Params.description }}
+        <span class="collection-description">{{ .Params.description | markdownify }}</span>
+        {{ end }}
+    </a>
+    {{ end }}
+</div>
+{{ end }}

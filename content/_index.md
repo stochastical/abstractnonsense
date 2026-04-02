@@ -19,7 +19,6 @@ You might like to start here: [_Can a regex match valid card numbers?_](/blog/20
 
 I'd love to hear from you! Feel free to email me at [`hello@abstractnonsense.xyz`](mailto:hello@abstractnonsense.xyz?subject=Hi&body=Hello,) or start a [discussion on GitHub](https://github.com/stochastical/abstractnonsense/discussions).
 
-
 ## Colophon
 
 This site is built with [Hugo](https://github.com/gohugoio/hugo) and served by [Cloudflare Pages](https://pages.cloudflare.com). Maths typesetting is rendered by [MathJax](https://github.com/mathjax/MathJax-src). The source code is available on [GitHub](https://github.com/stochastical/abstractnonsense). 

@@ -29,6 +29,7 @@
             <!-- Highlight the current page in the navigation bar -->
             <a href="{{ "/micro-blog/" | relURL }}"{{ if hasPrefix .RelPermalink "/micro-blog/" }} class="selected"{{ end }}>Microblog</a>
             <a href="{{ "/blog/" | relURL }}"{{ if hasPrefix .RelPermalink "/blog/" }} class="selected"{{ end }}>Blog</a>
+            <a href="{{ "/library/" | relURL }}"{{ if hasPrefix .RelPermalink "/library/" }} class="selected"{{ end }}>Library</a>
             <!-- Single site-wide RSS icon link -->
             <a href="{{ "/index.xml" | relURL }}" class="rss-icon-link" aria-label="Subscribe to RSS" title="Subscribe to RSS">
                 <svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true" focusable="false">

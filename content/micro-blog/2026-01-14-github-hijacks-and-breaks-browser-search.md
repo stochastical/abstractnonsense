@@ -6,7 +6,7 @@ tags:
   - ui
 ---
 
-I like to keep a [word list](https://abstractnonsense.xyz/blog/2025-08-01-a-living-log-of-lexical-learnings/) of any new and interesting words I come across day-to-day. Today I was curious how many entries were in my list and went to search the [YAML file](https://github.com/stochastical/abstractnonsense/blob/main/data/vocabulary.yaml) on GitHub.
+I like to keep a [word list](/library/words/) of any new and interesting words I come across day-to-day. Today I was curious how many entries were in my list and went to search the [YAML file](https://github.com/stochastical/abstractnonsense/blob/main/data/vocabulary.yaml) on GitHub.
 
 To my delight, I discover that GitHub has hijacked the native `Cmd-F` browser search. To top it off, seems the maximum number of matches GitHub's search returns is limited to `200`.
 
