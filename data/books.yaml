@@ -1,0 +1,1515 @@
+# 2026
+
+- title: "Programming Rust"
+  author: "Jim Blandy, Jason Orendorff and Leonora F. S. Tindall"
+  format: "textbook"
+  year: 2026
+  month: 1
+  url: "/micro-blog/2026-01-31-programming-rust-textbook"
+
+- title: "Real-World Cryptography"
+  author: "David Wong"
+  format: "textbook"
+  year: 2026
+  month: 3
+  url: "/micro-blog/2026-03-30-real-world-cryptography-by-david-wong/"
+
+# 2025
+
+- title: "The Outsider"
+  author: "Albert Camus"
+  year: 2025
+  month: 4
+  url: "/micro-blog/2025-04-19-the-outsider-by-albert-camus/"
+
+- title: "Meditations"
+  author: "Marcus Aurelius"
+  translator: "A.S.L Farquharson"
+  format: "non-fiction"
+  year: 2025
+  month: 6
+  url: "/micro-blog/2025-06-30-meditations-by-marcus-aurelius"
+
+- title: "Even as the wind rustled among the leaves"
+  author: "Yoon Dong-ju"
+  format: "poetry"
+  year: 2025
+  month: 9
+
+- title: "The Wonderful Wizard of Oz"
+  author: "L. Frank Baum"
+  year: 2025
+  month: 9
+
+- title: "Algospeak"
+  author: "Adam Aleksic"
+  format: "non-fiction"
+  year: 2025
+  month: 9
+
+- title: "Welcome to the Hyunam-Dong Bookshop"
+  author: "Hwang Bo-Reum"
+  year: 2025
+  month: 10
+  url: "/micro-blog/2025-10-05-welcome-to-the-hyunam-dong-bookshop-by-hwang-bo-reum/"
+
+- title: "The Little Drummer Girl"
+  author: "John le Carré"
+  year: 2025
+  month: 12
+
+# 2024
+
+- title: "Kim Ji-young, Born 1982"
+  author: "Cho Nam-ju"
+  year: 2024
+
+- title: "Pachinko"
+  author: "Min Jin Lee"
+  year: 2024
+  month: 4
+
+# 2023
+
+- title: "Beloved"
+  author: "Toni Morrison"
+  year: 2023
+  month: 1
+
+- title: "The Collapsing Empire"
+  author: "John Scalzi"
+  series: "Old Man's War"
+  year: 2023
+  month: 1
+
+- title: "The Cossacks and Other Stories"
+  author: "Leo Tolstoy"
+  translator: "David McDuff and Paul Foote"
+  year: 2023
+  month: 5
+
+- title: "Before the Coffee Gets Cold"
+  author: "Toshikazu Kawaguchi"
+  year: 2023
+  month: 6
+
+- title: "Yellowface"
+  author: "R. F. Kuang"
+  year: 2023
+  month: 7
+
+- title: "Babel"
+  author: "R. F. Kuang"
+  year: 2023
+  month: 8
+
+- title: "Murtagh"
+  author: "Christopher Paolini"
+  series: "The Inheritance Cycle"
+  series_position: 5
+  year: 2023
+  month: 11
+
+# 2022
+
+- title: "Mao's Last Dancer"
+  author: "Li Cunxin"
+  format: "non-fiction"
+  year: 2022
+  month: 1
+
+- title: "The Priory of the Orange Tree"
+  author: "Samantha Shannon"
+  year: 2022
+  month: 1
+
+- title: "The Tattooist of Auschwitz"
+  author: "Heather Morris"
+  year: 2022
+  month: 1
+
+- title: "Colorless Tsukuru Tazaki and His Years of Pilgrimage"
+  author: "Haruki Murakami"
+  year: 2022
+  month: 1
+
+- title: "Leaving the Atocha Station"
+  author: "Ben Lerner"
+  year: 2022
+  month: 2
+
+- title: "The Handmaid's Tale"
+  author: "Margaret Atwood"
+  year: 2022
+  month: 2
+
+- title: "Superfreakonomics"
+  author: "Steven D. Levitt and Stephen J. Dubner"
+  format: "non-fiction"
+  year: 2022
+  month: 3
+
+- title: "The Odyssey"
+  author: "Gareth Hinds"
+  format: "graphic-novel"
+  year: 2022
+  month: 4
+
+- title: "Maus"
+  author: "Art Spiegelman"
+  format: "graphic-novel"
+  year: 2022
+  month: 6
+
+- title: "Red Rising"
+  author: "Pierce Brown"
+  series: "Red Rising"
+  series_position: 1
+  year: 2022
+  month: 7
+
+- title: "Golden Son"
+  author: "Pierce Brown"
+  series: "Red Rising"
+  series_position: 2
+  year: 2022
+  month: 7
+
+- title: "Morning Star"
+  author: "Pierce Brown"
+  series: "Red Rising"
+  series_position: 3
+  year: 2022
+  month: 12
+
+- title: "Time is a Mother"
+  author: "Ocean Vuong"
+  format: "poetry"
+  year: 2022
+  month: 12
+
+# 2021
+
+- title: "A Nervous Breakdown"
+  author: "Anton Chekhov"
+  format: "short-story"
+  year: 2021
+  month: 1
+
+- title: "Piranesi"
+  author: "Susanna Clarke"
+  year: 2021
+  month: 1
+
+- title: "All That I Am"
+  author: "Anna Funder"
+  year: 2021
+  month: 1
+
+- title: "Logicomix"
+  author: "Apostolos Doxiadis and Christos Papadimitriou"
+  format: "graphic-novel"
+  year: 2021
+  month: 1
+
+- title: "A Pale View of Hills"
+  author: "Kazuo Ishiguro"
+  year: 2021
+  month: 1
+
+- title: "The Human Division"
+  author: "John Scalzi"
+  series: "Old Man's War"
+  series_position: 5
+  year: 2021
+  month: 3
+
+- title: "Norwegian Wood"
+  author: "Haruki Murakami"
+  year: 2021
+  month: 7
+
+- title: "Watchmen"
+  author: "Alan Moore"
+  format: "graphic-novel"
+  year: 2021
+  month: 7
+
+- title: "King Rat"
+  author: "James Clavell"
+  series: "The Asian Saga"
+  series_position: 4
+  year: 2021
+  month: 7
+
+- title: "Klara and the Sun"
+  author: "Kazuo Ishiguro"
+  year: 2021
+  month: 12
+
+# 2020
+
+- title: "Skunk Works"
+  author: "Ben Rich"
+  format: "non-fiction"
+  year: 2020
+  month: 1
+
+- title: "Stories of Your Life and Others"
+  author: "Ted Chiang"
+  format: "short-story"
+  year: 2020
+  month: 1
+
+- title: "Caves of Steel"
+  author: "Isaac Asimov"
+  series: "Robot"
+  year: 2020
+  month: 1
+
+- title: "Assassin's Apprentice"
+  author: "Robin Hobb"
+  series: "The Farseer Trilogy"
+  series_position: 1
+  year: 2020
+  month: 1
+
+- title: "The Return of the Warrior"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 9
+  year: 2020
+  month: 2
+
+- title: "The Tombs of Atuan"
+  author: "Ursula K. Le Guin"
+  series: "Earthsea Cycle"
+  series_position: 2
+  year: 2020
+  month: 3
+
+- title: "The Three Body Problem"
+  author: "Cixin Liu"
+  year: 2020
+  month: 3
+
+- title: "Noble House"
+  author: "James Clavell"
+  series: "The Asian Saga"
+  series_position: 5
+  year: 2020
+  month: 4
+
+- title: "Fortune's Favorites"
+  author: "Colleen McCullough"
+  series: "Masters of Rome"
+  series_position: 3
+  year: 2020
+  month: 7
+
+- title: "Casino Royale"
+  author: "Ian Fleming"
+  year: 2020
+  month: 7
+
+- title: "Because Internet"
+  author: "Gretchen McCulloch"
+  format: "non-fiction"
+  year: 2020
+  month: 7
+
+- title: "The Spy Who Came in from the Cold"
+  author: "John le Carré"
+  year: 2020
+  month: 8
+
+- title: "The Remains of the Day"
+  author: "Kazuo Ishiguro"
+  year: 2020
+  month: 9
+
+- title: "The Housekeeper and the Professor"
+  author: "Yōko Ogawa"
+  year: 2020
+  month: 9
+
+- title: "The Evening and the Morning"
+  author: "Ken Follett"
+  series: "The Kingsbridge Series"
+  series_position: 0
+  year: 2020
+  month: 9
+
+- title: "An Artist of the Floating World"
+  author: "Kazuo Ishiguro"
+  year: 2020
+  month: 10
+
+- title: "To Sleep in a Sea of Stars"
+  author: "Christopher Paolini"
+  year: 2020
+  month: 12
+
+- title: "Never Let Me Go"
+  author: "Kazuo Ishiguro"
+  year: 2020
+  month: 12
+
+- title: "On Wings of Eagles"
+  author: "Ken Follett"
+  format: "non-fiction"
+  year: 2020
+  month: 12
+
+- title: "Persepolis"
+  author: "Marjane Satrapi"
+  format: "graphic-novel"
+  year: 2020
+  month: 12
+
+- title: "Norse Mythology"
+  author: "Neil Gaiman"
+  year: 2020
+  month: 12
+
+- title: "The Night Circus"
+  author: "Erin Morgenstern"
+  year: 2020
+  month: 12
+
+- title: "The Buried Giant"
+  author: "Kazuo Ishiguro"
+  year: 2020
+  month: 12
+
+- title: "Desire"
+  author: "Haruki Murakami"
+  format: "short-story"
+  year: 2020
+  month: 12
+
+# 2019
+
+- title: "The Red Fox Clan"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice: The Royal Ranger Series"
+  series_position: 2
+  year: 2019
+  month: 1
+
+- title: "The Order of Time"
+  author: "Carlo Rovelli"
+  format: "non-fiction"
+  year: 2019
+  month: 1
+
+- title: "The Fork, the Witch, and the Worm"
+  author: "Christopher Paolini"
+  series: "The Inheritance Cycle"
+  format: "short-story"
+  year: 2019
+  month: 1
+
+- title: "Duel at Araluen"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice: The Royal Ranger Series"
+  series_position: 3
+  year: 2019
+  month: 1
+
+- title: "Starship Troopers"
+  author: "Robert Heinlein"
+  year: 2019
+  month: 1
+
+- title: "Ransom"
+  author: "David Malouf"
+  year: 2019
+  month: 1
+
+- title: "Climbing Mount Improbable"
+  author: "Richard Dawkins"
+  format: "non-fiction"
+  year: 2019
+  month: 2
+
+- title: "Death by Black Hole"
+  author: "Neil deGrasse Tyson"
+  format: "non-fiction"
+  year: 2019
+  month: 3
+
+- title: "Master and Commander"
+  author: "Patrick O'Brian"
+  year: 2019
+  month: 3
+
+- title: "Imperium"
+  author: "Robert Harris"
+  series: "Cicero Trilogy"
+  series_position: 1
+  year: 2019
+  month: 3
+
+- title: "The Women of Troy"
+  author: "Euripides"
+  format: "play"
+  year: 2019
+  month: 3
+
+- title: "Conspirata"
+  author: "Robert Harris"
+  series: "Cicero Trilogy"
+  series_position: 2
+  year: 2019
+  month: 4
+
+- title: "The Complete Guide to Asterix"
+  author: "Peter Kessler"
+  format: "non-fiction"
+  year: 2019
+  month: 4
+
+- title: "Through the Language Glass"
+  author: "Guy Deutscher"
+  format: "non-fiction"
+  year: 2019
+  month: 4
+
+- title: "The Wizard of Earthsea"
+  author: "Ursula K. Le Guin"
+  series: "Earthsea"
+  series_position: 1
+  year: 2019
+  month: 5
+
+- title: "Humble Pi"
+  author: "Matt Parker"
+  format: "non-fiction"
+  year: 2019
+  month: 6
+
+- title: "The U.S. Supreme Court: A Very Short Introduction"
+  author: "Linda Greenhouse"
+  format: "non-fiction"
+  year: 2019
+  month: 7
+
+- title: "Living Proof"
+  format: "non-fiction"
+  author: |
+    Allison K. Henrich, Emille D. Lawrence, Matthew A. Pons, David G. Taylor
+  year: 2019
+  month: 7
+
+- title: "The Indian in the Cupboard"
+  author: "Lynne Banks"
+  year: 2019
+  month: 7
+
+- title: "I, Robot"
+  author: "Isaac Asimov"
+  format: "short-story"
+  series: "Robot"
+  year: 2019
+  month: 8
+
+- title: "Foundation"
+  author: "Isaac Asimov"
+  series: "Foundation"
+  series_position: 1
+  year: 2019
+  month: 9
+
+- title: "The Return of the Temujai"
+  author: "John Flanagan"
+  series: "Brotherband Chronicles"
+  series_position: 8
+  year: 2019
+  month: 9
+
+- title: "Dictator"
+  author: "Robert Harris"
+  series: "Cicero Trilogy"
+  series_position: 3
+  year: 2019
+  month: 12
+
+- title: "Cuckoo's Egg"
+  author: "Cliff Stoll"
+  format: "non-fiction"
+  year: 2019
+  month: 12
+
+# 2018
+
+- title: "A Game of Thrones"
+  author: "George R.R. Martin"
+  series: "A Song of Ice and Fire"
+  series_position: 1
+  year: 2018
+  month: 1
+
+- title: "The Adventures of Sherlock Holmes and The Memoirs of Sherlock Holmes"
+  author: "Arthur Conan Doyle"
+  year: 2018
+  month: 1
+
+- title: "Tai-Pan"
+  author: "James Clavell"
+  series: "The Asian Saga"
+  series_position: 2
+  year: 2018
+  month: 1
+
+- title: "Deep Simplicity"
+  author: "John Gribbin"
+  format: "non-fiction"
+  year: 2018
+  month: 1
+
+- title: "Bad Pharma"
+  author: "Ben Goldacre"
+  format: "non-fiction"
+  year: 2018
+  month: 2
+
+- title: "The Double Helix"
+  author: "James Watson"
+  format: "non-fiction"
+  year: 2018
+  month: 2
+
+- title: "I Think You'll Find it's a Bit More Complicated Than That"
+  author: "Ben Goldacre"
+  format: "non-fiction"
+  year: 2018
+  month: 2
+
+- title: "The Complete Yes, Minister"
+  author: "Jonathan Lynn and Antony Jay"
+  year: 2018
+  month: 3
+
+- title: "The Signal and the Noise"
+  author: "Nate Silver"
+  format: "non-fiction"
+  year: 2018
+  month: 4
+
+- title: "Gai-Jin"
+  author: "James Clavell"
+  series: "The Asian Saga"
+  series_position: 3
+  year: 2018
+  month: 4
+
+- title: "12 Angry Men"
+  author: "Reginald Rose"
+  format: "play"
+  year: 2018
+  month: 4
+
+- title: "War of the Worldviews"
+  author: "Deepak Chopra and Leonard Mlodinow"
+  format: "non-fiction"
+  year: 2018
+  month: 4
+
+- title: "How to Lie with Statistics"
+  author: "Darrell Huff"
+  format: "non-fiction"
+  year: 2018
+  month: 7
+
+- title: "Medea"
+  author: "Euripides"
+  format: "play"
+  year: 2018
+  month: 8
+
+- title: "Uncle Tungsten"
+  author: "Oliver Sacks"
+  format: "non-fiction"
+  year: 2018
+  month: 9
+
+- title: "The Design of Everyday Things"
+  author: "Donald Norman"
+  format: "non-fiction"
+  year: 2018
+  month: 9
+
+- title: "All the Light We Cannot See"
+  author: "Anthony Doerr"
+  year: 2018
+  month: 10
+
+- title: "The Lieutenant"
+  author: "Kate Grenville"
+  year: 2018
+  month: 11
+
+- title: "Song of Troy"
+  author: "Colleen McCullough"
+  year: 2018
+  month: 12
+
+- title: "Math with Bad Drawings"
+  author: "Ben Orlin"
+  format: "non-fiction"
+  year: 2018
+  month: 12
+
+- title: "Old Man's War"
+  author: "John Scalzi"
+  series: "Old Man's War"
+  series_position: 1
+  year: 2018
+  month: 12
+
+- title: "The Ghost Brigades"
+  author: "John Scalzi"
+  series: "Old Man's War"
+  series_position: 2
+  year: 2018
+  month: 12
+
+# 2017
+
+- title: "Rendezvous with Rama"
+  author: "Arthur C. Clarke"
+  series: "Rama"
+  series_position: 1
+  year: 2017
+  month: 1
+
+- title: "Ethics in the Real World"
+  author: "Peter Singer"
+  format: "non-fiction"
+  year: 2017
+  month: 1
+
+- title: "Rama II"
+  author: "Arthur C. Clarke and Gentry Lee"
+  series: "Rama"
+  series_position: 2
+  year: 2017
+  month: 1
+
+- title: "The Blind Watchmaker"
+  author: "Richard Dawkins"
+  format: "non-fiction"
+  year: 2017
+  month: 1
+
+- title: "Eclipse"
+  author: "Richard North Patterson"
+  year: 2017
+  month: 1
+
+- title: "A Devil's Chaplain"
+  author: "Richard Dawkins"
+  format: "non-fiction"
+  year: 2017
+  month: 1
+
+- title: "Go Set a Watchman"
+  author: "Harper Lee"
+  series: "To Kill a Mockingbird"
+  series_position: 2
+  year: 2017
+  month: 1
+
+- title: "Generals Die in Bed"
+  author: "Charles Yale Harrison"
+  year: 2017
+  month: 1
+
+- title: "First They Killed My Father"
+  author: "Loung Ung"
+  format: "non-fiction"
+  year: 2017
+  month: 1
+
+- title: "Fall of Giants"
+  author: "Ken Follett"
+  series: "The Century Trilogy"
+  series_position: 1
+  year: 2017
+  month: 2
+
+- title: "Reality Is Not What It Seems"
+  author: "Carlo Rovelli"
+  format: "non-fiction"
+  year: 2017
+  month: 2
+
+- title: "The Garden of Rama"
+  author: "Arthur C. Clarke and Gentry Lee"
+  series: "Rama"
+  series_position: 3
+  year: 2017
+  month: 2
+
+- title: "Rama Revealed"
+  author: "Arthur C. Clarke and Gentry Lee"
+  series: "Rama"
+  series_position: 4
+  year: 2017
+  month: 2
+
+- title: "Winter of the World"
+  author: "Ken Follett"
+  series: "The Century Trilogy"
+  series_position: 2
+  year: 2017
+  month: 2
+
+- title: "Edge of Eternity"
+  author: "Ken Follett"
+  series: "The Century Trilogy"
+  series_position: 3
+  year: 2017
+  month: 3
+
+- title: "Rethinking Life and Death"
+  author: "Peter Singer"
+  format: "non-fiction"
+  year: 2017
+  month: 3
+
+- title: "The Meaning of It All"
+  author: "Richard Feynman"
+  format: "non-fiction"
+  year: 2017
+  month: 3
+
+- title: "Dune"
+  author: "Frank Herbert"
+  year: 2017
+  month: 3
+
+- title: "Sapiens"
+  author: "Yuval Noah Harari"
+  format: "non-fiction"
+  year: 2017
+  month: 3
+
+- title: "I Am Pilgrim"
+  author: "Terry Hayes"
+  year: 2017
+  month: 4
+
+- title: "The Most Good You Can Do"
+  author: "Peter Singer"
+  format: "non-fiction"
+  year: 2017
+  month: 4
+
+- title: "The Count of Monte Cristo"
+  author: "Alexandre Dumas"
+  translator: "Robin Buss"
+  year: 2017
+  month: 4
+
+- title: "Slaughterhouse-Five"
+  author: "Kurt Vonnegut"
+  year: 2017
+  month: 4
+
+- title: "The Battle of Hackham Heath"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice: The Early Years"
+  series_position: 2
+  year: 2017
+  month: 4
+
+- title: "Six Easy Pieces"
+  author: "Richard Feynman"
+  format: "non-fiction"
+  year: 2017
+  month: 5
+
+- title: "The Left Hand of Darkness"
+  author: "Ursula K. Le Guin"
+  series: "Hainish Cycle"
+  year: 2017
+  month: 5
+
+- title: "The Pillars of the Earth"
+  author: "Ken Follett"
+  series: "The Kingsbridge Series"
+  series_position: 1
+  year: 2017
+  month: 5
+
+- title: "13.8"
+  author: "John Gribbin"
+  format: "non-fiction"
+  year: 2017
+  month: 5
+
+- title: "Ancillary Justice"
+  author: "Ann Leckie"
+  year: 2017
+  month: 5
+
+- title: "Why Evolution Is True"
+  author: "Jerry Coyne"
+  format: "non-fiction"
+  year: 2017
+  month: 5
+
+- title: "World Without End"
+  author: "Ken Follett"
+  series: "The Kingsbridge Series"
+  series_position: 2
+  year: 2017
+  month: 6
+
+- title: "A Brief History of Time"
+  author: "Stephen Hawking"
+  format: "non-fiction"
+  year: 2017
+  month: 6
+
+- title: "The Three Musketeers"
+  author: "Alexandre Dumas"
+  translator: "Richard Pevear"
+  year: 2017
+  month: 6
+
+- title: "SPQR"
+  author: "Mary Beard"
+  format: "non-fiction"
+  year: 2017
+  month: 6
+
+- title: "2061"
+  author: "Arthur C. Clarke"
+  series: "Space Odyssey"
+  series_position: 3
+  year: 2017
+  month: 7
+
+- title: "Bad Science"
+  author: "Ben Goldacre"
+  format: "non-fiction"
+  year: 2017
+  month: 7
+
+- title: "Stasiland"
+  author: "Anna Funder"
+  format: "non-fiction"
+  year: 2017
+  month: 7
+
+- title: "The Forever War"
+  author: "Joe Haldeman"
+  series: "The Forever War"
+  series_position: 1
+  year: 2017
+  month: 7
+
+- title: "The First Man in Rome"
+  author: "Colleen McCullough"
+  series: "Masters of Rome"
+  series_position: 1
+  year: 2017
+  month: 7
+
+- title: "Fahrenheit 451"
+  author: "Ray Bradbury"
+  year: 2017
+  month: 7
+
+- title: "3001"
+  author: "Arthur C. Clarke"
+  series: "Space Odyssey"
+  series_position: 4
+  year: 2017
+  month: 7
+
+- title: "Childhood's End"
+  author: "Arthur C. Clarke"
+  year: 2017
+  month: 7
+
+- title: "The Dispossessed"
+  author: "Ursula K. Le Guin"
+  series: "Hainish Cycle"
+  year: 2017
+  month: 8
+
+- title: "Forever Peace"
+  author: "Joe Haldeman"
+  series: "The Forever War"
+  series_position: 2
+  year: 2017
+  month: 8
+
+- title: "Eye of the Needle"
+  author: "Ken Follett"
+  year: 2017
+  month: 8
+
+- title: "Thinking, Fast and Slow"
+  author: "Daniel Kahneman"
+  format: "non-fiction"
+  year: 2017
+  month: 8
+
+- title: "Shōgun"
+  author: "James Clavell"
+  series: "The Asian Saga"
+  series_position: 1
+  year: 2017
+  month: 9
+
+- title: "Contact"
+  author: "Carl Sagan"
+  year: 2017
+  month: 9
+
+- title: "Exile"
+  author: "Richard North Patterson"
+  year: 2017
+  month: 9
+
+- title: "The Grass Crown"
+  author: "Colleen McCullough"
+  series: "Masters of Rome"
+  series_position: 2
+  year: 2017
+  month: 9
+
+- title: "Minority Report"
+  author: "Philip K. Dick"
+  format: "short-story"
+  year: 2017
+  month: 10
+
+- title: "Brave New World"
+  author: "Aldous Huxley"
+  year: 2017
+  month: 10
+
+- title: "The Checklist Manifesto"
+  author: "Atul Gawande"
+  format: "non-fiction"
+  year: 2017
+  month: 10
+
+- title: "Nudge"
+  author: "Cass Sunstein and Richard Thaler"
+  format: "non-fiction"
+  year: 2017
+  month: 10
+
+- title: "A Column of Fire"
+  author: "Ken Follett"
+  series: "The Kingsbridge Series"
+  series_position: 3
+  year: 2017
+  month: 11
+
+- title: "Hidden Figures"
+  author: "Margot Lee Shetterly"
+  format: "non-fiction"
+  year: 2017
+  month: 11
+
+- title: "The Caldera"
+  author: "John Flanagan"
+  series: "Brotherband Chronicles"
+  series_position: 7
+  year: 2017
+  month: 12
+
+- title: "The Oxford Book of Modern Science Writing"
+  author: "Richard Dawkins"
+  format: "non-fiction"
+  year: 2017
+  month: 12
+
+# Undated (read sometime prior to 2017)
+
+- title: "Of Mice and Men"
+  author: "John Steinbeck"
+
+- title: "The Rugmaker of Mazar-e-Sharif"
+  author: "Najaf Mazari"
+  format: "non-fiction"
+
+- title: "What If?"
+  author: "Randall Munroe"
+  format: "non-fiction"
+
+- title: "Natural Computing"
+  author: "Dennis Sasha"
+  format: "non-fiction"
+
+- title: "Parvana"
+  author: "Deborah Ellis"
+
+- title: "Night"
+  author: "Elie Wiesel"
+  format: "non-fiction"
+
+- title: "The Da Vinci Code"
+  author: "Dan Brown"
+
+- title: "The Hobbit"
+  author: "J.R.R. Tolkien"
+
+- title: "Flatland"
+  author: "Edwin Abbott"
+
+- title: "The Art of War"
+  author: "Sun Tzu"
+  format: "non-fiction"
+
+- title: "Nothing to Envy"
+  author: "Barbara Demick"
+  format: "non-fiction"
+
+- title: "Escape from Camp 14"
+  author: "Blaine Harden"
+  format: "non-fiction"
+
+- title: "The Structure of Scientific Revolutions"
+  author: "Thomas Kuhn"
+  format: "non-fiction"
+
+- title: "Macbeth"
+  author: "William Shakespeare"
+  format: "play"
+
+- title: "2001: A Space Odyssey"
+  author: "Arthur C. Clarke"
+  series: "Space Odyssey"
+  series_position: 1
+
+- title: "2010: Odyssey Two"
+  author: "Arthur C. Clarke"
+  series: "Space Odyssey"
+  series_position: 2
+
+- title: "Time's Eye"
+  author: "Arthur C. Clarke and Stephen Baxter"
+  series: "A Time Odyssey"
+  series_position: 1
+
+- title: "Sunstorm"
+  author: "Arthur C. Clarke and Stephen Baxter"
+  series: "A Time Odyssey"
+  series_position: 2
+
+- title: "Firstborn"
+  author: "Arthur C. Clarke and Stephen Baxter"
+  series: "A Time Odyssey"
+  series_position: 3
+
+- title: "The Grand Design"
+  author: "Stephen Hawking"
+  format: "non-fiction"
+
+- title: "Seven Brief Lessons on Physics"
+  author: "Carlo Rovelli"
+  format: "non-fiction"
+
+- title: "Quidditch Through the Ages"
+  author: "J.K. Rowling"
+
+- title: "Harry Potter and the Philosopher's Stone"
+  author: "J.K. Rowling"
+  series: "Harry Potter"
+  series_position: 1
+
+- title: "Harry Potter and the Chamber of Secrets"
+  author: "J.K. Rowling"
+  series: "Harry Potter"
+  series_position: 2
+
+- title: "Harry Potter and the Prisoner of Azkaban"
+  author: "J.K. Rowling"
+  series: "Harry Potter"
+  series_position: 3
+
+- title: "Harry Potter and the Goblet of Fire"
+  author: "J.K. Rowling"
+  series: "Harry Potter"
+  series_position: 4
+
+- title: "Harry Potter and the Order of the Phoenix"
+  author: "J.K. Rowling"
+  series: "Harry Potter"
+  series_position: 5
+
+- title: "Harry Potter and the Half-Blood Prince"
+  author: "J.K. Rowling"
+  series: "Harry Potter"
+  series_position: 6
+
+- title: "Harry Potter and the Deathly Hallows"
+  author: "J.K. Rowling"
+  series: "Harry Potter"
+  series_position: 7
+
+- title: "Harry Potter and the Cursed Child"
+  author: "J.K. Rowling"
+  series: "Harry Potter"
+  format: "play"
+  series_position: 8
+
+- title: "Practical Ethics"
+  author: "Peter Singer"
+  format: "non-fiction"
+
+- title: "The Runaway Jury"
+  author: "John Grisham"
+
+- title: "The Last Juror"
+  author: "John Grisham"
+
+- title: "A Time to Kill"
+  author: "John Grisham"
+
+- title: "Sycamore Row"
+  author: "John Grisham"
+
+- title: "The Firm"
+  author: "John Grisham"
+
+- title: "The Associate"
+  author: "John Grisham"
+
+- title: "The Litigators"
+  author: "John Grisham"
+
+- title: "The King of Torts"
+  author: "John Grisham"
+
+- title: "In the Name of Honor"
+  author: "Richard North Patterson"
+
+- title: "No Safe Place"
+  author: "Richard North Patterson"
+
+- title: "The Devil's Light"
+  author: "Richard North Patterson"
+
+- title: "The Lasko Tangent"
+  author: "Richard North Patterson"
+
+- title: "The Spire"
+  author: "Richard North Patterson"
+
+- title: "The Race"
+  author: "Richard North Patterson"
+
+- title: "The Bicentennial Man and Other Stories"
+  author: "Isaac Asimov"
+  format: "short-story"
+
+- title: "As the Crow Flies"
+  author: "Jeffrey Archer"
+
+- title: "The Eleventh Commandment"
+  author: "Jeffrey Archer"
+
+- title: "1984"
+  author: "George Orwell"
+
+- title: "Animal Farm"
+  author: "George Orwell"
+
+- title: "The Time Machine"
+  author: "H.G. Wells"
+
+- title: "The World Set Free"
+  author: "H.G. Wells"
+
+- title: "The Magic Faraway Tree"
+  author: "Enid Blyton"
+
+- title: "To Kill a Mockingbird"
+  author: "Harper Lee"
+  series: "To Kill a Mockingbird"
+  series_position: 1
+
+- title: "The Way of the Warrior"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 1
+
+- title: "The Way of the Sword"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 2
+
+- title: "The Way of the Dragon"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 3
+
+- title: "The Ring of Earth"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 4
+
+- title: "The Ring of Water"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 5
+
+- title: "The Ring of Fire"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 6
+
+- title: "The Ring of Wind"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 7
+
+- title: "The Ring of Sky"
+  author: "Chris Bradford"
+  series: "Young Samurai"
+  series_position: 8
+
+- title: "The Ruins of Gorlan"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 1
+
+- title: "The Burning Bridge"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 2
+
+- title: "The Icebound Land"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 3
+
+- title: "The Battle for Skandia"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 4
+
+- title: "The Sorcerer in the North"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 5
+
+- title: "The Siege of Macindaw"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 6
+
+- title: "Erak's Ransom"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 7
+
+- title: "The Kings of Clonmel"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 8
+
+- title: "Halt's Peril"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 9
+
+- title: "The Emperor of Nihon-Ja"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 10
+
+- title: "The Lost Stories"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice"
+  series_position: 11
+
+- title: "The Royal Ranger"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice: The Royal Ranger Series"
+  series_position: 1
+
+- title: "The Tournament at Gorlan"
+  author: "John Flanagan"
+  series: "Ranger's Apprentice: The Early Years"
+  series_position: 1
+
+- title: "The Outcasts"
+  author: "John Flanagan"
+  series: "Brotherband Chronicles"
+  series_position: 1
+
+- title: "The Invaders"
+  author: "John Flanagan"
+  series: "Brotherband Chronicles"
+  series_position: 2
+
+- title: "The Hunters"
+  author: "John Flanagan"
+  series: "Brotherband Chronicles"
+  series_position: 3
+
+- title: "Slaves of Socorro"
+  author: "John Flanagan"
+  series: "Brotherband Chronicles"
+  series_position: 4
+
+- title: "Scorpion Mountain"
+  author: "John Flanagan"
+  series: "Brotherband Chronicles"
+  series_position: 5
+
+- title: "The Ghostfaces"
+  author: "John Flanagan"
+  series: "Brotherband Chronicles"
+  series_position: 6
+
+- title: "Eragon"
+  author: "Christopher Paolini"
+  series: "The Inheritance Cycle"
+  series_position: 1
+
+- title: "Eldest"
+  author: "Christopher Paolini"
+  series: "The Inheritance Cycle"
+  series_position: 2
+
+- title: "Brisingr"
+  author: "Christopher Paolini"
+  series: "The Inheritance Cycle"
+  series_position: 3
+
+- title: "Inheritance"
+  author: "Christopher Paolini"
+  series: "The Inheritance Cycle"
+  series_position: 4
+
+# Short story
+
+- title: "Lamb to the Slaughter"
+  author: "Roald Dahl"
+  format: "short-story"
+
+- title: "The Veldt"
+  author: "Ray Bradbury"
+  format: "short-story"
+
+- title: "The Pedestrian"
+  author: "Ray Bradbury"
+  format: "short-story"
+
+- title: "There Will Come Soft Rains"
+  author: "Ray Bradbury"
+  format: "short-story"
+
+- title: "Coming of Age in Karhide"
+  author: "Ursula K. Le Guin"
+  format: "short-story"
+
+- title: "My Father's Hands"
+  author: "Calvin Worthington"
+  format: "short-story"
+
+- title: "The Lottery"
+  author: "Shirley Jackson"
+  format: "short-story"
+
+- title: "The Tell-Tale Heart"
+  author: "Edgar Allan Poe"
+  format: "short-story"
+
+- title: "The Curious Case of Benjamin Button"
+  author: "F. Scott Fitzgerald"
+  format: "short-story"
+
+- title: "Harrison Bergeron"
+  author: "Kurt Vonnegut"
+  format: "short-story"
+
+- title: "An Afternoon at the Bakery"
+  author: "Yoko Ogawa"
+  format: "short-story"
+
+- title: "To Build a Fire"
+  author: "Jack London"
+  format: "short-story"
+
+- title: "The Library of Babel"
+  author: "Jorge Luis Borges"
+  format: "short-story"
+
+# Speeches
+
+- title: "I Have a Dream"
+  author: "Martin Luther King"
+  format: "speech"
+
+- title: "My Twentieth Century Evening and Other Small Breakthroughs: The Nobel Lecture"
+  author: "Kazuo Ishiguro"
+  format: "speech"
+
+- title: "Gettysburg Address"
+  author: "Abraham Lincoln"
+  format: "speech"
+
+- title: "Report to the American People on Civil Rights"
+  author: "John F. Kennedy"
+  format: "speech"
+
+- title: "Congressional Testimony to Congress' Joint Committee on Atomic Energy (April 1969)"
+  author: "R.R. Wilson"
+  format: "speech"
+
+# Poetry
+
+- title: "First They Came"
+  author: "Martin Niemöller"
+  format: "poetry"
+
+- title: "The Sea"
+  author: "James Reeves"
+  format: "poetry"
+
+- title: "The Eagle"
+  author: "Lord Alfred Tennyson"
+  format: "poetry"
+
+- title: "The Charge of the Light Brigade"
+  author: "Lord Alfred Tennyson"
+  format: "poetry"
+
+- title: "Prologue to Romeo and Juliet"
+  author: "William Shakespeare"
+  format: "poetry"
+
+- title: "O Captain! My Captain!"
+  author: "Walt Whitman"
+  format: "poetry"
+
+- title: "Son of Mine"
+  author: "Kath Walker"
+  format: "poetry"
+
+- title: "Ozymandias"
+  author: "Percy Bysshe Shelley"
+  format: "poetry"
+
+# Essays
+
+- title: "Seven Wonders"
+  author: "Lewis Thomas"
+  format: "essay"
+
+- title: "Worm for a Century, and All Seasons"
+  author: "Stephen Jay Gould"
+  format: "essay"
