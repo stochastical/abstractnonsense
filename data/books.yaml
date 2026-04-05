@@ -63,6 +63,7 @@
 - title: "Kim Ji-young, Born 1982"
   author: "Cho Nam-ju"
   year: 2024
+  month: 2
 
 - title: "Pachinko"
   author: "Min Jin Lee"
@@ -261,7 +262,7 @@
   year: 2020
   month: 1
 
-- title: "Caves of Steel"
+- title: "The Caves of Steel"
   author: "Isaac Asimov"
   series: "Robot"
   year: 2020
@@ -521,7 +522,7 @@
   year: 2019
   month: 9
 
-- title: "The Return of the Temujai"
+- title: "Return of the Temujai"
   author: "John Flanagan"
   series: "Brotherband Chronicles"
   series_position: 8
@@ -535,7 +536,7 @@
   year: 2019
   month: 12
 
-- title: "Cuckoo's Egg"
+- title: "The Cuckoo's Egg"
   author: "Cliff Stoll"
   format: "non-fiction"
   year: 2019
@@ -575,7 +576,7 @@
   month: 2
 
 - title: "The Double Helix"
-  author: "James Watson"
+  author: "James D. Watson"
   format: "non-fiction"
   year: 2018
   month: 2
@@ -586,7 +587,7 @@
   year: 2018
   month: 2
 
-- title: "The Complete Yes, Minister"
+- title: "The Complete Yes Minister"
   author: "Jonathan Lynn and Antony Jay"
   year: 2018
   month: 3
@@ -604,7 +605,7 @@
   year: 2018
   month: 4
 
-- title: "12 Angry Men"
+- title: "Twelve Angry Men"
   author: "Reginald Rose"
   format: "play"
   year: 2018
@@ -650,7 +651,7 @@
   year: 2018
   month: 11
 
-- title: "Song of Troy"
+- title: "The Song of Troy"
   author: "Colleen McCullough"
   year: 2018
   month: 12
@@ -780,7 +781,7 @@
   month: 3
 
 - title: "The Meaning of It All"
-  author: "Richard Feynman"
+  author: "Richard P. Feynman"
   format: "non-fiction"
   year: 2017
   month: 3
@@ -826,7 +827,7 @@
   month: 4
 
 - title: "Six Easy Pieces"
-  author: "Richard Feynman"
+  author: "Richard P. Feynman"
   format: "non-fiction"
   year: 2017
   month: 5
@@ -856,7 +857,7 @@
   month: 5
 
 - title: "Why Evolution Is True"
-  author: "Jerry Coyne"
+  author: "Jerry A. Coyne"
   format: "non-fiction"
   year: 2017
   month: 5
@@ -1002,7 +1003,7 @@
   month: 10
 
 - title: "Nudge"
-  author: "Cass Sunstein and Richard Thaler"
+  author: "Cass R. Sunstein and Richard H. Thaler"
   format: "non-fiction"
   year: 2017
   month: 10
@@ -1394,6 +1395,10 @@
   series: "The Inheritance Cycle"
   series_position: 4
 
+- title: "Probably Approximately Correct"
+  author: "Leslie Valiant"
+  format: "non-fiction"
+
 # Short story
 
 - title: "Lamb to the Slaughter"
@@ -1502,6 +1507,10 @@
 
 - title: "Ozymandias"
   author: "Percy Bysshe Shelley"
+  format: "poetry"
+
+- title: "Invictus"
+  author: "William Henley"
   format: "poetry"
 
 # Essays
