@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="svg" width="400" height="400" viewBox="0 0 400 400"
+    preserveAspectRatio="xMidYMid meet"
+    font-family="ui-monospace, 'Roboto Mono', 'JetBrains Mono', Menlo, Monaco, monospace">
+    <line x1="0" y1="186.12387390485958" x2="400" y2="186.12387390485958" stroke="#121212"
+        stroke-width="1.5" opacity="0.3" />
+    <line x1="79.38063047570206" y1="0" x2="79.38063047570206" y2="400" stroke="#121212"
+        stroke-width="1.5" opacity="0.3" />
+    <text x="390" y="201.12387390485958" fill="#121212" font-size="16" text-anchor="end">Re</text>
+    <text x="94.38063047570206" y="15" fill="#121212" font-size="16" text-anchor="start">Im</text>
+    <text x="296.8203636462508" y="201.70928328877625" fill="#2749c9" font-size="24"
+        text-anchor="middle" dominant-baseline="middle"
+        aria-label="Eigenvalue: 15.670060338144289-1.1231815909611012i" role="img">λ</text>
+    <text x="79.43095656667057" y="167.20850530561353" fill="#2749c9" font-size="24"
+        text-anchor="middle" dominant-baseline="middle"
+        aria-label="Eigenvalue: 0.003626811303345967+1.3631591749422372i" role="img">λ</text>
+    <text x="83.90858873643148" y="203.3299592153294" fill="#2749c9" font-size="24"
+        text-anchor="middle" dominant-baseline="middle"
+        aria-label="Eigenvalue: 0.3263128505523723-1.2399775839811376i" role="img">λ</text>
+    <circle cx="107.13288266598289" cy="172.24774780971916" r="55.504504380561656" fill="#2749c9"
+        opacity="0.15" aria-label="Circle 1: (centre: 2+1i, radius: 4)" role="img" />
+    <circle cx="107.13288266598289" cy="172.24774780971916" r="4" fill="#2749c9" />
+    <circle cx="148.76126095140415" cy="200" r="138.76126095140415" fill="#f59e42" opacity="0.15"
+        aria-label="Circle 2: (centre: 5-1i, radius: 10)" role="img" />
+    <circle cx="148.76126095140415" cy="200" r="4" fill="#f59e42" />
+    <circle cx="204.26576533196578" cy="200" r="185.73423466803422" fill="#27c971" opacity="0.15"
+        aria-label="Circle 3: (centre: 9-1i, radius: 13.385164807134505)" role="img" />
+    <circle cx="204.26576533196578" cy="200" r="4" fill="#27c971" />
+</svg>

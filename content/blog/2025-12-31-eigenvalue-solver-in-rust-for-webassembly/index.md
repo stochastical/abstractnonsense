@@ -2,6 +2,7 @@
 title: 'Writing an eigenvalue solver in Rust for WebAssembly'
 date: 2025-12-31
 tags: ['mathematics', 'linear-algebra', 'rust', 'webassembly']
+images: ['gershgorin-circles.png']
 description: |
     We build an eigenvalue solver in Rust and compile it to WebAssembly, to build an interactive demo of the Gershgorin Circle Theorem that bounds the region of the complex plane matrix eigenvalues live in.
 ---
