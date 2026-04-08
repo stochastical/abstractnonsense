@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ .Site.Title }}</title>
     <meta name="description" content="{{ .Site.Params.description }}">
+    {{ partial "schema.html" . }}
     <link rel="stylesheet" href="{{ (resources.Get "css/style.css" | minify | fingerprint).RelPermalink }}">
     <link rel="stylesheet" href="{{ (resources.Get "css/syntax.css" | minify | fingerprint).RelPermalink }}">
     <!-- RSS feed -->
