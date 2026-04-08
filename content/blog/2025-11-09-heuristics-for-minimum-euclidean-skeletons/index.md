@@ -2,6 +2,7 @@
 title: Heuristics for Minimum Euclidean Skeletons
 date: "2025-11-09"
 tags: ['mathematics', 'graph-theory', 'algorithms', 'research']
+images: ['visibility-graph.png']
 description: |
     A retrospective look at my 2021 University of Melbourne vacation research project on minimum Euclidean skeletons, a geometric graph theory optimisation problem.
 ---
