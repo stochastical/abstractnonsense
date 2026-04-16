@@ -5,6 +5,8 @@
   format: "textbook"
   year: 2026
   month: 1
+  pages: 622
+  hardcover_id: 480616
   url: "/micro-blog/2026-01-31-programming-rust-textbook"
 
 - title: "Real-World Cryptography"
@@ -12,6 +14,8 @@
   format: "textbook"
   year: 2026
   month: 3
+  pages: 398
+  hardcover_id: 1018549
   url: "/micro-blog/2026-03-30-real-world-cryptography-by-david-wong/"
 
 # 2025
@@ -28,6 +32,8 @@
   format: "non-fiction"
   year: 2025
   month: 6
+  pages: 254
+  hardcover_id: 157096
   url: "/micro-blog/2025-06-30-meditations-by-marcus-aurelius"
 
 - title: "Even as the wind rustled among the leaves"
@@ -40,76 +46,110 @@
   author: "L. Frank Baum"
   year: 2025
   month: 9
+  pages: 389
+  hardcover_id: 429549
 
 - title: "Algospeak"
   author: "Adam Aleksic"
   format: "non-fiction"
   year: 2025
   month: 9
+  pages: 221
+  hardcover_id: 1819871
 
 - title: "Welcome to the Hyunam-Dong Bookshop"
   author: "Hwang Bo-Reum"
   year: 2025
   month: 10
+  pages: 320
+  hardcover_id: 1026526
   url: "/micro-blog/2025-10-05-welcome-to-the-hyunam-dong-bookshop-by-hwang-bo-reum/"
 
 - title: "The Little Drummer Girl"
   author: "John le Carré"
+  genre: "thriller"
   year: 2025
   month: 12
+  pages: 480
+  hardcover_id: 837211
 
 # 2024
 
 - title: "Kim Ji-young, Born 1982"
   author: "Cho Nam-ju"
+  genre: "literary-fiction"
   year: 2024
   month: 2
+  pages: 256
+  hardcover_id: 434950
 
 - title: "Pachinko"
   author: "Min Jin Lee"
+  genre: "historical-fiction"
   year: 2024
   month: 4
+  pages: 496
+  hardcover_id: 127044
 
 # 2023
 
 - title: "Beloved"
   author: "Toni Morrison"
+  genre: "literary-fiction"
   year: 2023
   month: 1
+  pages: 362
+  hardcover_id: 374373
 
 - title: "The Collapsing Empire"
   author: "John Scalzi"
+  genre: "sci-fi"
   series: "Old Man's War"
   year: 2023
   month: 1
+  pages: 336
+  hardcover_id: 240343
 
 - title: "The Cossacks and Other Stories"
   author: "Leo Tolstoy"
   translator: "David McDuff and Paul Foote"
+  genre: "short-story"
   year: 2023
   month: 5
+  pages: 483
+  hardcover_id: 595303
 
 - title: "Before the Coffee Gets Cold"
   author: "Toshikazu Kawaguchi"
+  genre: "literary-fiction"
   year: 2023
   month: 6
+  pages: 224
+  hardcover_id: 436167
 
 - title: "Yellowface"
   author: "R. F. Kuang"
+  genre: "literary-fiction"
   year: 2023
   month: 7
+  pages: 336
+  hardcover_id: 590689
 
 - title: "Babel"
   author: "R. F. Kuang"
+  genre: "fantasy"
   year: 2023
   month: 8
 
 - title: "Murtagh"
   author: "Christopher Paolini"
+  genre: "fantasy"
   series: "The Inheritance Cycle"
   series_position: 5
   year: 2023
   month: 11
+  pages: 688
+  hardcover_id: 720128
 
 # 2022
 
@@ -118,43 +158,64 @@
   format: "non-fiction"
   year: 2022
   month: 1
+  pages: 530
+  hardcover_id: 980217
 
 - title: "The Priory of the Orange Tree"
   author: "Samantha Shannon"
+  genre: "fantasy"
   year: 2022
   month: 1
+  pages: 830
+  hardcover_id: 428024
 
 - title: "The Tattooist of Auschwitz"
   author: "Heather Morris"
+  genre: "war"
   year: 2022
   month: 1
+  pages: 288
+  hardcover_id: 751284
 
 - title: "Colorless Tsukuru Tazaki and His Years of Pilgrimage"
   author: "Haruki Murakami"
+  genre: "literary-fiction"
   year: 2022
   month: 1
+  pages: 336
+  hardcover_id: 432492
 
 - title: "Leaving the Atocha Station"
   author: "Ben Lerner"
+  genre: "literary-fiction"
   year: 2022
   month: 2
+  pages: 181
+  hardcover_id: 472659
 
 - title: "The Handmaid's Tale"
   author: "Margaret Atwood"
+  genre: "sci-fi"
   year: 2022
   month: 2
+  pages: 324
+  hardcover_id: 377799
 
 - title: "Superfreakonomics"
   author: "Steven D. Levitt and Stephen J. Dubner"
   format: "non-fiction"
   year: 2022
   month: 3
+  pages: 270
+  hardcover_id: 147007
 
 - title: "The Odyssey"
   author: "Gareth Hinds"
   format: "graphic-novel"
   year: 2022
   month: 4
+  pages: 256
+  hardcover_id: 231214
 
 - title: "Maus"
   author: "Art Spiegelman"
@@ -164,30 +225,41 @@
 
 - title: "Red Rising"
   author: "Pierce Brown"
+  genre: "sci-fi"
   series: "Red Rising"
   series_position: 1
   year: 2022
   month: 7
+  pages: 382
+  hardcover_id: 427473
 
 - title: "Golden Son"
   author: "Pierce Brown"
+  genre: "sci-fi"
   series: "Red Rising"
   series_position: 2
   year: 2022
   month: 7
+  pages: 466
+  hardcover_id: 378044
 
 - title: "Morning Star"
   author: "Pierce Brown"
+  genre: "sci-fi"
   series: "Red Rising"
   series_position: 3
   year: 2022
   month: 12
+  pages: 524
+  hardcover_id: 427456
 
 - title: "Time is a Mother"
   author: "Ocean Vuong"
   format: "poetry"
   year: 2022
   month: 12
+  pages: 128
+  hardcover_id: 454041
 
 # 2021
 
@@ -196,57 +268,85 @@
   format: "short-story"
   year: 2021
   month: 1
+  pages: 104
+  hardcover_id: 511342
 
 - title: "Piranesi"
   author: "Susanna Clarke"
+  genre: "sci-fi"
   year: 2021
   month: 1
+  pages: 272
+  hardcover_id: 175280
 
 - title: "All That I Am"
   author: "Anna Funder"
+  genre: "history"
   year: 2021
   month: 1
+  pages: 368
+  hardcover_id: 502814
 
 - title: "Logicomix"
   author: "Apostolos Doxiadis and Christos Papadimitriou"
   format: "graphic-novel"
   year: 2021
   month: 1
+  pages: 352
+  hardcover_id: 442888
 
 - title: "A Pale View of Hills"
   author: "Kazuo Ishiguro"
+  genre: "literary-fiction"
   year: 2021
   month: 1
+  pages: 183
+  hardcover_id: 107932
 
 - title: "The Human Division"
   author: "John Scalzi"
+  genre: "sci-fi"
   series: "Old Man's War"
   series_position: 5
   year: 2021
   month: 3
+  pages: 433
+  hardcover_id: 441230
 
 - title: "Norwegian Wood"
   author: "Haruki Murakami"
+  genre: "literary-fiction"
   year: 2021
   month: 7
+  pages: 298
+  hardcover_id: 776952
 
 - title: "Watchmen"
   author: "Alan Moore"
   format: "graphic-novel"
   year: 2021
   month: 7
+  pages: 448
+  hardcover_id: 308
 
 - title: "King Rat"
   author: "James Clavell"
+  genre: "historical-fiction"
   series: "The Asian Saga"
   series_position: 4
   year: 2021
   month: 7
+  pages: 464
+  hardcover_id: 347754
 
 - title: "Klara and the Sun"
   author: "Kazuo Ishiguro"
+  genre: "sci-fi"
   year: 2021
   month: 12
+  pages: 320
+  hardcover_id: 266607
+
 
 # 2020
 
@@ -255,112 +355,163 @@
   format: "non-fiction"
   year: 2020
   month: 1
+  pages: 370
+  hardcover_id: 348610
 
 - title: "Stories of Your Life and Others"
   author: "Ted Chiang"
   format: "short-story"
   year: 2020
   month: 1
+  pages: 352
+  hardcover_id: 94521
 
 - title: "The Caves of Steel"
   author: "Isaac Asimov"
+  genre: "sci-fi"
   series: "Robot"
   year: 2020
   month: 1
+  pages: 272
+  hardcover_id: 312167
 
 - title: "Assassin's Apprentice"
   author: "Robin Hobb"
+  genre: "fantasy"
   series: "The Farseer Trilogy"
   series_position: 1
   year: 2020
   month: 1
+  pages: 400
+  hardcover_id: 427336
 
 - title: "The Return of the Warrior"
   author: "Chris Bradford"
   series: "Young Samurai"
+  genre: "adventure"
   series_position: 9
   year: 2020
   month: 2
+  pages: 384
+  hardcover_id: 1054265
 
 - title: "The Tombs of Atuan"
   author: "Ursula K. Le Guin"
+  genre: "sci-fi"
   series: "Earthsea Cycle"
   series_position: 2
   year: 2020
   month: 3
+  pages: 208
+  hardcover_id: 37746
 
 - title: "The Three Body Problem"
   author: "Cixin Liu"
+  genre: "sci-fi"
   year: 2020
   month: 3
 
 - title: "Noble House"
   author: "James Clavell"
+  genre: "historical-fiction"
   series: "The Asian Saga"
   series_position: 5
   year: 2020
   month: 4
+  pages: 1284
+  hardcover_id: 470798
 
 - title: "Fortune's Favorites"
   author: "Colleen McCullough"
+  genre: "historical-fiction"
   series: "Masters of Rome"
   series_position: 3
   year: 2020
   month: 7
+  pages: 1072
+  hardcover_id: 485275
 
 - title: "Casino Royale"
   author: "Ian Fleming"
+  genre: "thriller"
   year: 2020
   month: 7
+  pages: 208
+  hardcover_id: 12854
 
 - title: "Because Internet"
   author: "Gretchen McCulloch"
   format: "non-fiction"
   year: 2020
   month: 7
+  pages: 338
+  hardcover_id: 385829
 
 - title: "The Spy Who Came in from the Cold"
   author: "John le Carré"
+  genre: "thriller"
   year: 2020
   month: 8
+  pages: 304
+  hardcover_id: 193425
 
 - title: "The Remains of the Day"
   author: "Kazuo Ishiguro"
+  genre: "literary-fiction"
   year: 2020
   month: 9
+  pages: 245
+  hardcover_id: 136692
 
 - title: "The Housekeeper and the Professor"
   author: "Yōko Ogawa"
+  genre: "literary-fiction"
   year: 2020
   month: 9
+  pages: 192
+  hardcover_id: 190337
 
 - title: "The Evening and the Morning"
   author: "Ken Follett"
+  genre: "historical-fiction"
   series: "The Kingsbridge Series"
   series_position: 0
   year: 2020
   month: 9
+  pages: 913
+  hardcover_id: 428358
 
 - title: "An Artist of the Floating World"
   author: "Kazuo Ishiguro"
+  genre: "historical-fiction"
   year: 2020
   month: 10
+  pages: 208
+  hardcover_id: 530858
 
 - title: "To Sleep in a Sea of Stars"
   author: "Christopher Paolini"
+  genre: "sci-fi"
   year: 2020
   month: 12
+  pages: 880
+  hardcover_id: 427334
 
 - title: "Never Let Me Go"
   author: "Kazuo Ishiguro"
+  genre: "sci-fi"
   year: 2020
   month: 12
+  pages: 288
+  hardcover_id: 132314
 
 - title: "On Wings of Eagles"
   author: "Ken Follett"
   format: "non-fiction"
   year: 2020
   month: 12
+  pages: 416
+  hardcover_id: 16425
 
 - title: "Persepolis"
   author: "Marjane Satrapi"
@@ -370,87 +521,123 @@
 
 - title: "Norse Mythology"
   author: "Neil Gaiman"
+  genre: "adventure"
   year: 2020
   month: 12
+  pages: 301
+  hardcover_id: 385427
 
 - title: "The Night Circus"
   author: "Erin Morgenstern"
+  genre: "fantasy"
   year: 2020
   month: 12
+  pages: 387
+  hardcover_id: 375064
 
 - title: "The Buried Giant"
   author: "Kazuo Ishiguro"
+  genre: "literary-fiction"
   year: 2020
   month: 12
+  pages: 317
+  hardcover_id: 3257
 
 - title: "Desire"
   author: "Haruki Murakami"
   format: "short-story"
   year: 2020
   month: 12
+  pages: 109
+  hardcover_id: 430752
 
 # 2019
 
 - title: "The Red Fox Clan"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice: The Royal Ranger Series"
   series_position: 2
   year: 2019
   month: 1
+  pages: 354
+  hardcover_id: 117045
 
 - title: "The Order of Time"
   author: "Carlo Rovelli"
   format: "non-fiction"
   year: 2019
   month: 1
+  pages: 172
+  hardcover_id: 432438
 
 - title: "The Fork, the Witch, and the Worm"
   author: "Christopher Paolini"
+  format: "fantasy"
   series: "The Inheritance Cycle"
-  format: "short-story"
   year: 2019
   month: 1
+  pages: 281
+  hardcover_id: 463833
 
 - title: "Duel at Araluen"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice: The Royal Ranger Series"
   series_position: 3
   year: 2019
   month: 1
+  pages: 305
+  hardcover_id: 1004371
 
 - title: "Starship Troopers"
   author: "Robert Heinlein"
+  genre: "sci-fi"
   year: 2019
   month: 1
+  pages: 288
+  hardcover_id: 379327
 
 - title: "Ransom"
   author: "David Malouf"
+  genre: "literary-fiction"
   year: 2019
   month: 1
+  pages: 240
+  hardcover_id: 464316
 
 - title: "Climbing Mount Improbable"
   author: "Richard Dawkins"
   format: "non-fiction"
   year: 2019
   month: 2
+  pages: 411
+  hardcover_id: 492819
 
 - title: "Death by Black Hole"
   author: "Neil deGrasse Tyson"
   format: "non-fiction"
   year: 2019
   month: 3
+  hardcover_id: 1969720
 
 - title: "Master and Commander"
   author: "Patrick O'Brian"
+  genre: "adventure"
   year: 2019
   month: 3
+  pages: 428
+  hardcover_id: 428537
 
 - title: "Imperium"
   author: "Robert Harris"
+  genre: "historical-fiction"
   series: "Cicero Trilogy"
   series_position: 1
   year: 2019
   month: 3
+  pages: 367
+  hardcover_id: 308041
 
 - title: "The Women of Troy"
   author: "Euripides"
@@ -460,53 +647,70 @@
 
 - title: "Conspirata"
   author: "Robert Harris"
+  genre: "historical-fiction"
   series: "Cicero Trilogy"
   series_position: 2
   year: 2019
   month: 4
+  pages: 340
+  hardcover_id: 328519
 
 - title: "The Complete Guide to Asterix"
   author: "Peter Kessler"
   format: "non-fiction"
   year: 2019
   month: 4
+  pages: 105
+  hardcover_id: 1515804
 
 - title: "Through the Language Glass"
   author: "Guy Deutscher"
   format: "non-fiction"
   year: 2019
   month: 4
+  pages: 308
+  hardcover_id: 282054
 
 - title: "The Wizard of Earthsea"
   author: "Ursula K. Le Guin"
+  genre: "fantasy"
   series: "Earthsea"
   series_position: 1
   year: 2019
   month: 5
+  pages: 251
+  hardcover_id: 427401
 
 - title: "Humble Pi"
   author: "Matt Parker"
   format: "non-fiction"
   year: 2019
   month: 6
+  pages: 337
+  hardcover_id: 438308
 
 - title: "The U.S. Supreme Court: A Very Short Introduction"
   author: "Linda Greenhouse"
   format: "non-fiction"
   year: 2019
   month: 7
+  pages: 144
+  hardcover_id: 1686208
 
 - title: "Living Proof"
+  author: "Allison K. Henrich, Emille D. Lawrence, Matthew A. Pons, David G. Taylor"
   format: "non-fiction"
-  author: |
-    Allison K. Henrich, Emille D. Lawrence, Matthew A. Pons, David G. Taylor
   year: 2019
   month: 7
+  hardcover_id: 1265196
 
 - title: "The Indian in the Cupboard"
   author: "Lynne Banks"
+  genre: "adventure"
   year: 2019
   month: 7
+  pages: 192
+  hardcover_id: 133703
 
 - title: "I, Robot"
   author: "Isaac Asimov"
@@ -514,50 +718,70 @@
   series: "Robot"
   year: 2019
   month: 8
+  pages: 256
+  hardcover_id: 192946
 
 - title: "Foundation"
   author: "Isaac Asimov"
+  genre: "sci-fi"
   series: "Foundation"
   series_position: 1
   year: 2019
   month: 9
+  pages: 320
+  hardcover_id: 188628
 
 - title: "Return of the Temujai"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Brotherband Chronicles"
   series_position: 8
   year: 2019
   month: 9
+  pages: 354
+  hardcover_id: 1209273
 
 - title: "Dictator"
   author: "Robert Harris"
+  genre: "historical-fiction"
   series: "Cicero Trilogy"
   series_position: 3
   year: 2019
   month: 12
+  pages: 385
+  hardcover_id: 289750
 
 - title: "The Cuckoo's Egg"
   author: "Cliff Stoll"
   format: "non-fiction"
   year: 2019
   month: 12
+  pages: 342
+  hardcover_id: 63625
 
 # 2018
 
 - title: "A Game of Thrones"
   author: "George R.R. Martin"
+  genre: "fantasy"
   series: "A Song of Ice and Fire"
   series_position: 1
   year: 2018
   month: 1
+  pages: 694
+  hardcover_id: 644
 
 - title: "The Adventures of Sherlock Holmes and The Memoirs of Sherlock Holmes"
   author: "Arthur Conan Doyle"
+  genre: "adventure"
   year: 2018
   month: 1
+  pages: 551
+  hardcover_id: 221065
 
 - title: "Tai-Pan"
   author: "James Clavell"
+  genre: "historical-fiction"
   series: "The Asian Saga"
   series_position: 2
   year: 2018
@@ -568,60 +792,82 @@
   format: "non-fiction"
   year: 2018
   month: 1
+  pages: 304
+  hardcover_id: 497529
 
 - title: "Bad Pharma"
   author: "Ben Goldacre"
   format: "non-fiction"
   year: 2018
   month: 2
+  pages: 448
+  hardcover_id: 438169
 
 - title: "The Double Helix"
   author: "James D. Watson"
   format: "non-fiction"
   year: 2018
   month: 2
+  pages: 189
+  hardcover_id: 306516
 
 - title: "I Think You'll Find it's a Bit More Complicated Than That"
   author: "Ben Goldacre"
   format: "non-fiction"
   year: 2018
   month: 2
+  pages: 400
+  hardcover_id: 470097
 
 - title: "The Complete Yes Minister"
   author: "Jonathan Lynn and Antony Jay"
+  genre: "politics"
   year: 2018
   month: 3
+  pages: 514
+  hardcover_id: 729750
 
 - title: "The Signal and the Noise"
   author: "Nate Silver"
   format: "non-fiction"
   year: 2018
   month: 4
+  pages: 534
+  hardcover_id: 374233
 
 - title: "Gai-Jin"
   author: "James Clavell"
+  genre: "historical-fiction"
   series: "The Asian Saga"
   series_position: 3
   year: 2018
   month: 4
+  pages: 1106
+  hardcover_id: 24177
 
 - title: "Twelve Angry Men"
   author: "Reginald Rose"
   format: "play"
   year: 2018
   month: 4
+  pages: 97
+  hardcover_id: 429420
 
 - title: "War of the Worldviews"
   author: "Deepak Chopra and Leonard Mlodinow"
   format: "non-fiction"
   year: 2018
   month: 4
+  pages: 336
+  hardcover_id: 802016
 
 - title: "How to Lie with Statistics"
   author: "Darrell Huff"
   format: "non-fiction"
   year: 2018
   month: 7
+  pages: 144
+  hardcover_id: 266884
 
 - title: "Medea"
   author: "Euripides"
@@ -634,414 +880,591 @@
   format: "non-fiction"
   year: 2018
   month: 9
+  pages: 338
+  hardcover_id: 582045
 
 - title: "The Design of Everyday Things"
   author: "Donald Norman"
   format: "non-fiction"
   year: 2018
   month: 9
+  pages: 368
+  hardcover_id: 482651
 
 - title: "All the Light We Cannot See"
   author: "Anthony Doerr"
+  genre: "historical-fiction"
   year: 2018
   month: 10
+  pages: 560
+  hardcover_id: 478556
 
 - title: "The Lieutenant"
   author: "Kate Grenville"
+  genre: "historical-fiction"
   year: 2018
   month: 11
+  pages: 320
+  hardcover_id: 173020
 
 - title: "The Song of Troy"
   author: "Colleen McCullough"
+  genre: "historical-fiction"
   year: 2018
   month: 12
+  pages: 404
+  hardcover_id: 464167
 
 - title: "Math with Bad Drawings"
   author: "Ben Orlin"
   format: "non-fiction"
   year: 2018
   month: 12
+  pages: 376
+  hardcover_id: 603404
 
 - title: "Old Man's War"
   author: "John Scalzi"
+  genre: "sci-fi"
   series: "Old Man's War"
   series_position: 1
   year: 2018
   month: 12
+  pages: 320
+  hardcover_id: 309315
 
 - title: "The Ghost Brigades"
   author: "John Scalzi"
+  genre: "sci-fi"
   series: "Old Man's War"
   series_position: 2
   year: 2018
   month: 12
+  pages: 374
+  hardcover_id: 431758
 
 # 2017
 
 - title: "Rendezvous with Rama"
   author: "Arthur C. Clarke"
+  genre: "sci-fi"
   series: "Rama"
   series_position: 1
   year: 2017
   month: 1
+  pages: 288
+  hardcover_id: 4720
 
 - title: "Ethics in the Real World"
   author: "Peter Singer"
   format: "non-fiction"
   year: 2017
   month: 1
+  pages: 355
+  hardcover_id: 525540
 
 - title: "Rama II"
   author: "Arthur C. Clarke and Gentry Lee"
+  genre: "sci-fi"
   series: "Rama"
   series_position: 2
   year: 2017
   month: 1
+  pages: 440
+  hardcover_id: 445036
 
 - title: "The Blind Watchmaker"
   author: "Richard Dawkins"
   format: "non-fiction"
   year: 2017
   month: 1
+  pages: 332
+  hardcover_id: 437945
 
 - title: "Eclipse"
   author: "Richard North Patterson"
+  genre: "thriller"
   year: 2017
   month: 1
+  pages: 369
+  hardcover_id: 283308
 
 - title: "A Devil's Chaplain"
   author: "Richard Dawkins"
   format: "non-fiction"
   year: 2017
   month: 1
+  pages: 310
+  hardcover_id: 547165
 
 - title: "Go Set a Watchman"
   author: "Harper Lee"
+  genre: "literary-fiction"
   series: "To Kill a Mockingbird"
   series_position: 2
   year: 2017
   month: 1
+  pages: 278
+  hardcover_id: 328859
 
 - title: "Generals Die in Bed"
   author: "Charles Yale Harrison"
+  genre: "war"
   year: 2017
   month: 1
+  pages: 180
+  hardcover_id: 797560
 
 - title: "First They Killed My Father"
   author: "Loung Ung"
-  format: "non-fiction"
+  format: "war"
   year: 2017
   month: 1
+  pages: 288
+  hardcover_id: 433163
 
 - title: "Fall of Giants"
   author: "Ken Follett"
+  genre: "historical-fiction"
   series: "The Century Trilogy"
   series_position: 1
   year: 2017
   month: 2
+  pages: 865
+  hardcover_id: 382859
 
 - title: "Reality Is Not What It Seems"
   author: "Carlo Rovelli"
   format: "non-fiction"
   year: 2017
   month: 2
+  pages: 280
+  hardcover_id: 443055
 
 - title: "The Garden of Rama"
   author: "Arthur C. Clarke and Gentry Lee"
+  genre: "sci-fi"
   series: "Rama"
   series_position: 3
   year: 2017
   month: 2
+  pages: 522
+  hardcover_id: 13293
 
 - title: "Rama Revealed"
   author: "Arthur C. Clarke and Gentry Lee"
+  genre: "sci-fi"
   series: "Rama"
   series_position: 4
   year: 2017
   month: 2
+  pages: 616
+  hardcover_id: 324325
 
 - title: "Winter of the World"
   author: "Ken Follett"
+  genre: "historical-fiction"
   series: "The Century Trilogy"
   series_position: 2
   year: 2017
   month: 2
+  pages: 940
+  hardcover_id: 183469
 
 - title: "Edge of Eternity"
   author: "Ken Follett"
+  genre: "historical-fiction"
   series: "The Century Trilogy"
   series_position: 3
   year: 2017
   month: 3
+  pages: 1121
+  hardcover_id: 7505
 
 - title: "Rethinking Life and Death"
   author: "Peter Singer"
   format: "non-fiction"
   year: 2017
   month: 3
+  pages: 268
+  hardcover_id: 914541
 
 - title: "The Meaning of It All"
   author: "Richard P. Feynman"
   format: "non-fiction"
   year: 2017
   month: 3
+  pages: 192
+  hardcover_id: 631914
 
 - title: "Dune"
   author: "Frank Herbert"
+  genre: "sci-fi"
   year: 2017
   month: 3
+  pages: 704
+  hardcover_id: 312460
 
 - title: "Sapiens"
   author: "Yuval Noah Harari"
   format: "non-fiction"
   year: 2017
   month: 3
+  pages: 443
+  hardcover_id: 375634
 
 - title: "I Am Pilgrim"
   author: "Terry Hayes"
+  genre: "thriller"
   year: 2017
   month: 4
+  pages: 624
+  hardcover_id: 26754
 
 - title: "The Most Good You Can Do"
   author: "Peter Singer"
   format: "non-fiction"
   year: 2017
   month: 4
+  pages: 232
+  hardcover_id: 441473
 
 - title: "The Count of Monte Cristo"
   author: "Alexandre Dumas"
   translator: "Robin Buss"
+  genre: "adventure"
   year: 2017
   month: 4
+  pages: 1276
+  hardcover_id: 473869
 
 - title: "Slaughterhouse-Five"
   author: "Kurt Vonnegut"
+  genre: "sci-fi"
   year: 2017
   month: 4
+  pages: 215
+  hardcover_id: 122240
 
 - title: "The Battle of Hackham Heath"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice: The Early Years"
   series_position: 2
   year: 2017
   month: 4
+  pages: 354
+  hardcover_id: 153385
 
 - title: "Six Easy Pieces"
   author: "Richard P. Feynman"
   format: "non-fiction"
   year: 2017
   month: 5
+  pages: 144
+  hardcover_id: 434175
 
 - title: "The Left Hand of Darkness"
   author: "Ursula K. Le Guin"
+  genre: "sci-fi"
   series: "Hainish Cycle"
   year: 2017
   month: 5
+  pages: 267
+  hardcover_id: 377842
 
 - title: "The Pillars of the Earth"
   author: "Ken Follett"
+  genre: "historical-fiction"
   series: "The Kingsbridge Series"
   series_position: 1
   year: 2017
   month: 5
+  pages: 1510
+  hardcover_id: 98094
 
 - title: "13.8"
   author: "John Gribbin"
   format: "non-fiction"
   year: 2017
   month: 5
+  pages: 267
+  hardcover_id: 1480365
 
 - title: "Ancillary Justice"
   author: "Ann Leckie"
+  genre: "sci-fi"
   year: 2017
   month: 5
+  pages: 396
+  hardcover_id: 95034
 
 - title: "Why Evolution Is True"
   author: "Jerry A. Coyne"
   format: "non-fiction"
   year: 2017
   month: 5
+  pages: 312
+  hardcover_id: 271693
 
 - title: "World Without End"
   author: "Ken Follett"
+  genre: "historical-fiction"
   series: "The Kingsbridge Series"
   series_position: 2
   year: 2017
   month: 6
+  pages: 1014
+  hardcover_id: 222828
 
 - title: "A Brief History of Time"
   author: "Stephen Hawking"
   format: "non-fiction"
   year: 2017
   month: 6
+  pages: 240
+  hardcover_id: 465017
 
 - title: "The Three Musketeers"
   author: "Alexandre Dumas"
   translator: "Richard Pevear"
+  genre: "adventure"
   year: 2017
   month: 6
+  pages: 608
+  hardcover_id: 598289
 
 - title: "SPQR"
   author: "Mary Beard"
   format: "non-fiction"
   year: 2017
   month: 6
+  pages: 607
+  hardcover_id: 267692
 
-- title: "2061"
+- title: 2061
   author: "Arthur C. Clarke"
+  genre: "sci-fi"
   series: "Space Odyssey"
   series_position: 3
   year: 2017
   month: 7
+  pages: 273
+  hardcover_id: 17728
 
 - title: "Bad Science"
   author: "Ben Goldacre"
   format: "non-fiction"
   year: 2017
   month: 7
+  pages: 354
+  hardcover_id: 220998
 
 - title: "Stasiland"
   author: "Anna Funder"
   format: "non-fiction"
   year: 2017
   month: 7
+  pages: 328
+  hardcover_id: 435118
 
 - title: "The Forever War"
   author: "Joe Haldeman"
+  genre: "sci-fi"
   series: "The Forever War"
   series_position: 1
   year: 2017
   month: 7
+  pages: 203
+  hardcover_id: 427389
 
 - title: "The First Man in Rome"
   author: "Colleen McCullough"
+  genre: "historical-fiction"
   series: "Masters of Rome"
   series_position: 1
   year: 2017
   month: 7
+  pages: 896
+  hardcover_id: 139930
 
 - title: "Fahrenheit 451"
   author: "Ray Bradbury"
+  genre: "sci-fi"
   year: 2017
   month: 7
+  pages: 227
+  hardcover_id: 375938
 
 - title: "3001"
   author: "Arthur C. Clarke"
+  genre: "sci-fi"
   series: "Space Odyssey"
   series_position: 4
   year: 2017
   month: 7
+  pages: 278
+  hardcover_id: 39696
 
 - title: "Childhood's End"
   author: "Arthur C. Clarke"
+  genre: "sci-fi"
   year: 2017
   month: 7
+  pages: 212
+  hardcover_id: 184949
 
 - title: "The Dispossessed"
   author: "Ursula K. Le Guin"
+  genre: "sci-fi"
   series: "Hainish Cycle"
   year: 2017
   month: 8
+  pages: 400
+  hardcover_id: 267204
 
 - title: "Forever Peace"
   author: "Joe Haldeman"
+  genre: "sci-fi"
   series: "The Forever War"
   series_position: 2
   year: 2017
   month: 8
+  pages: 424
+  hardcover_id: 322159
 
 - title: "Eye of the Needle"
   author: "Ken Follett"
+  genre: "thriller"
   year: 2017
   month: 8
+  pages: 354
+  hardcover_id: 532594
 
 - title: "Thinking, Fast and Slow"
   author: "Daniel Kahneman"
   format: "non-fiction"
   year: 2017
   month: 8
+  pages: 499
+  hardcover_id: 242841
 
 - title: "Shōgun"
   author: "James Clavell"
+  genre: "historical-fiction"
   series: "The Asian Saga"
   series_position: 1
   year: 2017
   month: 9
+  pages: 1125
+  hardcover_id: 6705
 
 - title: "Contact"
   author: "Carl Sagan"
+  genre: "sci-fi"
   year: 2017
   month: 9
+  pages: 453
+  hardcover_id: 111638
 
 - title: "Exile"
   author: "Richard North Patterson"
+  genre: "thriller"
   year: 2017
   month: 9
+  pages: 562
+  hardcover_id: 62795
 
 - title: "The Grass Crown"
   author: "Colleen McCullough"
+  genre: "historical-fiction"
   series: "Masters of Rome"
   series_position: 2
   year: 2017
   month: 9
+  pages: 1104
+  hardcover_id: 469224
 
 - title: "Minority Report"
   author: "Philip K. Dick"
   format: "short-story"
   year: 2017
   month: 10
+  pages: 103
+  hardcover_id: 2428039
 
 - title: "Brave New World"
   author: "Aldous Huxley"
+  genre: "sci-fi"
   year: 2017
   month: 10
+  pages: 332
+  hardcover_id: 374328
 
 - title: "The Checklist Manifesto"
   author: "Atul Gawande"
   format: "non-fiction"
   year: 2017
   month: 10
+  pages: 224
+  hardcover_id: 625748
 
 - title: "Nudge"
   author: "Cass R. Sunstein and Richard H. Thaler"
   format: "non-fiction"
   year: 2017
   month: 10
+  pages: 305
+  hardcover_id: 441346
 
 - title: "A Column of Fire"
   author: "Ken Follett"
+  genre: "historical-fiction"
   series: "The Kingsbridge Series"
   series_position: 3
   year: 2017
   month: 11
+  pages: 912
+  hardcover_id: 132866
 
 - title: "Hidden Figures"
   author: "Margot Lee Shetterly"
   format: "non-fiction"
   year: 2017
   month: 11
+  pages: 384
+  hardcover_id: 76071
 
 - title: "The Caldera"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Brotherband Chronicles"
   series_position: 7
   year: 2017
   month: 12
+  pages: 434
+  hardcover_id: 251887
 
 - title: "The Oxford Book of Modern Science Writing"
   author: "Richard Dawkins"
   format: "non-fiction"
   year: 2017
   month: 12
+  hardcover_id: 373500
 
 # Undated (read sometime prior to 2017)
 
 - title: "Of Mice and Men"
   author: "John Steinbeck"
+  genre: "literary-fiction"
+  pages: 162
+  hardcover_id: 378949
 
 - title: "The Rugmaker of Mazar-e-Sharif"
   author: "Najaf Mazari"
   format: "non-fiction"
+  pages: 262
+  hardcover_id: 2528981
 
 - title: "What If?"
   author: "Randall Munroe"
@@ -1053,31 +1476,47 @@
 
 - title: "Parvana"
   author: "Deborah Ellis"
+  genre: "war"
+  pages: 182
+  hardcover_id: 614979
 
 - title: "Night"
   author: "Elie Wiesel"
-  format: "non-fiction"
+  format: "war"
+  pages: 126
+  hardcover_id: 35078
 
 - title: "The Da Vinci Code"
   author: "Dan Brown"
+  genre: "adventure"
+  pages: 489
+  hardcover_id: 373163
 
 - title: "The Hobbit"
+  genre: "fantasy"
   author: "J.R.R. Tolkien"
 
 - title: "Flatland"
+  genre: "adventure"
   author: "Edwin Abbott"
 
 - title: "The Art of War"
   author: "Sun Tzu"
   format: "non-fiction"
+  pages: 190
+  hardcover_id: 80661
 
 - title: "Nothing to Envy"
   author: "Barbara Demick"
-  format: "non-fiction"
+  genre: "war"
+  pages: 338
+  hardcover_id: 427387
 
 - title: "Escape from Camp 14"
   author: "Blaine Harden"
-  format: "non-fiction"
+  genre: "war"
+  pages: 205
+  hardcover_id: 286409
 
 - title: "The Structure of Scientific Revolutions"
   author: "Thomas Kuhn"
@@ -1086,314 +1525,512 @@
 - title: "Macbeth"
   author: "William Shakespeare"
   format: "play"
+  pages: 176
+  hardcover_id: 383496
 
 - title: "2001: A Space Odyssey"
   author: "Arthur C. Clarke"
+  genre: "sci-fi"
   series: "Space Odyssey"
   series_position: 1
+  pages: 221
+  hardcover_id: 374134
 
 - title: "2010: Odyssey Two"
   author: "Arthur C. Clarke"
+  genre: "sci-fi"
   series: "Space Odyssey"
   series_position: 2
+  pages: 320
+  hardcover_id: 445066
 
 - title: "Time's Eye"
   author: "Arthur C. Clarke and Stephen Baxter"
+  genre: "sci-fi"
   series: "A Time Odyssey"
   series_position: 1
+  pages: 386
+  hardcover_id: 446216
 
 - title: "Sunstorm"
   author: "Arthur C. Clarke and Stephen Baxter"
+  genre: "sci-fi"
   series: "A Time Odyssey"
   series_position: 2
+  pages: 370
+  hardcover_id: 446085
 
 - title: "Firstborn"
   author: "Arthur C. Clarke and Stephen Baxter"
+  genre: "sci-fi"
   series: "A Time Odyssey"
   series_position: 3
+  pages: 364
+  hardcover_id: 385359
 
 - title: "The Grand Design"
   author: "Stephen Hawking"
   format: "non-fiction"
+  pages: 209
+  hardcover_id: 436455
 
 - title: "Seven Brief Lessons on Physics"
   author: "Carlo Rovelli"
   format: "non-fiction"
+  pages: 96
+  hardcover_id: 435935
 
 - title: "Quidditch Through the Ages"
   author: "J.K. Rowling"
+  genre: "fantasy"
+  pages: 130
+  hardcover_id: 213743
 
 - title: "Harry Potter and the Philosopher's Stone"
   author: "J.K. Rowling"
+  genre: "fantasy"
   series: "Harry Potter"
   series_position: 1
+  pages: 309
+  hardcover_id: 328491
 
 - title: "Harry Potter and the Chamber of Secrets"
   author: "J.K. Rowling"
+  genre: "fantasy"
   series: "Harry Potter"
   series_position: 2
+  pages: 332
+  hardcover_id: 429306
 
 - title: "Harry Potter and the Prisoner of Azkaban"
   author: "J.K. Rowling"
+  genre: "fantasy"
   series: "Harry Potter"
   series_position: 3
+  pages: 448
+  hardcover_id: 376219
 
 - title: "Harry Potter and the Goblet of Fire"
   author: "J.K. Rowling"
+  genre: "fantasy"
   series: "Harry Potter"
   series_position: 4
+  pages: 734
+  hardcover_id: 383236
 
 - title: "Harry Potter and the Order of the Phoenix"
   author: "J.K. Rowling"
+  genre: "fantasy"
   series: "Harry Potter"
   series_position: 5
+  pages: 896
+  hardcover_id: 428465
 
 - title: "Harry Potter and the Half-Blood Prince"
   author: "J.K. Rowling"
+  genre: "fantasy"
   series: "Harry Potter"
   series_position: 6
+  pages: 672
+  hardcover_id: 428506
 
 - title: "Harry Potter and the Deathly Hallows"
   author: "J.K. Rowling"
+  genre: "fantasy"
   series: "Harry Potter"
   series_position: 7
+  pages: 784
+  hardcover_id: 382143
 
 - title: "Harry Potter and the Cursed Child"
   author: "J.K. Rowling"
-  series: "Harry Potter"
   format: "play"
+  series: "Harry Potter"
   series_position: 8
+  pages: 320
+  hardcover_id: 279285
 
 - title: "Practical Ethics"
   author: "Peter Singer"
   format: "non-fiction"
+  pages: 395
+  hardcover_id: 158976
 
 - title: "The Runaway Jury"
   author: "John Grisham"
+  genre: "thriller"
+  pages: 465
+  hardcover_id: 135315
 
 - title: "The Last Juror"
   author: "John Grisham"
+  genre: "thriller"
+  pages: 418
+  hardcover_id: 374113
 
 - title: "A Time to Kill"
   author: "John Grisham"
+  genre: "thriller"
+  pages: 502
+  hardcover_id: 378855
 
 - title: "Sycamore Row"
   author: "John Grisham"
+  genre: "thriller"
+  pages: 447
+  hardcover_id: 218448
 
 - title: "The Firm"
   author: "John Grisham"
+  genre: "thriller"
+  pages: 432
+  hardcover_id: 378630
 
 - title: "The Associate"
   author: "John Grisham"
+  genre: "thriller"
+  pages: 486
+  hardcover_id: 309737
 
 - title: "The Litigators"
   author: "John Grisham"
+  genre: "thriller"
+  pages: 385
+  hardcover_id: 236204
 
 - title: "The King of Torts"
   author: "John Grisham"
+  genre: "thriller"
+  pages: 400
+  hardcover_id: 307976
 
 - title: "In the Name of Honor"
   author: "Richard North Patterson"
+  genre: "thriller"
+  hardcover_id: 300808
 
 - title: "No Safe Place"
   author: "Richard North Patterson"
+  genre: "thriller"
+  pages: 585
+  hardcover_id: 661031
 
 - title: "The Devil's Light"
   author: "Richard North Patterson"
+  genre: "thriller"
+  hardcover_id: 38686
 
 - title: "The Lasko Tangent"
   author: "Richard North Patterson"
+  genre: "thriller"
+  pages: 255
+  hardcover_id: 273088
 
 - title: "The Spire"
+  genre: "thriller"
   author: "Richard North Patterson"
+  pages: 384
+  hardcover_id: 793533
 
 - title: "The Race"
+  genre: "thriller"
   author: "Richard North Patterson"
+  pages: 352
+  hardcover_id: 3215
 
 - title: "The Bicentennial Man and Other Stories"
   author: "Isaac Asimov"
   format: "short-story"
+  pages: 352
+  hardcover_id: 445068
 
 - title: "As the Crow Flies"
   author: "Jeffrey Archer"
+  genre: "historical-fiction"
+  pages: 596
+  hardcover_id: 584351
 
 - title: "The Eleventh Commandment"
   author: "Jeffrey Archer"
+  genre: "thriller"
+  pages: 448
+  hardcover_id: 158955
 
 - title: "1984"
   author: "George Orwell"
+  genre: "sci-fi"
+  pages: 336
+  hardcover_id: 379760
 
 - title: "Animal Farm"
   author: "George Orwell"
+  genre: "sci-fi"
+  pages: 140
+  hardcover_id: 356467
 
 - title: "The Time Machine"
   author: "H.G. Wells"
+  genre: "sci-fi"
+  pages: 144
+  hardcover_id: 69589
 
 - title: "The World Set Free"
   author: "H.G. Wells"
+  genre: "sci-fi"
 
 - title: "The Magic Faraway Tree"
   author: "Enid Blyton"
+  genre: "literary-fiction"
+  pages: 192
+  hardcover_id: 343628
 
 - title: "To Kill a Mockingbird"
   author: "Harper Lee"
+  genre: "literary-fiction"
   series: "To Kill a Mockingbird"
   series_position: 1
+  pages: 309
+  hardcover_id: 149361
 
 - title: "The Way of the Warrior"
   author: "Chris Bradford"
+  genre: "adventure"
   series: "Young Samurai"
   series_position: 1
 
 - title: "The Way of the Sword"
   author: "Chris Bradford"
+  genre: "adventure"
   series: "Young Samurai"
   series_position: 2
+  pages: 362
+  hardcover_id: 568591
 
 - title: "The Way of the Dragon"
   author: "Chris Bradford"
+  genre: "adventure"
   series: "Young Samurai"
   series_position: 3
+  pages: 448
+  hardcover_id: 213126
 
 - title: "The Ring of Earth"
   author: "Chris Bradford"
+  genre: "adventure"
   series: "Young Samurai"
   series_position: 4
 
 - title: "The Ring of Water"
   author: "Chris Bradford"
+  genre: "adventure"
   series: "Young Samurai"
   series_position: 5
+  pages: 320
+  hardcover_id: 957406
 
 - title: "The Ring of Fire"
   author: "Chris Bradford"
+  genre: "adventure"
   series: "Young Samurai"
   series_position: 6
+  pages: 205
+  hardcover_id: 1652692
 
 - title: "The Ring of Wind"
   author: "Chris Bradford"
+  genre: "adventure"
   series: "Young Samurai"
   series_position: 7
 
 - title: "The Ring of Sky"
   author: "Chris Bradford"
+  genre: "adventure"
   series: "Young Samurai"
   series_position: 8
+  pages: 462
+  hardcover_id: 957407
 
 - title: "The Ruins of Gorlan"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 1
+  pages: 274
+  hardcover_id: 66923
 
 - title: "The Burning Bridge"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 2
+  pages: 284
+  hardcover_id: 210352
 
 - title: "The Icebound Land"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 3
+  pages: 284
+  hardcover_id: 60923
 
 - title: "The Battle for Skandia"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 4
+  pages: 294
+  hardcover_id: 210856
 
 - title: "The Sorcerer in the North"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 5
 
 - title: "The Siege of Macindaw"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 6
+  pages: 306
+  hardcover_id: 351826
 
 - title: "Erak's Ransom"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 7
+  pages: 441
+  hardcover_id: 187281
 
 - title: "The Kings of Clonmel"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 8
+  pages: 402
+  hardcover_id: 184766
 
 - title: "Halt's Peril"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 9
+  pages: 450
+  hardcover_id: 221148
 
 - title: "The Emperor of Nihon-Ja"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 10
+  pages: 435
+  hardcover_id: 256292
 
 - title: "The Lost Stories"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice"
   series_position: 11
+  pages: 434
+  hardcover_id: 639997
 
 - title: "The Royal Ranger"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice: The Royal Ranger Series"
   series_position: 1
+  pages: 460
+  hardcover_id: 254614
 
 - title: "The Tournament at Gorlan"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Ranger's Apprentice: The Early Years"
   series_position: 1
+  pages: 402
+  hardcover_id: 551933
 
 - title: "The Outcasts"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Brotherband Chronicles"
   series_position: 1
+  pages: 464
+  hardcover_id: 13632
 
 - title: "The Invaders"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Brotherband Chronicles"
   series_position: 2
+  pages: 431
+  hardcover_id: 198229
 
 - title: "The Hunters"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Brotherband Chronicles"
   series_position: 3
+  pages: 417
+  hardcover_id: 105210
 
 - title: "Slaves of Socorro"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Brotherband Chronicles"
   series_position: 4
+  pages: 482
+  hardcover_id: 852383
 
 - title: "Scorpion Mountain"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Brotherband Chronicles"
   series_position: 5
+  pages: 477
+  hardcover_id: 373024
 
 - title: "The Ghostfaces"
   author: "John Flanagan"
+  genre: "adventure"
   series: "Brotherband Chronicles"
   series_position: 6
+  pages: 386
+  hardcover_id: 551922
 
 - title: "Eragon"
   author: "Christopher Paolini"
+  genre: "fantasy"
   series: "The Inheritance Cycle"
   series_position: 1
+  pages: 518
+  hardcover_id: 316971
 
 - title: "Eldest"
   author: "Christopher Paolini"
+  genre: "fantasy"
   series: "The Inheritance Cycle"
   series_position: 2
+  pages: 679
+  hardcover_id: 100660
 
 - title: "Brisingr"
   author: "Christopher Paolini"
+  genre: "fantasy"
   series: "The Inheritance Cycle"
   series_position: 3
+  pages: 764
+  hardcover_id: 87168
 
 - title: "Inheritance"
   author: "Christopher Paolini"
+  genre: "fantasy"
   series: "The Inheritance Cycle"
   series_position: 4
+  pages: 880
+  hardcover_id: 286414
 
 - title: "Probably Approximately Correct"
   author: "Leslie Valiant"
