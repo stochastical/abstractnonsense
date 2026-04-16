@@ -12,10 +12,10 @@ I studied mathematics and computer science at the _University of Melbourne_, and
 
 - [Microblog](/micro-blog/): Quick thoughts, interesting finds, and daily musings.
 - [Blog](/blog/): Deep dives into maths, computer science, and everything in between.
+- [Library](/library/): Words and books.
 
 You might like to start here: [_Can a regex match valid card numbers?_](/blog/2025-08-31-can-a-regex-match-valid-card-numbers).
 
 ## Contact me
 
 I'd love to hear from you! Feel free to email me at [`hello@abstractnonsense.xyz`](mailto:hello@abstractnonsense.xyz?subject=Hi&body=Hello,) or start a [discussion on GitHub](https://github.com/stochastical/abstractnonsense/discussions).
-

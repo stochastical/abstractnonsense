@@ -1,0 +1,255 @@
+{{- $books := hugo.Data.books -}}
+{{- $months := slice "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec" -}}
+{{- $excludedFormats := slice "poetry" "speech" "essay" "short-story" -}}
+
+{{/* Collect genre/format counts for legend ordering */}}
+{{- $genreCounts := dict -}}
+{{- range $books -}}
+  {{- with .genre -}}
+    {{- $genreCounts = merge $genreCounts (dict . (add (index $genreCounts . | default 0) 1)) -}}
+  {{- end -}}
+  {{- with .format -}}
+    {{- $genreCounts = merge $genreCounts (dict . (add (index $genreCounts . | default 0) 1)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $genreEntries := slice -}}
+{{- range $k, $v := $genreCounts -}}
+  {{- $genreEntries = $genreEntries | append (dict "key" $k "count" $v) -}}
+{{- end -}}
+{{- $genreEntries = sort $genreEntries "count" "desc" -}}
+
+{{/* Partition books + compute stats in a single pass */}}
+{{- $byYear := dict -}}
+{{- $undated := slice -}}
+{{- $totalBooks := 0 -}}
+{{- $totalPages := 0 -}}
+{{- $authorCounts := dict -}}
+{{- range $books -}}
+  {{- $fmt := .format | default "" -}}
+  {{- if .year -}}
+    {{- $yr := string .year -}}
+    {{- $existing := index $byYear $yr | default slice -}}
+    {{- $byYear = merge $byYear (dict $yr ($existing | append .)) -}}
+    {{- $totalBooks = add $totalBooks 1 -}}
+    {{- with .pages -}}{{- $totalPages = add $totalPages (int .) -}}{{- end -}}
+    {{- with .author -}}{{- $authorCounts = merge $authorCounts (dict . (add (index $authorCounts . | default 0) 1)) -}}{{- end -}}
+  {{- else if not (in $excludedFormats $fmt) -}}
+    {{- $undated = $undated | append . -}}
+    {{- $totalBooks = add $totalBooks 1 -}}
+    {{- with .pages -}}{{- $totalPages = add $totalPages (int .) -}}{{- end -}}
+    {{- with .author -}}{{- $authorCounts = merge $authorCounts (dict . (add (index $authorCounts . | default 0) 1)) -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Sort each year group by month descending */}}
+{{- range $yr, $group := $byYear -}}
+  {{- $byYear = merge $byYear (dict $yr (sort $group "month" "desc")) -}}
+{{- end -}}
+
+{{/* Year keys descending */}}
+{{- $years := slice -}}
+{{- range $yr, $_ := $byYear -}}
+  {{- $years = $years | append $yr -}}
+{{- end -}}
+{{- $years = sort $years "value" "desc" -}}
+
+{{/* SVG sprite sheet for book genre/format icons.
+     Dynamically includes all icon-*.svg files from assets/book-icons/.
+     Referenced via <use href="#icon-name"/> */}}
+<svg class="book-icons-defs" aria-hidden="true">
+{{- range resources.Match "book-icons/icon-*.svg" }}
+  {{ .Content | safeHTML }}
+{{- end }}
+</svg>
+
+{{/* ---------- Stats + Legend ---------- */}}
+<div class="book-intro">
+  <div class="book-stats">
+    <div class="book-stat">
+      <span class="book-stat-number">{{ $totalBooks }}</span>
+      <span class="book-stat-label">books</span>
+    </div>
+    <div class="book-stat">
+      <span class="book-stat-number">{{ lang.FormatNumber 0 $totalPages }}</span>
+      <span class="book-stat-label">pages</span>
+    </div>
+    <div class="book-stat">
+      <span class="book-stat-number">{{ len $authorCounts }}</span>
+      <span class="book-stat-label">authors</span>
+    </div>
+  </div>
+  <div class="book-genre-chips">
+    {{- range $genreEntries }}
+    <span class="book-genre-chip" data-genre="{{ .key }}">
+      <svg class="book-icon" aria-hidden="true"><use href="#icon-{{ .key }}"/></svg>
+      {{ .key | humanize | title }}
+    </span>
+    {{- end }}
+  </div>
+</div>
+
+{{/* ---------- Book entry template ---------- */}}
+{{- define "bookEntry" }}
+  {{- $b := .book -}}
+  {{- $key := $b.format | default $b.genre | default "" -}}
+  {{- $iconId := printf "icon-%s" $key -}}
+  {{- $tooltip := $key | humanize | title -}}
+  {{- if not $key }}{{ $iconId = "icon-fiction" }}{{ $tooltip = "Fiction" }}{{ end -}}
+  <li class="book-entry{{ with $b.genre }} book-g-{{ . }}{{ end }}{{ with $b.format }} book-f-{{ . }}{{ end }}">
+    {{- if .showMonth }}
+    <time class="book-month"{{ with $b.month }} datetime="{{ $b.year }}-{{ printf "%02d" (int .) }}"{{ end }}>{{ with $b.month }}{{ index $.months (sub . 1) }}{{ end }}</time>
+    {{- else }}
+    <span class="book-month"></span>
+    {{- end }}
+    <span class="book-bar{{ if not .showMonth }} book-bar-cont{{ end }}"></span>
+    <div class="book-main">
+      <div class="book-header">
+        {{- if not .hideIcon }}
+        <span class="book-icon-wrap" title="{{ $tooltip }}">
+          <svg class="book-icon" aria-hidden="true"><use href="#{{ $iconId }}"/></svg>
+        </span>
+        {{- end }}
+        {{- if $b.url }}
+        <a href="{{ $b.url }}" class="book-title-link">{{ $b.title }}</a>
+        {{- else }}
+        <strong class="book-title">{{ $b.title }}</strong>
+        {{- end }}
+        {{- if and .hideMeta $b.series_position }}
+        <span class="book-series-pos">#{{ $b.series_position }}</span>
+        {{- end }}
+        {{- if not .hideMeta }}
+        <span class="book-byline">{{ $b.author }}{{ with $b.translator }} <span class="book-translator">(trans. {{ . }})</span>{{ end }}</span>
+        {{- with $b.series }}
+        <span class="book-series">{{ . }}{{ with $b.series_position }} #{{ . }}{{ end }}</span>
+        {{- end }}
+        {{- end }}
+      </div>
+      {{- with $b.review }}
+      <div class="book-review">{{ . | markdownify }}</div>
+      {{- end }}
+    </div>
+  </li>
+{{- end }}
+
+{{/* ---------- Per-year sections ---------- */}}
+{{- range $years -}}
+  {{- $yr := . -}}
+  {{- $group := index $byYear $yr -}}
+  {{- $yearCount := len $group -}}
+  {{- $yearPages := 0 -}}
+  {{- range $group -}}
+    {{- with .pages -}}{{- $yearPages = add $yearPages (int .) -}}{{- end -}}
+  {{- end -}}
+<section class="book-year-section">
+  <div class="book-year-header">
+    <h2 class="book-year-heading">{{ $yr }}</h2>
+    <span class="book-year-count">{{ $yearCount }} {{ if eq $yearCount 1 }}book{{ else }}books{{ end }}{{ if gt $yearPages 0 }} · {{ lang.FormatNumber 0 $yearPages }}p{{ end }}</span>
+  </div>
+  <ul class="book-list">
+  {{- $prevMonth := -1 -}}
+  {{- range $group }}
+    {{- $curMonth := .month | default 0 -}}
+    {{- $showMonth := true -}}
+    {{- if and (gt $curMonth 0) (eq $curMonth $prevMonth) -}}
+      {{- $showMonth = false -}}
+    {{- end -}}
+    {{- template "bookEntry" (dict "book" . "months" $months "showMonth" $showMonth "hideIcon" false "hideMeta" false) }}
+    {{- $prevMonth = $curMonth -}}
+  {{- end }}
+  </ul>
+</section>
+{{- end }}
+
+{{/* ---------- Undated books ---------- */}}
+{{- if $undated }}
+  {{/* Group by explicit series */}}
+  {{- $seriesMap := dict -}}
+  {{- $noSeries := slice -}}
+  {{- range $undated -}}
+    {{- if .series -}}
+      {{- $existing := index $seriesMap .series | default slice -}}
+      {{- $seriesMap = merge $seriesMap (dict .series ($existing | append .)) -}}
+    {{- else -}}
+      {{- $noSeries = $noSeries | append . -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{/* Group non-series books by author; 2+ books = author group */}}
+  {{- $authorMap := dict -}}
+  {{- range $noSeries -}}
+    {{- $a := .author | default "Unknown" -}}
+    {{- $existing := index $authorMap $a | default slice -}}
+    {{- $authorMap = merge $authorMap (dict $a ($existing | append .)) -}}
+  {{- end -}}
+  {{- $authorGroups := dict -}}
+  {{- $standalone := slice -}}
+  {{- range $a, $aBooks := $authorMap -}}
+    {{- if gt (len $aBooks) 1 -}}
+      {{- $authorGroups = merge $authorGroups (dict $a $aBooks) -}}
+    {{- else -}}
+      {{- range $aBooks -}}{{- $standalone = $standalone | append . -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{/* Build unified groups list: explicit series then author groups */}}
+  {{- $allGroups := slice -}}
+  {{- $seriesKeys := slice -}}
+  {{- range $k, $_ := $seriesMap -}}{{- $seriesKeys = $seriesKeys | append $k -}}{{- end -}}
+  {{- range sort $seriesKeys -}}
+    {{- $gb := sort (index $seriesMap .) "series_position" -}}
+    {{- $f := index $gb 0 -}}
+    {{- $allGroups = $allGroups | append (dict "name" . "books" $gb "author" $f.author "first" $f) -}}
+  {{- end -}}
+  {{- $authorKeys := slice -}}
+  {{- range $k, $_ := $authorGroups -}}{{- $authorKeys = $authorKeys | append $k -}}{{- end -}}
+  {{- range sort $authorKeys -}}
+    {{- $ab := index $authorGroups . -}}
+    {{- $f := index $ab 0 -}}
+    {{- $allGroups = $allGroups | append (dict "name" . "books" $ab "author" "" "first" $f) -}}
+  {{- end -}}
+
+  {{- $seriesTotal := sub (len $undated) (len $standalone) -}}
+
+{{- if $allGroups }}
+<section class="book-year-section">
+  <div class="book-year-header">
+    <h2 class="book-year-heading">Undated Series</h2>
+    <span class="book-year-count">{{ $seriesTotal }} books</span>
+  </div>
+  {{- range $allGroups }}
+    {{- $key := .first.format | default .first.genre | default "" -}}
+    {{- $iconId := printf "icon-%s" $key -}}
+    {{- if not $key }}{{ $iconId = "icon-fiction" }}{{ end -}}
+  <div class="book-series-group">
+    <div class="book-series-banner">
+      <svg class="book-icon" aria-hidden="true"><use href="#{{ $iconId }}"/></svg>
+      <span class="book-series-name">{{ .name }}</span>
+      {{- with .author }}
+      <span class="book-series-author">{{ . }}</span>
+      {{- end }}
+      <span class="book-series-count">{{ len .books }} books</span>
+    </div>
+    <ul class="book-list book-list-compact">
+    {{- range .books }}
+      {{- template "bookEntry" (dict "book" . "months" $months "showMonth" false "hideIcon" true "hideMeta" true) }}
+    {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+</section>
+{{- end }}
+
+  {{- if $standalone }}
+<section class="book-year-section">
+  <div class="book-year-header">
+    <h2 class="book-year-heading">Undated Books</h2>
+    <span class="book-year-count">{{ len $standalone }} books</span>
+  </div>
+  <ul class="book-list book-list-no-month">
+  {{- range $standalone }}
+    {{- template "bookEntry" (dict "book" . "months" $months "showMonth" false "hideIcon" false "hideMeta" false) }}
+  {{- end }}
+  </ul>
+</section>
+  {{- end }}
+{{- end -}}
