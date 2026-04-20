@@ -18,6 +18,14 @@
   hardcover_id: 1018549
   url: "/micro-blog/2026-03-30-real-world-cryptography-by-david-wong/"
 
+- title: "Project Hail Mary"
+  author: "Andy Weir"
+  genre: "sci-fi"
+  year: 2026
+  month: 4
+  pages: 496
+  hardcover_id: 427578
+
 # 2025
 
 - title: "The Outsider"
