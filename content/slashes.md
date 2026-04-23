@@ -1,6 +1,11 @@
 ---
+title: "Slash pages"
+description: "Slash pages"
 ---
 
-- [/ai](/ai)
-- [/colophon](/colophon)
-- [/slashes](/slashes)
+> Slash pages: inspired by [slashpages.net](https://slashpages.net).
+
+- [`/ai`](/ai)
+- [`/blogroll`](/blogroll)
+- [`/colophon`](/colophon)
+- [`/slashes`](/slashes)

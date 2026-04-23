@@ -1,0 +1,31 @@
+{{- range hugo.Data.blogroll.body.outline -}}
+  {{- $category := index . "-text" -}}
+  {{- $entries := index . "outline" -}}
+  {{- $categoryID := $category | urlize -}}
+  <section class="blogroll-category" aria-labelledby="category-{{ $categoryID }}">
+    <h2 id="category-{{ $categoryID }}">
+      {{ $category }}
+      <span class="blogroll-count">{{ len $entries }}</span>
+    </h2>
+    <ul class="blogroll-list">
+      {{- range $entries -}}
+        {{- $name := index . "-text" -}}
+        {{- $htmlUrl := index . "-htmlUrl" -}}
+        {{- $xmlUrl := index . "-xmlUrl" -}}
+        <li class="blogroll-entry">
+          {{- if $htmlUrl -}}
+            <a class="blogroll-name" href="{{ $htmlUrl }}">{{ $name }}</a>
+          {{- else -}}
+            <span class="blogroll-name">{{ $name }}</span>
+          {{- end -}}
+          {{- if $xmlUrl -}}
+            <a class="blogroll-feed" href="{{ $xmlUrl }}" rel="alternate" type="application/rss+xml" aria-label="Subscribe to {{ $name }}">
+              <svg aria-hidden="true" focusable="false" width="12" height="12"><use href="#icon-rss"/></svg>
+              <span>feed</span>
+            </a>
+          {{- end -}}
+        </li>
+      {{- end -}}
+    </ul>
+  </section>
+{{- end -}}

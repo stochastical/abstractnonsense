@@ -335,6 +335,7 @@ header {
     gap: var(--space-lg);
     padding: var(--space-md) 0;
     margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
 }
 
 header h1 {
@@ -358,7 +359,32 @@ header h1 a:focus {
     text-decoration: none;
 }
 
-header h1 a::after {
+/* Brand: logo + title */
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-logo {
+    width: clamp(26px, 3.6vw, 40px);
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.site-title-text {
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+/* Title underline anchored to the text only (logo excluded) */
+.site-title-text::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -369,7 +395,8 @@ header h1 a::after {
     transition: width 0.25s ease;
 }
 
-header h1 a:hover::after {
+.site-brand:hover .site-title-text::after,
+.site-brand:focus .site-title-text::after {
     width: 100%;
 }
 
@@ -1395,4 +1422,92 @@ ul.blog-list.tag-posts {
     .book-year-heading {
         font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.4rem);
     }
+}
+
+/* ======= BLOGROLL ======= */
+.blogroll-category {
+    margin-bottom: var(--space-xl);
+}
+
+.blogroll-category h2 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.blogroll-count {
+    font-size: 0.75rem;
+    font-weight: 500;
+    font-family: system-ui, sans-serif;
+    color: rgba(var(--color-fg-rgb), 0.5);
+    background: rgba(var(--color-fg-rgb), 0.07);
+    padding: 0.15em 0.55em;
+    border-radius: 999px;
+    line-height: 1.6;
+}
+
+.blogroll-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blogroll-entry {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.4em 0;
+    border-bottom: 1px solid rgba(var(--color-fg-rgb), 0.06);
+    margin-bottom: 0;
+}
+
+.blogroll-entry:last-child {
+    border-bottom: none;
+}
+
+.blogroll-name {
+    flex: 1;
+    min-width: 0;
+    color: var(--color-fg);
+    font-size: 0.95rem;
+    font-family: system-ui, sans-serif;
+}
+
+a.blogroll-name:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+span.blogroll-name {
+    opacity: 0.55;
+}
+
+.blogroll-feed {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    flex-shrink: 0;
+    color: var(--color-rss);
+    font-size: 0.75rem;
+    font-family: system-ui, sans-serif;
+    font-weight: 500;
+    padding: 0.2em 0.55em;
+    border-radius: 4px;
+    background: rgba(247, 159, 26, 0.1);
+    line-height: 1.5;
+    transition: background 0.15s ease;
+    text-decoration: none;
+}
+
+.blogroll-feed:hover,
+.blogroll-feed:focus-visible {
+    background: rgba(247, 159, 26, 0.22);
+    color: var(--color-rss);
+    text-decoration: none;
+}
+
+/* Suppress the generic icon decorators (github, arxiv, mailto) inside feed buttons */
+.blogroll-feed::before {
+    display: none;
 }

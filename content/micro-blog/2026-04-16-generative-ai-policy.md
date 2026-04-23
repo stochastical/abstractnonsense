@@ -1,7 +1,7 @@
 ---
 title: Generative AI Policy
 date: "2026-04-16"
-tags: []
+tags: ['abstractnonsense.xyz', 'slash-pages']
 ---
 
 I've added a [`/ai`](/ai) [slash page](https://slashpages.net/#ai) to my blog with my GenAI policy. I've excerpted the current contents below:
