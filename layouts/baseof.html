@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ .Site.Title }}</title>
     <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
     {{ partial "opengraph.html" . }}
     <link rel="stylesheet" href="{{ (resources.Get "css/style.css" | minify | fingerprint).RelPermalink }}">
     <link rel="stylesheet" href="{{ (resources.Get "css/syntax.css" | minify | fingerprint).RelPermalink }}">
@@ -33,9 +34,7 @@
     <header>
         <h1 class="site-heading">
             <a class="site-brand" href="{{ .Site.BaseURL | relURL }}">
-                <object class="site-logo" data="{{ "favicon.svg" | relURL }}" type="image/svg+xml" aria-hidden="true" tabindex="-1">
-                    <img src="{{ "favicon.svg" | relURL }}" alt="{{ .Site.Title }}" />
-                </object>
+                {{ readFile "static/favicon.svg" | safeHTML }}
                 <span class="site-title-text">{{ .Site.Title }}</span>
             </a>
         </h1>

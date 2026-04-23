@@ -336,6 +336,7 @@ header {
     padding: var(--space-md) 0;
     margin-bottom: var(--space-lg);
     flex-wrap: wrap;
+    view-transition-name: none;
 }
 
 header h1 {
