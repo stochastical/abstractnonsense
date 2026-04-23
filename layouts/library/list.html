@@ -10,5 +10,14 @@
         {{ end }}
     </a>
     {{ end }}
+
+    {{ with site.GetPage "/blogroll" }}
+    <a class="collection-card" href="{{ .RelPermalink }}">
+        <span class="collection-title">{{ .Title }}</span>
+        {{ if .Params.description }}
+        <span class="collection-description">{{ .Params.description | markdownify }}</span>
+        {{ end }}
+    </a>
+    {{ end }}
 </div>
 {{ end }}
