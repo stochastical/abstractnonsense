@@ -50,3 +50,7 @@ markup:
     lineNos: false
     codeFences: true
     guessSyntax: true
+
+services:
+  rss:
+    limit: 10
