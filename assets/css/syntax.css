@@ -297,7 +297,7 @@ pre {
 /* LiteralStringBacktick */ .chroma .sb { color: var(--literal-string-backtick); }
 /* LiteralStringChar */ .chroma .sc { color: var(--literal-string-char); }
 /* LiteralStringDelimiter */ .chroma .dl { color: var(--literal-string-delimiter); }
-/* LiteralStringDoc */ .chroma .sd { color: var(--literal-string-doc); }
+/* LiteralStringDoc */ .chroma .sd { color: var(--comment); font-style: italic; }
 /* LiteralStringDouble */ .chroma .s2 { color: var(--literal-string-double); }
 /* LiteralStringEscape */ .chroma .se { color: var(--literal-string-escape); }
 /* LiteralStringHeredoc */ .chroma .sh { color: var(--literal-string-heredoc); }
@@ -316,11 +316,11 @@ pre {
 /* Operator */ .chroma .o { color: var(--operator); }
 /* OperatorWord */ .chroma .ow { color: var(--operator-word); }
 /* Punctuation */ .chroma .p { color: var(--punctuation); }
-/* Comment */ .chroma .c { color: var(--comment); }
-/* CommentHashbang */ .chroma .ch { color: var(--comment-hashbang); }
-/* CommentMultiline */ .chroma .cm { color: var(--comment-multiline); }
-/* CommentSingle */ .chroma .c1 { color: var(--comment-single); }
-/* CommentSpecial */ .chroma .cs { color: var(--comment-special); }
+/* Comment */ .chroma .c { color: var(--comment); font-style: italic; }
+/* CommentHashbang */ .chroma .ch { color: var(--comment-hashbang); font-style: italic; }
+/* CommentMultiline */ .chroma .cm { color: var(--comment-multiline); font-style: italic; }
+/* CommentSingle */ .chroma .c1 { color: var(--comment-single); font-style: italic; }
+/* CommentSpecial */ .chroma .cs { color: var(--comment-special); font-style: italic; }
 /* CommentPreproc */ .chroma .cp { color: var(--comment-preproc); }
 /* CommentPreprocFile */ .chroma .cpf { color: var(--comment-preproc-file); }
 /* Generic */ .chroma .g {  }
