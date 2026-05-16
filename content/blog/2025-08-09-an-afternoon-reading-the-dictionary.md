@@ -2,8 +2,8 @@
 title: "An Afternoon Reading the Dictionary"
 description: |
     I scripted the extraction of dictionary definitions from macOS' built-in Oxford Dictionary archive to automate my new-vocabulary blog page. As all good automation projects, I probably spent more time automating the process than it would've taken to do it manually.
-tags: ["words"]
-date: "2025-08-09"
+tags: ['words']
+date: 2025-08-09
 ---
 
 I'm a heavy user of Apple's [Look Up for words](https://support.apple.com/en-au/guide/mac-help/mchl3983326c/mac) on macOS. With a quick [force click](https://support.apple.com/en-au/guide/mac-help/mchl3983326c/mac) you can instantly summon the dictionary or thesaurus for a selected word, which removes the friction of pursuing "hmm, that's a new word - what does it mean?"

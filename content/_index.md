@@ -10,7 +10,7 @@ I studied mathematics and computer science at the _University of Melbourne_, and
 
 ## Sections
 
-- [Microblog](/micro-blog/): Quick thoughts, interesting finds, and daily musings.
+- [Microblog](/microblog/): Quick thoughts, interesting finds, and daily musings.
 - [Blog](/blog/): Deep dives into maths, computer science, and everything in between.
 - [Library](/library/): Words and books.
 

@@ -2,12 +2,11 @@
 
 <div class="tags-page">
     <header class="tags-header">
-        <p class="tags-sub">Showing <span class="tag-count">{{ len .Pages }}</span> post{{ if gt (len .Pages) 1 }}s{{ end }} tagged with
-            <span class="tag-card"><span class="tag-name">{{ lower .Title }}</span></span>
-        </p>
+        <h1>{{ lower .Title }}</h1>
+        <p class="tags-sub"><span class="tag-count">{{ len .Pages }}</span> post{{ if gt (len .Pages) 1 }}s{{ end }}</p>
     </header>
 
-    <div class="blog-list">
+    <div class="blog-list tag-posts">
     {{ range .Pages }}
     <article class="blog-item">
         <div class="blog-meta">

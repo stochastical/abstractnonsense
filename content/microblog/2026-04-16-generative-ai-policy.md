@@ -1,5 +1,13 @@
 ---
-title: "AI"
+title: Generative AI Policy
+date: 2026-04-16
+tags: ['abstractnonsense.xyz', 'slash-pages']
+aliases:
+  - /micro-blog/2026-04-16-generative-ai-policy/
+---
+
+I've added a [`/ai`](/ai) [slash page](https://slashpages.net/#ai) to my blog with my GenAI policy. I've excerpted the current contents below:
+
 ---
 
 > *"Once men turned their thinking over to machines in the hope that this would set them free. But that only permitted other men with machines to enslave them."*

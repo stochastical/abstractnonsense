@@ -7,7 +7,7 @@
   month: 1
   pages: 622
   hardcover_id: 480616
-  url: "/micro-blog/2026-01-31-programming-rust-textbook"
+  url: "/microblog/2026-01-31-programming-rust-textbook"
 
 - title: "Real-World Cryptography"
   author: "David Wong"
@@ -16,7 +16,7 @@
   month: 3
   pages: 398
   hardcover_id: 1018549
-  url: "/micro-blog/2026-03-30-real-world-cryptography-by-david-wong/"
+  url: "/microblog/2026-03-30-real-world-cryptography-by-david-wong/"
 
 - title: "Project Hail Mary"
   author: "Andy Weir"
@@ -25,7 +25,7 @@
   month: 4
   pages: 496
   hardcover_id: 427578
-  url: "/micro-blog/2026-04-30-project-hail-mary/"
+  url: "/microblog/2026-04-30-project-hail-mary/"
 
 # 2025
 
@@ -33,7 +33,7 @@
   author: "Albert Camus"
   year: 2025
   month: 4
-  url: "/micro-blog/2025-04-19-the-outsider-by-albert-camus/"
+  url: "/microblog/2025-04-19-the-outsider-by-albert-camus/"
 
 - title: "Meditations"
   author: "Marcus Aurelius"
@@ -43,7 +43,7 @@
   month: 6
   pages: 254
   hardcover_id: 157096
-  url: "/micro-blog/2025-06-30-meditations-by-marcus-aurelius"
+  url: "/microblog/2025-06-30-meditations-by-marcus-aurelius"
 
 - title: "Even as the wind rustled among the leaves"
   author: "Yoon Dong-ju"
@@ -72,7 +72,7 @@
   month: 10
   pages: 320
   hardcover_id: 1026526
-  url: "/micro-blog/2025-10-05-welcome-to-the-hyunam-dong-bookshop-by-hwang-bo-reum/"
+  url: "/microblog/2025-10-05-welcome-to-the-hyunam-dong-bookshop-by-hwang-bo-reum/"
 
 - title: "The Little Drummer Girl"
   author: "John le Carré"

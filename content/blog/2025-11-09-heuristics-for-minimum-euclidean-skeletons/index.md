@@ -1,6 +1,6 @@
 ---
 title: Heuristics for Minimum Euclidean Skeletons
-date: "2025-11-09"
+date: 2025-11-09
 tags: ['mathematics', 'graph-theory', 'algorithms', 'research']
 images: ['visibility-graph.png']
 description: |
