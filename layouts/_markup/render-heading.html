@@ -1,4 +1,4 @@
 <h{{ .Level }} id="{{ .Anchor }}" {{- with .Attributes.class }} class="{{ . }}" {{- end }}>
-    <a href="#{{ .Anchor }}">#</a>
+    <a href="#{{ .Anchor }}" aria-hidden="true" tabindex="-1">#</a>
     {{ .Text }}
 </h{{ .Level }}>
