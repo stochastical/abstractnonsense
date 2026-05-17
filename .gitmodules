@@ -1,0 +1,3 @@
+[submodule "content/blog/2025-12-31-eigenvalue-solver-in-rust-for-webassembly/component"]
+	path = content/blog/2025-12-31-eigenvalue-solver-in-rust-for-webassembly/component
+	url = https://github.com/stochastical/eigenvalue-rs
