@@ -6,7 +6,7 @@ tags:
   - mathematics
   - statistics
   - quote
-date: "2026-05-17"
+date: 2026-05-17
 ---
 
 Recently I've been working on a statistics library in [Typst](https://github.com/typst/typst) called [`distro`](https://github.com/stochastical/distro)![*](fn "More to come soon"). Typst is architected with an [incremental](https://github.com/typst/typst/blob/main/docs/dev/architecture.md#compilation) [compiler](https://github.com/typst/comemo/), and pairs it with pure functions![*](fn "Almost all functions in Typst are pure, with a [few exceptions](https://typst.app/docs/reference/foundations/function/#:~:text=Note%20on%20function%20purity)") to facilitate snappy real-time compilation.
