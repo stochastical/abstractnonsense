@@ -6,6 +6,7 @@ description: "Slash pages"
 > Slash pages: inspired by [slashpages.net](https://slashpages.net).
 
 - [`/ai`](/ai)
+- [`/backlinks`](/backlinks)
 - [`/blogroll`](/blogroll)
 - [`/colophon`](/colophon)
 - [`/slashes`](/slashes)
