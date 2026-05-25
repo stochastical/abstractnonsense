@@ -22,6 +22,8 @@ quickly exceeds the range of fixed-width integer values.
 
 I was curious about just how quickly this actually occurs. That is, for what values of $n$ does $n!$ overflow a $b$-bit integer?
 
+## An inequality using Stirling's approximation
+
 [Stirling's approximation](https://en.wikipedia.org/wiki/Stirling's_approximation) gives an asymptotic approximation![*](fn "Asymptotic here means that the approximation becomes increasingly accurate as $n\to\infty$") for the factorial function:
 
 $$
