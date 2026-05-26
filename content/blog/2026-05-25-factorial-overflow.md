@@ -44,8 +44,10 @@ $$
 \end{align*}
 $$
 
-The last term in the inequality is pretty small, but we'll keep it in anyway. This gives us a quick way to find $\min\{n\in \mathbb N: n!> 2^b-1\}$ programmatically.  We'll consider [Rust's unsigned integers](https://doc.rust-lang.org/book/ch03-02-data-types.html#integer-types): `u8`, `u16`, `u32`, `u64` and `u128`.
+> *Edit*: Thank you Leo Fouché for pointing out that I've dropped the $-1$ term on the RHS of the inequality after taking the logarithm.
+It's ok to omit this since it doesn't materially change the approximation (by a similart argument as found below), but should be stated.
 
+The last term in the inequality is pretty small, but we'll keep it in anyway. This gives us a quick way to find $\min\{n\in \mathbb N: n!> 2^b-1\}$ programmatically.  We'll consider [Rust's unsigned integers](https://doc.rust-lang.org/book/ch03-02-data-types.html#integer-types): `u8`, `u16`, `u32`, `u64` and `u128`.
 
 ```rust
 use std::f64::consts::{E, PI};
