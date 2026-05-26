@@ -69,7 +69,7 @@ fn main() {
             .unwrap();
 
         let factorial: u128 = (1..n as u128).product(); // (n-1)!
-        println!("u{b:<4} {n:>3} {factorial:>24} {max_val:>25}");
+        println!("u{b:<4} {n:>3} {factorial:>40} {max_val:>40}");
     }
 }
 ```
