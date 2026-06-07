@@ -3,6 +3,9 @@ title: Apostol's Solution to the Basel problem
 tags:
   - mathematics
 date: "2026-06-07"
+description: |
+  A neat solution to the Basel problem: $\sum_{n=1}^\infty \frac 1 {n^2} = \frac{\pi^2}{6}$. The solution is by Apostol, and relies on using vector calculus.
+
 ---
 
 The [Basel problem](https://en.wikipedia.org/wiki/Basel_problem) asks for the solution to the infinite series of the reciprocal squares:
