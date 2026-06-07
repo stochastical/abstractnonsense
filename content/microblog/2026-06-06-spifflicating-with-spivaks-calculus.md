@@ -49,4 +49,4 @@ Continuing on from my [collection](/tags/quote) of humorous mathematical aphoris
 
 I did the first 8 questions in ~8 minutes before the tedium got to me, so I'm going to assume Spivak's estimate is at least on the correct order of magnitude.
 
-**Credit**: Leo Fouchè for sending this one through.
+**Credit**: Leo Fouché for sending this one through.
