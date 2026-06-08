@@ -1,3 +1,5 @@
 ---
 title: Library
+outputs:
+  - HTML
 ---

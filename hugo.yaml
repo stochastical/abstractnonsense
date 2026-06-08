@@ -20,6 +20,14 @@ taxonomies:
 enableGitInfo: true
 minify:
   minifyOutput: true
+  disableXML: true
+
+outputs:
+  home:     ["HTML", "RSS"]
+  section:  ["HTML", "RSS"]
+  taxonomy: ["HTML"]
+  term:     ["HTML"]
+  page:     ["HTML"]
 
 markup:
   goldmark:
