@@ -6,7 +6,11 @@ layout: page
 
 Welcome to _Abstract Nonsense_! ![hover here](fn "[Abstract Nonsense](https://en.wikipedia.org/wiki/Abstract_nonsense) is a whimsical name for the mathematical subject of [Category theory](https://en.wikipedia.org/wiki/Category_theory). It's also my domain of all things arcane.")
 
-I studied mathematics and computer science at the _University of Melbourne_, and currently work as an early-career AI researcher and data scientist at the Commonwealth Bank of Australia's AI Labs. I enjoy writing about maths, computer science, and anything that piques my curiosity!
+I studied mathematics and computer science at the _University of Melbourne_, and currently work as an early-career AI researcher and data scientist at the Commonwealth Bank of Australia's AI Labs.
+
+In between working, I enjoy learning about maths, procrastinating, writing long lists, reading, and generally pretending I have a life outside of my head. Sometimes it works.
+
+I enjoy writing about maths, computer science, and anything that piques my curiosity!
 
 ## Sections
 
