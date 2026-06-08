@@ -12,7 +12,11 @@ permissions:
 jobs:
   create-post:
     # Restrict to my GitHub username to prevent the public from creating new blog posts
-    if: github.actor == 'stochastical' && github.triggering_actor == 'stochastical' && github.event.label.name == 'new-blog-post'
+    if: >
+        github.actor == 'stochastical' &&
+        github.triggering_actor == 'stochastical' &&
+        github.event.issue.user.login == 'stochastical' &&
+        github.event.label.name == 'new-blog-post'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -76,8 +80,8 @@ jobs:
           SECTION: ${{ steps.metadata.outputs.section }}
           BRANCH: ${{ steps.metadata.outputs.branch }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Yossi Frenkel"
+          git config user.email "14257692+stochastical@users.noreply.github.com"
           
           git checkout "${BRANCH}"
           git add "content/${SECTION}/${FILENAME}"
@@ -85,10 +89,7 @@ jobs:
           git push origin "${BRANCH}"
 
           gh issue comment ${{ github.event.issue.number }} \
-            --body "Added new blog post to \`content/${SECTION}/${FILENAME}\` on branch \`${BRANCH}\` at [commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/$(git rev-parse HEAD))" 
+            --repo ${{ github.repository }} \
+            --body "Added new blog post to \`content/${SECTION}/${FILENAME}\` on branch \`${BRANCH}\` at [commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/$(git rev-parse HEAD))"
 
-      - name: Close issue
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-            gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}
+          gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}
