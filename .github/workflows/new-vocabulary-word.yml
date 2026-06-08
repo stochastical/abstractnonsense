@@ -32,18 +32,20 @@ jobs:
         run: |
           echo '${{ steps.issue-parser.outputs.json }}' > parsed.json
 
-          yq -o=yaml '
-            [
-              (
-                load("parsed.json")
-                | {
-                    word: .word,
-                    definition: .definition
-                  }
-                + (if .example != null and .example != "" then {example: .example} else {} end)
-              )
-            ] + .
-          ' data/vocabulary.yaml > data/vocabulary.yaml.tmp
+          jq '
+            {
+              "word": .word,
+              "definition": .definition
+            }
+            + (
+              if (.example // "") != "" and .example != "_No response_"
+              then {"example": .example}
+              else {}
+              end
+            )
+          ' parsed.json > new-word.json
+
+          yq -P -o=yaml '[load("new-word.json")] + .' data/vocabulary.yaml > data/vocabulary.yaml.tmp
 
           mv data/vocabulary.yaml.tmp data/vocabulary.yaml
 
