@@ -11,26 +11,40 @@ permissions:
 
 jobs:
   add-word:
-    if: github.actor == 'stochastical' && github.triggering_actor == 'stochastical' && github.event.label.name == 'new-vocabulary-word'
+    if: >
+        github.actor == 'stochastical' &&
+        github.triggering_actor == 'stochastical' &&
+        github.event.issue.user.login == 'stochastical' &&
+        github.event.label.name == 'new-vocabulary-word'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Parse Issue
         id: issue-parser
-        uses: issue-ops/parser@v4.2.0
+        uses: issue-ops/parser@v5.0.0
         with:
           body: ${{ github.event.issue.body }}
           issue-form-template: 'new-vocabulary-word.yml'
 
       - name: Add word to vocabulary.yaml
         run: |
-          echo '${{ steps.issue-parser.outputs.json }}' | jq -r '
-            "- word: \"\(.word)\"\n  definition: \"\(.definition)\"" +
-            (if .example and .example != "" then "\n  example: \"\(.example)\"" else "" end) +
-            "\n"
-          ' | cat - data/vocabulary.yaml > data/vocabulary.yaml.tmp
+          echo '${{ steps.issue-parser.outputs.json }}' > parsed.json
+
+          yq -o=yaml '
+            [
+              (
+                load("parsed.json")
+                | {
+                    word: .word,
+                    definition: .definition
+                  }
+                + (if .example != null and .example != "" then {example: .example} else {} end)
+              )
+            ] + .
+          ' data/vocabulary.yaml > data/vocabulary.yaml.tmp
+
           mv data/vocabulary.yaml.tmp data/vocabulary.yaml
 
       - name: Commit and push
@@ -45,6 +59,7 @@ jobs:
           git push origin main
 
           gh issue comment ${{ github.event.issue.number }} \
+            --repo ${{ github.repository }} \
             --body "Added **${WORD}** to \`data/vocabulary.yaml\` at [commit](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/commit/$(git rev-parse HEAD))"
 
           gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}
