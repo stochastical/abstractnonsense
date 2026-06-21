@@ -1,5 +1,5 @@
 baseURL: "https://abstractnonsense.xyz/"
-languageCode: "en-AU"
+locale: "en-AU"
 title: "Abstract Nonsense"
 
 params:
@@ -28,6 +28,11 @@ outputs:
   taxonomy: ["HTML"]
   term:     ["HTML"]
   page:     ["HTML"]
+
+security:
+  allowContent:
+      - "text/html"
+      - "text/markdown"
 
 markup:
   goldmark:
