@@ -17,7 +17,8 @@ In particular, I want to thank my indefatigable referees: [Dr Anna Leontjeva](ht
 
 There are many more lecturers and tutors from the University of Melbourne who had an outsized impact on my education, and I'm deeply grateful for the good fortune I had to learn from them.
 
-I'm especially indebted to the generosity of the [Cambridge Trust](https://www.cambridgetrust.org), [Cambridge Australia Scholarships](https://www.cambridgeaustralia.org.au), and Mr Charles Allen for the support of the Cambridge Australia Allen Scholarship.
+I'm especially indebted to the generosity of the [Cambridge Trust](https://www.cambridgetrust.org) and [Cambridge Australia Scholarships](https://www.cambridgeaustralia.org.au) for the support of the Cambridge Australia Allen Scholarship.
+In addition, thank you to the University of Melbourne for the support of the [Rae and Edith Bennett Prestigious Travelling Scholarship](https://scholarships.unimelb.edu.au/awards/rae-and-edith-bennett-travelling-scholarship).
 
 I hope to focus on homomorphic encryption for privacy-preserving machine learning.
 If you work in the field, or are just based in the area, I'd love to grab a coffee!
