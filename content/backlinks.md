@@ -4,6 +4,7 @@ title: Backlinks
 
 > Miscellaneous traces left elsewhere online.
 
+- [Preserving CommBank’s Archives with AI: From VHS to Vision Models](https://medium.com/@CommBankTechnology/preserving-commbanks-archives-with-ai-from-vhs-to-vision-models-3caff6d4f166): Wrote a blog post for the _CommBank Technology Blog_ with Lachy Berry and Xun Wang.
 - [Privacy-preserving machine learning with homomorphic encryption](https://medium.com/commbank-technology/privacy-preserving-machine-learning-with-homomorphic-encryption-506f932da330): Wrote a blog post for the _CommBank Technology Blog_.
 - Barkley, Aaron; Byrne, David P.; and Wu, Xiaosong. ["Price Effects of Calling Out Market Power: A Study of the COVID-19 Oil Price Shock."](https://doi.org/10.1111/jems.12485) Journal of Economics & Management Strategy (2022). Acknowledged contributor as a research assistant.
 - ["WitCH 21: Just Following Orders"](https://mathematicalcrap.com/2019/09/02/witch-21-just-following-orders/): _Bad Mathematics_ featured a reader submission I sent regarding a VCE Algorithmics exam question on asymptotic notation.
