@@ -27,6 +27,15 @@
   hardcover_id: 427578
   url: "/microblog/2026-04-30-project-hail-mary/"
 
+- title: "Designing Data-Intensive Applications"
+  author: "Martin Kleppmann"
+  format: "textbook"
+  year: 2026
+  month: 7
+  pages: 672
+  hardcover_id: 30680667
+  url: "/microblog/2026-07-20-designing-data-intensive-applications"
+
 # 2025
 
 - title: "The Outsider"
