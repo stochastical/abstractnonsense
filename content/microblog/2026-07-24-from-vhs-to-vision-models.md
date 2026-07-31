@@ -18,3 +18,5 @@ Many thanks to my wonderful colleagues: [Lachy Berry](https://www.linkedin.com/i
 [Julianne Liddicoat](https://www.linkedin.com/in/julianne-liddicoat-14913889/) and [Feroz Hussein]( https://www.linkedin.com/in/feroz-hussein-455a9014b/).
 
 Finally, thank you to [Brendan Hopper](https://www.linkedin.com/in/bhop/) and [Katie Cruickshanks](https://www.linkedin.com/in/katiecruickshanks/) for reviewing and approving it.
+
+**Update 2026-07-31:** you can see some open-sourced code here: [Commonwealth-Bank-of-Australia/project-echo](https://github.com/Commonwealth-Bank-of-Australia/project-echo).
