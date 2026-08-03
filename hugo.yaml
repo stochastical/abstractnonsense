@@ -4,6 +4,7 @@ title: "Abstract Nonsense"
 
 params:
   description: "A blog about Mathematics and Computer Science."
+  cdn: "https://cdn.abstractnonsense.xyz"
   math: true
   author:
     name: Yossi Frenkel
