@@ -24,7 +24,7 @@ I was curious about just how quickly this actually occurs. That is, for what val
 
 ## An inequality using Stirling's approximation
 
-[Stirling's approximation](https://en.wikipedia.org/wiki/Stirling's_approximation) gives an asymptotic approximation![*](fn "Asymptotic here means that the approximation becomes increasingly accurate as $n\to\infty$") for the factorial function:
+[Stirling's approximation](https://en.wikipedia.org/wiki/Stirling's_approximation) gives an asymptotic approximation[*](fn "Asymptotic here means that the approximation becomes increasingly accurate as $n\to\infty$") for the factorial function:
 
 $$
 n!\sim {\sqrt {2\pi n}}\left({\frac {n}{e}}\right)^{n}

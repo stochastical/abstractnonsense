@@ -6,7 +6,7 @@ aliases:
   - /micro-blog/2025-08-18-from-lambda-calculus-to-lifelong-learning/
 ---
 
-About a decade ago, whilst meandering through a late-night Wikipedia rabbit hole![*](fn "Some things haven't changed at all"), I stumbled across the page for the [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus).
+About a decade ago, whilst meandering through a late-night Wikipedia rabbit hole[*](fn "Some things haven't changed at all"), I stumbled across the page for the [Lambda Calculus](https://en.wikipedia.org/wiki/Lambda_calculus).
 
 A small footnote linked to [An Introduction to Lambda Calculus and Scheme](https://www.cs.unc.edu/~stotts/723/Lambda/scheme.html), a transcript of a short talk presented by Jim Larson, and, well, I fell in love. I loved the fact that there was this beautiful correspondence between foundational mathematics and models of computation; and that you could describe it through these symbolic wrappers called Lambda terms. There was something deep and abstract about it that I felt immensely drawn to.
 
@@ -31,4 +31,4 @@ Fast forward to university, and I had the pleasure of [studying](https://handboo
 
 And now? Well, now you're reading this post on a blog called [_Abstract Nonsense_](https://en.wikipedia.org/wiki/Abstract_nonsense), a subject of layers of abstraction, much like the calculus that inspired it.
 
-> Speaking of abstraction, if you haven't had a chance to read the excellent post [Up and Down the Ladder of Abstraction](https://worrydream.com/LadderOfAbstraction/) by [Bret Victor](https://worrydream.com), go and read it now. It's superb.![*](fn "He's even got a [post on the Lambda Calculus](https://worrydream.com/AlligatorEggs/)!")
+> Speaking of abstraction, if you haven't had a chance to read the excellent post [Up and Down the Ladder of Abstraction](https://worrydream.com/LadderOfAbstraction/) by [Bret Victor](https://worrydream.com), go and read it now. It's superb.[*](fn "He's even got a [post on the Lambda Calculus](https://worrydream.com/AlligatorEggs/)!")

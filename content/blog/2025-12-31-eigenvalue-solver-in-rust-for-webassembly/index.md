@@ -28,7 +28,7 @@ Let $A$ be a square matrix with complex entries. We define the Gershgorin circle
 
 For each row $i$ of the matrix, let the <u>centre</u> $c_i$ be the diagonal element $a_{ii}$.  The <u>radius</u> $r_i = \sum_{j \neq i} |a_{ij}|$ is the sum of the norms of the *off*-diagonal elements in that row.
 
-The Gershgorin circle![aside](fn "In mathematics, a *circle* typically refers to the one-dimensional boundary curve, whereas an open (closed) *disc* is the two-dimensional region excluding (including) the boundary. This makes the Gershgorin *Circle* Theorem a slight misnomer.") $D(c_i, r_i)$ is the set of complex numbers $z$ such that $|z - c_i| \leq r_i$.
+The Gershgorin circle[aside](fn "In mathematics, a *circle* typically refers to the one-dimensional boundary curve, whereas an open (closed) *disc* is the two-dimensional region excluding (including) the boundary. This makes the Gershgorin *Circle* Theorem a slight misnomer.") $D(c_i, r_i)$ is the set of complex numbers $z$ such that $|z - c_i| \leq r_i$.
 
 > **Gershgorin Circle Theorem**: every eigenvalue of $A$ lies within the union of the circles $\bigcup_{i=1}^{n} D(c_i, r_i)$.
 
@@ -320,7 +320,7 @@ content/blog/eigenvalue-solver-in-rust-for-webassembly
     └── target
 ```
 
-The `index.md` file contains this blog post and is compiled into `index.html` by Hugo. The `component.html` is embedded into the generated `index.html` as an `iframe`. The `src` directory stores our Rust code, and `pkg` contains both the compiled `.wasm` and auto-generated JS bindings artifacts![*](fn "I haven't published the `tests.rs` file."). If you're interested, open the iframe above in a new tab and poke around the paths to check out the source files (or view the blog repository on GitHub).
+The `index.md` file contains this blog post and is compiled into `index.html` by Hugo. The `component.html` is embedded into the generated `index.html` as an `iframe`. The `src` directory stores our Rust code, and `pkg` contains both the compiled `.wasm` and auto-generated JS bindings artifacts[*](fn "I haven't published the `tests.rs` file."). If you're interested, open the iframe above in a new tab and poke around the paths to check out the source files (or view the blog repository on GitHub).
 
 To view the interactive component in your browser, start a web server to serve the files in the `pkg/` directory. I'm using `hugo serve` since I'm publishing it through my blog.
 

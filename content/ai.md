@@ -5,7 +5,7 @@ title: "AI"
 > *"Once men turned their thinking over to machines in the hope that this would set them free. But that only permitted other men with machines to enslave them."*
 -- *Dune* by Frank Herbert.
 
-Every word on this blog is handcrafted by me, often painstakingly. I think of writing as an invaluable form of self-expression, and not one that I wish to delegate to a language model. I enjoy collecting [new words](/library/words), and I'm constantly struggling to develop my writing voice![*](fn "I freely admit that my grammar could really do with some improvement. ").
+Every word on this blog is handcrafted by me, often painstakingly. I think of writing as an invaluable form of self-expression, and not one that I wish to delegate to a language model. I enjoy collecting [new words](/library/words), and I'm constantly struggling to develop my writing voice[*](fn "I freely admit that my grammar could really do with some improvement. ").
 
 Unless otherwise stated, all code snippets are also written from scratch. If I used any textbook or blog resources to inform my code, I'll attribute it inline.
 

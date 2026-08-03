@@ -47,7 +47,7 @@ I've been struggling with this for a while, but I realised that Hugo supports [r
 so that I can write:
 
 ```markdown
-![fun fact](fn "_Abstract Nonsense_ is a blog about mathematics and computer science.")
+[fun fact](fn "_Abstract Nonsense_ is a blog about mathematics and computer science.")
 ```
 
 and, with some pure CSS magic, have it render into a collapsible inline footnote! You can see it live on my website now: I've started using it to add maths proofs and asides as footnotes that expand inline on hover.

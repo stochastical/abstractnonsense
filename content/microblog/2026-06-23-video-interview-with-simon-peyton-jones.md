@@ -7,7 +7,7 @@ tags:
 date: "2026-06-23"
 ---
 
-There's an [interview](https://www.youtube.com/watch?v=xcB_LF3cdqw) with [Simon Peyton Jones](https://simon.peytonjones.org)![*](fn "I'm a huge fan of his trademark presentation slides set in *Comic Sans*") I highly recommend watching. It's full of interesting observations on type theory, Haskell, functional programming, and the future of programming.
+There's an [interview](https://www.youtube.com/watch?v=xcB_LF3cdqw) with [Simon Peyton Jones](https://simon.peytonjones.org)[*](fn "I'm a huge fan of his trademark presentation slides set in *Comic Sans*") I highly recommend watching. It's full of interesting observations on type theory, Haskell, functional programming, and the future of programming.
 
 One quote at the end stood out to me in particular:
 
