@@ -1,5 +1,5 @@
 ---
-title: Internationali(z|a)tion is hard
+title: Internationali(z|s)ation is hard
 description: Good UI design across locales is hard
 tags: ['design', 'software-engineering']
 date: 2025-06-09
