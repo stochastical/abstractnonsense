@@ -7,6 +7,7 @@ aliases:
   - /micro-blog/2025-01-27-typography-in-parasite/
 ---
 
-<img width="345" alt="Image" src="https://github.com/user-attachments/assets/e0be47a2-a8a4-4945-a3fe-07efbb15ae2c" />
 
-This is awesome! Typographic Hangul from the title scene of _Parasite_
+![](typography-in-parasite/hangul-title-scene.png)
+
+This is awesome! Typographic Hangul from the title scene of _Parasite_.

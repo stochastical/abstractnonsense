@@ -1,4 +1,8 @@
-<img src="{{ .Destination | safeURL }}" loading="lazy" decoding="async"
+{{- $dest := .Destination -}}
+{{- if not (or (strings.Contains $dest "://") (strings.HasPrefix $dest "/")) -}}
+  {{- $dest = printf "%s/%s" site.Params.cdn $dest -}}
+{{- end -}}
+<img src="{{ $dest | safeURL }}" loading="lazy" decoding="async"
   {{- with .PlainText }} alt="{{ . }}"{{ end -}}
   {{- with .Title }} title="{{ . }}"{{ end -}}
 >

@@ -14,4 +14,4 @@ I live in Australia, where we closely follow British English spelling - meaning 
 
 There's a fantastic site literally called [grumpy.website](https://grumpy.website) that aggregates many such UI/UX whoopsies. I'd definitely recommend checking it out!
 
-![Image](https://github.com/user-attachments/assets/ab2d7dc3-0374-41c0-a3d2-d63ae8c92832)
+![](internationalization-is-hard/uber-favourites-orphan.jpg)
