@@ -1,0 +1,13 @@
+---
+title: "Tornado"
+date: 2015-01-01
+tags: ['short-stories']
+---
+
+I gazed out upon my empire; countries fallen before my might, whole nations left crumbling in the swathe of destruction left in my wake, and continents left starved and pillaged, over my endless reign. I was a shade, a creation of energy borne from evil human characteristics; namely hate and anger, derived from black matter. None could suppress me, no one able to overcome my strength.
+
+The breeze ran its fingers through my hair, carelessly sifting through the loose strands, even as one would while away the time by letting spill the delicate globules of sand, contained in loosely clenched hands. The wind rose and fell, like the discordant and eerie melodies of a long forgotten time. Its rasping breath increasing in strength, as the breeze wound its way toward me. Then raging it became a torrent of heat and air, known to mankind as a tornado. Destruction of untold amounts ravaging the borders of reality, twisting and deforming into shapes, and symbols potent and curious. This was no ordinary sheet of wind.
+
+I fled terrified for my life ducking and weaving my way around obstacles and people alike, after all who were people to me but mere pieces in a much greater plan to be manipulated and controlled to my will. At one stage I even ran through a blockage, what was a simple object to stand in my way, ruler of the world? I ran and ran, gathering speed but still the tornado gained on me. I turned the corner, carefree and ignorant I had run straight into the tornadoes smothering embrace, I berated myself for being a fool, and resolved to perform better in times to come. If failed to comprehend how the tornado had managed to ensnare me with such ease.
+
+While I was no philosopher nor intellect — although I possessed large dose of cunning - I could not help but wonder at the winding streets of fate, and forked branches of destiny, that determined a life's passage through the world… especially death. This was one encounter I was sure not to forget. It sucked me up, hurtling me at speeds alongside with gravitational force, beyond any black hole or gravity inducing — planetary rotation. Finally I succumbed to its power, I relented in the face of my adversary. Then death, what an inconvenience. All was dark, I was alone. Before long tiny pinpricks of light appeared in my vision, navigating their way toward me. The void was full of souls. I had hope, one day I would be reborn, even as a Phoenix deigns to rise its majestic head out of the ashes, and begin anew. When I did I would return stronger than ever, no longer a shade of my former glory.
