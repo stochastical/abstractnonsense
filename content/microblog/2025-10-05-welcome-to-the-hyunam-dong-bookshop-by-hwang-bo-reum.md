@@ -31,6 +31,14 @@ I think this interest is symmetric! It's precisely why I enjoy reading works of 
 
 I strongly relate to this: I find I have almost boundless energy for dabbling with maths and CS outside of work (or whatever other random rabbit hole I find myself in). It's a refreshing break from the day-to-day that I find restorative and joyful.
 
+Some notes on the nature of reading and writing:
+
+> Books are not meant to remain in your mind, but in your heart. Maybe they exist in your mind too, but as something more than memories. At a crossroads in life, a forgotten sentence or a story from years ago can come back to offer an invisible hand and guide you to a decision. Personally, I feel like the books I've read led me to make the choices I've made in life. While I may not remember all the details, the stories continue to exert a quiet influence on me.
+
+> We become more compassionate. To read is to see things from someone else's perspective, and that naturally leads you to stop and look out for other people, rather than chase after success in the rat race. If more people read, I think the world would become a better place.
+
+> 'Writing was something I wanted to try. So, instead of worrying whether I had the talent or not, I told myself to start writing, to just do it. I wanted to live like this at least once in my life?'
+
 And last but not least, an interesting typesetting note I learned from the book jacket:
 
 > The text of this book is set in [Minion](https://en.wikipedia.org/wiki/Minion_(typeface)), a digital typeface designed by Robert Slimbach in 1990 for Adobe Systems. The name comes from the traditional naming system for type sizes, in which minion is between nonpareil and brevier. It is inspired by late Renaissance-era type.
