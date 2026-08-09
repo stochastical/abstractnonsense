@@ -20,3 +20,5 @@ Despite the surrealism, everything feels strangely real - detached, yet vivid. T
 
 Reading it in the autumn made me think
 > Existentialism is to falling leaves as a book is to trees — both are susurrations of impermanence; one traces the shedding of meaning, the other preserves. What is lost and what remains.
+
+**Update 9 August 2026**: There's an interesting piece by the translator, Sandra Smith, on [_The Guardian_](https://www.theguardian.com/books/booksblog/2013/nov/28/translating-camus-the-outsider-sandra-smith).
