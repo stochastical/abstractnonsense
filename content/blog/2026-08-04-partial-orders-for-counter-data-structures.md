@@ -4,6 +4,8 @@ date: 2026-08-04
 tags:
   - rust
   - mathematics
+description: |
+    Multisets can be partially, but not totally, ordered by inclusion. Here's a quick bugfix for the `counter` crate. 
 ---
 
 A *counter* data structure provides an abstract data type for a *[multiset](https://en.wikipedia.org/wiki/Multiset)*. A multiset is much like a classic set, but augmented to track the multiplicity of each of its member elements. For example, $[1, 1, 1, 2, 3]$ is a multiset consisting of $1$ repeated thrice, and each of $2$ and $3$ once.
@@ -18,7 +20,7 @@ The inclusion relation lets us define a [partial order](https://en.wikipedia.org
 
 You can define other [arithmetic-like relations](https://en.wikipedia.org/wiki/Multiset#Basic_properties_and_operations) by delegating to their multiplicity functions in a similar fashion.
 
-The Python standard library implements multisets via the [￼`collections.Counter`￼￼](https://docs.python.org/3/library/collections.html#collections.Counter) class, which is a subclass of the dictionary data structure. For the Rust-equivalent crate, [￼`counter`￼](https://crates.io/crates/counter)  I’ve just fixed a small implementation bug and implemented the [￼`std::cmp::PartialOrd`￼](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html) trait in [PR \#58](https://github.com/coriolinus/counter-rs/pull/58).
+The Python standard library implements multisets via the [`collections.Counter`](https://docs.python.org/3/library/collections.html#collections.Counter) class, which is a subclass of the dictionary data structure. For the Rust-equivalent crate, [`counter`](https://crates.io/crates/counter) I’ve just fixed a small implementation bug and implemented the [`std::cmp::PartialOrd`](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html) trait in [PR \#58](https://github.com/coriolinus/counter-rs/pull/58).
 
 The `counter` crate [originally defined equality](https://github.com/coriolinus/counter-rs/blob/99ff5c337fe19f33e156f33acf584da02057c577/src/lib.rs#L302-L305) on two `Counter` structs as equality on the underlying HashMap structs:
 
@@ -39,7 +41,7 @@ fn eq(&self, other: &Self) -> bool {
 }
 ```
 
-Here, the struct [implements](https://github.com/coriolinus/counter-rs/blob/master/src/impls/index.rs) `std::ops::Index` so that `self[key]` and `other[key]` to return a reference to a (generic) `0` value for *missing* keys, which ensures the comparison succeeds even if `key` is present in one map but not the other.
+Here, the struct [implements `std::ops::Index`](https://github.com/coriolinus/counter-rs/blob/master/src/impls/index.rs) so that `self[key]` and `other[key]` to return a reference to a (generic) `0` value for *missing* keys, which ensures the comparison succeeds even if `key` is present in one map but not the other.
 
 As a bonus, if we implement the `partial_cmp` function [as follows](https://github.com/coriolinus/counter-rs/blob/master/src/lib.rs#L308-L329), we can get nice syntax sugar for the `<`, `<=`, `>`, `>=` operators:
 
@@ -68,4 +70,4 @@ where
 }
 ```
 
-I first came across the `counter` crate via the [*Thinking in Iterators*](https://corrode.dev/blog/iterators/) article on [￼`corrode.dev`￼](https://corrode.dev/blog/) and discovered the bug when reading through the source code. The corrode blog is worth checking out, there’s lots of interesting Rust posts!
+I first came across the `counter` crate via the [*Thinking in Iterators*](https://corrode.dev/blog/iterators/) article on [`corrode.dev`](https://corrode.dev/blog/) and discovered the bug when reading through the source code. The corrode blog is worth checking out, there’s lots of interesting Rust posts!
