@@ -1,26 +1,9 @@
 {{ define "main" }}
-
-<div class="tags-page">
-    <header class="tags-header">
-        <h1>{{ lower .Title }}</h1>
-        <p class="tags-sub"><span class="tag-count">{{ len .Pages }}</span> post{{ if gt (len .Pages) 1 }}s{{ end }}</p>
-    </header>
-
-    <div class="blog-list tag-posts">
-    {{ range .Pages }}
-    <article class="blog-item">
-        <div class="blog-meta">
-            <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
-        </div>
-        
-        <div class="blog-content">
-            <h2 class="blog-title">
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </h2>
-        </div>
-    </article>
-    {{ end }}
-</div>
-
-</div>
+{{ $n := len .Pages }}
+{{ partial "page-header.html" (dict
+    "page"  .
+    "title" (printf "#%s" .Title)
+    "desc"  ""
+    "meta"  (printf "%d post%s tagged <em>%s</em>" $n (cond (eq $n 1) "" "s") .Title)) }}
+{{ partial "post-list.html" (dict "pages" .Pages) }}
 {{ end }}

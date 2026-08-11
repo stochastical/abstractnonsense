@@ -1,0 +1,9 @@
+{{- /* Year-grouped post index. dict: pages (required). */ -}}
+<ul class="post-list" role="list">
+    {{- range .pages.GroupByDate "2006" }}
+    <li class="post-year" aria-hidden="true">{{ .Key }}</li>
+    {{- range .Pages }}
+    {{ partial "post-item.html" (dict "page" . "summary" true) }}
+    {{- end }}
+    {{- end }}
+</ul>

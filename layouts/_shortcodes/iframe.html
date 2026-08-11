@@ -1,29 +1,24 @@
 {{/*
 Shortcode: iframe.html
 Usage:
-  {{< iframe src="wasm/index.html" width="420" height="480" title="My Widget" style="border:2px solid #333;" >}}
+  {{< iframe src="wasm/index.html" title="My Widget" >}}
 Params:
   src     (required): resource path in page bundle
-  width   (optional): iframe width (default: 100%)
-  height  (optional): iframe height (default: 480)
-  title   (optional): iframe title (default: "Embedded Resource")
-  style   (optional): extra CSS for iframe (default: sensible border/shadow)
+  title   (optional): iframe title (default: "Embedded Component")
+  height  (optional): fallback height in px before the auto-size script runs,
+                      and the permanent height for cross-origin frames
+Same-origin embeds are measured and fitted to their content by
+assets/js/iframe-autosize.js, so no width/height guessing is needed here.
 */}}
 {{ $src := .Get "src" }}
-{{ $width := .Get "width" | default "100%" }}
-{{ $height := .Get "height" | default "auto" }}
 {{ $title := .Get "title" | default "Embedded Component" }}
-{{ $style := .Get "style" | default "" }}
+{{ $height := .Get "height" }}
+{{ .Page.Store.Set "hasIframe" true }}
 <div class="iframe-embed">
   <iframe
     src="{{ $src }}"
-    width="{{ $width }}"
-    height="{{ $height }}"
-    style="{{ $style }}"
-    loading="eager"
     title="{{ $title }}"
-    frameborder="0"
-    scrolling="no"
-    >
-  </iframe>
+    loading="eager"
+    {{ with $height }}style="height:{{ . }}px"{{ end }}
+    ></iframe>
 </div>

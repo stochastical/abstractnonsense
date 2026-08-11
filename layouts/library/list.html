@@ -1,23 +1,14 @@
 {{ define "main" }}
-<blockquote>A curated library of things I find interesting.</blockquote>
+{{ partial "page-header.html" . }}
 
 <div class="collections-grid">
-    {{ range .Pages }}
-    <a class="collection-card" href="{{ .Permalink }}">
-        <span class="collection-title">{{ .Title }}</span>
-        {{ if .Params.description }}
-        <span class="collection-description">{{ .Params.description | markdownify }}</span>
-        {{ end }}
-    </a>
-    {{ end }}
-
-    {{ with site.GetPage "/blogroll" }}
+    {{- range .Pages.ByWeight }}
     <a class="collection-card" href="{{ .RelPermalink }}">
         <span class="collection-title">{{ .Title }}</span>
-        {{ if .Params.description }}
-        <span class="collection-description">{{ .Params.description | markdownify }}</span>
-        {{ end }}
+        {{- with .Params.description }}
+        <span class="collection-description">{{ . | markdownify }}</span>
+        {{- end }}
     </a>
-    {{ end }}
+    {{- end }}
 </div>
 {{ end }}

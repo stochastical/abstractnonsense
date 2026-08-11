@@ -1,6 +1,7 @@
 ---
 title: "Blogroll"
-description: "A list of blogs I read, automatically extracted from OPML."
+description: "A list of blogs I read, extracted from an OPML feed."
+url: /blogroll/
 ---
 
 > A list of blogs I read, automatically extracted from [OPML](https://en.wikipedia.org/wiki/OPML).

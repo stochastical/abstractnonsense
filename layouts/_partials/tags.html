@@ -1,0 +1,14 @@
+{{- /* Tag chips. Accepts a Page, or a dict of {page, class}. */ -}}
+{{- $page := . -}}
+{{- $class := "" -}}
+{{- if reflect.IsMap . -}}
+  {{- $page = .page -}}
+  {{- $class = .class | default "" -}}
+{{- end -}}
+{{- with $page.Params.tags -}}
+<div class="post-tags{{ with $class }} {{ . }}{{ end }}" aria-label="Tags">
+  {{- range . }}
+  <a href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}" class="tag-card"><span class="tag-name">{{ . }}</span></a>
+  {{- end }}
+</div>
+{{- end -}}

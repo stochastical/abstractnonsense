@@ -1,48 +1,21 @@
 {{ define "main" }}
-<blockquote>
-    A place for musings, observations, design notes, code snippets -
-    <em>my thought gists</em>.
-</blockquote>
+{{ partial "page-header.html" . }}
 
-<div class="blog-list">
-    {{ range .Paginator.Pages }}
-    <article class="blog-item">
-        <div class="blog-meta">
-            <time datetime="{{ .Date }}" class="blog-date">{{ .Date.Format "2006.01.02" }}</time>
-        </div>
-        
-        <div class="blog-content">
-            <h2 class="blog-title">
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </h2>
-            
-            {{ if .Params.tags }}
-            <div class="post-tags">
-                {{ range .Params.tags }}
-                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-card"><span class="tag-name">{{ . }}</span></a>
-                {{ end }}
-            </div>
-            {{ end }}
-            
-            <div class="blog-description">{{ .Content }}</div>
-        </div>
-    </article>
-    {{ end }}
-</div>
+<ul class="post-list microblog" role="list">
+    {{- range .Paginator.Pages }}
+    {{ partial "post-item.html" (dict
+        "page" . "dateFormat" "2 Jan 2006" "tags" true "content" true) }}
+    {{- end }}
+</ul>
 
-<!-- Pagination navigation -->
 {{ if gt .Paginator.TotalPages 1 }}
-<nav class="pagination">
+<nav class="pagination" aria-label="Pagination">
     {{ if .Paginator.HasPrev }}
-        <a href="{{ .Paginator.Prev.URL }}" class="pagination-prev">← Previous</a>
+        <a href="{{ .Paginator.Prev.URL }}" class="pagination-prev" rel="prev">← Previous</a>
     {{ end }}
-    
-    <span class="pagination-info">
-        Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}
-    </span>
-    
+    <span class="pagination-info">Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
     {{ if .Paginator.HasNext }}
-        <a href="{{ .Paginator.Next.URL }}" class="pagination-next">Next →</a>
+        <a href="{{ .Paginator.Next.URL }}" class="pagination-next" rel="next">Next →</a>
     {{ end }}
 </nav>
 {{ end }}

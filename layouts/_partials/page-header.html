@@ -1,0 +1,23 @@
+{{- /* Index page header. Accepts a Page, or a dict of
+       {page, title, desc, meta}. meta is pre-rendered HTML. */ -}}
+{{- $page := . -}}
+{{- $title := "" -}}
+{{- $desc := "" -}}
+{{- $meta := "" -}}
+{{- if reflect.IsMap . -}}
+  {{- $page = .page -}}
+  {{- $title = .title -}}
+  {{- $desc = .desc -}}
+  {{- $meta = .meta -}}
+{{- end -}}
+{{- $title = $title | default $page.Title -}}
+{{- $desc = $desc | default $page.Description -}}
+<header class="page-header">
+    <h1>{{ $title }}</h1>
+    {{- with $desc }}
+    <p class="page-desc">{{ . | markdownify }}</p>
+    {{- end }}
+    {{- with $meta }}
+    <p class="page-meta">{{ . | safeHTML }}</p>
+    {{- end }}
+</header>

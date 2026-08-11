@@ -2,8 +2,12 @@
 {{- /* This is a footnote using link syntax */ -}}
 {{- $label := .PlainText | default "note" -}}
 {{- $content := .Title | default "Footnote content" -}}
-{{- $id := .Ordinal -}}
-<label for="fn{{ $id }}" class="footnote-trigger">{{ $label }}</label><input type="checkbox" id="fn{{ $id }}" class="footnote-checkbox" /><small class="footnote-aside" id="fn{{ $id }}">{{ $content | markdownify }}</small>
+{{- /* .Ordinal is per content page, but list pages (e.g. /microblog/page/2/)
+       render several posts' .Content into one document, so ordinals collide
+       across posts and the label toggles the wrong footnote. Scoping the id
+       to the owning page keeps it unique wherever the content is rendered. */ -}}
+{{- $id := printf "%s-%d" (substr (sha256 .Page.RelPermalink) 0 8) .Ordinal -}}
+<label for="fn{{ $id }}" class="footnote-trigger">{{ $label }}</label><input type="checkbox" id="fn{{ $id }}" class="footnote-checkbox" aria-describedby="fn{{ $id }}-aside" /><small class="footnote-aside" id="fn{{ $id }}-aside" role="note">{{ $content | markdownify }}</small>
 {{- else -}}
 {{- /* This is a regular link */ -}}
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>

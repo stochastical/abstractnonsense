@@ -1,8 +1,4 @@
----
-layout: page
----
-
-## Hi, I'm Yossi Frenkel
+# Hi, I'm Yossi Frenkel
 
 Welcome to _Abstract Nonsense_! [hover here](fn "[Abstract Nonsense](https://en.wikipedia.org/wiki/Abstract_nonsense) is a whimsical name for the mathematical subject of [Category theory](https://en.wikipedia.org/wiki/Category_theory). It's also my domain of all things arcane.")
 
@@ -11,12 +7,6 @@ I studied mathematics and computer science at the _University of Melbourne_, and
 In between working, I enjoy learning about maths, procrastinating, writing long lists, reading, and generally pretending I have a life outside of my head. Sometimes it works.
 
 I enjoy writing about maths, computer science, and anything that piques my curiosity!
-
-## Sections
-
-- [Microblog](/microblog/): Quick thoughts, interesting finds, and daily musings.
-- [Blog](/blog/): Deep dives into maths, computer science, and everything in between.
-- [Library](/library/): Words and books.
 
 You might like to start here: [_Can a regex match valid card numbers?_](/blog/2025-08-31-can-a-regex-match-valid-card-numbers).
 

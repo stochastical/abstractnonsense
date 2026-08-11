@@ -3,13 +3,13 @@
     <header>
         {{- if not .Date.IsZero }}
         <p class="post-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>
         </p>
         {{- end }}
         <h1>{{ .Title }}</h1>
-        {{- if ne .Params.showSubtitle false }}{{ with .Description }}
-        <div class="post-subtitle">{{ . | markdownify }}</div>
-        {{- end }}{{ end }}
+        {{- with .Params.description }}
+        <p class="post-subtitle">{{ . | markdownify }}</p>
+        {{- end }}
     </header>
 
     {{ .Content }}

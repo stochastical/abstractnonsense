@@ -2,7 +2,24 @@
 {{- if not (or (strings.Contains $dest "://") (strings.HasPrefix $dest "/")) -}}
   {{- $dest = printf "%s/%s" site.Params.cdn $dest -}}
 {{- end -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- if strings.Contains $dest "://" -}}
+  {{- $try := try (resources.GetRemote $dest) -}}
+  {{- with $try.Err -}}
+    {{- warnf "render-image: could not fetch %q for dimensions: %s" $dest . -}}
+  {{- else with $try.Value -}}
+    {{- $width = .Width -}}
+    {{- $height = .Height -}}
+  {{- end -}}
+{{- end -}}
+{{- $caption := .Title -}}
+{{- $isFigure := and .IsBlock (ne $caption "") -}}
+{{- if $isFigure -}}<figure>{{- end -}}
 <img src="{{ $dest | safeURL }}" loading="lazy" decoding="async"
+  {{- with $width }} width="{{ . }}"{{ end -}}
+  {{- with $height }} height="{{ . }}"{{ end -}}
   {{- with .PlainText }} alt="{{ . }}"{{ end -}}
-  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if not $isFigure }}{{ with .Title }} title="{{ . }}"{{ end }}{{ end -}}
 >
+{{- if $isFigure -}}<figcaption>{{ $caption | markdownify }}</figcaption></figure>{{- end -}}

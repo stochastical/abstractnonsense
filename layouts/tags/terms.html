@@ -1,17 +1,11 @@
 {{ define "main" }}
-<div class="tags-page">
-    <header class="tags-header">
-        <h1>Tags</h1>
-        <p class="tags-sub">Browse all tags. Click a tag to see related posts.</p>
-    </header>
+{{ partial "page-header.html" . }}
 
-    <section class="tags-grid">
-        {{ range .Data.Terms.ByCount }}
-            <a class="tag-card" href="{{ .Page.Permalink }}">
-                <span class="tag-name">{{ lower .Page.Title }}</span>
-                <span class="tag-count">{{ .Count }}</span>
-            </a>
-        {{ end }}
-    </section>
-</div>
+<section class="tags-index" aria-label="All tags">
+    {{- range .Data.Terms.Alphabetical }}
+    <a class="tag-card" href="{{ .Page.RelPermalink }}">
+        <span class="tag-name">{{ .Page.Title }}</span><span class="tag-count">{{ .Count }}</span>
+    </a>
+    {{- end }}
+</section>
 {{ end }}

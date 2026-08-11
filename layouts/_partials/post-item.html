@@ -1,0 +1,24 @@
+{{- /* One .post-list row.
+       dict: page (required), dateFormat, heading, summary, tags, content.
+       The heading tag goes through safeHTML — Go's escaper rejects an action
+       in tag-name position. */ -}}
+{{- $p := .page -}}
+{{- $dateFormat := .dateFormat | default "2 Jan" -}}
+{{- $heading := .heading | default "h2" -}}
+<li class="post-item">
+    <time class="post-date" datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format $dateFormat }}</time>
+    <div class="post-body">
+        {{ printf `<%s class="post-title">` $heading | safeHTML -}}
+        <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
+        {{- printf `</%s>` $heading | safeHTML }}
+        {{- if .tags }}
+        {{ partial "tags.html" (dict "page" $p "class" "post-tags--under-title") }}
+        {{- end }}
+        {{- if .summary }}{{ with $p.Params.description }}
+        <div class="post-summary">{{ . | markdownify }}</div>
+        {{- end }}{{ end }}
+        {{- if .content }}
+        <div class="post-content">{{ $p.Content }}</div>
+        {{- end }}
+    </div>
+</li>

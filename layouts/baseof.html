@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <title>{{ with .Title }}{{ printf "%s ⊢ " . }}{{ end }}{{ site.Title }}</title>
-    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="description" content="{{ with .Description }}{{ . | markdownify | plainify | chomp }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
     {{ partial "opengraph.html" . }}
     <link rel="stylesheet" href="{{ (resources.Get "css/style.css" | minify | fingerprint).RelPermalink }}">
@@ -25,41 +26,61 @@
 </head>
 
 <body>
-    <!-- SVG sprite sheet -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <svg xmlns="http://www.w3.org/2000/svg" hidden aria-hidden="true" style="display:none">
         <symbol id="icon-rss" viewBox="0 0 640 640">
             <path fill="currentColor" d="M96 128C96 110.3 110.3 96 128 96C357.8 96 544 282.2 544 512C544 529.7 529.7 544 512 544C494.3 544 480 529.7 480 512C480 317.6 322.4 160 128 160C110.3 160 96 145.7 96 128zM96 480C96 444.7 124.7 416 160 416C195.3 416 224 444.7 224 480C224 515.3 195.3 544 160 544C124.7 544 96 515.3 96 480zM128 224C287.1 224 416 352.9 416 512C416 529.7 401.7 544 384 544C366.3 544 352 529.7 352 512C352 388.3 251.7 288 128 288C110.3 288 96 273.7 96 256C96 238.3 110.3 224 128 224z"/>
         </symbol>
     </svg>
+
     <header>
-        <h1 class="site-heading">
-            <a class="site-brand" href="{{ .Site.BaseURL | relURL }}">
+        <p class="site-heading">
+            <a class="site-brand" href="{{ .Site.BaseURL | relURL }}" aria-label="{{ .Site.Title }} — home">
                 {{ readFile "static/favicon.svg" | safeHTML }}
                 <span class="site-title-text">{{ .Site.Title }}</span>
             </a>
-        </h1>
-        <nav>
-            <!-- Highlight the current page in the navigation bar -->
-            <a href="{{ "/microblog/" | relURL }}"{{ if hasPrefix .RelPermalink "/microblog/" }} class="selected"{{ end }}>Microblog</a>
-            <a href="{{ "/blog/" | relURL }}"{{ if hasPrefix .RelPermalink "/blog/" }} class="selected"{{ end }}>Blog</a>
-            <a href="{{ "/library/" | relURL }}"{{ if hasPrefix .RelPermalink "/library/" }} class="selected"{{ end }}>Library</a>
-            <!-- Site-wide RSS icon link -->
+        </p>
+        <nav aria-label="Primary">
+            <a href="{{ "/microblog/" | relURL }}"{{ if hasPrefix .RelPermalink "/microblog/" }} class="selected" aria-current="page"{{ end }}>Microblog</a>
+            <a href="{{ "/blog/" | relURL }}"{{ if hasPrefix .RelPermalink "/blog/" }} class="selected" aria-current="page"{{ end }}>Blog</a>
+            <a href="{{ "/library/" | relURL }}"{{ if hasPrefix .RelPermalink "/library/" }} class="selected" aria-current="page"{{ end }}>Library</a>
             <a href="{{ "/index.xml" | relURL }}" class="rss-icon-link" aria-label="Subscribe to RSS" title="Subscribe to RSS">
                 <svg class="rss-icon" aria-hidden="true" focusable="false"><use href="#icon-rss"/></svg>
             </a>
         </nav>
     </header>
-    <main>
+
+    <main id="main">
         {{ block "main" . }}{{ end }}
     </main>
+
+    <footer>
+        <nav class="footer-nav" aria-label="Secondary">
+            <a href="{{ "/slashes/" | relURL }}">/slashes</a>
+            <a href="{{ "/ai/" | relURL }}">/ai</a>
+            <a href="{{ "/colophon/" | relURL }}">/colophon</a>
+            <a href="{{ "/backlinks/" | relURL }}">/backlinks</a>
+            <a href="{{ "/tags/" | relURL }}">/tags</a>
+        </nav>
+    </footer>
+
     <!-- Add copy-to-clipboard functionality for code blocks -->
     <script src="{{ (resources.Get "js/copy-code.js" | minify | fingerprint).RelPermalink }}"></script>
+
+    <!-- Fit same-origin embeds to their content height -->
+    {{ if .Store.Get "hasIframe" }}
+        <script src="{{ (resources.Get "js/iframe-autosize.js" | minify | fingerprint).RelPermalink }}" defer></script>
+    {{ end }}
 
     <!-- Add Mermaid code block rendering support -->
     {{ if .Store.Get "hasMermaid" }}
         <script type="module">
             import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-            mermaid.initialize({ startOnLoad: true });
+            // Match the reader's colour scheme; the default light theme renders
+            // near-black on the dark background otherwise.
+            const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+            mermaid.initialize({ startOnLoad: true, theme: dark ? 'dark' : 'default' });
         </script>
     {{ end }}
 </body>

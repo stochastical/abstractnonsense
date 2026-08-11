@@ -1,3 +1,35 @@
 {{ define "main" }}
+<section class="home-intro">
 {{ .Content }}
+</section>
+
+{{ with where site.RegularPages "Section" "blog" | first 5 }}
+<section class="home-section" aria-labelledby="home-blog">
+    <div class="home-section-header">
+        <h2 id="home-blog">Recent posts</h2>
+        <a class="home-section-link" href="{{ "/blog/" | relURL }}">All blog posts →</a>
+    </div>
+    <ul class="post-list" role="list">
+        {{- range . }}
+        {{ partial "post-item.html" (dict
+            "page" . "dateFormat" "2006.01.02" "heading" "h3" "summary" true) }}
+        {{- end }}
+    </ul>
+</section>
+{{ end }}
+
+{{ with where site.RegularPages "Section" "microblog" | first 4 }}
+<section class="home-section" aria-labelledby="home-microblog">
+    <div class="home-section-header">
+        <h2 id="home-microblog">Recent microblog</h2>
+        <a class="home-section-link" href="{{ "/microblog/" | relURL }}">All microposts →</a>
+    </div>
+    <ul class="post-list" role="list">
+        {{- range . }}
+        {{ partial "post-item.html" (dict
+            "page" . "dateFormat" "2006.01.02" "heading" "h3") }}
+        {{- end }}
+    </ul>
+</section>
+{{ end }}
 {{ end }}
