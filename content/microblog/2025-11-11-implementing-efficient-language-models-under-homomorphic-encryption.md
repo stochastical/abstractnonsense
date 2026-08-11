@@ -1,7 +1,7 @@
 ---
 title: 'Talk: Implementing Efficient Language Models under Homomorphic Encryption'
 date: 2025-11-11
-tags: ['homomorphic-encryption', 'LLMs', 'mathematics', 'lecture']
+tags: ['homomorphic-encryption', 'LLM', 'mathematics', 'lecture']
 description: 'A summary of a talk on implementing efficient language models under homomorphic encryption by Donghwan Rho at Seoul National University.'
 aliases:
   - /micro-blog/2025-11-11-implementing-efficient-language-models-under-homomorphic-encryption/

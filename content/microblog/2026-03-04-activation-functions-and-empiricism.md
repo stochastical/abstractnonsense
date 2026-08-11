@@ -1,6 +1,6 @@
 ---
 title: Activation functions and empiricism
-tags: ['llm', 'quote']
+tags: ['LLM', 'quote']
 date: 2026-03-04
 aliases:
   - /micro-blog/2026-03-04-activation-functions-and-empiricism/
