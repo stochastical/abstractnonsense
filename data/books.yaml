@@ -1,5 +1,11 @@
 # 2026
 
+- title: "The Little Prince"
+  author: "Antoine de Saint-Exupéry"
+  genre: "literary-fiction"
+  year: 2026
+  month: 8
+
 - title: "Programming Rust"
   author: "Jim Blandy, Jason Orendorff and Leonora F. S. Tindall"
   format: "textbook"
