@@ -32,3 +32,6 @@ Here are some thoughts about the device.
 - There's a lot to customise, if you so desire. I found the stock fonts to be a bit grainy, but I've been enjoying using [Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)
 
 As the old adage goes, the best book you have is the one you're carrying. If it broke today, I'd probably go out and buy another one.
+
+**Update 19/10/2026**: After travelling overseas on a long-haul the screen of my X4 Pro kicked the bucket. It worked and was protected throughout transit and there were no discernible scratches or marks on the body. However, the screen would no longer refresh and there were "fragmentation patterns" emanating from a spot. I can only assume that the e-ink screen itself is very fragile and susceptible to stress fractures. I contacted the support team and they kindly (and promptly!) shipped me a replacement device for free. Kudos to the Xteink team for the assistance, but lesson learned to be even more careful with it.
+
