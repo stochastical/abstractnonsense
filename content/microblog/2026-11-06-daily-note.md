@@ -1,7 +1,7 @@
 ---
 title: "Daily Note: 6 November 2026"
 date: 2026-11-06
-tags: ["daily-note"]
+tags: ["daily-note", "cambridge"]
 ---
 
 > I'd planned to be more on top of my blogging, but I've been caught in a frenzy of life and due dates. So to make amends, I've decided to attempt a daily-note blog stream habit. Both as a way to keep some accountability and to gather my (increasingly scattered) thoughts.
